@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Active Subscribers</title>
+    <link rel="stylesheet" href="/css/mainmin.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/admin.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        table thead th {
+            background-color: #2B2D42;
+            padding: 10px;
+            text-align: left;
+            border-bottom: 2px solid #ddd;
+        }
+        table tbody td {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+        table tbody tr:nth-child(even) {
+            background-color: #fbfbfb;
+        }
+        table tbody tr:hover {
+            background-color: #f0f8ff;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    
+    <div class="sidebar d-flex flex-column">
+        <h2 class="text-center sidebar-heading">Admin Panel</h2>
+        <a href="http://127.0.0.1:5500/subscriberManagement.html">Home</a>
+        <a href="http://127.0.0.1:5500/subscriberManagement.html" class="active">Subscribers</a>
+        <a href="#">Recharge History</a>
+        <a href="#">Admin Panel</a>
+        <a href="#">Settings</a>
+    </div>
+    <div class="main-content">
+        <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm mb-4">
+            <div class="container-fluid">
+                <h2 class="navbar-brand">Dashboard</h2>
+                <button class="btn btn-danger">Logout</button>
+            </div>
+        </nav>
+        
+        <h2 class="text-secondary">Active Subscribers</h2>
+        
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Phone No</th>
+                    <th>Email-id</th>
+                    <th>Current Plan</th>
+                    <th>Plan Validity</th>
+                    <th>No of Days Left</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>Olivia Brown</td><td>9876543201</td><td>olivia.b@example.com</td><td>MC-455 (₹499)</td><td>2025-05-15</td><td>10</td></tr>
+                <tr><td>Liam Smith</td><td>9876543202</td><td>liam.s@example.com</td><td>MC-532 (₹299)</td><td>2025-06-10</td><td>20</td></tr>
+                <tr><td>Emma Wilson</td><td>9876543203</td><td>emma.w@example.com</td><td>MC-678 (₹799)</td><td>2025-07-20</td><td>5</td></tr>
+                <tr><td>Noah Johnson</td><td>9876543204</td><td>noah.j@example.com</td><td>MC-231 (₹459)</td><td>2025-05-18</td><td>8</td></tr>
+                <tr><td>Ava Davis</td><td>9876543205</td><td>ava.d@example.com</td><td>MC-890 (₹349)</td><td>2025-06-25</td><td>15</td></tr>
+                <tr><td>James Martinez</td><td>9876543206</td><td>james.m@example.com</td><td>MC-123 (₹599)</td><td>2025-08-01</td><td>3</td></tr>
+                <tr><td>Sophia Taylor</td><td>9876543207</td><td>sophia.t@example.com</td><td>MC-768 (₹279)</td><td>2025-06-11</td><td>11</td></tr>
+                <tr><td>Benjamin Anderson</td><td>9876543208</td><td>ben.a@example.com</td><td>MC-902 (₹689)</td><td>2025-07-15</td><td>18</td></tr>
+                <tr><td>Charlotte Thomas</td><td>9876543209</td><td>charlotte.t@example.com</td><td>MC-657 (₹399)</td><td>2025-06-05</td><td>7</td></tr>
+                <tr><td>Henry White</td><td>9876543210</td><td>henry.w@example.com</td><td>MC-112 (₹799)</td><td>2025-07-28</td><td>9</td></tr>
+                <tr><td>Amelia Harris</td><td>9876543211</td><td>amelia.h@example.com</td><td>MC-438 (₹459)</td><td>2025-05-29</td><td>12</td></tr>
+                <tr><td>Lucas Clark</td><td>9876543212</td><td>lucas.c@example.com</td><td>MC-910 (₹699)</td><td>2025-08-10</td><td>6</td></tr>
+                <tr><td>Isabella Lewis</td><td>9876543213</td><td>isabella.l@example.com</td><td>MC-145 (₹379)</td><td>2025-06-12</td><td>14</td></tr>
+                <tr><td>Mason Young</td><td>9876543214</td><td>mason.y@example.com</td><td>MC-321 (₹629)</td><td>2025-07-30</td><td>20</td></tr>
+                <tr><td>Mia Scott</td><td>9876543215</td><td>mia.s@example.com</td><td>MC-555 (₹499)</td><td>2025-05-14</td><td>4</td></tr>
+                <tr><td>Elijah Green</td><td>9876543216</td><td>elijah.g@example.com</td><td>MC-789 (₹359)</td><td>2025-06-18</td><td>10</td></tr>
+                <tr><td>Evelyn Baker</td><td>9876543217</td><td>evelyn.b@example.com</td><td>MC-246 (₹589)</td><td>2025-08-07</td><td>17</td></tr>
+                <tr><td>Alexander Hall</td><td>9876543218</td><td>alex.h@example.com</td><td>MC-888 (₹459)</td><td>2025-06-29</td><td>8</td></tr>
+                <tr><td>Sofia Allen</td><td>9876543219</td><td>sofia.a@example.com</td><td>MC-666 (₹429)</td><td>2025-07-03</td><td>9</td></tr>
+                <tr><td>William Adams</td><td>9876543220</td><td>william.a@example.com</td><td>MC-234 (₹579)</td><td>2025-06-09</td><td>19</td></tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
