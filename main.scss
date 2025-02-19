@@ -14,7 +14,6 @@ $light: #fff;
 @import "./node_modules/bootstrap/scss/bootstrap.scss";
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
 
-$brand: #fff49f;
 $black: #333;
 $lightblack: #505050;
 $lightwhite: #f1f2f3;
@@ -26,9 +25,7 @@ $done: #0a9505;
   z-index: -1;
 }
 
-.bg-brand{
-  background-color: $brand;
-}
+
 
 body {
   box-sizing: border-box;
@@ -40,7 +37,10 @@ body {
 }
 $colors: (
   "done":#0a9505,
-  "card":#1b1f3b
+  "card":#1b1f3b,
+  "brand": #fff49f
+
+
 );
 
 @each $key, $value in $colors {
@@ -67,20 +67,6 @@ body *::before {
   max-width: 1100px;
   margin-left: auto;
   margin-right: auto;
-}
-
-.carousel-inner img {
-  height: 600px;
-}
-
-
-.section__headline {
-  font-family: 'Roboto', sans-serif;
-  font-size: 62px;
-  font-weight: light;
-  color: $brand;
-  padding-left: 15px;
-  padding-top: 30px;
 }
 
 .c-faqs__headline {
@@ -248,70 +234,6 @@ nav ul li {
 
 
 
-.plan-card {
-  background: #1b1f3b;
-  border-radius: 16px;
-  padding: 25px;
-  text-align: left;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
-  width: 350px;
-  transition: transform 0.3s ease-in-out;
-  position: relative;
-}
-
-.plan-card:hover {
-  transform: translateY(-5px);
-}
-
-.plan-header {
-  background: #ffcc00;
-  color: #222;
-  font-weight: bold;
-  padding: 5px 10px;
-  border-radius: 6px;
-  display: inline-block;
-  margin-bottom: 15px;
-}
-
-.plan-title {
-  font-size: 22px;
-  font-weight: bold;
-  color: #f8f9fa;
-}
-
-.plan-price {
-  font-size: 18px;
-  color: #ffcc00;
-  font-weight: bold;
-  margin-bottom: 10px;
-}
-
-.plan-features {
-  font-size: 14px;
-  color: #ffffff;
-  margin-bottom: 15px;
-}
-
-ul li {
-  padding-block: 10px;
-}
-
-.proceed-btn {
-  background: #ff3b3b;
-  color: white;
-  border: none;
-  padding: 12px 24px;
-  border-radius: 8px;
-  cursor: pointer;
-  font-weight: bold;
-  transition: background 0.3s;
-  width: 100%;
-  text-align: center;
-}
-
-.proceed-btn:hover {
-  background: #ff5555;
-}
 
 .text-done {
   color: $done;
@@ -334,10 +256,9 @@ ul li {
 }
 
 
-input,input:focus, textarea:focus, select:focus {
+input:focus, textarea:focus, select:focus {
   outline: none !important;
   box-shadow: none !important;
-  border-color:$warning !important;
 }
 
     input[type="number"]::-webkit-outer-spin-button,
@@ -345,6 +266,13 @@ input,input:focus, textarea:focus, select:focus {
         -webkit-appearance: none;
         margin: 0;
     }
+    .success {
+      animation: glow 0.5s ease-in-out 2 alternate;
+  }
+  @keyframes glow {
+      0% { box-shadow: 0 0 5px $secondary; }
+      100% { box-shadow: 0 0 15px $secondary; }
+  }
 
 
 @import url('https://fonts.googleapis.com/css2?family=Gantari:ital,wght@0,100..900;1,100..900&display=swap');
@@ -487,5 +415,11 @@ i {
       font-size: 14px;
   }
 }
+
+
+
+
+
+
 
 
