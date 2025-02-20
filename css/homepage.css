@@ -1,0 +1,68 @@
+/* Banner Section */
+.mobicomm-banner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: linear-gradient(135deg, #001f3f, #0074cc); /* Premium Blue */
+    padding: 50px;
+    border-radius: 12px;
+    color: white;
+    max-width: 100%;
+    overflow: hidden;
+    position: relative;
+    height: 300px;
+  }
+  
+  /* Left Section */
+  .banner-left {
+    max-width: 45%;
+    animation: fadeIn 1.5s ease-in-out;
+  }
+  
+  .banner-left h2 {
+    font-size: 2.2rem;
+    font-weight: bold;
+  }
+  
+  .banner-left p {
+    font-size: 1.1rem;
+    margin: 15px 0;
+    opacity: 0.9;
+  }
+  
+  .cta-btn {
+    background: #ffea70; 
+    color: #001f3f;
+    padding: 12px 20px;
+    border: none;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: 0.3s;
+  }
+  
+  .cta-btn:hover {
+    background: #ffea70;
+    color: #000;
+  }
+  
+  .banner-right img {
+    width: 450px;
+    max-width: 100%;
+    border-radius: 10px;
+    transition: opacity 0.5s ease-in-out;
+  }
+  
+  /* Animation */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
