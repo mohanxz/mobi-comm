@@ -3,7 +3,7 @@ $secondary:#d52136 ;
 $info: #fffadf;
 $success :#8D99AE;
 $danger: #8f0414;
-$warning: #1fbefd;
+$warning: #afe8ff;
 $light: #fff;
 
 
@@ -61,6 +61,13 @@ body *::before {
   box-sizing: inherit;
 }
 
+.navbar{
+  position: sticky;
+  top: 1px;
+  background-color: white;
+  z-index: 15;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px;
+}
 
 
 
@@ -406,7 +413,7 @@ i {
 }
 
 .comparison-table i.fa-times-circle {
-  color: #dc3545;
+  color: $secondary;
 }
 
 @media (max-width: 768px) {
@@ -496,13 +503,12 @@ i {
 }
 
 .plan-card ul li::before {
-  content: "✔";
   color: #ffea70; 
   font-size: 14px;
 }
 
 .proceed-btn {
-  background: linear-gradient(135deg, #008080, #005f5f); /* Dark Teal Gradient */
+  background: linear-gradient(135deg, #008080, #005f5f);
   color: white;
   border: none;
   padding: 14px 28px;
@@ -516,11 +522,11 @@ i {
   box-shadow: 0 4px 8px rgba(0, 128, 128, 0.3);
 }
 
-.proceed-btn:hover {
-  background: linear-gradient(135deg, #00a0a0, #007575); /* Lighter Teal */
-  box-shadow: 0 6px 12px rgba(0, 128, 128, 0.5);
-  transform: scale(1.05);
-}
+// .proceed-btn:hover {
+//   background: linear-gradient(135deg, #00a0a0, #007575);
+//   box-shadow: 0 6px 12px rgba(0, 128, 128, 0.5);
+//   transform: scale(1.05);
+// }
 
 
 

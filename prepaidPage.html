@@ -33,36 +33,36 @@
             color:#EF233C !important;
         }
     </style>
-     <nav class="navbar navbar-expand-lg navbar-light bg-light border">
-        <div class="container-fluid ">
-            <a class="navbar-brand fw-bold text-secondary fs-1"
-                href="http://127.0.0.1:5500/homePage.html"><img src="src/images/mobi-comm-logo.png" alt="" style="width: 50px;"></a>
-            <a class="navbar-brand fw-bold text-secondary fs-1"
-                href="http://127.0.0.1:5500/homePage.html"><img src="src/images/mobi-comm-named-logo.png" alt="" style="width: 220px;"></a>
-
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll"
+     
+    <nav class="navbar navbar-expand-lg navbar-light  border p-0 ">
+        <div class="container-fluid p-0">
+            <a class="navbar-brand  fs-1 p-0" href="http://127.0.0.1:5501/homePage.html"><img
+                    src="src/images/mobi-comm-named-logo.png" alt="" style="width: 220px;"></a>
+    
+            <button class="navbar-toggler p-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll"
                 aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarScroll">
                 <ul class="navbar-nav me-auto my-2 my-lg-0 " style="--bs-scroll-height: 100px;">
-                    <li class="nav-item">
-                        <a class="nav-link active text-secondary text-decoration-underline"
-                            aria-current="page">Home</a>
+                    <li class="nav-item p-0">
+                        <a class="nav-link text-secondary"
+                            aria-current="page" href="http://127.0.0.1:5501/homePage.html" >Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link " aria-current="page" href="http://127.0.0.1:5500/viewplans.html">View plans
-                            </a>
+                        <a class="nav-link " aria-current="page" href="http://127.0.0.1:5501/viewplans.html">Prepaid
+                            plans
+                        </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="http://127.0.0.1:5500/AboutUsPage.html">About us</a>
+                        <a class="nav-link " href="http://127.0.0.1:5501/aboutUsPage.html">About us</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="http://127.0.0.1:5500/customerSupport.html">Support</a>
+                        <a class="nav-link" href="http://127.0.0.1:5501/customerSupport.html">Support</a>
                     </li>
-
+    
                 </ul>
-              
+    
             </div>
         </div>
     </nav>
@@ -78,9 +78,9 @@
                     </div>
                 </div>
                 <div id="right-section" class="col-lg-8">
-                    <nav aria-label="breadcrumb">
-                        <ol class="breadcrumb">
-                            <li class="breadcrumb-item active "><a href="http://127.0.0.1:5500/login.html">Recharge </a>
+                    <nav aria-label="breadcrumb ">
+                        <ol class="breadcrumb mt-1">
+                            <li class="breadcrumb-item"><a href="http://127.0.0.1:5500/login.html">Recharge </a>
                             </li>
                             <li class="breadcrumb-item " aria-current="page"><a href="">Prepaid</a></li>
                             <li class="breadcrumb-item " aria-current="page">All plans</li>
@@ -103,6 +103,10 @@
                         <li class="nav-item">
                             <a class="nav-link" id="unlimited-tab" data-bs-toggle="tab" href="#unlimited" role="tab"
                                 aria-controls="unlimited">Unlimited 5G Plus</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="ott-tab" data-bs-toggle="tab" href="#ott" role="tab"
+                                aria-controls="ott">Ott plans</a>
                         </li>
                     </ul>
 
@@ -734,7 +738,7 @@
                                         <ul class="plan-features">
                                             <li><i class="fa-solid fa-wifi me-1"></i>Unlimited 5G Data + 5Gbps Max Speed
                                             </li>
-                                            <li><i class="fa-solid fa-globe me-1"></i>Netflix + Disney+ + Prime +
+                                            <li><i class="fa-solid fa-globe me-1"></i>Netflix + Jio + Prime +
                                                 Spotify</li>
                                         </ul>
                                         <button class="proceed-btn">Recharge ₹9999 Plan</button>
@@ -792,7 +796,7 @@
                                         <ul class="plan-features">
                                             <li><i class="fa-solid fa-wifi me-1"></i>Truly Unlimited 5G Data</li>
                                             <li><i class="fa-solid fa-globe me-1"></i>Ultra HD Streaming & Gaming</li>
-                                            <li><i class="fa-solid fa-tv"></i>OTT Pack (Netflix Mobile + Disney+
+                                            <li><i class="fa-solid fa-tv"></i>OTT Pack (Netflix Mobile + Jio
                                                 Hotstar)</li>
                                         </ul>
                                         <button class="proceed-btn mt-3">Recharge ₹799 Plan</button>
@@ -814,6 +818,299 @@
                                         <button class="proceed-btn">Recharge ₹1199 Plan</button>
                                     </div>
                                 </div>
+                            </div>
+
+                        </div>
+                        <div class="tab-pane fade" id="ott" role="tabpanel" aria-labelledby="ott-tab">
+                            <div class="row">
+                                <div class="row">
+                                    <!-- Basic OTT Pack -->
+                                    <div class="col-lg-4 col-sm-6 responsive">
+                                        <div class="plan-card">
+                                            <div class="plan-header">Basic OTT Pack</div>
+                                            <h5 class="plan-title">Starter Plan</h5>
+                                            <p class="plan-price">₹399/30 Days</p>
+                                            <ul class="plan-features">
+                                                <li><i class="fa-solid fa-wifi me-1"></i>2GB/day + Unlimited Calls</li>
+                                                <li>
+                                                    <img src="src/images/netflixlogo.png" alt="Netflix" style="height: 14px; vertical-align: middle;">
+                                                    Netflix (Mobile-only)
+                                                </li>
+                                                <li><i class="fa-solid fa-globe me-1"></i>Validity: 30 Days</li>
+                                            </ul>
+                                            <button class="proceed-btn">Recharge ₹399 Plan</button>
+                                        </div>
+                                    </div>
+                                
+                                    <!-- OTT Value Pack -->
+                                    <div class="col-lg-4 col-sm-6 responsive">
+                                        <div class="plan-card">
+                                            <div class="plan-header">OTT Value Pack</div>
+                                            <h5 class="plan-title">Entertainment Lite</h5>
+                                            <p class="plan-price">₹499/30 Days</p>
+                                            <ul class="plan-features">
+                                                <li><i class="fa-solid fa-wifi me-1"></i>2.5GB/day + Unlimited Calls</li>
+                                                <li>
+                                                    <img src="src/images/amazonprimelogo.png" alt="Prime Video" style="height: 14px; vertical-align: middle;">
+                                                    Prime Video
+                                                </li>
+                                                <li>
+                                                    <img src="src/images/netflixlogo.png" alt="Netflix" style="height: 14px; vertical-align: middle;">
+                                                    Netflix (Standard)
+                                                </li>
+                                                <li><i class="fa-solid fa-globe me-1"></i>Validity: 30 Days</li>
+                                            </ul>
+                                            <button class="proceed-btn">Recharge ₹499 Plan</button>
+                                        </div>
+                                    </div>
+                                
+                                    <!-- OTT Super Saver -->
+                                    <div class="col-lg-4 col-sm-6 responsive">
+                                        <div class="plan-card">
+                                            <div class="plan-header">OTT Super Saver</div>
+                                            <h5 class="plan-title">OTT Power Pack</h5>
+                                            <p class="plan-price">₹599/45 Days</p>
+                                            <ul class="plan-features">
+                                                <li><i class="fa-solid fa-wifi me-1"></i>3GB/day + Unlimited Calls</li>
+                                                <li>
+                                                    <img src="src/images/netflixlogo.png" alt="Netflix" style="height: 14px; vertical-align: middle;">
+                                                    Netflix (HD)
+                                                </li>
+                                                <li>
+                                                    <img src="src/images/amazonprimelogo.png" alt="Prime Video" style="height: 14px; vertical-align: middle;">
+                                                    Prime Video
+                                                </li>
+                                                <li>
+                                                    <img src="src/images/jiohotstarlogo.png" alt="Jio Hotstar" style="height: 14px; vertical-align: middle;">
+                                                    Jio Hotstar (Mobile)
+                                                </li>
+                                                <li><i class="fa-solid fa-globe me-1"></i>Validity: 45 Days</li>
+                                            </ul>
+                                            <button class="proceed-btn">Recharge ₹599 Plan</button>
+                                        </div>
+                                    </div>
+                                
+                                    <!-- OTT Max Pack -->
+                                    <div class="col-lg-4 col-sm-6 responsive">
+                                        <div class="plan-card">
+                                            <div class="plan-header">OTT Max Pack</div>
+                                            <h5 class="plan-title">OTT Lovers Plan</h5>
+                                            <p class="plan-price">₹799/60 Days</p>
+                                            <ul class="plan-features">
+                                                <li><i class="fa-solid fa-wifi me-1"></i>3.5GB/day + Unlimited Calls</li>
+                                                <li>
+                                                    <img src="src/images/netflixlogo.png" alt="Netflix" style="height: 14px; vertical-align: middle;">
+                                                    Netflix (4K)
+                                                </li>
+                                                <li>
+                                                    <img src="src/images/amazonprimelogo.png" alt="Prime Video" style="height: 14px; vertical-align: middle;">
+                                                    Prime Video
+                                                </li>
+                                                <li>
+                                                    <img src="src/images/jiohotstarlogo.png" alt="Jio Hotstar" style="height: 14px; vertical-align: middle;">
+                                                    Jio Hotstar (Premium)
+                                                </li>
+                                                <li><i class="fa-solid fa-globe me-1"></i>Validity: 60 Days</li>
+                                            </ul>
+                                            <button class="proceed-btn">Recharge ₹799 Plan</button>
+                                        </div>
+                                    </div>
+                                
+                                    <!-- OTT Ultimate Plan -->
+                                    <div class="col-lg-4 col-sm-6 responsive">
+                                        <div class="plan-card">
+                                            <div class="plan-header">Ultimate OTT Bundle</div>
+                                            <h5 class="plan-title">OTT Unlimited</h5>
+                                            <p class="plan-price">₹999/90 Days</p>
+                                            <ul class="plan-features">
+                                                <li><i class="fa-solid fa-wifi me-1"></i>4GB/day + Unlimited Calls</li>
+                                                <li>
+                                                    <img src="src/images/netflixlogo.png" alt="Netflix" style="height: 14px; vertical-align: middle;">
+                                                    Netflix (4K UHD)
+                                                </li>
+                                                <li>
+                                                    <img src="src/images/amazonprimelogo.png" alt="Prime Video" style="height: 14px; vertical-align: middle;">
+                                                    Prime Video (Full Access)
+                                                </li>
+                                                <li>
+                                                    <img src="src/images/jiohotstarlogo.png" alt="Jio Hotstar" style="height: 14px; vertical-align: middle;">
+                                                    Jio Hotstar (VIP)
+                                                </li>
+                                                <li><i class="fa-solid fa-globe me-1"></i>Validity: 90 Days</li>
+                                            </ul>
+                                            <button class="proceed-btn">Recharge ₹999 Plan</button>
+                                        </div>
+                                    </div>
+                                
+                                    <!-- OTT Annual Premium -->
+                                    <div class="col-lg-4 col-sm-6 responsive">
+                                        <div class="plan-card">
+                                            <div class="plan-header">Annual OTT Premium</div>
+                                            <h5 class="plan-title">OTT Mega Saver</h5>
+                                            <p class="plan-price">₹2999/365 Days</p>
+                                            <ul class="plan-features">
+                                                <li><i class="fa-solid fa-wifi me-1"></i>5GB/day + Unlimited 5G</li>
+                                                <li>
+                                                    <img src="src/images/netflixlogo.png" alt="Netflix" style="height: 14px; vertical-align: middle;">
+                                                    Netflix (Full Family)
+                                                </li>
+                                                <li>
+                                                    <img src="src/images/amazonprimelogo.png" alt="Prime Video" style="height: 14px; vertical-align: middle;">
+                                                    Prime Video (Full Access)
+                                                </li>
+                                                <li>
+                                                    <img src="src/images/jiohotstarlogo.png" alt="Jio Hotstar" style="height: 14px; vertical-align: middle;">
+                                                    Jio Hotstar (VIP)
+                                                </li>
+                                                <li><i class="fa-solid fa-globe me-1"></i>Validity: 365 Days</li>
+                                            </ul>
+                                            <button class="proceed-btn">Recharge ₹2999 Plan</button>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <!-- Lite OTT Pack -->
+                                        <div class="col-lg-4 col-sm-6 responsive">
+                                            <div class="plan-card">
+                                                <div class="plan-header">Lite OTT Pack</div>
+                                                <h5 class="plan-title">Budget Binge</h5>
+                                                <p class="plan-price">₹299/28 Days</p>
+                                                <ul class="plan-features">
+                                                    <li><i class="fa-solid fa-wifi me-1"></i>1.5GB/day + Unlimited Calls</li>
+                                                    <li>
+                                                        <img src="src/images/jiohotstarlogo.png" alt="Jio Hotstar" style="height: 14px; vertical-align: middle;">
+                                                        Jio Hotstar (Mobile)
+                                                    </li>
+                                                    <li><i class="fa-solid fa-globe me-1"></i>Validity: 28 Days</li>
+                                                </ul>
+                                                <button class="proceed-btn">Recharge ₹299 Plan</button>
+                                            </div>
+                                        </div>
+                                    
+                                        <!-- Standard OTT Pack -->
+                                        <div class="col-lg-4 col-sm-6 responsive">
+                                            <div class="plan-card">
+                                                <div class="plan-header">Standard OTT Pack</div>
+                                                <h5 class="plan-title">Entertainment Plan</h5>
+                                                <p class="plan-price">₹549/30 Days</p>
+                                                <ul class="plan-features">
+                                                    <li><i class="fa-solid fa-wifi me-1"></i>3GB/day + Unlimited Calls</li>
+                                                    <li>
+                                                        <img src="src/images/netflixlogo.png" alt="Netflix" style="height: 14px; vertical-align: middle;">
+                                                        Netflix (Mobile)
+                                                    </li>
+                                                    <li>
+                                                        <img src="src/images/jiohotstarlogo.png" alt="Jio Hotstar" style="height: 14px; vertical-align: middle;">
+                                                        Jio Hotstar (Mobile)
+                                                    </li>
+                                                    <li><i class="fa-solid fa-globe me-1"></i>Validity: 30 Days</li>
+                                                </ul>
+                                                <button class="proceed-btn">Recharge ₹549 Plan</button>
+                                            </div>
+                                        </div>
+                                    
+                                        <!-- Premium OTT Pack -->
+                                        <div class="col-lg-4 col-sm-6 responsive">
+                                            <div class="plan-card">
+                                                <div class="plan-header">Premium OTT Pack</div>
+                                                <h5 class="plan-title">Binge Max</h5>
+                                                <p class="plan-price">₹849/60 Days</p>
+                                                <ul class="plan-features">
+                                                    <li><i class="fa-solid fa-wifi me-1"></i>3.5GB/day + Unlimited Calls</li>
+                                                    <li>
+                                                        <img src="src/images/netflixlogo.png" alt="Netflix" style="height: 14px; vertical-align: middle;">
+                                                        Netflix (HD)
+                                                    </li>
+                                                    <li>
+                                                        <img src="src/images/amazonprimelogo.png" alt="Prime Video" style="height: 14px; vertical-align: middle;">
+                                                        Prime Video
+                                                    </li>
+                                                    <li><i class="fa-solid fa-globe me-1"></i>Validity: 60 Days</li>
+                                                </ul>
+                                                <button class="proceed-btn">Recharge ₹849 Plan</button>
+                                            </div>
+                                        </div>
+                                    
+                                        <!-- Super OTT Pack -->
+                                        <div class="col-lg-4 col-sm-6 responsive">
+                                            <div class="plan-card">
+                                                <div class="plan-header">Super OTT Pack</div>
+                                                <h5 class="plan-title">OTT Plus</h5>
+                                                <p class="plan-price">₹1199/90 Days</p>
+                                                <ul class="plan-features">
+                                                    <li><i class="fa-solid fa-wifi me-1"></i>4GB/day + Unlimited Calls</li>
+                                                    <li>
+                                                        <img src="src/images/netflixlogo.png" alt="Netflix" style="height: 14px; vertical-align: middle;">
+                                                        Netflix (4K UHD)
+                                                    </li>
+                                                    <li>
+                                                        <img src="src/images/amazonprimelogo.png" alt="Prime Video" style="height: 14px; vertical-align: middle;">
+                                                        Prime Video
+                                                    </li>
+                                                    <li>
+                                                        <img src="src/images/jiohotstarlogo.png" alt="Jio Hotstar" style="height: 14px; vertical-align: middle;">
+                                                        Jio Hotstar (Premium)
+                                                    </li>
+                                                    <li><i class="fa-solid fa-globe me-1"></i>Validity: 90 Days</li>
+                                                </ul>
+                                                <button class="proceed-btn">Recharge ₹1199 Plan</button>
+                                            </div>
+                                        </div>
+                                    
+                                        <!-- Annual OTT Family Plan -->
+                                        <div class="col-lg-4 col-sm-6 responsive">
+                                            <div class="plan-card">
+                                                <div class="plan-header">Annual Family OTT</div>
+                                                <h5 class="plan-title">OTT Family Plan</h5>
+                                                <p class="plan-price">₹3499/365 Days</p>
+                                                <ul class="plan-features">
+                                                    <li><i class="fa-solid fa-wifi me-1"></i>6GB/day + Unlimited 5G</li>
+                                                    <li>
+                                                        <img src="src/images/netflixlogo.png" alt="Netflix" style="height: 14px; vertical-align: middle;">
+                                                        Netflix (Full Family)
+                                                    </li>
+                                                    <li>
+                                                        <img src="src/images/amazonprimelogo.png" alt="Prime Video" style="height: 14px; vertical-align: middle;">
+                                                        Prime Video (Full Access)
+                                                    </li>
+                                                    <li>
+                                                        <img src="src/images/jiohotstarlogo.png" alt="Jio Hotstar" style="height: 14px; vertical-align: middle;">
+                                                        Jio Hotstar (VIP)
+                                                    </li>
+                                                    <li><i class="fa-solid fa-globe me-1"></i>Validity: 365 Days</li>
+                                                </ul>
+                                                <button class="proceed-btn">Recharge ₹3499 Plan</button>
+                                            </div>
+                                        </div>
+                                    
+                                        <!-- Ultimate OTT Plan -->
+                                        <div class="col-lg-4 col-sm-6 responsive">
+                                            <div class="plan-card">
+                                                <div class="plan-header">Ultimate OTT Pack</div>
+                                                <h5 class="plan-title">OTT Elite</h5>
+                                                <p class="plan-price">₹4999/365 Days</p>
+                                                <ul class="plan-features">
+                                                    <li><i class="fa-solid fa-wifi me-1"></i>Unlimited Data + Unlimited 5G</li>
+                                                    <li>
+                                                        <img src="src/images/netflixlogo.png" alt="Netflix" style="height: 14px; vertical-align: middle;">
+                                                        Netflix (Premium Family)
+                                                    </li>
+                                                    <li>
+                                                        <img src="src/images/amazonprimelogo.png" alt="Prime Video" style="height: 14px; vertical-align: middle;">
+                                                        Prime Video (Ultra HD)
+                                                    </li>
+                                                    <li>
+                                                        <img src="src/images/jiohotstarlogo.png" alt="Jio Hotstar" style="height: 14px; vertical-align: middle;">
+                                                        Jio Hotstar (Full Access)
+                                                    </li>
+                                                    <li><i class="fa-solid fa-globe me-1"></i>Validity: 365 Days</li>
+                                                </ul>
+                                                <button class="proceed-btn">Recharge ₹4999 Plan</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                                
                             </div>
 
                         </div>
