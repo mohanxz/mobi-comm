@@ -1,4 +1,3 @@
-/* Banner Section */
 .mobicomm-banner {
     display: flex;
     align-items: center;
@@ -13,7 +12,6 @@
     height: 300px;
   }
   
-  /* Left Section */
   .banner-left {
     max-width: 45%;
     animation: fadeIn 1.5s ease-in-out;
@@ -54,7 +52,6 @@
     transition: opacity 0.5s ease-in-out;
   }
   
-  /* Animation */
   @keyframes fadeIn {
     from {
       opacity: 0;
@@ -66,3 +63,142 @@
     }
   }
   
+
+
+  #bannerImage{
+    width: 400px;
+  }
+
+     /* Card Container */
+        .card-container {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        /* Individual Card */
+        .card {
+            display: flex;
+            align-items: center;
+            width: 320px;
+            padding: 20px;
+            background: #fdf4c1;
+            border-radius: 18px;
+            text-decoration: none;
+            color: #333;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+            transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
+            position: relative;
+            overflow: hidden;
+            margin-top: 100px;
+            
+        }
+
+        /* Hover Effect */
+        .card:hover {
+          box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+        }
+
+        /* Sim Slot */
+        .sim-slot {
+            width: 50px;
+            height: 50px;
+            background: #ddd;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 240px;
+            transition: transform 1s ease-in-out;
+            transform: translateX(-60px); /* Initially outside the card */
+        }
+
+        /* SIM Icon */
+        .sim-icon {
+            font-size: 24px;
+            transition: transform 1s ease-in-out;
+        }
+
+        /* Tower Icon (Initially Hidden) */
+        .tower-icon {
+            font-size: 30px;
+            position: absolute;
+            top: 10px;
+            color: white;
+            right: 10px;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        /* Activated Card */
+        .card.activated {
+          background: linear-gradient(to bottom, #004e92, #000428);
+            color: white;
+            box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Show Tower Icon on Activation */
+        .card.activated .tower-icon {
+            opacity: 1;
+        }
+
+        .card  .card-content h3{
+          color: #d52136;
+          font-weight: bold;
+        }
+
+        .card .card-content p{
+          color: #000428;
+          font-weight: bold;
+        }
+
+        .card.activated .card-content p{
+          color: #daddff;
+          font-weight: bold;
+        }
+
+        .card.activated .card-content h3{
+          color: #ffea70;
+          
+        }
+
+       
+
+
+
+        
+        
+
+        /* Navigation Arrow Button */
+        .arrow-btn {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+background: linear-gradient(to bottom, #004e92, #000428);
+
+            border: none;
+            color: white;
+            font-size: 20px;
+            box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        /* Arrow Button Hover */
+        .arrow-btn:hover {
+            background:#d52136;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .card {
+                width: 100%;
+            }
+        }

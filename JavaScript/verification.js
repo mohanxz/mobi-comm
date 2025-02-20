@@ -53,22 +53,21 @@ const banners = [
     {
         title: "Recharge Instantly with MobiComm",
         text: "Fast, secure, and easy mobile recharges. Get exciting offers on every top-up!",
-        image: "images/recharge1.png"
+        image: "src/images/slide1.jpg"
     },
     {
         title: "Exclusive Discounts on Prepaid Plans",
         text: "Enjoy up to 20% off on selected mobile recharge plans!",
-        image: "images/recharge2.png"
+        image: "src/images/slide-2.jpg"
     },
     {
         title: "24/7 Customer Support",
         text: "We're here to help you with your recharge anytime, anywhere.",
-        image: "images/recharge3.png"
+        image: "src/images/slide-3.jpg"
     }
 ];
 
 let index = 0;
-
 function changeBanner() {
     const titleElement = document.getElementById("bannerTitle");
     const textElement = document.getElementById("bannerText");
@@ -81,17 +80,45 @@ function changeBanner() {
     setTimeout(() => {
         titleElement.innerText = banners[index].title;
         textElement.innerText = banners[index].text;
-        imageElement.src = banners[index].image;
 
+        imageElement.onload = () => {
+            imageElement.style.opacity = "1"; // Fade in image after loading
+        };
+
+        imageElement.src = banners[index].image; // Change the image source
         titleElement.style.opacity = "1";
         textElement.style.opacity = "1";
-        imageElement.style.opacity = "1";
 
         index = (index + 1) % banners.length;
     }, 500);
 }
 
-setInterval(changeBanner, 4000);
+
+changeBanner();
+setInterval(changeBanner,3500);
 
 
+function startSimAnimation(event, button, url) {
+    event.stopPropagation(); // Prevent unintended events
+    let card = button.closest(".card");
+    if (card.classList.contains("activated")) return;
 
+    let simSlot = card.querySelector(".sim-slot");
+    let towerIcon = card.querySelector(".tower-icon");
+
+    // Move SIM inside the card
+    simSlot.style.transform = "translateX(0px)";
+    simSlot.style.backgroundColor="#d52136"
+    simSlot.style.color="#fff"
+
+    // After 1.5s, activate the card and show the tower
+    setTimeout(() => {
+        card.classList.add("activated");
+        towerIcon.style.opacity = "1";
+
+        // Navigate to the page after animation
+        setTimeout(() => {
+            window.location.href = url;
+        }, 1000);
+    }, 1500);
+}
