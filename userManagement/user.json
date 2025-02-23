@@ -1,0 +1,25 @@
+{
+    "users": [
+      {
+        "id": 1,
+        "username": "UserBalaji",
+        "mobileNumber": "9876510001",
+        "email": "user1@example.com",
+        "currentPlan": "Basic",
+        "walletAmount": 20500,
+        "active": false,
+        "numberOfTransactions": 51,
+        "customerType": "New",
+        "rechargeHistory": [
+          {
+            "date": "2025-01-21",
+            "amount": 499,
+            "paymentMode": "Credit Card",
+            "transactionId": "TXN001",
+            "expiryDate": "2025-04-11"
+          }
+        ]
+      }
+    ]
+  }
+  

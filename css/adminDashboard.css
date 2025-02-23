@@ -1,220 +1,233 @@
-/* General Styling */
+/* General Styles */
 body {
-    font-family: 'Roboto', sans-serif;
-    display: flex;
-    background-color: #f8f9fa;
-}
-
-/* Sidebar Styling */
-.sidenav {
-    width: 250px;
-    height: 100vh;
-    background: #ffffff;
-    border-right: 2px solid #ddd;
-    position: fixed;
-    left: 0;
-    top: 0;
-    padding-top: 20px;
-    transition: all 0.3s;
-}
-
-/* Responsive Sidebar */
-@media (max-width: 992px) {
-    .sidenav {
-        width: 100%;
-        height: auto;
-        position: relative;
-        padding: 10px 0;
-    }
-}
-
-/* Sidebar Closed */
-.sidenav.closed {
-    transform: translateX(-100%);
-}
-
-/* Brand */
-.navbar-brand {
-    display: flex;
-    align-items: center;
-    padding: 0 20px;
-}
-
-.navbar-brand img {
-    width: 30px;
-    height: 30px;
-    margin-right: 10px;
-}
-
-.brand-text {
-    font-weight: 500;
-    font-size: 18px;
-    color: #333;
-}
-
-/* Close Button */
-.close-btn {
-    position: absolute;
-    right: 15px;
-    top: 15px;
-    font-size: 20px;
-    cursor: pointer;
-    color: #666;
-}
-
-/* Nav Links */
-.nav-links {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.nav-links li {
-    padding: 12px 20px;
-}
-
-.nav-links li a {
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    color: #333;
-    font-size: 15px;
-    font-weight: 400;
-    transition: 0.3s;
-}
-
-.nav-links li a:hover {
+    font-family: 'Poppins', sans-serif;
     background: #f8f9fa;
-    border-left: 4px solid #d52136;
-    padding-left: 9px;
 }
 
-/* Active Link */
-.nav-links li a.active {
-    background: #d52136;
-    color: #fff;
-    padding: 10px 20px;
-    border-radius: 15px;
-}
-
-/* Material Icons */
-.material-symbols-rounded {
-    font-size: 20px;
-    margin-right: 10px;
-    color: inherit;
-}
-
-/* Section Title */
-.section-title {
-    padding: 10px 20px;
-    font-size: 12px;
-    text-transform: uppercase;
-    color: #777;
-    font-weight: bold;
-}
-
-/* Footer Buttons */
-.sidenav-footer {
-    position: absolute;
-    bottom: 20px;
-    left: 20px;
-    right: 20px;
-}
-
-.sidenav-footer a {
-    display: block;
-    text-align: center;
-    margin-bottom: 10px;
-}
-
-/* Content Area */
-.content {
-    margin-left: 260px;
-    padding: 20px;
-}
-
-/* Responsive Layout */
-@media (max-width: 992px) {
-    .content {
-        margin-left: 0;
-    }
-}
-
-/* Stats Cards */
-.stat-card {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 15px;
-    border-radius: 10px;
-    background: white;
-    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+.card {
+    border: none;
     transition: transform 0.3s ease-in-out;
-    margin-left: 25px;
 }
 
-/* Hover Effect */
-.stat-card:hover {
-    transform: translateY(-5px);
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
-/* Stats Icon */
-.stat-icon {
-    background: black;
-    color: white;
-    padding: 10px;
-    border-radius: 8px;
+.fade-in {
+    animation: fadeIn 1.5s ease-in-out;
 }
 
-/* Stats Number */
-.stat-number {
-    font-size: 24px;
-    font-weight: bold;
-}
-
-/* Stats Text */
-.stat-text {
-    font-size: 14px;
-    color: gray;
-}
-
-/* Stat Change Indicators */
-.stat-change {
-    font-size: 14px;
-    font-weight: bold;
-}
-
-.green { color: green; }
-.red { color: red; }
-
-
-
-
-/* Hover Table */
-.table { 
-  width: 90%;
-  margin-left: 100px;
-}
-.table-hover tbody tr:hover { 
-    background-color: #f1f1f1; 
-    cursor: pointer; 
-    transition: 0.3s; 
-}
-
-/* Fade Animation for Modal */
-.modal-content { 
-    animation: fadeIn 0.5s ease-in-out; 
-}
-
-@keyframes fadeIn { 
-    from { opacity: 0; transform: translateY(-10px); } 
-    to { opacity: 1; transform: translateY(0); } 
-}
-
-/* Responsive Grid */
-@media (max-width: 768px) {
-    .stat-card {
-        flex-direction: column;
-        text-align: center;
+@keyframes fadeIn {
+    from {
+        opacity: 0;
     }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.table-container {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.table-hover tbody tr:hover {
+    background: #f8d7da !important;
+    transition: background 0.3s ease-in-out;
+}
+
+.table thead {
+    background: #dc3545 !important;
+    color: white;
+    text-transform: uppercase;
+}
+
+.table td,
+.table th {
+    padding: 12px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.table-container {
+    overflow-x: auto;
+    /* Enables horizontal scrolling on small screens */
+}
+
+.btn-outline-primary {
+    border-radius: 50px;
+    padding: 5px 15px;
+}
+
+/* Sidebar - Hide on Mobile */
+aside {
+    width: 200px;
+    position: fixed;
+    height: 100vh;
+    background: white;
+    padding: 15px;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+}
+
+main {
+    margin-left: 220px;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    aside {
+        display: none;
+        /* Hide sidebar on small screens */
+    }
+
+    main {
+        margin-left: 0;
+        /* Full-width content */
+        padding: 15px;
+    }
+
+    .table-container {
+        overflow-x: auto;
+        /* Enable scrolling */
+    }
+
+    .row .col-md-3 {
+        flex: 0 0 100%;
+        /* Stack cards vertically */
+        max-width: 100%;
+        margin-bottom: 10px;
+    }
+
+    h2 {
+        text-align: center;
+        /* Center title on mobile */
+    }
+}
+
+
+
+canvas {
+    background-color: #fffadf;
+    border-radius: 8px;
+    padding: 10px;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.col {
+    width: 400px;
+    margin: 10px;
+}
+
+
+
+#charts {
+    width: 70%;
+    margin: auto;
+    margin-top: 100px;
+
+
+
+}
+
+#planChart {
+    height: 500px !important;
+    width: 700px !important;
+}
+
+
+#clock {
+    width: 500px;
+    display: flex;
+    position: relative;
+    left: 20%;
+
+}
+
+.display-date {
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 600;
+    position: relative;
+    left: 40px;
+
+}
+
+.display-time {
+    display: flex;
+    font-size: 1.3rem;
+    font-weight: bold;
+    border: 1px solid #dc3545;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: ease-in-out 0.1s;
+    transition-property: background, box-shadow, color;
+    -webkit-box-reflect: below 2px linear-gradient(transparent, rgba(255, 255, 255, 0.05));
+    position: relative;
+    left: 40px;
+    top: 5px;
+}
+
+.display-time:hover {
+    background-color: #a5f4ff;
+    color: #dc3545;
+    border: none;
+
+    cursor: pointer;
+}
+
+
+#mobiLogo {
+    width: 120px;
+    position: relative;
+    top: -20px;
+    margin: 0;
+    padding: 0;
+}
+
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    display: none;
+}
+
+#userSidebar {
+    position: fixed;
+    top: 0;
+    right: -350px;
+    /* Initially hidden */
+    width: 300px;
+    height: 100%;
+    background: white;
+    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    transition: right 0.3s ease-in-out;
+    overflow-y: auto;
+}
+
+#sortSelect{
+    position: relative;
+    right: 10px;
+}
+
+
+
+nav ul li  a{
+    transition: all ease-in-out 0.5s;
+}
+nav ul li a:hover{
+    padding-left: 15px;
+    border-left: solid 10px #dc3545;
 }
