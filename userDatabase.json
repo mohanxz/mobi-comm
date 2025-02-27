@@ -1,2856 +1,3095 @@
 {
-    "users": [
-        {
-            "id": 1,
-            "username": "UserBalaji",
-            "mobileNumber": "9876510001",
-            "email": "user1@example.com",
-            "currentPlan": "MC-359",
-            "walletAmount": 20500,
-            "active": false,
-            "numberOfTransactions": 51,
-            "customerType": "New",
-            "rechargeHistory": [
-                {
-                    "date": "2025-01-27",
-                    "amount": 499,
-                    "paymentMode": "Credit Card",
-                    "transactionId": "TXN001",
-                    "expiryDate": "2025-04-11"
-                }
-            ]
-        },
-        {
-            "id": 2,
-            "username": "UserCharan",
-            "mobileNumber": "9876510002",
-            "email": "user2@example.com",
-            "currentPlan": "MC-59",
-            "walletAmount": 21000,
-            "active": true,
-            "numberOfTransactions": 52,
-            "customerType": "MC-59",
-            "rechargeHistory": [
-                {
-                    "date": "2025-01-27",
-                    "amount": 499,
-                    "paymentMode": "Credit Card",
-                    "transactionId": "TXN002",
-                    "expiryDate": "2025-04-12"
-                }
-            ]
-        },
-        {
-            "id": 3,
-            "username": "UserDeepak",
-            "mobileNumber": "9876510003",
-            "email": "user3@example.com",
-            "currentPlan": "MC-359",
-            "walletAmount": 21500,
-            "active": false,
-            "numberOfTransactions": 53,
-            "customerType": "New",
-            "rechargeHistory": [
-                {
-                    "date": "2025-01-27",
-                    "amount": 499,
-                    "paymentMode": "Credit Card",
-                    "transactionId": "TXN003",
-                    "expiryDate": "2025-04-13"
-                }
-            ]
-        },
-        {
-            "id": 4,
-            "username": "UserEshwar",
-            "mobileNumber": "9876510004",
-            "email": "user4@example.com",
-            "currentPlan": "MC-59",
-            "walletAmount": 22000,
-            "active": true,
-            "numberOfTransactions": 54,
-            "customerType": "MC-59",
-            "rechargeHistory": [
-                {
-                    "date": "2025-01-27",
-                    "amount": 499,
-                    "paymentMode": "Credit Card",
-                    "transactionId": "TXN004",
-                    "expiryDate": "2025-04-14"
-                }
-            ]
-        },
-        {
-            "id": 5,
-            "username": "UserFarooq",
-            "mobileNumber": "9876510005",
-            "email": "user5@example.com",
-            "currentPlan": "MC-359",
-            "walletAmount": 22500,
-            "active": false,
-            "numberOfTransactions": 55,
-            "customerType": "New",
-            "rechargeHistory": [
-                {
-                    "date": "2025-01-27",
-                    "amount": 499,
-                    "paymentMode": "Credit Card",
-                    "transactionId": "TXN005",
-                    "expiryDate": "2025-04-15"
-                }
-            ]
-        },
-        {
-            "id": 6,
-            "username": "UserGokul",
-            "mobileNumber": "9876510006",
-            "email": "user6@example.com",
-            "currentPlan": "MC-59",
-            "walletAmount": 23000,
-            "active": true,
-            "numberOfTransactions": 56,
-            "customerType": "MC-59",
-            "rechargeHistory": [
-                {
-                    "date": "2025-01-27",
-                    "amount": 499,
-                    "paymentMode": "Credit Card",
-                    "transactionId": "TXN006",
-                    "expiryDate": "2025-04-16"
-                }
-            ]
-        },
-        {
-            "id": 7,
-            "username": "UserHari",
-            "mobileNumber": "9876510007",
-            "email": "user7@example.com",
-            "currentPlan": "MC-359",
-            "walletAmount": 23500,
-            "active": false,
-            "numberOfTransactions": 57,
-            "customerType": "New",
-            "rechargeHistory": [
-                {
-                    "date": "2025-01-27",
-                    "amount": 499,
-                    "paymentMode": "Credit Card",
-                    "transactionId": "TXN007",
-                    "expiryDate": "2025-04-17"
-                }
-            ]
-        },
-        {
-            "id": 8,
-            "username": "UserIlayaraja",
-            "mobileNumber": "9876510008",
-            "email": "user8@example.com",
-            "currentPlan": "MC-59",
-            "walletAmount": 24000,
-            "active": true,
-            "numberOfTransactions": 58,
-            "customerType": "MC-59",
-            "rechargeHistory": [
-                {
-                    "date": "2025-01-27",
-                    "amount": 499,
-                    "paymentMode": "Credit Card",
-                    "transactionId": "TXN008",
-                    "expiryDate": "2025-04-18"
-                }
-            ]
-        },
-        {
-            "id": 9,
-            "username": "UserJagan",
-            "mobileNumber": "9876510009",
-            "email": "user9@example.com",
-            "currentPlan": "MC-359",
-            "walletAmount": 24500,
-            "active": false,
-            "numberOfTransactions": 59,
-            "customerType": "New",
-            "rechargeHistory": [
-                {
-                    "date": "2025-01-27",
-                    "amount": 499,
-                    "paymentMode": "Credit Card",
-                    "transactionId": "TXN009",
-                    "expiryDate": "2025-04-19"
-                }
-            ]
-        },
-        {
-            "id": 10,
-            "username": "UserKarthik",
-            "mobileNumber": "9876510010",
-            "email": "user10@example.com",
-            "currentPlan": "MC-59",
-            "walletAmount": 25000,
-            "active": true,
-            "numberOfTransactions": 60,
-            "customerType": "MC-59",
-            "rechargeHistory": [
-                {
-                    "date": "2025-01-27",
-                    "amount": 499,
-                    "paymentMode": "Credit Card",
-                    "transactionId": "TXN0010",
-                    "expiryDate": "2025-04-10"
-                }
-            ]
-        },
-        {
-            "id": 11,
-            "username": "UserLokesh",
-            "mobileNumber": "9876510011",
-            "email": "user11@example.com",
-            "currentPlan": "MC-359",
-            "walletAmount": 25500,
-            "active": false,
-            "numberOfTransactions": 61,
-            "customerType": "New",
-            "rechargeHistory": [
-                {
-                    "date": "2025-01-27",
-                    "amount": 499,
-                    "paymentMode": "Credit Card",
-                    "transactionId": "TXN0011",
-                    "expiryDate": "2025-04-11"
-                }
-            ]
-        },
-        {
-            "id": 12,
-            "username": "UserMuthu",
-            "mobileNumber": "9876510012",
-            "email": "user12@example.com",
-            "currentPlan": "MC-59",
-            "walletAmount": 26000,
-            "active": true,
-            "numberOfTransactions": 62,
-            "customerType": "MC-59",
-            "rechargeHistory": [
-                {
-                    "date": "2025-01-27",
-                    "amount": 499,
-                    "paymentMode": "Credit Card",
-                    "transactionId": "TXN0012",
-                    "expiryDate": "2025-04-12"
-                }
-            ]
-        },
-        {
-            "id": 13,
-            "username": "UserNaveen",
-            "mobileNumber": "9876510013",
-            "email": "user13@example.com",
-            "currentPlan": "MC-359",
-            "walletAmount": 26500,
-            "active": false,
-            "numberOfTransactions": 63,
-            "customerType": "New",
-            "rechargeHistory": [
-                {
-                    "date": "2025-01-27",
-                    "amount": 499,
-                    "paymentMode": "Credit Card",
-                    "transactionId": "TXN0013",
-                    "expiryDate": "2025-04-13"
-                }
-            ]
-        },
-        {
-            "id": 14,
-            "username": "UserOmkara",
-            "mobileNumber": "9876510014",
-            "email": "user14@example.com",
-            "currentPlan": "MC-59",
-            "walletAmount": 27000,
-            "active": true,
-            "numberOfTransactions": 64,
-            "customerType": "MC-59",
-            "rechargeHistory": [
-                {
-                    "date": "2025-01-27",
-                    "amount": 499,
-                    "paymentMode": "Credit Card",
-                    "transactionId": "TXN0014",
-                    "expiryDate": "2025-04-14"
-                }
-            ]
-        },
-        {
-            "id": 15,
-            "username": "UserPrakash",
-            "mobileNumber": "9876510015",
-            "email": "user15@example.com",
-            "currentPlan": "MC-359",
-            "walletAmount": 27500,
-            "active": false,
-            "numberOfTransactions": 65,
-            "customerType": "New",
-            "rechargeHistory": [
-                {
-                    "date": "2025-01-27",
-                    "amount": 499,
-                    "paymentMode": "Credit Card",
-                    "transactionId": "TXN0015",
-                    "expiryDate": "2025-04-15"
-                }
-            ]
-        },
-        {
-            "id": 16,
-            "username": "UserQuadir",
-            "mobileNumber": "9876510016",
-            "email": "user16@example.com",
-            "currentPlan": "MC-59",
-            "walletAmount": 28000,
-            "active": true,
-            "numberOfTransactions": 66,
-            "customerType": "MC-59",
-            "rechargeHistory": [
-                {
-                    "date": "2025-01-27",
-                    "amount": 499,
-                    "paymentMode": "Credit Card",
-                    "transactionId": "TXN0016",
-                    "expiryDate": "2025-04-16"
-                }
-            ]
-        },
-        {
-            "id": 17,
-            "username": "UserRamesh",
-            "mobileNumber": "9876510017",
-            "email": "user17@example.com",
-            "currentPlan": "MC-359",
-            "walletAmount": 28500,
-            "active": false,
-            "numberOfTransactions": 67,
-            "customerType": "New",
-            "rechargeHistory": [
-                {
-                    "date": "2025-01-27",
-                    "amount": 499,
-                    "paymentMode": "Credit Card",
-                    "transactionId": "TXN0017",
-                    "expiryDate": "2025-04-17"
-                }
-            ]
-        },
-        {
-            "id": 18,
-            "username": "UserSuresh",
-            "mobileNumber": "9876510018",
-            "email": "user18@example.com",
-            "currentPlan": "MC-59",
-            "walletAmount": 29000,
-            "active": true,
-            "numberOfTransactions": 68,
-            "customerType": "MC-59",
-            "rechargeHistory": [
-                {
-                    "date": "2025-01-27",
-                    "amount": 499,
-                    "paymentMode": "Credit Card",
-                    "transactionId": "TXN0018",
-                    "expiryDate": "2025-04-18"
-                }
-            ]
-        },
-        {
-            "id": 19,
-            "username": "UserTharun",
-            "mobileNumber": "9876510019",
-            "email": "user19@example.com",
-            "currentPlan": "MC-359",
-            "walletAmount": 29500,
-            "active": false,
-            "numberOfTransactions": 69,
-            "customerType": "New",
-            "rechargeHistory": [
-                {
-                    "date": "2025-01-27",
-                    "amount": 499,
-                    "paymentMode": "Credit Card",
-                    "transactionId": "TXN0019",
-                    "expiryDate": "2025-04-19"
-                }
-            ]
-        },
-        {
-            "id": 20,
-            "username": "UserUday",
-            "mobileNumber": "9876510020",
-            "email": "user20@example.com",
-            "currentPlan": "MC-59",
-            "walletAmount": 30000,
-            "active": true,
-            "numberOfTransactions": 70,
-            "customerType": "MC-59",
-            "rechargeHistory": [
-                {
-                    "date": "2025-01-27",
-                    "amount": 499,
-                    "paymentMode": "Credit Card",
-                    "transactionId": "TXN0020",
-                    "expiryDate": "2025-04-10"
-                }
-            ]
-        },
-        {
-            "id": 27,
-            "username": "UserVenkatesh",
-            "mobileNumber": "9876510021",
-            "email": "user21@example.com",
-            "currentPlan": "MC-359",
-            "walletAmount": 30500,
-            "active": false,
-            "numberOfTransactions": 71,
-            "customerType": "New",
-            "rechargeHistory": [
-                {
-                    "date": "2025-01-27",
-                    "amount": 499,
-                    "paymentMode": "Credit Card",
-                    "transactionId": "TXN0021",
-                    "expiryDate": "2025-04-11"
-                }
-            ]
-        },
-        {
-            "id": 22,
-            "username": "UserWaseem",
-            "mobileNumber": "9876510022",
-            "email": "user22@example.com",
-            "currentPlan": "MC-59",
-            "walletAmount": 31000,
-            "active": true,
-            "numberOfTransactions": 72,
-            "customerType": "MC-59",
-            "rechargeHistory": [
-                {
-                    "date": "2025-01-27",
-                    "amount": 499,
-                    "paymentMode": "Credit Card",
-                    "transactionId": "TXN0022",
-                    "expiryDate": "2025-04-12"
-                }
-            ]
-        },
-        {
-            "id": 23,
-            "username": "UserXavier",
-            "mobileNumber": "9876510023",
-            "email": "user23@example.com",
-            "currentPlan": "MC-359",
-            "walletAmount": 31500,
-            "active": false,
-            "numberOfTransactions": 73,
-            "customerType": "New",
-            "rechargeHistory": [
-                {
-                    "date": "2025-01-27",
-                    "amount": 499,
-                    "paymentMode": "Credit Card",
-                    "transactionId": "TXN0023",
-                    "expiryDate": "2025-04-13"
-                }
-            ]
-        },
-        {
-            "id": 24,
-            "username": "UserYogesh",
-            "mobileNumber": "9876510024",
-            "email": "user24@example.com",
-            "currentPlan": "MC-59",
-            "walletAmount": 32000,
-            "active": true,
-            "numberOfTransactions": 74,
-            "customerType": "MC-59",
-            "rechargeHistory": [
-                {
-                    "date": "2025-01-27",
-                    "amount": 499,
-                    "paymentMode": "Credit Card",
-                    "transactionId": "TXN0024",
-                    "expiryDate": "2025-04-14"
-                }
-            ]
-        },
-        {
-            "id": 25,
-            "username": "UserZahir",
-            "mobileNumber": "9876510025",
-            "email": "user25@example.com",
-            "currentPlan": "MC-359",
-            "walletAmount": 32500,
-            "active": false,
-            "numberOfTransactions": 75,
-            "customerType": "New",
-            "rechargeHistory": [
-                {
-                    "date": "2025-01-27",
-                    "amount": 499,
-                    "paymentMode": "Credit Card",
-                    "transactionId": "TXN0025",
-                    "expiryDate": "2025-04-15"
-                }
-            ]
-        },
-        {
-            "id": 26,
-            "username": "UserAjith",
-            "mobileNumber": "9876510026",
-            "email": "user26@example.com",
-            "currentPlan": "MC-59",
-            "walletAmount": 33000,
-            "active": true,
-            "numberOfTransactions": 76,
-            "customerType": "MC-59",
-            "rechargeHistory": [
-                {
-                    "date": "2025-01-27",
-                    "amount": 499,
-                    "paymentMode": "Credit Card",
-                    "transactionId": "TXN0026",
-                    "expiryDate": "2025-04-16"
-                }
-            ]
-        },
-        {
-            "id": 27,
-            "username": "UserBharath",
-            "mobileNumber": "9876510027",
-            "email": "user27@example.com",
-            "currentPlan": "MC-359",
-            "walletAmount": 33500,
-            "active": false,
-            "numberOfTransactions": 77,
-            "customerType": "New",
-            "rechargeHistory": [
-                {
-                    "date": "2025-01-27",
-                    "amount": 499,
-                    "paymentMode": "Credit Card",
-                    "transactionId": "TXN0027",
-                    "expiryDate": "2025-04-17"
-                }
-            ]
-        },
-        {
-            "id": 28,
-            "username": "UserChandru",
-            "mobileNumber": "9876510028",
-            "email": "user28@example.com",
-            "currentPlan": "MC-59",
-            "walletAmount": 34000,
-            "active": true,
-            "numberOfTransactions": 78,
-            "customerType": "MC-59",
-            "rechargeHistory": [
-                {
-                    "date": "2025-01-27",
-                    "amount": 499,
-                    "paymentMode": "Credit Card",
-                    "transactionId": "TXN0028",
-                    "expiryDate": "2025-04-18"
-                }
-            ]
-        },
-        {
-            "id": 29,
-            "username": "UserDhanush",
-            "mobileNumber": "9876510029",
-            "email": "user29@example.com",
-            "currentPlan": "MC-359",
-            "walletAmount": 34500,
-            "active": false,
-            "numberOfTransactions": 79,
-            "customerType": "New",
-            "rechargeHistory": [
-                {
-                    "date": "2025-01-27",
-                    "amount": 499,
-                    "paymentMode": "Credit Card",
-                    "transactionId": "TXN0029",
-                    "expiryDate": "2025-04-19"
-                }
-            ]
-        },
-        {
-            "id": 30,
-            "username": "UserEzhil",
-            "mobileNumber": "9876510030",
-            "email": "user30@example.com",
-            "currentPlan": "MC-59",
-            "walletAmount": 35000,
-            "active": true,
-            "numberOfTransactions": 80,
-            "customerType": "MC-59",
-            "rechargeHistory": [
-                {
-                    "date": "2025-01-27",
-                    "amount": 499,
-                    "paymentMode": "Credit Card",
-                    "transactionId": "TXN0030",
-                    "expiryDate": "2025-04-10"
-                }
-            ]
-        },
-        {
-            "id": 31,
-            "username": "UserFaisal",
-            "mobileNumber": "9876510031",
-            "email": "user31@example.com",
-            "currentPlan": "MC-359",
-            "walletAmount": 35500,
-            "active": false,
-            "numberOfTransactions": 81,
-            "customerType": "New",
-            "rechargeHistory": [
-                {
-                    "date": "2025-01-27",
-                    "amount": 499,
-                    "paymentMode": "Credit Card",
-                    "transactionId": "TXN0031",
-                    "expiryDate": "2025-04-11"
-                }
-            ]
-        },
-        {
-            "id": 32,
-            "username": "UserGirish",
-            "mobileNumber": "9876510032",
-            "email": "user32@example.com",
-            "currentPlan": "MC-59",
-            "walletAmount": 36000,
-            "active": true,
-            "numberOfTransactions": 82,
-            "customerType": "MC-59",
-            "rechargeHistory": [
-                {
-                    "date": "2025-01-27",
-                    "amount": 499,
-                    "paymentMode": "Credit Card",
-                    "transactionId": "TXN0032",
-                    "expiryDate": "2025-04-12"
-                }
-            ]
-        },
-        {
-            "id": 33,
-            "username": "UserHarish",
-            "mobileNumber": "9876510033",
-            "email": "user33@example.com",
-            "currentPlan": "MC-359",
-            "walletAmount": 36500,
-            "active": false,
-            "numberOfTransactions": 83,
-            "customerType": "New",
-            "rechargeHistory": [
-                {
-                    "date": "2025-01-27",
-                    "amount": 499,
-                    "paymentMode": "Credit Card",
-                    "transactionId": "TXN0033",
-                    "expiryDate": "2025-04-13"
-                }
-            ]
-        },
-        {
-            "id": 34,
-            "username": "UserIndrajith",
-            "mobileNumber": "9876510034",
-            "email": "user34@example.com",
-            "currentPlan": "MC-59",
-            "walletAmount": 37000,
-            "active": true,
-            "numberOfTransactions": 84,
-            "customerType": "MC-59",
-            "rechargeHistory": [
-                {
-                    "date": "2025-01-27",
-                    "amount": 499,
-                    "paymentMode": "Credit Card",
-                    "transactionId": "TXN0034",
-                    "expiryDate": "2025-04-14"
-                }
-            ]
-        },
-        {
-            "id": 35,
-            "username": "UserJeeva",
-            "mobileNumber": "9876510035",
-            "email": "user35@example.com",
-            "currentPlan": "MC-359",
-            "walletAmount": 37500,
-            "active": false,
-            "numberOfTransactions": 85,
-            "customerType": "New",
-            "rechargeHistory": [
-                {
-                    "date": "2025-01-27",
-                    "amount": 499,
-                    "paymentMode": "Credit Card",
-                    "transactionId": "TXN0035",
-                    "expiryDate": "2025-04-15"
-                }
-            ]
-        },
-        {
-            "id": 36,
-            "username": "UserKannan",
-            "mobileNumber": "9876510036",
-            "email": "user36@example.com",
-            "currentPlan": "MC-59",
-            "walletAmount": 38000,
-            "active": true,
-            "numberOfTransactions": 86,
-            "customerType": "MC-59",
-            "rechargeHistory": [
-                {
-                    "date": "2025-01-27",
-                    "amount": 499,
-                    "paymentMode": "Credit Card",
-                    "transactionId": "TXN0036",
-                    "expiryDate": "2025-04-16"
-                }
-            ]
-        },
-        {
-            "id": 37,
-            "username": "UserLakshman",
-            "mobileNumber": "9876510037",
-            "email": "user37@example.com",
-            "currentPlan": "MC-359",
-            "walletAmount": 38500,
-            "active": false,
-            "numberOfTransactions": 87,
-            "customerType": "New",
-            "rechargeHistory": [
-                {
-                    "date": "2025-01-27",
-                    "amount": 499,
-                    "paymentMode": "Credit Card",
-                    "transactionId": "TXN0037",
-                    "expiryDate": "2025-04-17"
-                }
-            ]
-        },
-        {
-            "id": 38,
-            "username": "UserManoj",
-            "mobileNumber": "9876510038",
-            "email": "user38@example.com",
-            "currentPlan": "MC-59",
-            "walletAmount": 39000,
-            "active": true,
-            "numberOfTransactions": 88,
-            "customerType": "MC-59",
-            "rechargeHistory": [
-                {
-                    "date": "2025-01-27",
-                    "amount": 499,
-                    "paymentMode": "Credit Card",
-                    "transactionId": "TXN0038",
-                    "expiryDate": "2025-04-18"
-                }
-            ]
-        },
-        {
-            "id": 39,
-            "username": "UserNitin",
-            "mobileNumber": "9876510039",
-            "email": "user39@example.com",
-            "currentPlan": "MC-359",
-            "walletAmount": 39500,
-            "active": false,
-            "numberOfTransactions": 89,
-            "customerType": "New",
-            "rechargeHistory": [
-                {
-                    "date": "2025-01-27",
-                    "amount": 499,
-                    "paymentMode": "Credit Card",
-                    "transactionId": "TXN0039",
-                    "expiryDate": "2025-04-19"
-                }
-            ]
-        },
-        {
-            "id": 40,
-            "username": "UserOviya",
-            "mobileNumber": "9876510040",
-            "email": "user40@example.com",
-            "currentPlan": "MC-59",
-            "walletAmount": 40000,
-            "active": true,
-            "numberOfTransactions": 90,
-            "customerType": "MC-59",
-            "rechargeHistory": [
-                {
-                    "date": "2025-01-27",
-                    "amount": 499,
-                    "paymentMode": "Credit Card",
-                    "transactionId": "TXN0040",
-                    "expiryDate": "2025-04-10"
-                }
-            ]
-        },
-        {
-            "id": 41,
-            "username": "UserPraveen",
-            "mobileNumber": "9876510041",
-            "email": "user41@example.com",
-            "currentPlan": "MC-359",
-            "walletAmount": 40500,
-            "active": false,
-            "numberOfTransactions": 91,
-            "customerType": "New",
-            "rechargeHistory": [
-                {
-                    "date": "2025-01-27",
-                    "amount": 499,
-                    "paymentMode": "Credit Card",
-                    "transactionId": "TXN0041",
-                    "expiryDate": "2025-04-11"
-                }
-            ]
-        },
-        {
-            "id": 42,
-            "username": "UserQasim",
-            "mobileNumber": "9876510042",
-            "email": "user42@example.com",
-            "currentPlan": "MC-59",
-            "walletAmount": 41000,
-            "active": true,
-            "numberOfTransactions": 92,
-            "customerType": "MC-59",
-            "rechargeHistory": [
-                {
-                    "date": "2025-01-27",
-                    "amount": 499,
-                    "paymentMode": "Credit Card",
-                    "transactionId": "TXN0042",
-                    "expiryDate": "2025-04-12"
-                }
-            ]
-        },
-        {
-            "id": 43,
-            "username": "UserRajesh",
-            "mobileNumber": "9876510043",
-            "email": "user43@example.com",
-            "currentPlan": "MC-359",
-            "walletAmount": 41500,
-            "active": false,
-            "numberOfTransactions": 93,
-            "customerType": "New",
-            "rechargeHistory": [
-                {
-                    "date": "2025-01-27",
-                    "amount": 499,
-                    "paymentMode": "Credit Card",
-                    "transactionId": "TXN0043",
-                    "expiryDate": "2025-04-13"
-                }
-            ]
-        },
-        {
-            "id": 44,
-            "username": "UserSundar",
-            "mobileNumber": "9876510044",
-            "email": "user44@example.com",
-            "currentPlan": "MC-59",
-            "walletAmount": 42000,
-            "active": true,
-            "numberOfTransactions": 94,
-            "customerType": "MC-59",
-            "rechargeHistory": [
-                {
-                    "date": "2025-01-27",
-                    "amount": 499,
-                    "paymentMode": "Credit Card",
-                    "transactionId": "TXN0044",
-                    "expiryDate": "2025-04-14"
-                }
-            ]
-        },
-        {
-            "id": 45,
-            "username": "UserThiru",
-            "mobileNumber": "9876510045",
-            "email": "user45@example.com",
-            "currentPlan": "MC-359",
-            "walletAmount": 42500,
-            "active": false,
-            "numberOfTransactions": 95,
-            "customerType": "New",
-            "rechargeHistory": [
-                {
-                    "date": "2025-01-27",
-                    "amount": 499,
-                    "paymentMode": "Credit Card",
-                    "transactionId": "TXN0045",
-                    "expiryDate": "2025-04-15"
-                }
-            ]
-        },
-        {
-            "id": 46,
-            "username": "UserUmesh",
-            "mobileNumber": "9876510046",
-            "email": "user46@example.com",
-            "currentPlan": "MC-59",
-            "walletAmount": 43000,
-            "active": true,
-            "numberOfTransactions": 96,
-            "customerType": "MC-59",
-            "rechargeHistory": [
-                {
-                    "date": "2025-01-27",
-                    "amount": 499,
-                    "paymentMode": "Credit Card",
-                    "transactionId": "TXN0046",
-                    "expiryDate": "2025-04-16"
-                }
-            ]
-        },
-        {
-            "id": 47,
-            "username": "UserVasanth",
-            "mobileNumber": "9876510047",
-            "email": "user47@example.com",
-            "currentPlan": "MC-359",
-            "walletAmount": 43500,
-            "active": false,
-            "numberOfTransactions": 97,
-            "customerType": "New",
-            "rechargeHistory": [
-                {
-                    "date": "2025-01-27",
-                    "amount": 499,
-                    "paymentMode": "Credit Card",
-                    "transactionId": "TXN0047",
-                    "expiryDate": "2025-04-17"
-                }
-            ]
-        },
-        {
-            "id": 48,
-            "username": "UserWilliam",
-            "mobileNumber": "9876510048",
-            "email": "user48@example.com",
-            "currentPlan": "MC-59",
-            "walletAmount": 44000,
-            "active": true,
-            "numberOfTransactions": 98,
-            "customerType": "MC-59",
-            "rechargeHistory": [
-                {
-                    "date": "2025-01-27",
-                    "amount": 499,
-                    "paymentMode": "Credit Card",
-                    "transactionId": "TXN0048",
-                    "expiryDate": "2025-04-18"
-                }
-            ]
-        },
-        {
-            "id": 49,
-            "username": "UserYuvan",
-            "mobileNumber": "9876510049",
-            "email": "user49@example.com",
-            "currentPlan": "MC-359",
-            "walletAmount": 44500,
-            "active": false,
-            "numberOfTransactions": 99,
-            "customerType": "New",
-            "rechargeHistory": [
-                {
-                    "date": "2025-01-27",
-                    "amount": 499,
-                    "paymentMode": "Credit Card",
-                    "transactionId": "TXN0049",
-                    "expiryDate": "2025-04-19"
-                }
-            ]
-        },
-        {
-            "id": 50,
-            "username": "UserArun",
-            "mobileNumber": "9876510050",
-            "email": "user50@example.com",
-            "currentPlan": "MC-59",
-            "walletAmount": 45000,
-            "active": true,
-            "numberOfTransactions": 100,
-            "customerType": "MC-59",
-            "rechargeHistory": [
-                {
-                    "date": "2025-01-27",
-                    "amount": 499,
-                    "paymentMode": "Credit Card",
-                    "transactionId": "TXN0050",
-                    "expiryDate": "2025-04-10"
-                }
-            ]
-        },
-        {
-            "id": 51,
-            "username": "Ram",
-            "mobileNumber": "9876543251",
-            "email": "ram@example.com",
-            "currentPlan": "Mc-299",
-            "rechargeHistory": [
-                {
-                    "expiryDate": "2025-02-25",
-                    "amount": 299
-                }
-            ]
-        },
-        {
-            "id": 52,
-            "username": "Ravi",
-            "mobileNumber": "9876543252",
-            "email": "ravi@example.com",
-            "currentPlan": "Mc-399",
-            "rechargeHistory": [
-                {
-                    "expiryDate": "2025-02-23",
-                    "amount": 399
-                }
-            ]
-        },
-        {
-            "id": 53,
-            "username": "Siva",
-            "mobileNumber": "9876543253",
-            "email": "siva@example.com",
-            "currentPlan": "Mc-499",
-            "rechargeHistory": [
-                {
-                    "expiryDate": "2025-02-27",
-                    "amount": 499
-                }
-            ]
-        },
-        {
-            "id": 54,
-            "username": "Kumar",
-            "mobileNumber": "9876543254",
-            "email": "kumar@example.com",
-            "currentPlan": "Mc-599",
-            "rechargeHistory": [
-                {
-                    "expiryDate": "2025-02-25",
-                    "amount": 599
-                }
-            ]
-        },
-        {
-            "id": 55,
-            "username": "Arun",
-            "mobileNumber": "9876543255",
-            "email": "arun@example.com",
-            "currentPlan": "Mc-199",
-            "rechargeHistory": [
-                {
-                    "expiryDate": "2025-02-23",
-                    "amount": 199
-                }
-            ]
-        },
-        {
-            "id": 56,
-            "username": "Vijay",
-            "mobileNumber": "9876543256",
-            "email": "vijay@example.com",
-            "currentPlan": "Mc-299",
-            "rechargeHistory": [
-                {
-                    "expiryDate": "2025-02-27",
-                    "amount": 299
-                }
-            ]
-        },
-        {
-            "id": 57,
-            "username": "Raj",
-            "mobileNumber": "9876543257",
-            "email": "raj@example.com",
-            "currentPlan": "Mc-399",
-            "rechargeHistory": [
-                {
-                    "expiryDate": "2025-02-25",
-                    "amount": 399
-                }
-            ]
-        },
-        {
-            "id": 58,
-            "username": "Hari",
-            "mobileNumber": "9876543258",
-            "email": "hari@example.com",
-            "currentPlan": "Mc-499",
-            "rechargeHistory": [
-                {
-                    "expiryDate": "2025-02-23",
-                    "amount": 499
-                }
-            ]
-        },
-        {
-            "id": 59,
-            "username": "Surya",
-            "mobileNumber": "9876543259",
-            "email": "surya@example.com",
-            "currentPlan": "Mc-599",
-            "rechargeHistory": [
-                {
-                    "expiryDate": "2025-02-27",
-                    "amount": 599
-                }
-            ]
-        },
-        {
-            "id": 60,
-            "username": "Mohan",
-            "mobileNumber": "9876543260",
-            "email": "mohan@example.com",
-            "currentPlan": "Mc-199",
-            "rechargeHistory": [
-                {
-                    "expiryDate": "2025-02-25",
-                    "amount": 199
-                }
-            ]
-        },
-        {
-            "id": 61,
-            "username": "Deepak",
-            "mobileNumber": "9876543261",
-            "email": "deepak@example.com",
-            "currentPlan": "Mc-299",
-            "rechargeHistory": [
-                {
-                    "expiryDate": "2025-02-23",
-                    "amount": 299
-                }
-            ]
-        },
-        {
-            "id": 62,
-            "username": "Ganesh",
-            "mobileNumber": "9876543262",
-            "email": "ganesh@example.com",
-            "currentPlan": "Mc-399",
-            "rechargeHistory": [
-                {
-                    "expiryDate": "2025-02-27",
-                    "amount": 399
-                }
-            ]
-        },
-        {
-            "id": 63,
-            "username": "Sathish",
-            "mobileNumber": "9876543263",
-            "email": "sathish@example.com",
-            "currentPlan": "Mc-499",
-            "rechargeHistory": [
-                {
-                    "expiryDate": "2025-02-25",
-                    "amount": 499
-                }
-            ]
-        },
-        {
-            "id": 64,
-            "username": "Bala",
-            "mobileNumber": "9876543264",
-            "email": "bala@example.com",
-            "currentPlan": "Mc-599",
-            "rechargeHistory": [
-                {
-                    "expiryDate": "2025-02-23",
-                    "amount": 599
-                }
-            ]
-        },
-        {
-            "id": 65,
-            "username": "Ajay",
-            "mobileNumber": "9876543265",
-            "email": "ajay@example.com",
-            "currentPlan": "Mc-199",
-            "rechargeHistory": [
-                {
-                    "expiryDate": "2025-02-27",
-                    "amount": 199
-                }
-            ]
-        },
-        {
-            "id": 66,
-            "username": "Karthik",
-            "mobileNumber": "9876543266",
-            "email": "karthik@example.com",
-            "currentPlan": "Mc-299",
-            "rechargeHistory": [
-                {
-                    "expiryDate": "2025-02-25",
-                    "amount": 299
-                }
-            ]
-        },
-        {
-            "id": 70,
-            "username": "UserGopi",
-            "mobileNumber": "9876510070",
-            "email": "user70@example.com",
-            "currentPlan": "MC-399",
-            "walletAmount": 23000,
-            "active": false,
-            "numberOfTransactions": 3,
-            "customerType": "New",
-            "rechargeHistory": [
-              {
-                "date": "2025-02-15",
-                "amount": 399,
-                "paymentMode": "Debit Card",
-                "transactionId": "TXN070",
-                "expiryDate": "2025-02-25"
-              }
-            ]
-          },
-          {
-            "id": 71,
-            "username": "UserHari",
-            "mobileNumber": "9876510071",
-            "email": "user71@example.com",
-            "currentPlan": "MC-499",
-            "walletAmount": 23500,
-            "active": true,
-            "numberOfTransactions": 5,
-            "customerType": "MC-59",
-            "rechargeHistory": [
-              {
-                "date": "2025-02-16",
-                "amount": 499,
-                "paymentMode": "Credit Card",
-                "transactionId": "TXN071",
-                "expiryDate": "2025-02-23"
-              }
-            ]
-          },
-          {
-            "id": 72,
-            "username": "UserImran",
-            "mobileNumber": "9876510072",
-            "email": "user72@example.com",
-            "currentPlan": "MC-350",
-            "walletAmount": 24000,
-            "active": false,
-            "numberOfTransactions": 4,
-            "customerType": "New",
-            "rechargeHistory": [
-              {
-                "date": "2025-02-17",
-                "amount": 350,
-                "paymentMode": "UPI",
-                "transactionId": "TXN072",
-                "expiryDate": "2025-02-24"
-              }
-            ]
-          },
-          {
-            "id": 73,
-            "username": "UserJagan",
-            "mobileNumber": "9876510073",
-            "email": "user73@example.com",
-            "currentPlan": "MC-450",
-            "walletAmount": 24500,
-            "active": true,
-            "numberOfTransactions": 3,
-            "customerType": "MC-59",
-            "rechargeHistory": [
-              {
-                "date": "2025-02-18",
-                "amount": 450,
-                "paymentMode": "Net Banking",
-                "transactionId": "TXN073",
-                "expiryDate": "2025-02-25"
-              }
-            ]
-          },
-          {
-            "id": 74,
-            "username": "UserKiran",
-            "mobileNumber": "9876510074",
-            "email": "user74@example.com",
-            "currentPlan": "MC-499",
-            "walletAmount": 25000,
-            "active": false,
-            "numberOfTransactions": 5,
-            "customerType": "New",
-            "rechargeHistory": [
-              {
-                "date": "2025-02-19",
-                "amount": 499,
-                "paymentMode": "Credit Card",
-                "transactionId": "TXN074",
-                "expiryDate": "2025-02-26"
-              }
-            ]
-          },
-          {
-              "id": 102,
-              "username": "User2",
-              "mobileNumber": "987651002",
-              "email": "user2@example.com",
-              "currentPlan": "MC-59",
-              "walletAmount": 22000,
-              "active": true,
-              "numberOfTransactions": 54,
-              "customerType": "MC-59",
-              "rechargeHistory": [
-                  {
-                      "date": "2025-02-03",
-                      "amount": 999,
-                      "paymentMode": "Credit Card",
-                      "transactionId": "TXN102",
-                      "expiryDate": "2025-05-03"
-                  }
-              ]
-          },
-          {
-              "id": 103,
-              "username": "User3",
-              "mobileNumber": "987651003",
-              "email": "user3@example.com",
-              "currentPlan": "MC-359",
-              "walletAmount": 23000,
-              "active": true,
-              "numberOfTransactions": 56,
-              "customerType": "New",
-              "rechargeHistory": [
-                  {
-                      "date": "2025-02-04",
-                      "amount": 499,
-                      "paymentMode": "UPI",
-                      "transactionId": "TXN103",
-                      "expiryDate": "2025-05-04"
-                  }
-              ]
-          },
-          {
-              "id": 104,
-              "username": "User4",
-              "mobileNumber": "987651004",
-              "email": "user4@example.com",
-              "currentPlan": "MC-59",
-              "walletAmount": 24000,
-              "active": true,
-              "numberOfTransactions": 58,
-              "customerType": "MC-59",
-              "rechargeHistory": [
-                  {
-                      "date": "2025-02-05",
-                      "amount": 999,
-                      "paymentMode": "Credit Card",
-                      "transactionId": "TXN104",
-                      "expiryDate": "2025-05-05"
-                  }
-              ]
-          },
-          {
-              "id": 105,
-              "username": "User5",
-              "mobileNumber": "987651005",
-              "email": "user5@example.com",
-              "currentPlan": "MC-359",
-              "walletAmount": 25000,
-              "active": false,
-              "numberOfTransactions": 60,
-              "customerType": "New",
-              "rechargeHistory": [
-                  {
-                      "date": "2025-02-06",
-                      "amount": 499,
-                      "paymentMode": "Credit Card",
-                      "transactionId": "TXN105",
-                      "expiryDate": "2025-05-06"
-                  }
-              ]
-          },
-          {
-              "id": 106,
-              "username": "User6",
-              "mobileNumber": "987651006",
-              "email": "user6@example.com",
-              "currentPlan": "MC-59",
-              "walletAmount": 26000,
-              "active": true,
-              "numberOfTransactions": 62,
-              "customerType": "MC-59",
-              "rechargeHistory": [
-                  {
-                      "date": "2025-02-07",
-                      "amount": 999,
-                      "paymentMode": "UPI",
-                      "transactionId": "TXN106",
-                      "expiryDate": "2025-05-07"
-                  }
-              ]
-          },
-          {
-              "id": 107,
-              "username": "User7",
-              "mobileNumber": "987651007",
-              "email": "user7@example.com",
-              "currentPlan": "MC-359",
-              "walletAmount": 27000,
-              "active": true,
-              "numberOfTransactions": 64,
-              "customerType": "New",
-              "rechargeHistory": [
-                  {
-                      "date": "2025-02-08",
-                      "amount": 499,
-                      "paymentMode": "Credit Card",
-                      "transactionId": "TXN107",
-                      "expiryDate": "2025-05-08"
-                  }
-              ]
-          },
-          {
-              "id": 108,
-              "username": "User8",
-              "mobileNumber": "987651008",
-              "email": "user8@example.com",
-              "currentPlan": "MC-59",
-              "walletAmount": 28000,
-              "active": true,
-              "numberOfTransactions": 66,
-              "customerType": "MC-59",
-              "rechargeHistory": [
-                  {
-                      "date": "2025-02-09",
-                      "amount": 999,
-                      "paymentMode": "Credit Card",
-                      "transactionId": "TXN108",
-                      "expiryDate": "2025-05-09"
-                  }
-              ]
-          },
-          {
-              "id": 109,
-              "username": "User9",
-              "mobileNumber": "987651009",
-              "email": "user9@example.com",
-              "currentPlan": "MC-359",
-              "walletAmount": 29000,
-              "active": true,
-              "numberOfTransactions": 68,
-              "customerType": "New",
-              "rechargeHistory": [
-                  {
-                      "date": "2025-02-10",
-                      "amount": 499,
-                      "paymentMode": "UPI",
-                      "transactionId": "TXN109",
-                      "expiryDate": "2025-05-10"
-                  }
-              ]
-          },
-          {
-              "id": 110,
-              "username": "User10",
-              "mobileNumber": "987651010",
-              "email": "user10@example.com",
-              "currentPlan": "MC-59",
-              "walletAmount": 30000,
-              "active": false,
-              "numberOfTransactions": 70,
-              "customerType": "MC-59",
-              "rechargeHistory": [
-                  {
-                      "date": "2025-02-11",
-                      "amount": 999,
-                      "paymentMode": "Credit Card",
-                      "transactionId": "TXN110",
-                      "expiryDate": "2025-05-11"
-                  }
-              ]
-          },
-          {
-              "id": 111,
-              "username": "User11",
-              "mobileNumber": "987651011",
-              "email": "user11@example.com",
-              "currentPlan": "MC-359",
-              "walletAmount": 31000,
-              "active": true,
-              "numberOfTransactions": 72,
-              "customerType": "New",
-              "rechargeHistory": [
-                  {
-                      "date": "2025-02-12",
-                      "amount": 499,
-                      "paymentMode": "Credit Card",
-                      "transactionId": "TXN111",
-                      "expiryDate": "2025-05-12"
-                  }
-              ]
-          },
-          {
-              "id": 112,
-              "username": "User12",
-              "mobileNumber": "987651012",
-              "email": "user12@example.com",
-              "currentPlan": "MC-59",
-              "walletAmount": 32000,
-              "active": true,
-              "numberOfTransactions": 74,
-              "customerType": "MC-59",
-              "rechargeHistory": [
-                  {
-                      "date": "2025-02-13",
-                      "amount": 999,
-                      "paymentMode": "UPI",
-                      "transactionId": "TXN112",
-                      "expiryDate": "2025-05-13"
-                  }
-              ]
-          },
-          {
-              "id": 113,
-              "username": "User13",
-              "mobileNumber": "987651013",
-              "email": "user13@example.com",
-              "currentPlan": "MC-359",
-              "walletAmount": 33000,
-              "active": true,
-              "numberOfTransactions": 76,
-              "customerType": "New",
-              "rechargeHistory": [
-                  {
-                      "date": "2025-02-14",
-                      "amount": 499,
-                      "paymentMode": "Credit Card",
-                      "transactionId": "TXN113",
-                      "expiryDate": "2025-05-14"
-                  }
-              ]
-          },
-          {
-              "id": 114,
-              "username": "User14",
-              "mobileNumber": "987651014",
-              "email": "user14@example.com",
-              "currentPlan": "MC-59",
-              "walletAmount": 34000,
-              "active": true,
-              "numberOfTransactions": 78,
-              "customerType": "MC-59",
-              "rechargeHistory": [
-                  {
-                      "date": "2025-02-15",
-                      "amount": 999,
-                      "paymentMode": "Credit Card",
-                      "transactionId": "TXN114",
-                      "expiryDate": "2025-05-15"
-                  }
-              ]
-          },
-          {
-              "id": 115,
-              "username": "User15",
-              "mobileNumber": "987651015",
-              "email": "user15@example.com",
-              "currentPlan": "MC-359",
-              "walletAmount": 35000,
-              "active": false,
-              "numberOfTransactions": 80,
-              "customerType": "New",
-              "rechargeHistory": [
-                  {
-                      "date": "2025-02-16",
-                      "amount": 499,
-                      "paymentMode": "UPI",
-                      "transactionId": "TXN115",
-                      "expiryDate": "2025-05-16"
-                  }
-              ]
-          },
-          {
-              "id": 116,
-              "username": "User16",
-              "mobileNumber": "987651016",
-              "email": "user16@example.com",
-              "currentPlan": "MC-59",
-              "walletAmount": 36000,
-              "active": true,
-              "numberOfTransactions": 82,
-              "customerType": "MC-59",
-              "rechargeHistory": [
-                  {
-                      "date": "2025-02-17",
-                      "amount": 999,
-                      "paymentMode": "Credit Card",
-                      "transactionId": "TXN116",
-                      "expiryDate": "2025-05-17"
-                  }
-              ]
-          },
-          {
-              "id": 117,
-              "username": "User17",
-              "mobileNumber": "987651017",
-              "email": "user17@example.com",
-              "currentPlan": "MC-359",
-              "walletAmount": 37000,
-              "active": true,
-              "numberOfTransactions": 84,
-              "customerType": "New",
-              "rechargeHistory": [
-                  {
-                      "date": "2025-02-18",
-                      "amount": 499,
-                      "paymentMode": "Credit Card",
-                      "transactionId": "TXN117",
-                      "expiryDate": "2025-05-18"
-                  }
-              ]
-          },
-          {
-              "id": 118,
-              "username": "User18",
-              "mobileNumber": "987651018",
-              "email": "user18@example.com",
-              "currentPlan": "MC-59",
-              "walletAmount": 38000,
-              "active": true,
-              "numberOfTransactions": 86,
-              "customerType": "MC-59",
-              "rechargeHistory": [
-                  {
-                      "date": "2025-02-19",
-                      "amount": 999,
-                      "paymentMode": "UPI",
-                      "transactionId": "TXN118",
-                      "expiryDate": "2025-05-19"
-                  }
-              ]
-          },
-          {
-              "id": 119,
-              "username": "User19",
-              "mobileNumber": "987651019",
-              "email": "user19@example.com",
-              "currentPlan": "MC-359",
-              "walletAmount": 39000,
-              "active": true,
-              "numberOfTransactions": 88,
-              "customerType": "New",
-              "rechargeHistory": [
-                  {
-                      "date": "2025-02-20",
-                      "amount": 499,
-                      "paymentMode": "Credit Card",
-                      "transactionId": "TXN119",
-                      "expiryDate": "2025-05-20"
-                  }
-              ]
-          },
-          {
-              "id": 120,
-              "username": "User20",
-              "mobileNumber": "987651020",
-              "email": "user20@example.com",
-              "currentPlan": "MC-59",
-              "walletAmount": 40000,
-              "active": false,
-              "numberOfTransactions": 90,
-              "customerType": "MC-59",
-              "rechargeHistory": [
-                  {
-                      "date": "2025-02-27",
-                      "amount": 999,
-                      "paymentMode": "Credit Card",
-                      "transactionId": "TXN120",
-                      "expiryDate": "2025-05-27"
-                  }
-              ]
-          },
-          {
-              "id": 121,
-              "username": "User21",
-              "mobileNumber": "987651021",
-              "email": "user21@example.com",
-              "currentPlan": "MC-359",
-              "walletAmount": 41000,
-              "active": true,
-              "numberOfTransactions": 92,
-              "customerType": "New",
-              "rechargeHistory": [
-                  {
-                      "date": "2025-02-25",
-                      "amount": 499,
-                      "paymentMode": "UPI",
-                      "transactionId": "TXN121",
-                      "expiryDate": "2025-05-25"
-                  }
-              ]
-          },
-          {
-              "id": 122,
-              "username": "User22",
-              "mobileNumber": "987651022",
-              "email": "user22@example.com",
-              "currentPlan": "MC-59",
-              "walletAmount": 42000,
-              "active": true,
-              "numberOfTransactions": 94,
-              "customerType": "MC-59",
-              "rechargeHistory": [
-                  {
-                      "date": "2025-02-23",
-                      "amount": 999,
-                      "paymentMode": "Credit Card",
-                      "transactionId": "TXN122",
-                      "expiryDate": "2025-05-23"
-                  }
-              ]
-          },
-          {
-              "id": 123,
-              "username": "User23",
-              "mobileNumber": "987651023",
-              "email": "user23@example.com",
-              "currentPlan": "MC-359",
-              "walletAmount": 43000,
-              "active": true,
-              "numberOfTransactions": 96,
-              "customerType": "New",
-              "rechargeHistory": [
-                  {
-                      "date": "2025-02-24",
-                      "amount": 499,
-                      "paymentMode": "Credit Card",
-                      "transactionId": "TXN123",
-                      "expiryDate": "2025-05-24"
-                  }
-              ]
-          },
-          {
-              "id": 124,
-              "username": "User24",
-              "mobileNumber": "987651024",
-              "email": "user24@example.com",
-              "currentPlan": "MC-59",
-              "walletAmount": 44000,
-              "active": true,
-              "numberOfTransactions": 98,
-              "customerType": "MC-59",
-              "rechargeHistory": [
-                  {
-                      "date": "2025-02-25",
-                      "amount": 999,
-                      "paymentMode": "UPI",
-                      "transactionId": "TXN124",
-                      "expiryDate": "2025-05-25"
-                  }
-              ]
-          },
-          {
-              "id": 125,
-              "username": "User25",
-              "mobileNumber": "987651025",
-              "email": "user25@example.com",
-              "currentPlan": "MC-359",
-              "walletAmount": 45000,
-              "active": false,
-              "numberOfTransactions": 100,
-              "customerType": "New",
-              "rechargeHistory": [
-                  {
-                      "date": "2025-02-26",
-                      "amount": 499,
-                      "paymentMode": "Credit Card",
-                      "transactionId": "TXN125",
-                      "expiryDate": "2025-05-26"
-                  }
-              ]
-          },
-          {
-              "id": 126,
-              "username": "User26",
-              "mobileNumber": "987651026",
-              "email": "user26@example.com",
-              "currentPlan": "MC-59",
-              "walletAmount": 46000,
-              "active": true,
-              "numberOfTransactions": 102,
-              "customerType": "MC-59",
-              "rechargeHistory": [
-                  {
-                      "date": "2025-02-27",
-                      "amount": 999,
-                      "paymentMode": "Credit Card",
-                      "transactionId": "TXN126",
-                      "expiryDate": "2025-05-27"
-                  }
-              ]
-          },
-          {
-              "id": 127,
-              "username": "User27",
-              "mobileNumber": "987651027",
-              "email": "user27@example.com",
-              "currentPlan": "MC-359",
-              "walletAmount": 47000,
-              "active": true,
-              "numberOfTransactions": 104,
-              "customerType": "New",
-              "rechargeHistory": [
-                  {
-                      "date": "2025-02-28",
-                      "amount": 499,
-                      "paymentMode": "UPI",
-                      "transactionId": "TXN127",
-                      "expiryDate": "2025-05-28"
-                  }
-              ]
-          },
-          {
-              "id": 128,
-              "username": "User28",
-              "mobileNumber": "987651028",
-              "email": "user28@example.com",
-              "currentPlan": "MC-59",
-              "walletAmount": 48000,
-              "active": true,
-              "numberOfTransactions": 106,
-              "customerType": "MC-59",
-              "rechargeHistory": [
-                  {
-                      "date": "2025-02-01",
-                      "amount": 999,
-                      "paymentMode": "Credit Card",
-                      "transactionId": "TXN128",
-                      "expiryDate": "2025-05-01"
-                  }
-              ]
-          },
-          {
-              "id": 129,
-              "username": "User29",
-              "mobileNumber": "987651029",
-              "email": "user29@example.com",
-              "currentPlan": "MC-359",
-              "walletAmount": 49000,
-              "active": true,
-              "numberOfTransactions": 108,
-              "customerType": "New",
-              "rechargeHistory": [
-                  {
-                      "date": "2025-02-02",
-                      "amount": 499,
-                      "paymentMode": "Credit Card",
-                      "transactionId": "TXN129",
-                      "expiryDate": "2025-05-02"
-                  }
-              ]
-          },
-          {
-              "id": 130,
-              "username": "User30",
-              "mobileNumber": "987651030",
-              "email": "user30@example.com",
-              "currentPlan": "MC-59",
-              "walletAmount": 50000,
-              "active": false,
-              "numberOfTransactions": 110,
-              "customerType": "MC-59",
-              "rechargeHistory": [
-                  {
-                      "date": "2025-02-03",
-                      "amount": 999,
-                      "paymentMode": "UPI",
-                      "transactionId": "TXN130",
-                      "expiryDate": "2025-05-03"
-                  }
-              ]
-          },
-          {
-              "id": 131,
-              "username": "User31",
-              "mobileNumber": "987651031",
-              "email": "user31@example.com",
-              "currentPlan": "MC-359",
-              "walletAmount": 51000,
-              "active": true,
-              "numberOfTransactions": 112,
-              "customerType": "New",
-              "rechargeHistory": [
-                  {
-                      "date": "2025-02-04",
-                      "amount": 499,
-                      "paymentMode": "Credit Card",
-                      "transactionId": "TXN131",
-                      "expiryDate": "2025-05-04"
-                  }
-              ]
-          },
-          {
-              "id": 132,
-              "username": "User32",
-              "mobileNumber": "987651032",
-              "email": "user32@example.com",
-              "currentPlan": "MC-59",
-              "walletAmount": 52000,
-              "active": true,
-              "numberOfTransactions": 114,
-              "customerType": "MC-59",
-              "rechargeHistory": [
-                  {
-                      "date": "2025-02-05",
-                      "amount": 999,
-                      "paymentMode": "Credit Card",
-                      "transactionId": "TXN132",
-                      "expiryDate": "2025-05-05"
-                  }
-              ]
-          },
-          {
-              "id": 133,
-              "username": "User33",
-              "mobileNumber": "987651033",
-              "email": "user33@example.com",
-              "currentPlan": "MC-359",
-              "walletAmount": 53000,
-              "active": true,
-              "numberOfTransactions": 116,
-              "customerType": "New",
-              "rechargeHistory": [
-                  {
-                      "date": "2025-02-06",
-                      "amount": 499,
-                      "paymentMode": "UPI",
-                      "transactionId": "TXN133",
-                      "expiryDate": "2025-05-06"
-                  }
-              ]
-          },
-          {
-              "id": 134,
-              "username": "User34",
-              "mobileNumber": "987651034",
-              "email": "user34@example.com",
-              "currentPlan": "MC-59",
-              "walletAmount": 54000,
-              "active": true,
-              "numberOfTransactions": 118,
-              "customerType": "MC-59",
-              "rechargeHistory": [
-                  {
-                      "date": "2025-02-07",
-                      "amount": 999,
-                      "paymentMode": "Credit Card",
-                      "transactionId": "TXN134",
-                      "expiryDate": "2025-05-07"
-                  }
-              ]
-          },
-          {
-              "id": 135,
-              "username": "User35",
-              "mobileNumber": "987651035",
-              "email": "user35@example.com",
-              "currentPlan": "MC-359",
-              "walletAmount": 55000,
-              "active": false,
-              "numberOfTransactions": 120,
-              "customerType": "New",
-              "rechargeHistory": [
-                  {
-                      "date": "2025-02-08",
-                      "amount": 499,
-                      "paymentMode": "Credit Card",
-                      "transactionId": "TXN135",
-                      "expiryDate": "2025-05-08"
-                  }
-              ]
-          },
-          {
-              "id": 136,
-              "username": "User36",
-              "mobileNumber": "987651036",
-              "email": "user36@example.com",
-              "currentPlan": "MC-59",
-              "walletAmount": 56000,
-              "active": true,
-              "numberOfTransactions": 122,
-              "customerType": "MC-59",
-              "rechargeHistory": [
-                  {
-                      "date": "2025-02-09",
-                      "amount": 999,
-                      "paymentMode": "UPI",
-                      "transactionId": "TXN136",
-                      "expiryDate": "2025-05-09"
-                  }
-              ]
-          },
-          {
-              "id": 137,
-              "username": "User37",
-              "mobileNumber": "987651037",
-              "email": "user37@example.com",
-              "currentPlan": "MC-359",
-              "walletAmount": 57000,
-              "active": true,
-              "numberOfTransactions": 124,
-              "customerType": "New",
-              "rechargeHistory": [
-                  {
-                      "date": "2025-02-10",
-                      "amount": 499,
-                      "paymentMode": "Credit Card",
-                      "transactionId": "TXN137",
-                      "expiryDate": "2025-05-10"
-                  }
-              ]
-          },
-          {
-              "id": 138,
-              "username": "User38",
-              "mobileNumber": "987651038",
-              "email": "user38@example.com",
-              "currentPlan": "MC-59",
-              "walletAmount": 58000,
-              "active": true,
-              "numberOfTransactions": 126,
-              "customerType": "MC-59",
-              "rechargeHistory": [
-                  {
-                      "date": "2025-02-11",
-                      "amount": 999,
-                      "paymentMode": "Credit Card",
-                      "transactionId": "TXN138",
-                      "expiryDate": "2025-05-11"
-                  }
-              ]
-          },
-          {
-              "id": 139,
-              "username": "User39",
-              "mobileNumber": "987651039",
-              "email": "user39@example.com",
-              "currentPlan": "MC-359",
-              "walletAmount": 59000,
-              "active": true,
-              "numberOfTransactions": 128,
-              "customerType": "New",
-              "rechargeHistory": [
-                  {
-                      "date": "2025-02-12",
-                      "amount": 499,
-                      "paymentMode": "UPI",
-                      "transactionId": "TXN139",
-                      "expiryDate": "2025-05-12"
-                  }
-              ]
-          },
-          {
-              "id": 140,
-              "username": "User40",
-              "mobileNumber": "987651040",
-              "email": "user40@example.com",
-              "currentPlan": "MC-59",
-              "walletAmount": 60000,
-              "active": false,
-              "numberOfTransactions": 130,
-              "customerType": "MC-59",
-              "rechargeHistory": [
-                  {
-                      "date": "2025-02-13",
-                      "amount": 999,
-                      "paymentMode": "Credit Card",
-                      "transactionId": "TXN140",
-                      "expiryDate": "2025-05-13"
-                  }
-              ]
-          },
-          {
-              "id": 141,
-              "username": "User41",
-              "mobileNumber": "987651041",
-              "email": "user41@example.com",
-              "currentPlan": "MC-359",
-              "walletAmount": 61000,
-              "active": true,
-              "numberOfTransactions": 132,
-              "customerType": "New",
-              "rechargeHistory": [
-                  {
-                      "date": "2025-02-14",
-                      "amount": 499,
-                      "paymentMode": "Credit Card",
-                      "transactionId": "TXN141",
-                      "expiryDate": "2025-05-14"
-                  }
-              ]
-          },
-          {
-              "id": 142,
-              "username": "User42",
-              "mobileNumber": "987651042",
-              "email": "user42@example.com",
-              "currentPlan": "MC-59",
-              "walletAmount": 62000,
-              "active": true,
-              "numberOfTransactions": 134,
-              "customerType": "MC-59",
-              "rechargeHistory": [
-                  {
-                      "date": "2025-02-15",
-                      "amount": 999,
-                      "paymentMode": "UPI",
-                      "transactionId": "TXN142",
-                      "expiryDate": "2025-05-15"
-                  }
-              ]
-          },
-          {
-              "id": 143,
-              "username": "User43",
-              "mobileNumber": "987651043",
-              "email": "user43@example.com",
-              "currentPlan": "MC-359",
-              "walletAmount": 63000,
-              "active": true,
-              "numberOfTransactions": 136,
-              "customerType": "New",
-              "rechargeHistory": [
-                  {
-                      "date": "2025-02-16",
-                      "amount": 499,
-                      "paymentMode": "Credit Card",
-                      "transactionId": "TXN143",
-                      "expiryDate": "2025-05-16"
-                  }
-              ]
-          },
-          {
-              "id": 144,
-              "username": "User44",
-              "mobileNumber": "987651044",
-              "email": "user44@example.com",
-              "currentPlan": "MC-59",
-              "walletAmount": 64000,
-              "active": true,
-              "numberOfTransactions": 138,
-              "customerType": "MC-59",
-              "rechargeHistory": [
-                  {
-                      "date": "2025-02-17",
-                      "amount": 999,
-                      "paymentMode": "Credit Card",
-                      "transactionId": "TXN144",
-                      "expiryDate": "2025-05-17"
-                  }
-              ]
-          },
-          {
-              "id": 145,
-              "username": "User45",
-              "mobileNumber": "987651045",
-              "email": "user45@example.com",
-              "currentPlan": "MC-359",
-              "walletAmount": 65000,
-              "active": false,
-              "numberOfTransactions": 140,
-              "customerType": "New",
-              "rechargeHistory": [
-                  {
-                      "date": "2025-02-18",
-                      "amount": 499,
-                      "paymentMode": "UPI",
-                      "transactionId": "TXN145",
-                      "expiryDate": "2025-05-18"
-                  }
-              ]
-          },
-          {
-              "id": 146,
-              "username": "User46",
-              "mobileNumber": "987651046",
-              "email": "user46@example.com",
-              "currentPlan": "MC-59",
-              "walletAmount": 66000,
-              "active": true,
-              "numberOfTransactions": 142,
-              "customerType": "MC-59",
-              "rechargeHistory": [
-                  {
-                      "date": "2025-02-19",
-                      "amount": 999,
-                      "paymentMode": "Credit Card",
-                      "transactionId": "TXN146",
-                      "expiryDate": "2025-05-19"
-                  }
-              ]
-          },
-          {
-              "id": 147,
-              "username": "User47",
-              "mobileNumber": "987651047",
-              "email": "user47@example.com",
-              "currentPlan": "MC-359",
-              "walletAmount": 67000,
-              "active": true,
-              "numberOfTransactions": 144,
-              "customerType": "New",
-              "rechargeHistory": [
-                  {
-                      "date": "2025-02-20",
-                      "amount": 499,
-                      "paymentMode": "Credit Card",
-                      "transactionId": "TXN147",
-                      "expiryDate": "2025-05-20"
-                  }
-              ]
-          },
-          {
-              "id": 148,
-              "username": "User48",
-              "mobileNumber": "987651048",
-              "email": "user48@example.com",
-              "currentPlan": "MC-59",
-              "walletAmount": 68000,
-              "active": true,
-              "numberOfTransactions": 146,
-              "customerType": "MC-59",
-              "rechargeHistory": [
-                  {
-                      "date": "2025-02-27",
-                      "amount": 999,
-                      "paymentMode": "UPI",
-                      "transactionId": "TXN148",
-                      "expiryDate": "2025-05-21"
-                  }
-              ]
-          },
-          {
-              "id": 149,
-              "username": "User49",
-              "mobileNumber": "987651049",
-              "email": "user49@example.com",
-              "currentPlan": "MC-359",
-              "walletAmount": 69000,
-              "active": true,
-              "numberOfTransactions": 148,
-              "customerType": "New",
-              "rechargeHistory": [
-                  {
-                      "date": "2025-02-25",
-                      "amount": 499,
-                      "paymentMode": "Credit Card",
-                      "transactionId": "TXN149",
-                      "expiryDate": "2025-05-25"
-                  }
-              ]
-          },
-          {
-              "id": 150,
-              "username": "User50",
-              "mobileNumber": "987651050",
-              "email": "user50@example.com",
-              "currentPlan": "MC-59",
-              "walletAmount": 70000,
-              "active": false,
-              "numberOfTransactions": 150,
-              "customerType": "MC-59",
-              "rechargeHistory": [
-                  {
-                      "date": "2025-02-23",
-                      "amount": 999,
-                      "paymentMode": "Credit Card",
-                      "transactionId": "TXN150",
-                      "expiryDate": "2025-05-23"
-                  }
-              ]
-          }
-    
-    ],
-
-    "ott": [
-        {
-            "label": "Gaming & Streaming",
-            "plan_name": "Gaming & Streaming",
-            "plan_code": "MC-549",
-            "price": "₹549/month",
-            "validity": "30 Days",
-            "features": [
-                "3GB data/day",
-                "200GB data Roll Over",
-                "OTT Access"
-            ]
-        },
-        {
-            "label": "Half-Yearly Special",
-            "plan_name": "Half-Yearly Special",
-            "plan_code": "MC-2499",
-            "price": "₹2499/6 Months",
-            "validity": "180 Days",
-            "features": [
-                "3GB data/day",
-                "500GB data Roll Over",
-                "MC-59 Music & OTT"
-            ]
-        },
-        {
-            "label": "Family Pack",
-            "plan_name": "Family Pack",
-            "plan_code": "MC-5999",
-            "price": "₹5999/Year",
-            "validity": "365 Days",
-            "features": [
-                "5GB data/day (Shared)",
-                "1TB Data Roll Over",
-                "Netflix & Prime"
-            ]
-        },
-        {
-            "label": "Super OTT Plan",
-            "plan_name": "Super OTT Plan",
-            "plan_code": "MC-799",
-            "price": "₹799/Month",
-            "validity": "30 Days",
-            "features": [
-                "2GB data/day",
-                "250GB Data Roll Over",
-                "Disney+ Hotstar & Prime Video"
-            ]
-        },
-        {
-            "label": "Ultra Streaming",
-            "plan_name": "Ultra Streaming",
-            "plan_code": "MC-999",
-            "price": "₹999/Month",
-            "validity": "30 Days",
-            "features": [
-                "3.5GB data/day",
-                "Unlimited Data Roll Over",
-                "Netflix & Amazon Prime"
-            ]
-        },
-        {
-            "label": "OTT Platinum",
-            "plan_name": "OTT Platinum",
-            "plan_code": "MC-1499",
-            "price": "₹1499/Month",
-            "validity": "30 Days",
-            "features": [
-                "5GB data/day",
-                "500GB Data Roll Over",
-                "Netflix, Prime, Disney+ Hotstar"
-            ]
-        },
-        {
-            "label": "OTT MC-59 Max",
-            "plan_name": "OTT MC-59 Max",
-            "plan_code": "MC-1999",
-            "price": "₹1999/Month",
-            "validity": "30 Days",
-            "features": [
-                "6GB data/day",
-                "Unlimited Data Roll Over",
-                "Netflix, Prime, Hotstar, Zee5, SonyLIV"
-            ]
-        },
-        {
-            "label": "Ultimate OTT Pack",
-            "plan_name": "Ultimate OTT Pack",
-            "plan_code": "MC-2999",
-            "price": "₹2999/3 Months",
-            "validity": "90 Days",
-            "features": [
-                "8GB data/day",
-                "1.5TB Data Roll Over",
-                "Netflix, Prime, Disney+, SonyLIV, Voot, Zee5"
-            ]
-        },
-        {
-            "label": "OTT Elite Annual",
-            "plan_name": "OTT Elite Annual",
-            "plan_code": "MC-4999",
-            "price": "₹4999/Year",
-            "validity": "365 Days",
-            "features": [
-                "10GB data/day",
-                "2TB Data Roll Over",
-                "All OTT Platforms + Gaming Perks"
-            ]
+  "users": [
+    {
+      "id": "1",
+      "username": "UserBalaji",
+      "mobileNumber": "9876510001",
+      "email": "user1@example.com",
+      "currentPlan": "MC-359",
+      "walletAmount": 20500,
+      "active": false,
+      "numberOfTransactions": 51,
+      "customerType": "New",
+      "rechargeHistory": [
+        {
+          "date": "2025-01-27",
+          "amount": 499,
+          "paymentMode": "Credit Card",
+          "transactionId": "TXN001",
+          "expiryDate": "2025-04-11"
         }
-    ],
-    "recommended": [
+      ]
+    },
+    {
+      "id": "2",
+      "username": "UserCharan",
+      "mobileNumber": "9876510002",
+      "email": "user2@example.com",
+      "currentPlan": "MC-59",
+      "walletAmount": 21000,
+      "active": true,
+      "numberOfTransactions": 52,
+      "customerType": "MC-59",
+      "rechargeHistory": [
         {
-            "label": "Trial Offer",
-            "plan_name": "Unlimited Trial",
-            "plan_code": "MC-59",
-            "price": "₹59/1 Day",
-            "validity": "1 Day",
-            "features": [
-                "Unlimited 5G Data",
-                "Max Speed: 1Gbps"
-            ]
-        },
-        {
-            "label": "Weekly Best",
-            "plan_name": "Unlimited Weekly",
-            "plan_code": "MC-349",
-            "price": "₹349/7 Days",
-            "validity": "7 Days",
-            "features": [
-                "Unlimited 5G Data",
-                "Max Speed: 1Gbps + Weekend Data Boost"
-            ]
-        },
-        {
-            "label": "Most Popular",
-            "plan_name": "Most Popular",
-            "plan_code": "MC-799",
-            "price": "₹799/Month",
-            "validity": "30 Days",
-            "features": [
-                "Unlimited 5G Data + 100GB DataPriority Speed",
-                "OTT Access (Netflix, Prime)"
-            ]
-        },
-        {
-            "label": "Gaming Pack",
-            "plan_name": "Gaming & Streaming",
-            "plan_code": "MC-1199",
-            "price": "₹1199/Month",
-            "validity": "30 Days",
-            "features": [
-                "Unlimited 5G Data + No Speed Caps",
-                "4K Streaming + Cloud Gaming Boost"
-            ]
-        },
-        {
-            "label": "Business Choice",
-            "plan_name": "Business Pro",
-            "plan_code": "MC-2999",
-            "price": "₹2999/3 Months",
-            "validity": "90 Days",
-            "features": [
-                "Unlimited 5G Data + 1TB Cloud Storage",
-                "Guaranteed 5Gbps Speeds"
-            ]
-        },
-        {
-            "label": "MC-59 Deal",
-            "plan_name": "Half-Yearly Ultimate",
-            "plan_code": "MC-5999",
-            "price": "₹5999/6 Months",
-            "validity": "180 Days",
-            "features": [
-                "Unlimited 5G Data + MC-59 VPN",
-                "High-Priority Network Access"
-            ]
-        },
-        {
-            "label": "Best Annual",
-            "plan_name": "Annual Saver",
-            "plan_code": "MC-9999",
-            "price": "₹9999/Year",
-            "validity": "365 Days",
-            "features": [
-                "Unlimited 5G Data + 5Gbps Max Speed",
-                "Netflix + Jio + Prime + Spotify"
-            ]
-        },
-        {
-            "label": "Family Plan",
-            "plan_name": "Family Pack",
-            "plan_code": "MC-12999",
-            "price": "₹12,999/Year",
-            "validity": "365 Days",
-            "features": [
-                "Unlimited 5G Data (5 Devices)",
-                "Netflix, Prime, Hotstar + Parental Controls"
-            ]
-        },
-        {
-            "label": "Enterprise Elite",
-            "plan_name": "Enterprise Exclusive",
-            "plan_code": "MC-19999",
-            "price": "₹19,999/Year",
-            "validity": "365 Days",
-            "features": [
-                "Unlimited 5G Data + Dedicated Support",
-                "10Gbps Speed + Secure Business VPN"
-            ]
-        },
-        {
-            "label": "Super Saver",
-            "plan_name": "MC-359 5G Unlimited",
-            "plan_code": "MC-499",
-            "price": "₹499/28 Days",
-            "validity": "28 Days",
-            "features": [
-                "Unlimited 5G Data",
-                "100GB DataPriority High-Speed, then 5Mbps",
-                "Free OTT Access (SonyLIV + Zee5)"
-            ]
-        },
-        {
-            "label": "MC-59 Pack",
-            "plan_name": "MC-59 5G Max",
-            "plan_code": "MC-799",
-            "price": "₹799/56 Days",
-            "validity": "56 Days",
-            "features": [
-                "Truly Unlimited 5G Data",
-                "Ultra HD Streaming & Gaming",
-                "OTT Pack (Netflix Mobile + Jio Hotstar)"
-            ]
-        },
-        {
-            "label": "Ultimate Pack",
-            "plan_name": "Ultimate 5G Pro",
-            "plan_code": "MC-1199",
-            "price": "₹1199/90 Days",
-            "validity": "90 Days",
-            "features": [
-                "Unlimited 5G Data + International Roaming",
-                "Gaming Mode with 1ms Latency",
-                "OTT Bundle (Netflix + Prime + Hotstar)"
-            ]
+          "date": "2025-01-27",
+          "amount": 499,
+          "paymentMode": "Credit Card",
+          "transactionId": "TXN002",
+          "expiryDate": "2025-04-12"
         }
-    ],
-
-    "unlimited": [
+      ]
+    },
+    {
+      "id": "3",
+      "username": "UserDeepak",
+      "mobileNumber": "9876510003",
+      "email": "user3@example.com",
+      "currentPlan": "MC-359",
+      "walletAmount": 21500,
+      "active": false,
+      "numberOfTransactions": 53,
+      "customerType": "New",
+      "rechargeHistory": [
         {
-            "label": "Ultimate Pack",
-            "plan_name": "Ultimate 5G Pro",
-            "plan_code": "MC-1199",
-            "price": "₹1199/90 Days",
-            "validity": "90 Days",
-            "features": [
-                "Unlimited 5G Data + International Roaming",
-                "Gaming Mode with 1ms Latency",
-                "OTT Bundle (Netflix + Prime + Hotstar)"
-            ]
-        },
-        {
-            "label": "MC-59 Deal",
-            "plan_name": "5G Max Ultra",
-            "plan_code": "MC-1499",
-            "price": "₹1499/120 Days",
-            "validity": "120 Days",
-            "features": [
-                "Unlimited 5G Data + AI-Powered Network Boost",
-                "4K Streaming + Cloud Gaming Mode",
-                "OTT Access (Netflix + Disney+ Hotstar + Spotify)"
-            ]
-        },
-        {
-            "label": "Super Saver",
-            "plan_name": "Annual 5G Infinity",
-            "plan_code": "MC-4999",
-            "price": "₹4999/365 Days",
-            "validity": "365 Days",
-            "features": [
-                "Truly Unlimited 5G Data + 5Gbps Speed",
-                "OTT Pack (Netflix, Prime, Disney+ Hotstar)",
-                "Priority Network Access & VIP Customer Support"
-            ]
-        },
-        {
-            "label": "Gaming Pro",
-            "plan_name": "5G Gamers Elite",
-            "plan_code": "MC-1899",
-            "price": "₹1899/90 Days",
-            "validity": "90 Days",
-            "features": [
-                "Unlimited 5G Data + Ultra-Low Latency Mode",
-                "Cloud Gaming Access (GeForce Now + Xbox Cloud)",
-                "OTT Bundle (Twitch Prime + YouTube MC-59)"
-            ]
-        },
-        {
-            "label": "Entertainment Plus",
-            "plan_name": "OTT 5G MC-59",
-            "plan_code": "MC-2999",
-            "price": "₹2999/180 Days",
-            "validity": "180 Days",
-            "features": [
-                "Unlimited 5G Data + 2TB Cloud Storage",
-                "OTT Bundle (Netflix, Amazon Prime, Disney+ Hotstar)",
-                "Home Wi-Fi Router with 5G Speed Boost"
-            ]
-        },
-        {
-            "label": "Weekend Booster",
-            "plan_name": "5G Speed Plus",
-            "plan_code": "MC-599",
-            "price": "₹599/30 Days",
-            "validity": "30 Days",
-            "features": [
-                "Unlimited 5G Data + Weekend Speed Boost",
-                "50GB High-Priority Speed + Unlimited Calls",
-                "Exclusive Gaming Perks & Streaming Benefits"
-            ]
-        },
-        {
-            "label": "Business Elite",
-            "plan_name": "5G Enterprise Pro",
-            "plan_code": "MC-9999",
-            "price": "₹9999/365 Days",
-            "validity": "365 Days",
-            "features": [
-                "Unlimited 5G Data + Dedicated Support",
-                "10Gbps Speed + Secure VPN Access",
-                "OTT Pack (Netflix + Business Suite)"
-            ]
-        },
-        {
-            "label": "Budget Friendly",
-            "plan_name": "Affordable 5G Max",
-            "plan_code": "MC-899",
-            "price": "₹899/60 Days",
-            "validity": "60 Days",
-            "features": [
-                "Unlimited 5G Data + 1.5GB/day of High-Speed 4G",
-                "100 SMS per day + Unlimited Calls",
-                "OTT Bonus (SonyLIV + Zee5)"
-            ]
-        },
-        {
-            "label": "Family Plan",
-            "plan_name": "5G Family Pack",
-            "plan_code": "MC-12999",
-            "price": "₹12,999/Year",
-            "validity": "365 Days",
-            "features": [
-                "Unlimited 5G Data for 5 Devices",
-                "OTT Bundle (Netflix, Prime, Hotstar + Parental Controls)",
-                "Priority Customer Support & Free International Roaming"
-            ]
-        },
-        {
-            "label": "Super Annual",
-            "plan_name": "Ultimate Annual Max",
-            "plan_code": "MC-17999",
-            "price": "₹17,999/Year",
-            "validity": "365 Days",
-            "features": [
-                "Truly Unlimited 5G Data + 10Gbps Speed",
-                "Unlimited International Roaming + Free Calls",
-                "OTT Pack (Netflix Ultra HD + Spotify + YouTube MC-59)"
-            ]
-        },
-        {
-            "label": "Student Choice",
-            "plan_name": "5G Campus Pro",
-            "plan_code": "MC-1299",
-            "price": "₹1299/90 Days",
-            "validity": "90 Days",
-            "features": [
-                "Unlimited 5G Data + 100GB High-Speed",
-                "E-Learning Perks (Udemy, Coursera, LinkedIn Learning)",
-                "OTT Bonus (Amazon Prime Student Edition)"
-            ]
-        },
-        {
-            "label": "Traveler's Pick",
-            "plan_name": "5G Roaming Global",
-            "plan_code": "MC-2199",
-            "price": "₹2199/60 Days",
-            "validity": "60 Days",
-            "features": [
-                "Unlimited 5G Data + Free Global Roaming",
-                "High-Speed 5G in 20+ Countries",
-                "OTT Pack (Netflix Mobile + Apple Music)"
-            ]
+          "date": "2025-01-27",
+          "amount": 499,
+          "paymentMode": "Credit Card",
+          "transactionId": "TXN003",
+          "expiryDate": "2025-04-13"
         }
-    ]
-    ,
-    "validity": [
+      ]
+    },
+    {
+      "id": "4",
+      "username": "UserEshwar",
+      "mobileNumber": "9876510004",
+      "email": "user4@example.com",
+      "currentPlan": "MC-59",
+      "walletAmount": 22000,
+      "active": true,
+      "numberOfTransactions": 54,
+      "customerType": "MC-59",
+      "rechargeHistory": [
         {
-            "label": "MC-359 Surfing",
-            "plan_name": "1GB Daily Starter",
-            "plan_code": "MC-199",
-            "price": "₹199",
-            "validity": "28 Days",
-            "benefits": [
-                "1GB/day High-Speed Data",
-                "Unlimited 4G/5G Usage after FUP at 64kbps",
-                "100 SMS per day + Unlimited Calls"
-            ]
-        },
-        {
-            "label": "Budget Data Pack",
-            "plan_name": "2GB Daily Saver",
-            "plan_code": "MC-299",
-            "price": "₹299",
-            "validity": "30 Days",
-            "benefits": [
-                "2GB/day High-Speed Data",
-                "Unlimited 4G/5G Usage after FUP at 128kbps",
-                "OTT Bonus (SonyLIV Mobile)"
-            ]
-        },
-        {
-            "label": "Social Media Lover",
-            "plan_name": "Unlimited Social Data",
-            "plan_code": "MC-349",
-            "price": "₹349",
-            "validity": "28 Days",
-            "benefits": [
-                "Unlimited Data for WhatsApp, Instagram, Facebook & Twitter",
-                "10GB High-Speed for Other Usage",
-                "OTT Pack (Zee5 Mobile)"
-            ]
-        },
-        {
-            "label": "Streaming Essentials",
-            "plan_name": "4GB Daily Booster",
-            "plan_code": "MC-449",
-            "price": "₹449",
-            "validity": "30 Days",
-            "benefits": [
-                "4GB/day High-Speed Data",
-                "OTT Bundle (Disney+ Hotstar Mobile)",
-                "Unlimited Calls & 200 SMS per day"
-            ]
-        },
-        {
-            "label": "Work From Home",
-            "plan_name": "6GB Daily Pro",
-            "plan_code": "MC-599",
-            "price": "₹599",
-            "validity": "56 Days",
-            "benefits": [
-                "6GB/day High-Speed Data",
-                "Zoom, Teams, and Google Meet Data Free",
-                "100GB Cloud Storage Bonus"
-            ]
-        },
-        {
-            "label": "Gaming Power",
-            "plan_name": "8GB Daily Ultra",
-            "plan_code": "MC-799",
-            "price": "₹799",
-            "validity": "84 Days",
-            "benefits": [
-                "8GB/day High-Speed Data",
-                "Gaming Mode (Ultra Low Latency)",
-                "Exclusive Free Fire & BGMI Data"
-            ]
-        },
-        {
-            "label": "MC-59 Data Pack",
-            "plan_name": "10GB Daily Elite",
-            "plan_code": "MC-999",
-            "price": "₹999",
-            "validity": "90 Days",
-            "benefits": [
-                "10GB/day High-Speed Data",
-                "OTT Bundle (Netflix + Amazon Prime)",
-                "Exclusive VIP Customer Support"
-            ]
-        },
-        {
-            "label": "Super Data Booster",
-            "plan_name": "500GB One-Time",
-            "plan_code": "MC-1299",
-            "price": "₹1299",
-            "validity": "180 Days",
-            "benefits": [
-                "500GB High-Speed Data (One-Time)",
-                "Unlimited Calls & SMS",
-                "OTT Pack (Disney+ Hotstar, YouTube MC-59)"
-            ]
-        },
-        {
-            "label": "Heavy User Pack",
-            "plan_name": "1TB One-Time",
-            "plan_code": "MC-1899",
-            "price": "₹1899",
-            "validity": "365 Days",
-            "benefits": [
-                "1TB High-Speed Data (One-Time)",
-                "Unlimited Night Data (12 AM - 6 AM)",
-                "Gaming Pack & OTT Bundle (Netflix, Prime, Spotify)"
-            ]
-        },
-        {
-            "label": "Business Pro",
-            "plan_name": "Unlimited Data Pro",
-            "plan_code": "MC-2499",
-            "price": "₹2499",
-            "validity": "365 Days",
-            "benefits": [
-                "Truly Unlimited 5G Data",
-                "5Gbps Priority Speed & VPN Access",
-                "OTT Bundle (Netflix + Business Suite)"
-            ]
-        },
-        {
-            "label": "Mega Data Plan",
-            "plan_name": "2TB One-Time",
-            "plan_code": "MC-3499",
-            "price": "₹3499",
-            "validity": "365 Days",
-            "benefits": [
-                "2TB High-Speed Data (One-Time)",
-                "Exclusive VIP Network Priority",
-                "Cloud Storage & OTT Access (Netflix, Apple Music, YouTube MC-59)"
-            ]
-        },
-        {
-            "label": "Ultimate 5G Max",
-            "plan_name": "Unlimited 5G Supreme",
-            "plan_code": "MC-4999",
-            "price": "₹4999",
-            "validity": "365 Days",
-            "benefits": [
-                "Unlimited 5G Data + AI-Powered Boost",
-                "10Gbps Speed + 5G Home Router Support",
-                "OTT Bundle (Netflix Ultra, Spotify, YouTube MC-59)"
-            ]
-        },
-        {
-            "id": 101,
-            "username": "User1",
-            "mobileNumber": "987651001",
-            "email": "user1@example.com",
-            "currentPlan": "MC-359",
-            "walletAmount": 21000,
-            "active": true,
-            "numberOfTransactions": 52,
-            "customerType": "New",
-            "rechargeHistory": [
-                {
-                    "date": "2025-02-02",
-                    "amount": 499,
-                    "paymentMode": "Credit Card",
-                    "transactionId": "TXN101",
-                    "expiryDate": "2025-05-02"
-                }
-            ]
+          "date": "2025-01-27",
+          "amount": 499,
+          "paymentMode": "Credit Card",
+          "transactionId": "TXN004",
+          "expiryDate": "2025-04-14"
         }
-    ]
-    
+      ]
+    },
+    {
+      "id": "5",
+      "username": "UserFarooq",
+      "mobileNumber": "9876510005",
+      "email": "user5@example.com",
+      "currentPlan": "MC-359",
+      "walletAmount": 22500,
+      "active": false,
+      "numberOfTransactions": 55,
+      "customerType": "New",
+      "rechargeHistory": [
+        {
+          "date": "2025-01-27",
+          "amount": 499,
+          "paymentMode": "Credit Card",
+          "transactionId": "TXN005",
+          "expiryDate": "2025-04-15"
+        }
+      ]
+    },
+    {
+      "id": "6",
+      "username": "UserGokul",
+      "mobileNumber": "9876510006",
+      "email": "user6@example.com",
+      "currentPlan": "MC-59",
+      "walletAmount": 23000,
+      "active": true,
+      "numberOfTransactions": 56,
+      "customerType": "MC-59",
+      "rechargeHistory": [
+        {
+          "date": "2025-01-27",
+          "amount": 499,
+          "paymentMode": "Credit Card",
+          "transactionId": "TXN006",
+          "expiryDate": "2025-04-16"
+        }
+      ]
+    },
+    {
+      "id": "7",
+      "username": "UserHari",
+      "mobileNumber": "9876510007",
+      "email": "user7@example.com",
+      "currentPlan": "MC-359",
+      "walletAmount": 23500,
+      "active": false,
+      "numberOfTransactions": 57,
+      "customerType": "New",
+      "rechargeHistory": [
+        {
+          "date": "2025-01-27",
+          "amount": 499,
+          "paymentMode": "Credit Card",
+          "transactionId": "TXN007",
+          "expiryDate": "2025-04-17"
+        }
+      ]
+    },
+    {
+      "id": "8",
+      "username": "UserIlayaraja",
+      "mobileNumber": "9876510008",
+      "email": "user8@example.com",
+      "currentPlan": "MC-59",
+      "walletAmount": 24000,
+      "active": true,
+      "numberOfTransactions": 58,
+      "customerType": "MC-59",
+      "rechargeHistory": [
+        {
+          "date": "2025-01-27",
+          "amount": 499,
+          "paymentMode": "Credit Card",
+          "transactionId": "TXN008",
+          "expiryDate": "2025-04-18"
+        }
+      ]
+    },
+    {
+      "id": "9",
+      "username": "UserJagan",
+      "mobileNumber": "9876510009",
+      "email": "user9@example.com",
+      "currentPlan": "MC-359",
+      "walletAmount": 24500,
+      "active": false,
+      "numberOfTransactions": 59,
+      "customerType": "New",
+      "rechargeHistory": [
+        {
+          "date": "2025-01-27",
+          "amount": 499,
+          "paymentMode": "Credit Card",
+          "transactionId": "TXN009",
+          "expiryDate": "2025-04-19"
+        }
+      ]
+    },
+    {
+      "id": "10",
+      "username": "UserKarthik",
+      "mobileNumber": "9876510010",
+      "email": "user10@example.com",
+      "currentPlan": "MC-59",
+      "walletAmount": 25000,
+      "active": true,
+      "numberOfTransactions": 60,
+      "customerType": "MC-59",
+      "rechargeHistory": [
+        {
+          "date": "2025-01-27",
+          "amount": 499,
+          "paymentMode": "Credit Card",
+          "transactionId": "TXN0010",
+          "expiryDate": "2025-04-10"
+        }
+      ]
+    },
+    {
+      "id": "11",
+      "username": "UserLokesh",
+      "mobileNumber": "9876510011",
+      "email": "user11@example.com",
+      "currentPlan": "MC-359",
+      "walletAmount": 25500,
+      "active": false,
+      "numberOfTransactions": 61,
+      "customerType": "New",
+      "rechargeHistory": [
+        {
+          "date": "2025-01-27",
+          "amount": 499,
+          "paymentMode": "Credit Card",
+          "transactionId": "TXN0011",
+          "expiryDate": "2025-04-11"
+        }
+      ]
+    },
+    {
+      "id": "12",
+      "username": "UserMuthu",
+      "mobileNumber": "9876510012",
+      "email": "user12@example.com",
+      "currentPlan": "MC-59",
+      "walletAmount": 26000,
+      "active": true,
+      "numberOfTransactions": 62,
+      "customerType": "MC-59",
+      "rechargeHistory": [
+        {
+          "date": "2025-01-27",
+          "amount": 499,
+          "paymentMode": "Credit Card",
+          "transactionId": "TXN0012",
+          "expiryDate": "2025-04-12"
+        }
+      ]
+    },
+    {
+      "id": "13",
+      "username": "UserNaveen",
+      "mobileNumber": "9876510013",
+      "email": "user13@example.com",
+      "currentPlan": "MC-359",
+      "walletAmount": 26500,
+      "active": false,
+      "numberOfTransactions": 63,
+      "customerType": "New",
+      "rechargeHistory": [
+        {
+          "date": "2025-01-27",
+          "amount": 499,
+          "paymentMode": "Credit Card",
+          "transactionId": "TXN0013",
+          "expiryDate": "2025-04-13"
+        }
+      ]
+    },
+    {
+      "id": "14",
+      "username": "UserOmkara",
+      "mobileNumber": "9876510014",
+      "email": "user14@example.com",
+      "currentPlan": "MC-59",
+      "walletAmount": 27000,
+      "active": true,
+      "numberOfTransactions": 64,
+      "customerType": "MC-59",
+      "rechargeHistory": [
+        {
+          "date": "2025-01-27",
+          "amount": 499,
+          "paymentMode": "Credit Card",
+          "transactionId": "TXN0014",
+          "expiryDate": "2025-04-14"
+        }
+      ]
+    },
+    {
+      "id": "15",
+      "username": "UserPrakash",
+      "mobileNumber": "9876510015",
+      "email": "user15@example.com",
+      "currentPlan": "MC-359",
+      "walletAmount": 27500,
+      "active": false,
+      "numberOfTransactions": 65,
+      "customerType": "New",
+      "rechargeHistory": [
+        {
+          "date": "2025-01-27",
+          "amount": 499,
+          "paymentMode": "Credit Card",
+          "transactionId": "TXN0015",
+          "expiryDate": "2025-04-15"
+        }
+      ]
+    },
+    {
+      "id": "16",
+      "username": "UserQuadir",
+      "mobileNumber": "9876510016",
+      "email": "user16@example.com",
+      "currentPlan": "MC-59",
+      "walletAmount": 28000,
+      "active": true,
+      "numberOfTransactions": 66,
+      "customerType": "MC-59",
+      "rechargeHistory": [
+        {
+          "date": "2025-01-27",
+          "amount": 499,
+          "paymentMode": "Credit Card",
+          "transactionId": "TXN0016",
+          "expiryDate": "2025-04-16"
+        }
+      ]
+    },
+    {
+      "id": "17",
+      "username": "UserRamesh",
+      "mobileNumber": "9876510017",
+      "email": "user17@example.com",
+      "currentPlan": "MC-359",
+      "walletAmount": 28500,
+      "active": false,
+      "numberOfTransactions": 67,
+      "customerType": "New",
+      "rechargeHistory": [
+        {
+          "date": "2025-01-27",
+          "amount": 499,
+          "paymentMode": "Credit Card",
+          "transactionId": "TXN0017",
+          "expiryDate": "2025-04-17"
+        }
+      ]
+    },
+    {
+      "id": "18",
+      "username": "UserSuresh",
+      "mobileNumber": "9876510018",
+      "email": "user18@example.com",
+      "currentPlan": "MC-59",
+      "walletAmount": 29000,
+      "active": true,
+      "numberOfTransactions": 68,
+      "customerType": "MC-59",
+      "rechargeHistory": [
+        {
+          "date": "2025-01-27",
+          "amount": 499,
+          "paymentMode": "Credit Card",
+          "transactionId": "TXN0018",
+          "expiryDate": "2025-04-18"
+        }
+      ]
+    },
+    {
+      "id": "19",
+      "username": "UserTharun",
+      "mobileNumber": "9876510019",
+      "email": "user19@example.com",
+      "currentPlan": "MC-359",
+      "walletAmount": 29500,
+      "active": false,
+      "numberOfTransactions": 69,
+      "customerType": "New",
+      "rechargeHistory": [
+        {
+          "date": "2025-01-27",
+          "amount": 499,
+          "paymentMode": "Credit Card",
+          "transactionId": "TXN0019",
+          "expiryDate": "2025-04-19"
+        }
+      ]
+    },
+    {
+      "id": "20",
+      "username": "UserUday",
+      "mobileNumber": "9876510020",
+      "email": "user20@example.com",
+      "currentPlan": "MC-59",
+      "walletAmount": 30000,
+      "active": true,
+      "numberOfTransactions": 70,
+      "customerType": "MC-59",
+      "rechargeHistory": [
+        {
+          "date": "2025-01-27",
+          "amount": 499,
+          "paymentMode": "Credit Card",
+          "transactionId": "TXN0020",
+          "expiryDate": "2025-04-10"
+        }
+      ]
+    },
+    {
+      "id": "27",
+      "username": "UserVenkatesh",
+      "mobileNumber": "9876510021",
+      "email": "user21@example.com",
+      "currentPlan": "MC-359",
+      "walletAmount": 30500,
+      "active": false,
+      "numberOfTransactions": 71,
+      "customerType": "New",
+      "rechargeHistory": [
+        {
+          "date": "2025-01-27",
+          "amount": 499,
+          "paymentMode": "Credit Card",
+          "transactionId": "TXN0021",
+          "expiryDate": "2025-04-11"
+        }
+      ]
+    },
+    {
+      "id": "22",
+      "username": "UserWaseem",
+      "mobileNumber": "9876510022",
+      "email": "user22@example.com",
+      "currentPlan": "MC-59",
+      "walletAmount": 31000,
+      "active": true,
+      "numberOfTransactions": 72,
+      "customerType": "MC-59",
+      "rechargeHistory": [
+        {
+          "date": "2025-01-27",
+          "amount": 499,
+          "paymentMode": "Credit Card",
+          "transactionId": "TXN0022",
+          "expiryDate": "2025-04-12"
+        }
+      ]
+    },
+    {
+      "id": "23",
+      "username": "UserXavier",
+      "mobileNumber": "9876510023",
+      "email": "user23@example.com",
+      "currentPlan": "MC-359",
+      "walletAmount": 31500,
+      "active": false,
+      "numberOfTransactions": 73,
+      "customerType": "New",
+      "rechargeHistory": [
+        {
+          "date": "2025-01-27",
+          "amount": 499,
+          "paymentMode": "Credit Card",
+          "transactionId": "TXN0023",
+          "expiryDate": "2025-04-13"
+        }
+      ]
+    },
+    {
+      "id": "24",
+      "username": "UserYogesh",
+      "mobileNumber": "9876510024",
+      "email": "user24@example.com",
+      "currentPlan": "MC-59",
+      "walletAmount": 32000,
+      "active": true,
+      "numberOfTransactions": 74,
+      "customerType": "MC-59",
+      "rechargeHistory": [
+        {
+          "date": "2025-01-27",
+          "amount": 499,
+          "paymentMode": "Credit Card",
+          "transactionId": "TXN0024",
+          "expiryDate": "2025-04-14"
+        }
+      ]
+    },
+    {
+      "id": "25",
+      "username": "UserZahir",
+      "mobileNumber": "9876510025",
+      "email": "user25@example.com",
+      "currentPlan": "MC-359",
+      "walletAmount": 32500,
+      "active": false,
+      "numberOfTransactions": 75,
+      "customerType": "New",
+      "rechargeHistory": [
+        {
+          "date": "2025-01-27",
+          "amount": 499,
+          "paymentMode": "Credit Card",
+          "transactionId": "TXN0025",
+          "expiryDate": "2025-04-15"
+        }
+      ]
+    },
+    {
+      "id": "26",
+      "username": "UserAjith",
+      "mobileNumber": "9876510026",
+      "email": "user26@example.com",
+      "currentPlan": "MC-59",
+      "walletAmount": 33000,
+      "active": true,
+      "numberOfTransactions": 76,
+      "customerType": "MC-59",
+      "rechargeHistory": [
+        {
+          "date": "2025-01-27",
+          "amount": 499,
+          "paymentMode": "Credit Card",
+          "transactionId": "TXN0026",
+          "expiryDate": "2025-04-16"
+        }
+      ]
+    },
+    {
+      "id": "27",
+      "username": "UserBharath",
+      "mobileNumber": "9876510027",
+      "email": "user27@example.com",
+      "currentPlan": "MC-359",
+      "walletAmount": 33500,
+      "active": false,
+      "numberOfTransactions": 77,
+      "customerType": "New",
+      "rechargeHistory": [
+        {
+          "date": "2025-01-27",
+          "amount": 499,
+          "paymentMode": "Credit Card",
+          "transactionId": "TXN0027",
+          "expiryDate": "2025-04-17"
+        }
+      ]
+    },
+    {
+      "id": "28",
+      "username": "UserChandru",
+      "mobileNumber": "9876510028",
+      "email": "user28@example.com",
+      "currentPlan": "MC-59",
+      "walletAmount": 34000,
+      "active": true,
+      "numberOfTransactions": 78,
+      "customerType": "MC-59",
+      "rechargeHistory": [
+        {
+          "date": "2025-01-27",
+          "amount": 499,
+          "paymentMode": "Credit Card",
+          "transactionId": "TXN0028",
+          "expiryDate": "2025-04-18"
+        }
+      ]
+    },
+    {
+      "id": "29",
+      "username": "UserDhanush",
+      "mobileNumber": "9876510029",
+      "email": "user29@example.com",
+      "currentPlan": "MC-359",
+      "walletAmount": 34500,
+      "active": false,
+      "numberOfTransactions": 79,
+      "customerType": "New",
+      "rechargeHistory": [
+        {
+          "date": "2025-01-27",
+          "amount": 499,
+          "paymentMode": "Credit Card",
+          "transactionId": "TXN0029",
+          "expiryDate": "2025-04-19"
+        }
+      ]
+    },
+    {
+      "id": "30",
+      "username": "UserEzhil",
+      "mobileNumber": "9876510030",
+      "email": "user30@example.com",
+      "currentPlan": "MC-59",
+      "walletAmount": 35000,
+      "active": true,
+      "numberOfTransactions": 80,
+      "customerType": "MC-59",
+      "rechargeHistory": [
+        {
+          "date": "2025-01-27",
+          "amount": 499,
+          "paymentMode": "Credit Card",
+          "transactionId": "TXN0030",
+          "expiryDate": "2025-04-10"
+        }
+      ]
+    },
+    {
+      "id": "31",
+      "username": "UserFaisal",
+      "mobileNumber": "9876510031",
+      "email": "user31@example.com",
+      "currentPlan": "MC-359",
+      "walletAmount": 35500,
+      "active": false,
+      "numberOfTransactions": 81,
+      "customerType": "New",
+      "rechargeHistory": [
+        {
+          "date": "2025-01-27",
+          "amount": 499,
+          "paymentMode": "Credit Card",
+          "transactionId": "TXN0031",
+          "expiryDate": "2025-04-11"
+        }
+      ]
+    },
+    {
+      "id": "32",
+      "username": "UserGirish",
+      "mobileNumber": "9876510032",
+      "email": "user32@example.com",
+      "currentPlan": "MC-59",
+      "walletAmount": 36000,
+      "active": true,
+      "numberOfTransactions": 82,
+      "customerType": "MC-59",
+      "rechargeHistory": [
+        {
+          "date": "2025-01-27",
+          "amount": 499,
+          "paymentMode": "Credit Card",
+          "transactionId": "TXN0032",
+          "expiryDate": "2025-04-12"
+        }
+      ]
+    },
+    {
+      "id": "33",
+      "username": "UserHarish",
+      "mobileNumber": "9876510033",
+      "email": "user33@example.com",
+      "currentPlan": "MC-359",
+      "walletAmount": 36500,
+      "active": false,
+      "numberOfTransactions": 83,
+      "customerType": "New",
+      "rechargeHistory": [
+        {
+          "date": "2025-01-27",
+          "amount": 499,
+          "paymentMode": "Credit Card",
+          "transactionId": "TXN0033",
+          "expiryDate": "2025-04-13"
+        }
+      ]
+    },
+    {
+      "id": "34",
+      "username": "UserIndrajith",
+      "mobileNumber": "9876510034",
+      "email": "user34@example.com",
+      "currentPlan": "MC-59",
+      "walletAmount": 37000,
+      "active": true,
+      "numberOfTransactions": 84,
+      "customerType": "MC-59",
+      "rechargeHistory": [
+        {
+          "date": "2025-01-27",
+          "amount": 499,
+          "paymentMode": "Credit Card",
+          "transactionId": "TXN0034",
+          "expiryDate": "2025-04-14"
+        }
+      ]
+    },
+    {
+      "id": "35",
+      "username": "UserJeeva",
+      "mobileNumber": "9876510035",
+      "email": "user35@example.com",
+      "currentPlan": "MC-359",
+      "walletAmount": 37500,
+      "active": false,
+      "numberOfTransactions": 85,
+      "customerType": "New",
+      "rechargeHistory": [
+        {
+          "date": "2025-01-27",
+          "amount": 499,
+          "paymentMode": "Credit Card",
+          "transactionId": "TXN0035",
+          "expiryDate": "2025-04-15"
+        }
+      ]
+    },
+    {
+      "id": "36",
+      "username": "UserKannan",
+      "mobileNumber": "9876510036",
+      "email": "user36@example.com",
+      "currentPlan": "MC-59",
+      "walletAmount": 38000,
+      "active": true,
+      "numberOfTransactions": 86,
+      "customerType": "MC-59",
+      "rechargeHistory": [
+        {
+          "date": "2025-01-27",
+          "amount": 499,
+          "paymentMode": "Credit Card",
+          "transactionId": "TXN0036",
+          "expiryDate": "2025-04-16"
+        }
+      ]
+    },
+    {
+      "id": "37",
+      "username": "UserLakshman",
+      "mobileNumber": "9876510037",
+      "email": "user37@example.com",
+      "currentPlan": "MC-359",
+      "walletAmount": 38500,
+      "active": false,
+      "numberOfTransactions": 87,
+      "customerType": "New",
+      "rechargeHistory": [
+        {
+          "date": "2025-01-27",
+          "amount": 499,
+          "paymentMode": "Credit Card",
+          "transactionId": "TXN0037",
+          "expiryDate": "2025-04-17"
+        }
+      ]
+    },
+    {
+      "id": "38",
+      "username": "UserManoj",
+      "mobileNumber": "9876510038",
+      "email": "user38@example.com",
+      "currentPlan": "MC-59",
+      "walletAmount": 39000,
+      "active": true,
+      "numberOfTransactions": 88,
+      "customerType": "MC-59",
+      "rechargeHistory": [
+        {
+          "date": "2025-01-27",
+          "amount": 499,
+          "paymentMode": "Credit Card",
+          "transactionId": "TXN0038",
+          "expiryDate": "2025-04-18"
+        }
+      ]
+    },
+    {
+      "id": "39",
+      "username": "UserNitin",
+      "mobileNumber": "9876510039",
+      "email": "user39@example.com",
+      "currentPlan": "MC-359",
+      "walletAmount": 39500,
+      "active": false,
+      "numberOfTransactions": 89,
+      "customerType": "New",
+      "rechargeHistory": [
+        {
+          "date": "2025-01-27",
+          "amount": 499,
+          "paymentMode": "Credit Card",
+          "transactionId": "TXN0039",
+          "expiryDate": "2025-04-19"
+        }
+      ]
+    },
+    {
+      "id": "40",
+      "username": "UserOviya",
+      "mobileNumber": "9876510040",
+      "email": "user40@example.com",
+      "currentPlan": "MC-59",
+      "walletAmount": 40000,
+      "active": true,
+      "numberOfTransactions": 90,
+      "customerType": "MC-59",
+      "rechargeHistory": [
+        {
+          "date": "2025-01-27",
+          "amount": 499,
+          "paymentMode": "Credit Card",
+          "transactionId": "TXN0040",
+          "expiryDate": "2025-04-10"
+        }
+      ]
+    },
+    {
+      "id": "41",
+      "username": "UserPraveen",
+      "mobileNumber": "9876510041",
+      "email": "user41@example.com",
+      "currentPlan": "MC-359",
+      "walletAmount": 40500,
+      "active": false,
+      "numberOfTransactions": 91,
+      "customerType": "New",
+      "rechargeHistory": [
+        {
+          "date": "2025-01-27",
+          "amount": 499,
+          "paymentMode": "Credit Card",
+          "transactionId": "TXN0041",
+          "expiryDate": "2025-04-11"
+        }
+      ]
+    },
+    {
+      "id": "42",
+      "username": "UserQasim",
+      "mobileNumber": "9876510042",
+      "email": "user42@example.com",
+      "currentPlan": "MC-59",
+      "walletAmount": 41000,
+      "active": true,
+      "numberOfTransactions": 92,
+      "customerType": "MC-59",
+      "rechargeHistory": [
+        {
+          "date": "2025-01-27",
+          "amount": 499,
+          "paymentMode": "Credit Card",
+          "transactionId": "TXN0042",
+          "expiryDate": "2025-04-12"
+        }
+      ]
+    },
+    {
+      "id": "43",
+      "username": "UserRajesh",
+      "mobileNumber": "9876510043",
+      "email": "user43@example.com",
+      "currentPlan": "MC-359",
+      "walletAmount": 41500,
+      "active": false,
+      "numberOfTransactions": 93,
+      "customerType": "New",
+      "rechargeHistory": [
+        {
+          "date": "2025-01-27",
+          "amount": 499,
+          "paymentMode": "Credit Card",
+          "transactionId": "TXN0043",
+          "expiryDate": "2025-04-13"
+        }
+      ]
+    },
+    {
+      "id": "44",
+      "username": "UserSundar",
+      "mobileNumber": "9876510044",
+      "email": "user44@example.com",
+      "currentPlan": "MC-59",
+      "walletAmount": 42000,
+      "active": true,
+      "numberOfTransactions": 94,
+      "customerType": "MC-59",
+      "rechargeHistory": [
+        {
+          "date": "2025-01-27",
+          "amount": 499,
+          "paymentMode": "Credit Card",
+          "transactionId": "TXN0044",
+          "expiryDate": "2025-04-14"
+        }
+      ]
+    },
+    {
+      "id": "45",
+      "username": "UserThiru",
+      "mobileNumber": "9876510045",
+      "email": "user45@example.com",
+      "currentPlan": "MC-359",
+      "walletAmount": 42500,
+      "active": false,
+      "numberOfTransactions": 95,
+      "customerType": "New",
+      "rechargeHistory": [
+        {
+          "date": "2025-01-27",
+          "amount": 499,
+          "paymentMode": "Credit Card",
+          "transactionId": "TXN0045",
+          "expiryDate": "2025-04-15"
+        }
+      ]
+    },
+    {
+      "id": "46",
+      "username": "UserUmesh",
+      "mobileNumber": "9876510046",
+      "email": "user46@example.com",
+      "currentPlan": "MC-59",
+      "walletAmount": 43000,
+      "active": true,
+      "numberOfTransactions": 96,
+      "customerType": "MC-59",
+      "rechargeHistory": [
+        {
+          "date": "2025-01-27",
+          "amount": 499,
+          "paymentMode": "Credit Card",
+          "transactionId": "TXN0046",
+          "expiryDate": "2025-04-16"
+        }
+      ]
+    },
+    {
+      "id": "47",
+      "username": "UserVasanth",
+      "mobileNumber": "9876510047",
+      "email": "user47@example.com",
+      "currentPlan": "MC-359",
+      "walletAmount": 43500,
+      "active": false,
+      "numberOfTransactions": 97,
+      "customerType": "New",
+      "rechargeHistory": [
+        {
+          "date": "2025-01-27",
+          "amount": 499,
+          "paymentMode": "Credit Card",
+          "transactionId": "TXN0047",
+          "expiryDate": "2025-04-17"
+        }
+      ]
+    },
+    {
+      "id": "48",
+      "username": "UserWilliam",
+      "mobileNumber": "9876510048",
+      "email": "user48@example.com",
+      "currentPlan": "MC-59",
+      "walletAmount": 44000,
+      "active": true,
+      "numberOfTransactions": 98,
+      "customerType": "MC-59",
+      "rechargeHistory": [
+        {
+          "date": "2025-01-27",
+          "amount": 499,
+          "paymentMode": "Credit Card",
+          "transactionId": "TXN0048",
+          "expiryDate": "2025-04-18"
+        }
+      ]
+    },
+    {
+      "id": "49",
+      "username": "UserYuvan",
+      "mobileNumber": "9876510049",
+      "email": "user49@example.com",
+      "currentPlan": "MC-359",
+      "walletAmount": 44500,
+      "active": false,
+      "numberOfTransactions": 99,
+      "customerType": "New",
+      "rechargeHistory": [
+        {
+          "date": "2025-01-27",
+          "amount": 499,
+          "paymentMode": "Credit Card",
+          "transactionId": "TXN0049",
+          "expiryDate": "2025-04-19"
+        }
+      ]
+    },
+    {
+      "id": "50",
+      "username": "UserArun",
+      "mobileNumber": "9876510050",
+      "email": "user50@example.com",
+      "currentPlan": "MC-59",
+      "walletAmount": 45000,
+      "active": true,
+      "numberOfTransactions": 100,
+      "customerType": "MC-59",
+      "rechargeHistory": [
+        {
+          "date": "2025-01-27",
+          "amount": 499,
+          "paymentMode": "Credit Card",
+          "transactionId": "TXN0050",
+          "expiryDate": "2025-04-10"
+        }
+      ]
+    },
+    {
+      "id": "51",
+      "username": "Ram",
+      "mobileNumber": "9876543251",
+      "email": "ram@example.com",
+      "currentPlan": "Mc-299",
+      "rechargeHistory": [
+        {
+          "expiryDate": "2025-02-28",
+          "amount": 299
+        }
+      ]
+    },
+    {
+      "id": "52",
+      "username": "Ravi",
+      "mobileNumber": "9876543252",
+      "email": "ravi@example.com",
+      "currentPlan": "Mc-399",
+      "rechargeHistory": [
+        {
+          "expiryDate": "2025-02-23",
+          "amount": 399
+        }
+      ]
+    },
+    {
+      "id": "53",
+      "username": "Siva",
+      "mobileNumber": "9876543253",
+      "email": "siva@example.com",
+      "currentPlan": "Mc-499",
+      "rechargeHistory": [
+        {
+          "expiryDate": "2025-02-27",
+          "amount": 499
+        }
+      ]
+    },
+    {
+      "id": "54",
+      "username": "Kumar",
+      "mobileNumber": "9876543254",
+      "email": "kumar@example.com",
+      "currentPlan": "Mc-599",
+      "rechargeHistory": [
+        {
+          "expiryDate": "2025-02-28",
+          "amount": 599
+        }
+      ]
+    },
+    {
+      "id": "55",
+      "username": "Arun",
+      "mobileNumber": "9876543255",
+      "email": "arun@example.com",
+      "currentPlan": "Mc-199",
+      "rechargeHistory": [
+        {
+          "expiryDate": "2025-02-23",
+          "amount": 199
+        }
+      ]
+    },
+    {
+      "id": "56",
+      "username": "Vijay",
+      "mobileNumber": "9876543256",
+      "email": "vijay@example.com",
+      "currentPlan": "Mc-299",
+      "rechargeHistory": [
+        {
+          "expiryDate": "2025-02-27",
+          "amount": 299
+        }
+      ]
+    },
+    {
+      "id": "57",
+      "username": "Raj",
+      "mobileNumber": "9876543257",
+      "email": "raj@example.com",
+      "currentPlan": "Mc-399",
+      "rechargeHistory": [
+        {
+          "expiryDate": "2025-02-28",
+          "amount": 399
+        }
+      ]
+    },
+    {
+      "id": "58",
+      "username": "Hari",
+      "mobileNumber": "9876543258",
+      "email": "hari@example.com",
+      "currentPlan": "Mc-499",
+      "rechargeHistory": [
+        {
+          "expiryDate": "2025-02-23",
+          "amount": 499
+        }
+      ]
+    },
+    {
+      "id": "59",
+      "username": "Surya",
+      "mobileNumber": "9876543259",
+      "email": "surya@example.com",
+      "currentPlan": "Mc-599",
+      "rechargeHistory": [
+        {
+          "expiryDate": "2025-02-27",
+          "amount": 599
+        }
+      ]
+    },
+    {
+      "id": "60",
+      "username": "Mohan",
+      "mobileNumber": "9876543260",
+      "email": "mohan@example.com",
+      "currentPlan": "Mc-199",
+      "rechargeHistory": [
+        {
+          "expiryDate": "2025-02-28",
+          "amount": 199
+        }
+      ]
+    },
+    {
+      "id": "61",
+      "username": "Deepak",
+      "mobileNumber": "9876543261",
+      "email": "deepak@example.com",
+      "currentPlan": "Mc-299",
+      "rechargeHistory": [
+        {
+          "expiryDate": "2025-02-23",
+          "amount": 299
+        }
+      ]
+    },
+    {
+      "id": "62",
+      "username": "Ganesh",
+      "mobileNumber": "9876543262",
+      "email": "ganesh@example.com",
+      "currentPlan": "Mc-399",
+      "rechargeHistory": [
+        {
+          "expiryDate": "2025-02-27",
+          "amount": 399
+        }
+      ]
+    },
+    {
+      "id": "63",
+      "username": "Sathish",
+      "mobileNumber": "9876543263",
+      "email": "sathish@example.com",
+      "currentPlan": "Mc-499",
+      "rechargeHistory": [
+        {
+          "expiryDate": "2025-02-28",
+          "amount": 499
+        }
+      ]
+    },
+    {
+      "id": "64",
+      "username": "Bala",
+      "mobileNumber": "9876543264",
+      "email": "bala@example.com",
+      "currentPlan": "Mc-599",
+      "rechargeHistory": [
+        {
+          "expiryDate": "2025-02-23",
+          "amount": 599
+        }
+      ]
+    },
+    {
+      "id": "65",
+      "username": "Ajay",
+      "mobileNumber": "9876543265",
+      "email": "ajay@example.com",
+      "currentPlan": "Mc-199",
+      "rechargeHistory": [
+        {
+          "expiryDate": "2025-02-27",
+          "amount": 199
+        }
+      ]
+    },
+    {
+      "id": "66",
+      "username": "Karthik",
+      "mobileNumber": "9876543266",
+      "email": "karthik@example.com",
+      "currentPlan": "Mc-299",
+      "rechargeHistory": [
+        {
+          "expiryDate": "2025-02-28",
+          "amount": 299
+        }
+      ]
+    },
+    {
+      "id": "70",
+      "username": "UserGopi",
+      "mobileNumber": "9876510070",
+      "email": "user70@example.com",
+      "currentPlan": "MC-399",
+      "walletAmount": 23000,
+      "active": false,
+      "numberOfTransactions": 3,
+      "customerType": "New",
+      "rechargeHistory": [
+        {
+          "date": "2025-02-15",
+          "amount": 399,
+          "paymentMode": "Debit Card",
+          "transactionId": "TXN070",
+          "expiryDate": "2025-02-28"
+        }
+      ]
+    },
+    {
+      "id": "71",
+      "username": "UserHari",
+      "mobileNumber": "9876510071",
+      "email": "user71@example.com",
+      "currentPlan": "MC-499",
+      "walletAmount": 23500,
+      "active": true,
+      "numberOfTransactions": 5,
+      "customerType": "MC-59",
+      "rechargeHistory": [
+        {
+          "date": "2025-02-16",
+          "amount": 499,
+          "paymentMode": "Credit Card",
+          "transactionId": "TXN071",
+          "expiryDate": "2025-02-23"
+        }
+      ]
+    },
+    {
+      "id": "72",
+      "username": "UserImran",
+      "mobileNumber": "9876510072",
+      "email": "user72@example.com",
+      "currentPlan": "MC-350",
+      "walletAmount": 24000,
+      "active": false,
+      "numberOfTransactions": 4,
+      "customerType": "New",
+      "rechargeHistory": [
+        {
+          "date": "2025-02-17",
+          "amount": 350,
+          "paymentMode": "UPI",
+          "transactionId": "TXN072",
+          "expiryDate": "2025-02-24"
+        }
+      ]
+    },
+    {
+      "id": "73",
+      "username": "UserJagan",
+      "mobileNumber": "9876510073",
+      "email": "user73@example.com",
+      "currentPlan": "MC-450",
+      "walletAmount": 24500,
+      "active": true,
+      "numberOfTransactions": 3,
+      "customerType": "MC-59",
+      "rechargeHistory": [
+        {
+          "date": "2025-02-18",
+          "amount": 450,
+          "paymentMode": "Net Banking",
+          "transactionId": "TXN073",
+          "expiryDate": "2025-02-28"
+        }
+      ]
+    },
+    {
+      "id": "74",
+      "username": "UserKiran",
+      "mobileNumber": "9876510074",
+      "email": "user74@example.com",
+      "currentPlan": "MC-499",
+      "walletAmount": 25000,
+      "active": false,
+      "numberOfTransactions": 5,
+      "customerType": "New",
+      "rechargeHistory": [
+        {
+          "date": "2025-02-19",
+          "amount": 499,
+          "paymentMode": "Credit Card",
+          "transactionId": "TXN074",
+          "expiryDate": "2025-02-26"
+        }
+      ]
+    },
+    {
+      "id": "102",
+      "username": "User2",
+      "mobileNumber": "987651002",
+      "email": "user2@example.com",
+      "currentPlan": "MC-59",
+      "walletAmount": 22000,
+      "active": true,
+      "numberOfTransactions": 54,
+      "customerType": "MC-59",
+      "rechargeHistory": [
+        {
+          "date": "2025-02-03",
+          "amount": 999,
+          "paymentMode": "Credit Card",
+          "transactionId": "TXN102",
+          "expiryDate": "2025-05-03"
+        }
+      ]
+    },
+    {
+      "id": "103",
+      "username": "User3",
+      "mobileNumber": "987651003",
+      "email": "user3@example.com",
+      "currentPlan": "MC-359",
+      "walletAmount": 23000,
+      "active": true,
+      "numberOfTransactions": 56,
+      "customerType": "New",
+      "rechargeHistory": [
+        {
+          "date": "2025-02-04",
+          "amount": 499,
+          "paymentMode": "UPI",
+          "transactionId": "TXN103",
+          "expiryDate": "2025-05-04"
+        }
+      ]
+    },
+    {
+      "id": "104",
+      "username": "User4",
+      "mobileNumber": "987651004",
+      "email": "user4@example.com",
+      "currentPlan": "MC-59",
+      "walletAmount": 24000,
+      "active": true,
+      "numberOfTransactions": 58,
+      "customerType": "MC-59",
+      "rechargeHistory": [
+        {
+          "date": "2025-02-05",
+          "amount": 999,
+          "paymentMode": "Credit Card",
+          "transactionId": "TXN104",
+          "expiryDate": "2025-05-05"
+        }
+      ]
+    },
+    {
+      "id": "105",
+      "username": "User5",
+      "mobileNumber": "987651005",
+      "email": "user5@example.com",
+      "currentPlan": "MC-359",
+      "walletAmount": 25000,
+      "active": false,
+      "numberOfTransactions": 60,
+      "customerType": "New",
+      "rechargeHistory": [
+        {
+          "date": "2025-02-06",
+          "amount": 499,
+          "paymentMode": "Credit Card",
+          "transactionId": "TXN105",
+          "expiryDate": "2025-05-06"
+        }
+      ]
+    },
+    {
+      "id": "106",
+      "username": "User6",
+      "mobileNumber": "987651006",
+      "email": "user6@example.com",
+      "currentPlan": "MC-59",
+      "walletAmount": 26000,
+      "active": true,
+      "numberOfTransactions": 62,
+      "customerType": "MC-59",
+      "rechargeHistory": [
+        {
+          "date": "2025-02-07",
+          "amount": 999,
+          "paymentMode": "UPI",
+          "transactionId": "TXN106",
+          "expiryDate": "2025-05-07"
+        }
+      ]
+    },
+    {
+      "id": "107",
+      "username": "User7",
+      "mobileNumber": "987651007",
+      "email": "user7@example.com",
+      "currentPlan": "MC-359",
+      "walletAmount": 27000,
+      "active": true,
+      "numberOfTransactions": 64,
+      "customerType": "New",
+      "rechargeHistory": [
+        {
+          "date": "2025-02-08",
+          "amount": 499,
+          "paymentMode": "Credit Card",
+          "transactionId": "TXN107",
+          "expiryDate": "2025-05-08"
+        }
+      ]
+    },
+    {
+      "id": "108",
+      "username": "User8",
+      "mobileNumber": "987651008",
+      "email": "user8@example.com",
+      "currentPlan": "MC-59",
+      "walletAmount": 28000,
+      "active": true,
+      "numberOfTransactions": 66,
+      "customerType": "MC-59",
+      "rechargeHistory": [
+        {
+          "date": "2025-02-09",
+          "amount": 999,
+          "paymentMode": "Credit Card",
+          "transactionId": "TXN108",
+          "expiryDate": "2025-05-09"
+        }
+      ]
+    },
+    {
+      "id": "109",
+      "username": "User9",
+      "mobileNumber": "987651009",
+      "email": "user9@example.com",
+      "currentPlan": "MC-359",
+      "walletAmount": 29000,
+      "active": true,
+      "numberOfTransactions": 68,
+      "customerType": "New",
+      "rechargeHistory": [
+        {
+          "date": "2025-02-10",
+          "amount": 499,
+          "paymentMode": "UPI",
+          "transactionId": "TXN109",
+          "expiryDate": "2025-05-10"
+        }
+      ]
+    },
+    {
+      "id": "110",
+      "username": "User10",
+      "mobileNumber": "987651010",
+      "email": "user10@example.com",
+      "currentPlan": "MC-59",
+      "walletAmount": 30000,
+      "active": false,
+      "numberOfTransactions": 70,
+      "customerType": "MC-59",
+      "rechargeHistory": [
+        {
+          "date": "2025-02-11",
+          "amount": 999,
+          "paymentMode": "Credit Card",
+          "transactionId": "TXN110",
+          "expiryDate": "2025-05-11"
+        }
+      ]
+    },
+    {
+      "id": "111",
+      "username": "User11",
+      "mobileNumber": "987651011",
+      "email": "user11@example.com",
+      "currentPlan": "MC-359",
+      "walletAmount": 31000,
+      "active": true,
+      "numberOfTransactions": 72,
+      "customerType": "New",
+      "rechargeHistory": [
+        {
+          "date": "2025-02-12",
+          "amount": 499,
+          "paymentMode": "Credit Card",
+          "transactionId": "TXN111",
+          "expiryDate": "2025-05-12"
+        }
+      ]
+    },
+    {
+      "id": "112",
+      "username": "User12",
+      "mobileNumber": "987651012",
+      "email": "user12@example.com",
+      "currentPlan": "MC-59",
+      "walletAmount": 32000,
+      "active": true,
+      "numberOfTransactions": 74,
+      "customerType": "MC-59",
+      "rechargeHistory": [
+        {
+          "date": "2025-02-13",
+          "amount": 999,
+          "paymentMode": "UPI",
+          "transactionId": "TXN112",
+          "expiryDate": "2025-05-13"
+        }
+      ]
+    },
+    {
+      "id": "113",
+      "username": "User13",
+      "mobileNumber": "987651013",
+      "email": "user13@example.com",
+      "currentPlan": "MC-359",
+      "walletAmount": 33000,
+      "active": true,
+      "numberOfTransactions": 76,
+      "customerType": "New",
+      "rechargeHistory": [
+        {
+          "date": "2025-02-14",
+          "amount": 499,
+          "paymentMode": "Credit Card",
+          "transactionId": "TXN113",
+          "expiryDate": "2025-05-14"
+        }
+      ]
+    },
+    {
+      "id": "114",
+      "username": "User14",
+      "mobileNumber": "987651014",
+      "email": "user14@example.com",
+      "currentPlan": "MC-59",
+      "walletAmount": 34000,
+      "active": true,
+      "numberOfTransactions": 78,
+      "customerType": "MC-59",
+      "rechargeHistory": [
+        {
+          "date": "2025-02-15",
+          "amount": 999,
+          "paymentMode": "Credit Card",
+          "transactionId": "TXN114",
+          "expiryDate": "2025-05-15"
+        }
+      ]
+    },
+    {
+      "id": "115",
+      "username": "User15",
+      "mobileNumber": "987651015",
+      "email": "user15@example.com",
+      "currentPlan": "MC-359",
+      "walletAmount": 35000,
+      "active": false,
+      "numberOfTransactions": 80,
+      "customerType": "New",
+      "rechargeHistory": [
+        {
+          "date": "2025-02-16",
+          "amount": 499,
+          "paymentMode": "UPI",
+          "transactionId": "TXN115",
+          "expiryDate": "2025-05-16"
+        }
+      ]
+    },
+    {
+      "id": "116",
+      "username": "User16",
+      "mobileNumber": "987651016",
+      "email": "user16@example.com",
+      "currentPlan": "MC-59",
+      "walletAmount": 36000,
+      "active": true,
+      "numberOfTransactions": 82,
+      "customerType": "MC-59",
+      "rechargeHistory": [
+        {
+          "date": "2025-02-17",
+          "amount": 999,
+          "paymentMode": "Credit Card",
+          "transactionId": "TXN116",
+          "expiryDate": "2025-05-17"
+        }
+      ]
+    },
+    {
+      "id": "117",
+      "username": "User17",
+      "mobileNumber": "987651017",
+      "email": "user17@example.com",
+      "currentPlan": "MC-359",
+      "walletAmount": 37000,
+      "active": true,
+      "numberOfTransactions": 84,
+      "customerType": "New",
+      "rechargeHistory": [
+        {
+          "date": "2025-02-18",
+          "amount": 499,
+          "paymentMode": "Credit Card",
+          "transactionId": "TXN117",
+          "expiryDate": "2025-05-18"
+        }
+      ]
+    },
+    {
+      "id": "118",
+      "username": "User18",
+      "mobileNumber": "987651018",
+      "email": "user18@example.com",
+      "currentPlan": "MC-59",
+      "walletAmount": 38000,
+      "active": true,
+      "numberOfTransactions": 86,
+      "customerType": "MC-59",
+      "rechargeHistory": [
+        {
+          "date": "2025-02-19",
+          "amount": 999,
+          "paymentMode": "UPI",
+          "transactionId": "TXN118",
+          "expiryDate": "2025-05-19"
+        }
+      ]
+    },
+    {
+      "id": "119",
+      "username": "User19",
+      "mobileNumber": "987651019",
+      "email": "user19@example.com",
+      "currentPlan": "MC-359",
+      "walletAmount": 39000,
+      "active": true,
+      "numberOfTransactions": 88,
+      "customerType": "New",
+      "rechargeHistory": [
+        {
+          "date": "2025-02-20",
+          "amount": 499,
+          "paymentMode": "Credit Card",
+          "transactionId": "TXN119",
+          "expiryDate": "2025-05-20"
+        }
+      ]
+    },
+    {
+      "id": "120",
+      "username": "User20",
+      "mobileNumber": "987651020",
+      "email": "user20@example.com",
+      "currentPlan": "MC-59",
+      "walletAmount": 40000,
+      "active": false,
+      "numberOfTransactions": 90,
+      "customerType": "MC-59",
+      "rechargeHistory": [
+        {
+          "date": "2025-02-27",
+          "amount": 999,
+          "paymentMode": "Credit Card",
+          "transactionId": "TXN120",
+          "expiryDate": "2025-05-27"
+        }
+      ]
+    },
+    {
+      "id": "121",
+      "username": "User21",
+      "mobileNumber": "987651021",
+      "email": "user21@example.com",
+      "currentPlan": "MC-359",
+      "walletAmount": 41000,
+      "active": true,
+      "numberOfTransactions": 92,
+      "customerType": "New",
+      "rechargeHistory": [
+        {
+          "date": "2025-02-28",
+          "amount": 499,
+          "paymentMode": "UPI",
+          "transactionId": "TXN121",
+          "expiryDate": "2025-05-25"
+        }
+      ]
+    },
+    {
+      "id": "122",
+      "username": "User22",
+      "mobileNumber": "987651022",
+      "email": "user22@example.com",
+      "currentPlan": "MC-59",
+      "walletAmount": 42000,
+      "active": true,
+      "numberOfTransactions": 94,
+      "customerType": "MC-59",
+      "rechargeHistory": [
+        {
+          "date": "2025-02-23",
+          "amount": 999,
+          "paymentMode": "Credit Card",
+          "transactionId": "TXN122",
+          "expiryDate": "2025-05-23"
+        }
+      ]
+    },
+    {
+      "id": "123",
+      "username": "User23",
+      "mobileNumber": "987651023",
+      "email": "user23@example.com",
+      "currentPlan": "MC-359",
+      "walletAmount": 43000,
+      "active": true,
+      "numberOfTransactions": 96,
+      "customerType": "New",
+      "rechargeHistory": [
+        {
+          "date": "2025-02-24",
+          "amount": 499,
+          "paymentMode": "Credit Card",
+          "transactionId": "TXN123",
+          "expiryDate": "2025-05-24"
+        }
+      ]
+    },
+    {
+      "id": "124",
+      "username": "User24",
+      "mobileNumber": "987651024",
+      "email": "user24@example.com",
+      "currentPlan": "MC-59",
+      "walletAmount": 44000,
+      "active": true,
+      "numberOfTransactions": 98,
+      "customerType": "MC-59",
+      "rechargeHistory": [
+        {
+          "date": "2025-02-28",
+          "amount": 999,
+          "paymentMode": "UPI",
+          "transactionId": "TXN124",
+          "expiryDate": "2025-05-25"
+        }
+      ]
+    },
+    {
+      "id": "125",
+      "username": "User25",
+      "mobileNumber": "987651025",
+      "email": "user25@example.com",
+      "currentPlan": "MC-359",
+      "walletAmount": 45000,
+      "active": false,
+      "numberOfTransactions": 100,
+      "customerType": "New",
+      "rechargeHistory": [
+        {
+          "date": "2025-02-26",
+          "amount": 499,
+          "paymentMode": "Credit Card",
+          "transactionId": "TXN125",
+          "expiryDate": "2025-05-26"
+        }
+      ]
+    },
+    {
+      "id": "126",
+      "username": "User26",
+      "mobileNumber": "987651026",
+      "email": "user26@example.com",
+      "currentPlan": "MC-59",
+      "walletAmount": 46000,
+      "active": true,
+      "numberOfTransactions": 102,
+      "customerType": "MC-59",
+      "rechargeHistory": [
+        {
+          "date": "2025-02-27",
+          "amount": 999,
+          "paymentMode": "Credit Card",
+          "transactionId": "TXN126",
+          "expiryDate": "2025-05-27"
+        }
+      ]
+    },
+    {
+      "id": "127",
+      "username": "User27",
+      "mobileNumber": "987651027",
+      "email": "user27@example.com",
+      "currentPlan": "MC-359",
+      "walletAmount": 47000,
+      "active": true,
+      "numberOfTransactions": 104,
+      "customerType": "New",
+      "rechargeHistory": [
+        {
+          "date": "2025-02-28",
+          "amount": 499,
+          "paymentMode": "UPI",
+          "transactionId": "TXN127",
+          "expiryDate": "2025-05-28"
+        }
+      ]
+    },
+    {
+      "id": "128",
+      "username": "User28",
+      "mobileNumber": "987651028",
+      "email": "user28@example.com",
+      "currentPlan": "MC-59",
+      "walletAmount": 48000,
+      "active": true,
+      "numberOfTransactions": 106,
+      "customerType": "MC-59",
+      "rechargeHistory": [
+        {
+          "date": "2025-02-01",
+          "amount": 999,
+          "paymentMode": "Credit Card",
+          "transactionId": "TXN128",
+          "expiryDate": "2025-05-01"
+        }
+      ]
+    },
+    {
+      "id": "129",
+      "username": "User29",
+      "mobileNumber": "987651029",
+      "email": "user29@example.com",
+      "currentPlan": "MC-359",
+      "walletAmount": 49000,
+      "active": true,
+      "numberOfTransactions": 108,
+      "customerType": "New",
+      "rechargeHistory": [
+        {
+          "date": "2025-02-02",
+          "amount": 499,
+          "paymentMode": "Credit Card",
+          "transactionId": "TXN129",
+          "expiryDate": "2025-05-02"
+        }
+      ]
+    },
+    {
+      "id": "130",
+      "username": "User30",
+      "mobileNumber": "987651030",
+      "email": "user30@example.com",
+      "currentPlan": "MC-59",
+      "walletAmount": 50000,
+      "active": false,
+      "numberOfTransactions": 110,
+      "customerType": "MC-59",
+      "rechargeHistory": [
+        {
+          "date": "2025-02-03",
+          "amount": 999,
+          "paymentMode": "UPI",
+          "transactionId": "TXN130",
+          "expiryDate": "2025-05-03"
+        }
+      ]
+    },
+    {
+      "id": "131",
+      "username": "User31",
+      "mobileNumber": "987651031",
+      "email": "user31@example.com",
+      "currentPlan": "MC-359",
+      "walletAmount": 51000,
+      "active": true,
+      "numberOfTransactions": 112,
+      "customerType": "New",
+      "rechargeHistory": [
+        {
+          "date": "2025-02-04",
+          "amount": 499,
+          "paymentMode": "Credit Card",
+          "transactionId": "TXN131",
+          "expiryDate": "2025-05-04"
+        }
+      ]
+    },
+    {
+      "id": "132",
+      "username": "User32",
+      "mobileNumber": "987651032",
+      "email": "user32@example.com",
+      "currentPlan": "MC-59",
+      "walletAmount": 52000,
+      "active": true,
+      "numberOfTransactions": 114,
+      "customerType": "MC-59",
+      "rechargeHistory": [
+        {
+          "date": "2025-02-05",
+          "amount": 999,
+          "paymentMode": "Credit Card",
+          "transactionId": "TXN132",
+          "expiryDate": "2025-05-05"
+        }
+      ]
+    },
+    {
+      "id": "133",
+      "username": "User33",
+      "mobileNumber": "987651033",
+      "email": "user33@example.com",
+      "currentPlan": "MC-359",
+      "walletAmount": 53000,
+      "active": true,
+      "numberOfTransactions": 116,
+      "customerType": "New",
+      "rechargeHistory": [
+        {
+          "date": "2025-02-06",
+          "amount": 499,
+          "paymentMode": "UPI",
+          "transactionId": "TXN133",
+          "expiryDate": "2025-05-06"
+        }
+      ]
+    },
+    {
+      "id": "134",
+      "username": "User34",
+      "mobileNumber": "987651034",
+      "email": "user34@example.com",
+      "currentPlan": "MC-59",
+      "walletAmount": 54000,
+      "active": true,
+      "numberOfTransactions": 118,
+      "customerType": "MC-59",
+      "rechargeHistory": [
+        {
+          "date": "2025-02-07",
+          "amount": 999,
+          "paymentMode": "Credit Card",
+          "transactionId": "TXN134",
+          "expiryDate": "2025-05-07"
+        }
+      ]
+    },
+    {
+      "id": "135",
+      "username": "User35",
+      "mobileNumber": "987651035",
+      "email": "user35@example.com",
+      "currentPlan": "MC-359",
+      "walletAmount": 55000,
+      "active": false,
+      "numberOfTransactions": 120,
+      "customerType": "New",
+      "rechargeHistory": [
+        {
+          "date": "2025-02-08",
+          "amount": 499,
+          "paymentMode": "Credit Card",
+          "transactionId": "TXN135",
+          "expiryDate": "2025-05-08"
+        }
+      ]
+    },
+    {
+      "id": "136",
+      "username": "User36",
+      "mobileNumber": "987651036",
+      "email": "user36@example.com",
+      "currentPlan": "MC-59",
+      "walletAmount": 56000,
+      "active": true,
+      "numberOfTransactions": 122,
+      "customerType": "MC-59",
+      "rechargeHistory": [
+        {
+          "date": "2025-02-09",
+          "amount": 999,
+          "paymentMode": "UPI",
+          "transactionId": "TXN136",
+          "expiryDate": "2025-05-09"
+        }
+      ]
+    },
+    {
+      "id": "137",
+      "username": "User37",
+      "mobileNumber": "987651037",
+      "email": "user37@example.com",
+      "currentPlan": "MC-359",
+      "walletAmount": 57000,
+      "active": true,
+      "numberOfTransactions": 124,
+      "customerType": "New",
+      "rechargeHistory": [
+        {
+          "date": "2025-02-10",
+          "amount": 499,
+          "paymentMode": "Credit Card",
+          "transactionId": "TXN137",
+          "expiryDate": "2025-05-10"
+        }
+      ]
+    },
+    {
+      "id": "138",
+      "username": "User38",
+      "mobileNumber": "987651038",
+      "email": "user38@example.com",
+      "currentPlan": "MC-59",
+      "walletAmount": 58000,
+      "active": true,
+      "numberOfTransactions": 126,
+      "customerType": "MC-59",
+      "rechargeHistory": [
+        {
+          "date": "2025-02-11",
+          "amount": 999,
+          "paymentMode": "Credit Card",
+          "transactionId": "TXN138",
+          "expiryDate": "2025-05-11"
+        }
+      ]
+    },
+    {
+      "id": "139",
+      "username": "User39",
+      "mobileNumber": "987651039",
+      "email": "user39@example.com",
+      "currentPlan": "MC-359",
+      "walletAmount": 59000,
+      "active": true,
+      "numberOfTransactions": 128,
+      "customerType": "New",
+      "rechargeHistory": [
+        {
+          "date": "2025-02-12",
+          "amount": 499,
+          "paymentMode": "UPI",
+          "transactionId": "TXN139",
+          "expiryDate": "2025-05-12"
+        }
+      ]
+    },
+    {
+      "id": "140",
+      "username": "User40",
+      "mobileNumber": "987651040",
+      "email": "user40@example.com",
+      "currentPlan": "MC-59",
+      "walletAmount": 60000,
+      "active": false,
+      "numberOfTransactions": 130,
+      "customerType": "MC-59",
+      "rechargeHistory": [
+        {
+          "date": "2025-02-13",
+          "amount": 999,
+          "paymentMode": "Credit Card",
+          "transactionId": "TXN140",
+          "expiryDate": "2025-05-13"
+        }
+      ]
+    },
+    {
+      "id": "141",
+      "username": "User41",
+      "mobileNumber": "987651041",
+      "email": "user41@example.com",
+      "currentPlan": "MC-359",
+      "walletAmount": 61000,
+      "active": true,
+      "numberOfTransactions": 132,
+      "customerType": "New",
+      "rechargeHistory": [
+        {
+          "date": "2025-02-14",
+          "amount": 499,
+          "paymentMode": "Credit Card",
+          "transactionId": "TXN141",
+          "expiryDate": "2025-05-14"
+        }
+      ]
+    },
+    {
+      "id": "142",
+      "username": "User42",
+      "mobileNumber": "987651042",
+      "email": "user42@example.com",
+      "currentPlan": "MC-59",
+      "walletAmount": 62000,
+      "active": true,
+      "numberOfTransactions": 134,
+      "customerType": "MC-59",
+      "rechargeHistory": [
+        {
+          "date": "2025-02-15",
+          "amount": 999,
+          "paymentMode": "UPI",
+          "transactionId": "TXN142",
+          "expiryDate": "2025-05-15"
+        }
+      ]
+    },
+    {
+      "id": "143",
+      "username": "User43",
+      "mobileNumber": "987651043",
+      "email": "user43@example.com",
+      "currentPlan": "MC-359",
+      "walletAmount": 63000,
+      "active": true,
+      "numberOfTransactions": 136,
+      "customerType": "New",
+      "rechargeHistory": [
+        {
+          "date": "2025-02-16",
+          "amount": 499,
+          "paymentMode": "Credit Card",
+          "transactionId": "TXN143",
+          "expiryDate": "2025-05-16"
+        }
+      ]
+    },
+    {
+      "id": "144",
+      "username": "User44",
+      "mobileNumber": "987651044",
+      "email": "user44@example.com",
+      "currentPlan": "MC-59",
+      "walletAmount": 64000,
+      "active": true,
+      "numberOfTransactions": 138,
+      "customerType": "MC-59",
+      "rechargeHistory": [
+        {
+          "date": "2025-02-17",
+          "amount": 999,
+          "paymentMode": "Credit Card",
+          "transactionId": "TXN144",
+          "expiryDate": "2025-05-17"
+        }
+      ]
+    },
+    {
+      "id": "145",
+      "username": "User45",
+      "mobileNumber": "987651045",
+      "email": "user45@example.com",
+      "currentPlan": "MC-359",
+      "walletAmount": 65000,
+      "active": false,
+      "numberOfTransactions": 140,
+      "customerType": "New",
+      "rechargeHistory": [
+        {
+          "date": "2025-02-18",
+          "amount": 499,
+          "paymentMode": "UPI",
+          "transactionId": "TXN145",
+          "expiryDate": "2025-05-18"
+        }
+      ]
+    },
+    {
+      "id": "146",
+      "username": "User46",
+      "mobileNumber": "987651046",
+      "email": "user46@example.com",
+      "currentPlan": "MC-59",
+      "walletAmount": 66000,
+      "active": true,
+      "numberOfTransactions": 142,
+      "customerType": "MC-59",
+      "rechargeHistory": [
+        {
+          "date": "2025-02-19",
+          "amount": 999,
+          "paymentMode": "Credit Card",
+          "transactionId": "TXN146",
+          "expiryDate": "2025-05-19"
+        }
+      ]
+    },
+    {
+      "id": "147",
+      "username": "User47",
+      "mobileNumber": "987651047",
+      "email": "user47@example.com",
+      "currentPlan": "MC-359",
+      "walletAmount": 67000,
+      "active": true,
+      "numberOfTransactions": 144,
+      "customerType": "New",
+      "rechargeHistory": [
+        {
+          "date": "2025-02-20",
+          "amount": 499,
+          "paymentMode": "Credit Card",
+          "transactionId": "TXN147",
+          "expiryDate": "2025-05-20"
+        }
+      ]
+    },
+    {
+      "id": "148",
+      "username": "User48",
+      "mobileNumber": "987651048",
+      "email": "user48@example.com",
+      "currentPlan": "MC-59",
+      "walletAmount": 68000,
+      "active": true,
+      "numberOfTransactions": 146,
+      "customerType": "MC-59",
+      "rechargeHistory": [
+        {
+          "date": "2025-02-27",
+          "amount": 999,
+          "paymentMode": "UPI",
+          "transactionId": "TXN148",
+          "expiryDate": "2025-05-21"
+        }
+      ]
+    },
+    {
+      "id": "149",
+      "username": "User49",
+      "mobileNumber": "987651049",
+      "email": "user49@example.com",
+      "currentPlan": "MC-359",
+      "walletAmount": 69000,
+      "active": true,
+      "numberOfTransactions": 148,
+      "customerType": "New",
+      "rechargeHistory": [
+        {
+          "date": "2025-02-28",
+          "amount": 499,
+          "paymentMode": "Credit Card",
+          "transactionId": "TXN149",
+          "expiryDate": "2025-05-25"
+        }
+      ]
+    },
+    {
+      "id": "150",
+      "username": "User50",
+      "mobileNumber": "987651050",
+      "email": "user50@example.com",
+      "currentPlan": "MC-59",
+      "walletAmount": 70000,
+      "active": false,
+      "numberOfTransactions": 150,
+      "customerType": "MC-59",
+      "rechargeHistory": [
+        {
+          "date": "2025-02-23",
+          "amount": 999,
+          "paymentMode": "Credit Card",
+          "transactionId": "TXN150",
+          "expiryDate": "2025-05-23"
+        }
+      ]
+    }
+  ],
+  "ott": [
+    {
+      "label": "Gaming & Streaming",
+      "plan_name": "Gaming & Streaming",
+      "plan_code": "MC-549",
+      "price": "₹549/month",
+      "validity": "30 Days",
+      "features": [
+        "3GB data/day",
+        "200GB data Roll Over",
+        "OTT Access"
+      ],
+      "id": "37fc"
+    },
+    {
+      "label": "Half-Yearly Special",
+      "plan_name": "Half-Yearly Special",
+      "plan_code": "MC-2499",
+      "price": "₹2499/6 Months",
+      "validity": "180 Days",
+      "features": [
+        "3GB data/day",
+        "500GB data Roll Over",
+        "MC-59 Music & OTT"
+      ],
+      "id": "2725"
+    },
+    {
+      "label": "Family Pack",
+      "plan_name": "Family Pack",
+      "plan_code": "MC-5999",
+      "price": "₹5999/Year",
+      "validity": "365 Days",
+      "features": [
+        "5GB data/day (Shared)",
+        "1TB Data Roll Over",
+        "Netflix & Prime"
+      ],
+      "id": "c4bf"
+    },
+    {
+      "label": "Super OTT Plan",
+      "plan_name": "Super OTT Plan",
+      "plan_code": "MC-799",
+      "price": "₹799/Month",
+      "validity": "30 Days",
+      "features": [
+        "2GB data/day",
+        "250GB Data Roll Over",
+        "Disney+ jiohotstar & Prime Video"
+      ],
+      "id": "df03"
+    },
+    {
+      "label": "Ultra Streaming",
+      "plan_name": "Ultra Streaming",
+      "plan_code": "MC-999",
+      "price": "₹999/Month",
+      "validity": "30 Days",
+      "features": [
+        "3.5GB data/day",
+        "Unlimited Data Roll Over",
+        "Netflix & Amazon Prime"
+      ],
+      "id": "d7a1"
+    },
+    {
+      "label": "OTT Platinum",
+      "plan_name": "OTT Platinum",
+      "plan_code": "MC-1499",
+      "price": "₹1499/Month",
+      "validity": "30 Days",
+      "features": [
+        "5GB data/day",
+        "500GB Data Roll Over",
+        "Netflix, Prime, Disney+ jiohotstar"
+      ],
+      "id": "6c28"
+    },
+    {
+      "label": "OTT MC-59 Max",
+      "plan_name": "OTT MC-59 Max",
+      "plan_code": "MC-1999",
+      "price": "₹1999/Month",
+      "validity": "30 Days",
+      "features": [
+        "6GB data/day",
+        "Unlimited Data Roll Over",
+        "Netflix, Prime, jiohotstar, Zee5, SonyLIV"
+      ],
+      "id": "53b7"
+    },
+    {
+      "label": "Ultimate OTT Pack",
+      "plan_name": "Ultimate OTT Pack",
+      "plan_code": "MC-2999",
+      "price": "₹2999/3 Months",
+      "validity": "90 Days",
+      "features": [
+        "8GB data/day",
+        "1.5TB Data Roll Over",
+        "Netflix, Prime, Disney+, SonyLIV, Voot, Zee5"
+      ],
+      "id": "d1fc"
+    },
+    {
+      "label": "OTT Elite Annual",
+      "plan_name": "OTT Elite Annual",
+      "plan_code": "MC-4999",
+      "price": "₹4999/Year",
+      "validity": "365 Days",
+      "features": [
+        "10GB data/day",
+        "2TB Data Roll Over",
+        "All OTT Platforms + Gaming Perks"
+      ],
+      "id": "4800"
+    }
+  ],
+  "recommended": [
+    {
+      "plan_name": "MC - 451",
+      "price": "₹451/month",
+      "validity": "30 Days",
+      "features": [
+        "Unlimited Calls (Local, STD, National Roaming)",
+        "50GB Data+ Unlimited Night Data",
+        "200GB data Roll Over",
+        "2500 SMS/Month (STD)"
+      ],
+      "label": "Recommended",
+      "badge": "src/images/best-seller-banner_175838-470-removebg-preview.png",
+      "hidden": true,
+      "id": "74b8"
+    },
+    {
+      "label": "Best Seller",
+      "plan_name": "MC - 299",
+      "plan_code": "MC-299",
+      "price": "₹299/month",
+      "validity": "30 Days",
+      "features": [
+        "Unlimited Calls (Local, STD, Roaming)",
+        "30GB data + Weekend Bonus",
+        "100GB data Roll Over",
+        "2000 SMS/Month"
+      ],
+      "id": "8f50",
+      "hidden": false
+    },
+    {
+      "label": "Most Popular",
+      "plan_name": "MC - 499",
+      "plan_code": "MC-499",
+      "price": "₹499/month",
+      "validity": "30 Days",
+      "features": [
+        "Unlimited Calls (Local, STD, Roaming)",
+        "70GB Data+ Unlimited Night Data",
+        "200GB data Roll Over",
+        "3000 SMS/Month"
+      ],
+      "id": "f8eb",
+      "hidden": false
+    },
+    {
+      "label": "Budget Choice",
+      "plan_name": "MC - 199",
+      "plan_code": "MC-199",
+      "price": "₹199/month",
+      "validity": "30 Days",
+      "features": [
+        "Unlimited Calls",
+        "15GB data",
+        "50GB data Roll Over",
+        "1000 SMS/Month"
+      ],
+      "id": "5be6"
+    },
+    {
+      "label": "MC-59",
+      "plan_name": "MC - 799",
+      "plan_code": "MC-799",
+      "price": "₹799/month",
+      "validity": "30 Days",
+      "features": [
+        "Unlimited Calls",
+        "100GB Data+ Unlimited Night Data",
+        "300GB data Roll Over",
+        "5000 SMS/Month"
+      ],
+      "id": "b7d9"
+    },
+    {
+      "label": "Family Pack",
+      "plan_name": "MC - 999",
+      "plan_code": "MC-999",
+      "price": "₹999/month",
+      "validity": "30 Days",
+      "features": [
+        "Unlimited Calls",
+        "150GB data",
+        "400GB data Roll Over",
+        "6000 SMS/Month"
+      ],
+      "id": "82fa"
+    },
+    {
+      "label": "Annual Super Saver",
+      "plan_name": "MC - 5999",
+      "plan_code": "MC-5999",
+      "price": "₹5999/year",
+      "validity": "365 Days",
+      "features": [
+        "Unlimited Calls",
+        "1TB Data Per Year",
+        "Data Roll Over Unlimited",
+        "50,000 SMS/Year"
+      ],
+      "id": "3e6a"
+    },
+    {
+      "label": "Weekend Bonus",
+      "plan_name": "MC - 649",
+      "plan_code": "MC-649",
+      "price": "₹649/month",
+      "validity": "30 Days",
+      "features": [
+        "Unlimited Calls",
+        "90GB data + Weekend Bonus",
+        "250GB data Roll Over",
+        "4000 SMS/Month"
+      ],
+      "id": "02be",
+      "hidden": false
+    },
+    {
+      "label": "Student Special",
+      "plan_name": "MC - 399",
+      "plan_code": "MC-399",
+      "price": "₹399/month",
+      "validity": "30 Days",
+      "features": [
+        "Unlimited Calls",
+        "60GB data",
+        "150GB data Roll Over",
+        "2500 SMS/Month"
+      ],
+      "id": "862e"
+    },
+    {
+      "label": "Business Pro",
+      "plan_name": "MC - 1299",
+      "plan_code": "MC-1299",
+      "price": "₹1299/month",
+      "validity": "30 Days",
+      "features": [
+        "Unlimited Calls",
+        "200GB data",
+        "500GB data Roll Over",
+        "8000 SMS/Month"
+      ],
+      "id": "760e"
+    },
+    {
+      "label": "Speed Boost Pack",
+      "plan_name": "MC - 999",
+      "plan_code": "MC-999",
+      "price": "₹999/Month",
+      "validity": "30 Days",
+      "features": [
+        "Unlimited 5G Data + 200GB Data Ultra-Fast Speed",
+        "Max Speed: 3Gbps"
+      ],
+      "id": "e3c6"
+    },
+    {
+      "plan_name": "Gaming and Streaming",
+      "price": "₹1000/month",
+      "validity": "30 Days",
+      "features": [
+        "Unlimited 5g data",
+        "Free Xbox code for 1 month"
+      ],
+      "id": "c0d1",
+      "hidden": false
+    },
+    {
+      "plan_name": "Macha summa irra",
+      "price": "₹1000/month",
+      "validity": "30 Days",
+      "features": [
+        "Feature 1",
+        "Feature 2"
+      ],
+      "id": "f806"
+    },
+    {
+      "id": "a3f9",
+      "label": "New Plan",
+      "plan_name": "MC - NEW",
+      "price": "₹000/month",
+      "validity": "30 Days",
+      "features": [
+        "Feature 1",
+        "Feature 2"
+      ],
+      "hidden": false
+    },
+    {
+      "id": "985c",
+      "label": "New Plan",
+      "plan_name": "MC - NEW",
+      "price": "₹000/month",
+      "validity": "30 Days",
+      "features": [
+        "Feature 1",
+        "Feature 2"
+      ],
+      "hidden": false
+    },
+    {
+      "id": "4bab",
+      "plan_name": "hello",
+      "price": "10000",
+      "validity": "30 Days",
+      "features": [
+        "12345678"
+      ],
+      "label": "123",
+      "badge": "src/images/best-seller-banner_175838-470-removebg-preview.png",
+      "hidden": true
+    },
+    {
+      "id": "6e25",
+      "plan_name": "Keerthu",
+      "price": "1",
+      "validity": "11",
+      "features": [
+        "1"
+      ],
+      "label": "1",
+      "badge": "src/images/best-seller-banner_175838-470-removebg-preview.png",
+      "hidden": true
+    },
+    {
+      "id": "93b7",
+      "plan_name": "MC - 451",
+      "price": "₹451/month",
+      "validity": "30 Days",
+      "features": [
+        "Unlimited Calls (Local, STD, National Roaming)",
+        "50GB Data+ Unlimited Night Data",
+        "200GB data Roll Over",
+        "2500 SMS/Month (STD)"
+      ],
+      "label": "Recommended",
+      "badge": "src/images/best-seller-banner_175838-470-removebg-preview.png",
+      "hidden": false
+    },
+    {
+      "id": "24ca",
+      "plan_name": "MC - 951",
+      "price": "1400",
+      "validity": "28",
+      "features": [
+        "UNLIMITED"
+      ],
+      "label": "Recommended",
+      "badge": "src/images/best-seller-banner_175838-470-removebg-preview.png",
+      "hidden": false
+    }
+  ],
+  "data": [
+    {
+      "label": "Best for Browsing",
+      "plan_name": "MC - 99",
+      "plan_code": "MC-99",
+      "price": "₹99/3 Days",
+      "validity": "3 Days",
+      "features": [
+        "1GB data/day + Unlimited Night Data",
+        "10GB data Roll Over"
+      ],
+      "id": "c12e"
+    },
+    {
+      "label": "Best for Browsing",
+      "plan_name": "MC - 29",
+      "plan_code": "MC-29",
+      "price": "₹29/1 Day",
+      "validity": "1 Day",
+      "features": [
+        "1GB data/day + Unlimited Night Data",
+        "10GB data Roll Over"
+      ],
+      "id": "03b8"
+    },
+    {
+      "label": "Daily Power User",
+      "plan_name": "MC - 149",
+      "plan_code": "MC-149",
+      "price": "₹149/7 Days",
+      "validity": "7 Days",
+      "features": [
+        "2GB data/day + Weekend Data Bonus",
+        "15GB data Roll Over"
+      ],
+      "id": "39e2"
+    },
+    {
+      "label": "Most Popular",
+      "plan_name": "MC - 399",
+      "plan_code": "MC-399",
+      "price": "₹399/month",
+      "validity": "30 Days",
+      "features": [
+        "1.5GB data/day + 100GB data Roll Over",
+        "Weekend Unlimited Data"
+      ],
+      "id": "c161"
+    },
+    {
+      "label": "Gaming & Streaming",
+      "plan_name": "MC - 549",
+      "plan_code": "MC-549",
+      "price": "₹549/month",
+      "validity": "30 Days",
+      "features": [
+        "3GB data/day + OTT Access",
+        "200GB data Roll Over"
+      ],
+      "id": "e017"
+    },
+    {
+      "label": "Quarterly Pack",
+      "plan_name": "MC - 1299",
+      "plan_code": "MC-1299",
+      "price": "₹1299/3 Months",
+      "validity": "90 Days",
+      "features": [
+        "2.5GB data/day + Unlimited Night Data",
+        "300GB data Roll Over"
+      ],
+      "id": "63a2"
+    },
+    {
+      "label": "Half-Yearly Special",
+      "plan_name": "MC - 2499",
+      "plan_code": "MC-2499",
+      "price": "₹2499/6 Months",
+      "validity": "180 Days",
+      "features": [
+        "3GB data/day + MC-59 Music & OTT",
+        "500GB data Roll Over"
+      ],
+      "id": "ab7a"
+    },
+    {
+      "label": "Annual Power Saver",
+      "plan_name": "MC - 4999",
+      "plan_code": "MC-4999",
+      "price": "₹4999/Year",
+      "validity": "365 Days",
+      "features": [
+        "2.5GB data/day + Unlimited Calls",
+        "Unlimited Data Roll Over"
+      ],
+      "id": "0996"
+    },
+    {
+      "label": "Family Pack",
+      "plan_name": "MC - 5999",
+      "plan_code": "MC-5999",
+      "price": "₹5999/Year",
+      "validity": "365 Days",
+      "features": [
+        "5GB data/day (Shared) + Netflix & Prime",
+        "1TB Data Roll Over"
+      ],
+      "id": "4ddf"
+    },
+    {
+      "label": "Daily Essentials",
+      "plan_name": "MC - 19",
+      "plan_code": "MC-19",
+      "price": "₹19/1 Day",
+      "validity": "1 Day",
+      "features": [
+        "1GB data",
+        "High-Speed Access"
+      ],
+      "id": "9551"
+    },
+    {
+      "label": "Weekly Pack",
+      "plan_name": "MC - 129",
+      "plan_code": "MC-129",
+      "price": "₹129/7 Days",
+      "validity": "7 Days",
+      "features": [
+        "10GB data",
+        "Ultra-Fast 4G/5G Speed"
+      ],
+      "id": "8aaa"
+    },
+    {
+      "label": "Monthly Saver",
+      "plan_name": "MC - 399",
+      "plan_code": "MC-399",
+      "price": "₹399/28 Days",
+      "validity": "28 Days",
+      "features": [
+        "50GB data",
+        "Data Rollover Available"
+      ],
+      "id": "6fbc"
+    }
+  ],
+  "unlimited": [
+    {
+      "label": "Ultimate Pack",
+      "plan_name": "Ultimate 5G Pro",
+      "plan_code": "MC-1199",
+      "price": "₹1199/90 Days",
+      "validity": "90 Days",
+      "features": [
+        "Unlimited 5G Data + International Roaming",
+        "Gaming Mode with 1ms Latency",
+        "OTT Bundle (Netflix + Prime + jiohotstar)"
+      ],
+      "id": "cd98"
+    },
+    {
+      "label": "MC-59 Deal",
+      "plan_name": "5G Max Ultra",
+      "plan_code": "MC-1499",
+      "price": "₹1499/120 Days",
+      "validity": "120 Days",
+      "features": [
+        "Unlimited 5G Data + AI-Powered Network Boost",
+        "4K Streaming + Cloud Gaming Mode",
+        "OTT Access (Netflix + Disney+ jiohotstar + Spotify)"
+      ],
+      "id": "3237"
+    },
+    {
+      "label": "Super Saver",
+      "plan_name": "Annual 5G Infinity",
+      "plan_code": "MC-4999",
+      "price": "₹4999/365 Days",
+      "validity": "365 Days",
+      "features": [
+        "Truly Unlimited 5G Data + 5Gbps Speed",
+        "OTT Pack (Netflix, Prime, Disney+ jiohotstar)",
+        "Priority Network Access & VIP Customer Support"
+      ],
+      "id": "bdfe"
+    },
+    {
+      "label": "Gaming Pro",
+      "plan_name": "5G Gamers Elite",
+      "plan_code": "MC-1899",
+      "price": "₹1899/90 Days",
+      "validity": "90 Days",
+      "features": [
+        "Unlimited 5G Data + Ultra-Low Latency Mode",
+        "Cloud Gaming Access (GeForce Now + Xbox Cloud)",
+        "OTT Bundle (Twitch Prime + YouTube MC-59)"
+      ],
+      "id": "be41"
+    },
+    {
+      "label": "Entertainment Plus",
+      "plan_name": "OTT 5G MC-59",
+      "plan_code": "MC-2999",
+      "price": "₹2999/180 Days",
+      "validity": "180 Days",
+      "features": [
+        "Unlimited 5G Data + 2TB Cloud Storage",
+        "OTT Bundle (Netflix, Amazon Prime, Disney+ jiohotstar)",
+        "Home Wi-Fi Router with 5G Speed Boost"
+      ],
+      "id": "8961"
+    },
+    {
+      "label": "Weekend Booster",
+      "plan_name": "5G Speed Plus",
+      "plan_code": "MC-599",
+      "price": "₹599/30 Days",
+      "validity": "30 Days",
+      "features": [
+        "Unlimited 5G Data + Weekend Speed Boost",
+        "50GB High-Priority Speed + Unlimited Calls",
+        "Exclusive Gaming Perks & Streaming Benefits"
+      ],
+      "id": "b85c"
+    },
+    {
+      "label": "Business Elite",
+      "plan_name": "5G Enterprise Pro",
+      "plan_code": "MC-9999",
+      "price": "₹9999/365 Days",
+      "validity": "365 Days",
+      "features": [
+        "Unlimited 5G Data + Dedicated Support",
+        "10Gbps Speed + Secure VPN Access",
+        "OTT Pack (Netflix + Business Suite)"
+      ],
+      "id": "7db4"
+    },
+    {
+      "label": "Budget Friendly",
+      "plan_name": "Affordable 5G Max",
+      "plan_code": "MC-899",
+      "price": "₹899/60 Days",
+      "validity": "60 Days",
+      "features": [
+        "Unlimited 5G Data + 1.5GB/day of High-Speed 4G",
+        "100 SMS per day + Unlimited Calls",
+        "OTT Bonus (SonyLIV + Zee5)"
+      ],
+      "id": "6009"
+    },
+    {
+      "label": "Family Plan",
+      "plan_name": "5G Family Pack",
+      "plan_code": "MC-12999",
+      "price": "₹12,999/Year",
+      "validity": "365 Days",
+      "features": [
+        "Unlimited 5G Data for 5 Devices",
+        "OTT Bundle (Netflix, Prime, jiohotstar + Parental Controls)",
+        "Priority Customer Support & Free International Roaming"
+      ],
+      "id": "8c02"
+    },
+    {
+      "label": "Super Annual",
+      "plan_name": "Ultimate Annual Max",
+      "plan_code": "MC-17999",
+      "price": "₹17,999/Year",
+      "validity": "365 Days",
+      "features": [
+        "Truly Unlimited 5G Data + 10Gbps Speed",
+        "Unlimited International Roaming + Free Calls",
+        "OTT Pack (Netflix Ultra HD + Spotify + YouTube MC-59)"
+      ],
+      "id": "d2a6"
+    },
+    {
+      "label": "Student Choice",
+      "plan_name": "5G Campus Pro",
+      "plan_code": "MC-1299",
+      "price": "₹1299/90 Days",
+      "validity": "90 Days",
+      "features": [
+        "Unlimited 5G Data + 100GB High-Speed",
+        "E-Learning Perks (Udemy, Coursera, LinkedIn Learning)",
+        "OTT Bonus (Amazon Prime Student Edition)"
+      ],
+      "id": "9d18"
+    },
+    {
+      "label": "Traveler's Pick",
+      "plan_name": "5G Roaming Global",
+      "plan_code": "MC-2199",
+      "price": "₹2199/60 Days",
+      "validity": "60 Days",
+      "features": [
+        "Unlimited 5G Data + Free Global Roaming",
+        "High-Speed 5G in 20+ Countries",
+        "OTT Pack (Netflix Mobile + Apple Music)"
+      ],
+      "id": "dadf"
+    }
+  ],
+  "validity": [
+    {
+      "plan_name": "1-Day Pack",
+      "price": "₹19/1 Day",
+      "validity": "",
+      "features": [
+        "1GB data + High-Speed Access",
+        "5GB data Roll Over"
+      ],
+      "label": "Daily Essentials",
+      "badge": null,
+      "hidden": false,
+      "id": "006a"
+    },
+    {
+      "label": "Best for Browsing",
+      "plan_name": "1-Day Pack",
+      "plan_code": "MC-29",
+      "price": "₹29/1 Day",
+      "features": [
+        "1GB data/day + Unlimited Night Data",
+        "10GB data Roll Over"
+      ],
+      "id": "a6e5",
+      "hidden": false
+    },
+    {
+      "label": "Best for Browsing",
+      "plan_name": "3-Day Pack",
+      "plan_code": "MC-99",
+      "price": "₹99/3 Days",
+      "features": [
+        "1GB data/day + Unlimited Night Data",
+        "10GB data Roll Over"
+      ],
+      "id": "cb61"
+    },
+    {
+      "label": "Weekly Pack",
+      "plan_name": "7-Day Pack",
+      "plan_code": "MC-129",
+      "price": "₹129/7 Days",
+      "features": [
+        "10GB data",
+        "Ultra-Fast 4G/5G Speed"
+      ],
+      "id": "82b1"
+    },
+    {
+      "label": "Daily Power User",
+      "plan_name": "7-Day Pack",
+      "plan_code": "MC-149",
+      "price": "₹149/7 Days",
+      "features": [
+        "2GB data/day + Weekend Data Bonus",
+        "15GB data Roll Over"
+      ],
+      "id": "eb70"
+    },
+    {
+      "label": "Most Popular",
+      "plan_name": "Monthly Pack",
+      "plan_code": "MC-399",
+      "price": "₹399/28 Days",
+      "features": [
+        "50GB data",
+        "Data Rollover Available"
+      ],
+      "id": "af9f"
+    },
+    {
+      "label": "Gaming & Streaming",
+      "plan_name": "Monthly Pack",
+      "plan_code": "MC-549",
+      "price": "₹549/30 Days",
+      "features": [
+        "3GB data/day + OTT Access",
+        "200GB data Roll Over"
+      ],
+      "id": "1426"
+    },
+    {
+      "label": "Quarterly Pack",
+      "plan_name": "3-Month Pack",
+      "plan_code": "MC-1299",
+      "price": "₹1299/3 Months",
+      "features": [
+        "2.5GB data/day + Unlimited Night Data",
+        "300GB data Roll Over"
+      ],
+      "id": "5bdb"
+    },
+    {
+      "label": "Half-Yearly Special",
+      "plan_name": "6-Month Pack",
+      "plan_code": "MC-2499",
+      "price": "₹2499/6 Months",
+      "features": [
+        "3GB data/day + MC-59 Music & OTT",
+        "500GB data Roll Over"
+      ],
+      "id": "06d1"
+    },
+    {
+      "label": "Annual Power Saver",
+      "plan_name": "12-Month Pack",
+      "plan_code": "MC-4999",
+      "price": "₹4999/1 Year",
+      "features": [
+        "2.5GB data/day + Unlimited Calls",
+        "Unlimited Data Roll Over"
+      ],
+      "id": "e3fb"
+    },
+    {
+      "label": "Family Pack",
+      "plan_name": "12-Month Pack",
+      "plan_code": "MC-5999",
+      "price": "₹5999/1 Year",
+      "features": [
+        "5GB data/day (Shared) + Netflix & Prime",
+        "1TB Data Roll Over"
+      ],
+      "id": "e745"
+    }
+  ]
 }

@@ -1,0 +1,140 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap");
+
+:root {
+    --primary-color: #185ee0;
+    --secondary-color: #324a6a;
+}
+
+body {
+    font-family: "Inter", sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: auto;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Tabs */
+.tabs {
+    display: flex;
+    position: relative;
+    background-color: #fff;
+    padding: 0.75rem;
+    border-radius: 99px;
+    box-shadow: 0 0 1px 0 rgba(24, 94, 224, 0.15), 0 6px 12px 0 rgba(24, 94, 224, 0.15);
+}
+
+input[type="radio"] {
+    display: none;
+}
+
+.tab {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    width: 150px;
+    font-size: 1rem;
+    font-weight: 500;
+    border-radius: 99px;
+    cursor: pointer;
+    transition: color 0.15s ease-in;
+
+}
+
+
+input[type="radio"]:checked + .tab {
+    color: white; /* Ensures visibility */
+    font-weight: 600;
+}
+
+.glider {
+    position: absolute;
+    height: 54px;
+    width: calc(100% / 4);
+    background-color: var(--secondary-color);
+    z-index: 0;
+    border-radius: 99px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.tab {
+    position: relative;
+    z-index: 2; /* Make text above glider */
+    color: var(--secondary-color);
+    transition: color 0.3s ease-in-out;
+}
+
+
+/* Search Bar */
+.search-container {
+    margin: 10px 0;
+}
+
+.search-box {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Sort Dropdown */
+.sort-container {
+    margin-bottom: 10px;
+}
+
+.form-select {
+    width: 100%;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+
+
+.tabs {
+  display: flex;
+  position: relative;
+  background-color: #fff;
+  box-shadow: 0 0 1px 0 rgba(24, 94, 224, 0.15), 0 6px 12px 0 rgba(24, 94, 224, 0.15);
+  padding: 0.75rem;
+  border-radius: 99px; 
+}
+
+.tab {
+  flex: 1; /* Ensure equal width for all tabs */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 54px;
+  font-size: 1.25rem;
+  font-weight: 500;
+  border-radius: 99px;
+  cursor: pointer;
+  transition: color 0.3s ease-in-out;
+}
+
+.glider {
+  position: absolute;
+  display: flex;
+  height: 54px;
+  width: calc(100% / 4); /* Adjust width dynamically based on the number of tabs */
+  background-color: var(--secondary-color);
+  z-index: 1;
+  border-radius: 99px;
+  transition: transform 0.3s ease-in-out;
+}
+
+
+@media (max-width: 700px) {
+    .tabs {
+        transform: scale(0.8);
+    }
+}

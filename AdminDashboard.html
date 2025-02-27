@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mobi-Comm Dashboard</title>
+    <link rel="stylesheet" href="css/mainmin.css">
     <link rel="stylesheet" href="css/adminDashboard.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://d3js.org/d3.v6.min.js"></script>
@@ -14,29 +15,40 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.6.0/jspdf.plugin.autotable.min.js"></script>
+    <link rel="stylesheet" href="css/admin.css">
 
 
 
 
 </head>
+<style>
+    .highlight {
+        background-color: yellow !important;
+        font-weight: bold;
+    }
+    
+</style>
 
 <body class="bg-light">
 
     <aside class="d-none d-md-block">
         <div class="container" style="margin-left: -30px;">
-            <img src="src/images/mobi-comm-named-logo-removebg-preview.png" alt="" style="width: 200px;">
+            <a href="http://127.0.0.1:5501/AdminDashboard.html">
+                <img src="src/images/mobi-comm-named-logo-removebg-preview.png" alt="" style="width: 200px;">
+
+            </a>
 
         </div>
         <nav class="mt-3">
             <ul class="list-unstyled">
                 <li class="p-2 bg-danger text-white rounded mb-2">
-                    <a href="#" class="text-white text-decoration-none">Expiring Recharges</a>
+                    <a href="http://127.0.0.1:5501/AdminDashboard.html" class="text-white text-decoration-none">Expiring Recharges</a>
                 </li>
                 <li class="p-2 text-dark rounded mb-2">
-                    <a href="#" class="text-dark text-decoration-none">Subscribers</a>
+                    <a href="http://127.0.0.1:5501/subscriberManagement.html" class="text-dark text-decoration-none">Subscribers</a>
                 </li>
                 <li class="p-2 text-dark rounded mb-2">
-                    <a href="#" class="text-dark text-decoration-none">Recharge Management</a>
+                    <a href="http://127.0.0.1:5501/planManagement.html" class="text-dark text-decoration-none">Plans</a>
                 </li>
                 <li class="p-2 text-dark rounded mb-2">
                     <a href="#" class="text-dark text-decoration-none">Complaint Management</a>
@@ -46,7 +58,7 @@
                 </li>
             </ul>
         </nav>
-        
+
     </aside>
 
     <!-- Offcanvas Sidebar for Mobile -->
@@ -157,15 +169,10 @@
             </div>
         </div>
 
-        <div id="user-details-container" style="
-    width: 60%;
-    margin: 20px auto;
-    padding: 20px;
-    border-radius: 10px;
-    font-family: Arial, sans-serif;
-">
+        <div id="user-details-container" class="mt-3"></div>
 
-        </div>
+
+   
 
         <div class="table-responsive mt-4 table-container">
             <div class="container">
@@ -173,38 +180,39 @@
                     <div class="col">
                         <div class="d-flex justify-content-between mb-2">
                             <!-- Search Bar -->
-                            <div class="input-group w-50">
-                                <input type="text" id="searchInput" class="form-control" placeholder="Search users..."
+                            <div class="input-group w-50 ">
+                                <input type="text" id="searchInput" class="form-control input-style" placeholder="Search users..."
                                     onkeyup="filterTable()">
                             </div>
 
 
                             <div>
-                                <select class="form-select bg-dark text-white" id="sortSelect" onchange="sortTable()" 
-                                style="width: 200px; padding: 8px; border-radius: 5px;">
-                            <option value="default">Sort By</option>
-                            <option value="name_asc">Name (A-Z)</option>
-                            <option value="name_desc">Name (Z-A)</option>
-                            <option value="daysLeft_asc">Days Left (Fewest First)</option>
-                            <option value="daysLeft_desc">Days Left (Most First)</option>
-                            <option value="reset">Reset</option>
-                        </select>
-                        
-                    </div>
-                    <button onclick="downloadStyledContainerAsPDF()">Download <i
-                            class="fa fa download"></i></button>
-                            
+                                <select class="form-select  text-dark" id="sortSelect" onchange="sortTable()"
+                                    style="width: 200px; padding: 8px; border-radius: 5px;">
+                                    <option value="default">Sort By</option>
+                                    <option value="name_asc">Name (A-Z)</option>
+                                    <option value="name_desc">Name (Z-A)</option>
+                                    <option value="daysLeft_asc">Days Left (Fewest First)</option>
+                                    <option value="daysLeft_desc">Days Left (Most First)</option>
+                                    <option value="reset">Reset</option>
+                                </select>
+                                
 
-                           
                             </div>
+                            <button onclick="downloadStyledContainerAsPDF()" class="download-btn">Download <i class="fa-solid fa-download text-light"></i></button>
+
+
 
                         </div>
+
                     </div>
                 </div>
-                <h5 class="text-danger fw-bold">Expiring Soon (≤ 3 days)</h5>
+            </div>
+            <h5 class="text-danger fw-bold">Users with Upcoming Validity Expiry</h5>
 
-                <table class="table table-hover table-bordered">
-                    <thead class="table-dark text-white">
+            <div class="table-container">
+                <table class="table">
+                    <thead>
                         <tr>
                             <th>ID</th>
                             <th>Username</th>
@@ -215,11 +223,12 @@
                             <th>Days Left</th>
                         </tr>
                     </thead>
-                    <tbody id="expiring-users-table" class="bg-white"
-                        onclick="window.location.href='#user-details-container'"></tbody>
+                    <tbody id="user-table" class="bg-white" onclick="window.location.href='#user-details-container'">
+                    </tbody>
 
                 </table>
             </div>
+        </div>
 
 
 
@@ -256,6 +265,16 @@
     <script src="JavaScript/expirationChart.js"> </script>
 
     <script>
+        document.addEventListener("scroll", function () {
+            const table = document.querySelector(".table thead");
+            const tablePosition = table.getBoundingClientRect().top;
+
+            if (tablePosition <= 10) {
+                table.classList.add("sticky-active");
+            } else {
+                table.classList.remove("sticky-active");
+            }
+        });
         async function fetchUserData() {
             try {
                 const response = await fetch("http://localhost:3000/users");

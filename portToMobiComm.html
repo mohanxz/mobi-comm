@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Port to Mobi-Comm</title>
     <link rel="stylesheet" href="/css/mainmin.css">
+    <link rel="stylesheet" href="css/style.css">
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 </head>
@@ -25,7 +26,7 @@
             <div class="collapse navbar-collapse" id="navbarScroll">
                 <ul class="navbar-nav me-auto my-2 my-lg-0 " style="--bs-scroll-height: 100px;">
                     <li class="nav-item">
-                        <a class="nav-link active text-secondary text-decoration-underline"
+                        <a class="nav-link active text-secondary text-decoration-underline" href="http://127.0.0.1:5501/homePage.html"
                             aria-current="page">Home</a>
                     </li>
                     <li class="nav-item">
@@ -52,15 +53,15 @@
                 <form id="porting-form">
                     <div class="form-group py-3 ">
                         <label for="user-name">Full Name</label>
-                        <input type="text" class="form-control" id="user-name" placeholder="Enter your full name" required>
+                        <input type="text" class="form-control input-style" id="user-name" placeholder="Enter your full name" required>
                     </div>
                     <div class="form-group py-3 ">
                         <label for="other-mobile">Other Telecom Mobile Number</label>
-                        <input type="tel" class="form-control" id="other-mobile" placeholder="Enter your current mobile number with other telecom" required>
+                        <input type="tel" class="form-control input-style" id="other-mobile" placeholder="Enter your current mobile number with other telecom" required>
                     </div>
                     <div class="form-group py-3 ">
                         <label for="aadhaar-number">Aadhar Number</label>
-                        <input type="text" class="form-control" id="aadhaar-number" placeholder="Enter your Aadhar number" required maxlength="12" minlength="12">
+                        <input type="text" class="form-control input-style" id="aadhaar-number" placeholder="Enter your Aadhar number" required maxlength="12" minlength="12">
                     </div>
                     <button type="button" class="btn btn-primary btn-block mt-3" onclick="submitPortingRequest()">Submit Porting Request</button>
                 </form>

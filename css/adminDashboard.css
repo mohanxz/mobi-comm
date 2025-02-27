@@ -28,35 +28,6 @@ body {
     }
 }
 
-.table-container {
-    background: #ffffff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-.table-hover tbody tr:hover {
-    background: #f8d7da !important;
-    transition: background 0.3s ease-in-out;
-}
-
-.table thead {
-    background: #dc3545 !important;
-    color: white;
-    text-transform: uppercase;
-}
-
-.table td,
-.table th {
-    padding: 12px;
-    text-align: center;
-    vertical-align: middle;
-}
-
-.table-container {
-    overflow-x: auto;
-    /* Enables horizontal scrolling on small screens */
-}
 
 .btn-outline-primary {
     border-radius: 50px;
@@ -65,13 +36,18 @@ body {
 
 /* Sidebar - Hide on Mobile */
 aside {
-    width: 200px;
+    width: 250px;
     position: fixed;
     height: 100vh;
-    background: white;
+    left: 0;  /* Ensures no gap on the left */
+    top: 0;   /* Keeps it fixed at the top */
     padding: 15px;
-    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+    background: white; /* Ensure it has a background */
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, 
+                rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, 
+                rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 }
+
 
 main {
     margin-left: 220px;
@@ -90,10 +66,7 @@ main {
         padding: 15px;
     }
 
-    .table-container {
-        overflow-x: auto;
-        /* Enable scrolling */
-    }
+  
 
     .row .col-md-3 {
         flex: 0 0 100%;
@@ -116,16 +89,6 @@ canvas {
     padding: 10px;
 }
 
-.row {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-}
-
-.col {
-    width: 400px;
-    margin: 10px;
-}
 
 
 
