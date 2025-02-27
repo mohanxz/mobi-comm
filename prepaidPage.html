@@ -29,16 +29,17 @@
             overflow-x: hidden;
             padding-right: 10px;
         }
-        .active{
-            color:#EF233C !important;
+
+        .active {
+            color: #EF233C !important;
         }
     </style>
-     
+
     <nav class="navbar navbar-expand-lg navbar-light  border p-0 ">
         <div class="container-fluid p-0">
             <a class="navbar-brand  fs-1 p-0" href="http://127.0.0.1:5501/homePage.html"><img
                     src="src/images/mobi-comm-named-logo.png" alt="" style="width: 220px;"></a>
-    
+
             <button class="navbar-toggler p-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll"
                 aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -46,11 +47,11 @@
             <div class="collapse navbar-collapse" id="navbarScroll">
                 <ul class="navbar-nav me-auto my-2 my-lg-0 " style="--bs-scroll-height: 100px;">
                     <li class="nav-item p-0">
-                        <a class="nav-link text-secondary"
-                            aria-current="page" href="http://127.0.0.1:5501/homePage.html" >Home</a>
+                        <a class="nav-link" aria-current="page"
+                            href="http://127.0.0.1:5501/homePage.html">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link " aria-current="page" href="http://127.0.0.1:5501/viewplans.html">Prepaid
+                        <a class="nav-link text-secondary " aria-current="page" href="http://127.0.0.1:5501/viewplans.html">Prepaid
                             plans
                         </a>
                     </li>
@@ -60,9 +61,9 @@
                     <li class="nav-item">
                         <a class="nav-link" href="http://127.0.0.1:5501/customerSupport.html">Support</a>
                     </li>
-    
+
                 </ul>
-    
+
             </div>
         </div>
     </nav>
@@ -70,11 +71,12 @@
     <main>
         <div class="container-fluid">
             <div class="row">
-                <div class="col-lg-4 bg-info  p-5  d-none d-lg-block">
+                <div class="col-lg-4 bg-info  p-5  d-none d-lg-block ">
                     <div class=" mt-5 ms-5  p-5 bg-light rounded-3">
-                        <h6>Find the right Recharge  pack for you</h6>
-                        <input type="search" class="fw-bold rounded-2 border-1 p-2 border-warning border-focus-none">
+                        <h6>Find the right Recharge pack for you</h6>
+                        <input type="search" class="fw-bold rounded-2 border-1 p-2 border-warning border-focus-none input-style">
                         <i class="fa-solid fa-magnifying-glass ms-1"></i>
+                        
                     </div>
                 </div>
                 <div id="right-section" class="col-lg-8">
@@ -86,15 +88,15 @@
                             <li class="breadcrumb-item " aria-current="page">All plans</li>
                         </ol>
                     </nav>
-                    <h2 class="text-secondary">Recharge  Packages</h2>
+                    <h2 class="text-secondary">Recharge Packages</h2>
                     <ul class="nav nav-tabs" id="myTab" role="tablist">
                         <li class="nav-item">
                             <a class="nav-link active" id="recommended-tab" data-bs-toggle="tab" href="#recommended"
                                 role="tab" aria-controls="recommended" aria-selected="true">Recommended Packs</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" id="validity-tab" data-bs-toggle="tab" href="#validity"
-                                role="tab" aria-controls="validity">Validity</a>
+                            <a class="nav-link" id="validity-tab" data-bs-toggle="tab" href="#validity" role="tab"
+                                aria-controls="validity">Validity</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" id="data-tab" data-bs-toggle="tab" href="#data" role="tab"
@@ -115,7 +117,7 @@
                             aria-labelledby="recommended-tab">
                             <div class="scrollable-container">
                                 <div class="row ">
-                                
+
                                 </div>
                             </div>
                         </div>
@@ -123,332 +125,12 @@
 
                         <div class="tab-pane fade" id="validity" role="tabpanel" aria-labelledby="validity">
                             <div class="row">
-                                <div class="col-lg-4 col-sm-6 responsive">
-                                    <div class="plan-card">
-                                        <div class="plan-header">Daily Plan</div>
-                                        <h5 class="plan-title">1-Day Pack</h5>
-                                        <p class="plan-price">₹19/1 Day</p>
-                                        <ul class="plan-features">
-                                            <li><i class="fa-solid fa-wifi me-1"></i>1GB data + Unlimited Calls</li>
-                                            <li><i class="fa-solid fa-globe me-1"></i>Validity: 24 Hours</li>
-                                        </ul>
-                                        <button class="proceed-btn">Recharge ₹19 Plan</button>
-                                    </div>
-                                </div>
-
-                                <div class="col-lg-4 col-sm-6 responsive">
-                                    <div class="plan-card">
-                                        <div class="plan-header">Short Trip Special</div>
-                                        <h5 class="plan-title">2-Day Pack</h5>
-                                        <p class="plan-price">₹29/2 Days</p>
-                                        <ul class="plan-features">
-                                            <li><i class="fa-solid fa-wifi me-1"></i>2GB data (1GB/day) + 100 SMS
-                                            </li>
-                                            <li><i class="fa-solid fa-globe me-1"></i>Validity: 48 Hours</li>
-                                        </ul>
-                                        <button class="proceed-btn">Recharge ₹29 Plan</button>
-                                    </div>
-                                </div>
-
-                                <div class="col-lg-4 col-sm-6 responsive">
-                                    <div class="plan-card">
-                                        <div class="plan-header">Weekly Data Booster</div>
-                                        <h5 class="plan-title">7-Day Pack</h5>
-                                        <p class="plan-price">₹79/7 Days</p>
-                                        <ul class="plan-features">
-                                            <li><i class="fa-solid fa-wifi me-1"></i>5GB DataTotal Data + Unlimited
-                                                Calls</li>
-                                            <li><i class="fa-solid fa-globe me-1"></i>Validity: 7 Days</li>
-                                        </ul>
-                                        <button class="proceed-btn">Recharge ₹79 Plan</button>
-                                    </div>
-                                </div>
-
-                                <div class="col-lg-4 col-sm-6 responsive">
-                                    <div class="plan-card">
-                                        <div class="plan-header">Best Seller</div>
-                                        <h5 class="plan-title">Monthly Pack</h5>
-                                        <p class="plan-price">₹299/30 Days</p>
-                                        <ul class="plan-features">
-                                            <li><i class="fa-solid fa-wifi me-1"></i>1.5GB/day + 100 SMS/day</li>
-                                            <li><i class="fa-solid fa-globe me-1"></i>Validity: 30 Days</li>
-                                        </ul>
-                                        <button class="proceed-btn">Recharge ₹299 Plan</button>
-                                    </div>
-                                </div>
-
-                                <div class="col-lg-4 col-sm-6 responsive">
-                                    <div class="plan-card">
-                                        <div class="plan-header">Quarterly Plan</div>
-                                        <h5 class="plan-title">3-Month Pack</h5>
-                                        <p class="plan-price">₹799/90 Days</p>
-                                        <ul class="plan-features">
-                                            <li><i class="fa-solid fa-wifi me-1"></i>2GB/day + Unlimited Calls</li>
-                                            <li><i class="fa-solid fa-globe me-1"></i>Validity: 90 Days</li>
-                                        </ul>
-                                        <button class="proceed-btn">Recharge ₹799 Plan</button>
-                                    </div>
-                                </div>
-
-                                <div class="col-lg-4 col-sm-6 responsive">
-                                    <div class="plan-card">
-                                        <div class="plan-header">Half-Yearly Plan</div>
-                                        <h5 class="plan-title">6-Month Pack</h5>
-                                        <p class="plan-price">₹1499/180 Days</p>
-                                        <ul class="plan-features">
-                                            <li><i class="fa-solid fa-wifi me-1"></i>1.5GB/day + Unlimited Calls</li>
-                                            <li><i class="fa-solid fa-globe me-1"></i>Validity: 180 Days</li>
-                                        </ul>
-                                        <button class="proceed-btn">Recharge ₹1499 Plan</button>
-                                    </div>
-                                </div>
-
-                                <div class="col-lg-4 col-sm-6 responsive">
-                                    <div class="plan-card">
-                                        <div class="plan-header">Annual Super Saver</div>
-                                        <h5 class="plan-title">12-Month Pack</h5>
-                                        <p class="plan-price">₹2999/365 Days</p>
-                                        <ul class="plan-features">
-                                            <li><i class="fa-solid fa-wifi me-1"></i>2GB/day + Unlimited Calls</li>
-                                            <li><i class="fa-solid fa-globe me-1"></i>Validity: 365 Days</li>
-                                        </ul>
-                                        <button class="proceed-btn">Recharge ₹2999 Plan</button>
-                                    </div>
-                                </div>
-
-                                <div class="col-lg-4 col-sm-6 responsive">
-                                    <div class="plan-card">
-                                        <div class="plan-header">Entertainment Pack</div>
-                                        <h5 class="plan-title">OTT & Data Combo</h5>
-                                        <p class="plan-price">₹499/30 Days</p>
-                                        <ul class="plan-features">
-                                            <li><i class="fa-solid fa-wifi me-1"></i>2.5GB/day + Netflix & Prime</li>
-                                            <li><i class="fa-solid fa-globe me-1"></i>Validity: 30 Days</li>
-                                        </ul>
-                                        <button class="proceed-btn">Recharge ₹499 Plan</button>
-                                    </div>
-                                </div>
-
-                                <div class="col-lg-4 col-sm-6 responsive">
-                                    <div class="plan-card">
-                                        <div class="plan-header">Talktime + Data Combo</div>
-                                        <h5 class="plan-title">Flexi Plan</h5>
-                                        <p class="plan-price">₹199/28 Days</p>
-                                        <ul class="plan-features">
-                                            <li><i class="fa-solid fa-wifi me-1"></i>10GB DataTotal Data + ₹100 Talktime
-                                            </li>
-                                            <li><i class="fa-solid fa-globe me-1"></i>Validity: 28 Days</li>
-                                        </ul>
-                                        <button class="proceed-btn">Recharge ₹199 Plan</button>
-                                    </div>
-                                </div>
-                                <div class="col-lg-4 col-sm-6 responsive">
-                                    <div class="plan-card">
-                                        <div class="plan-header">Long-Term Saver</div>
-                                        <h5 class="plan-title">MC - 1799</h5>
-                                        <p class="plan-price">₹1799/180 Days</p>
-                                        <ul class="plan-features">
-                                            <li><i class="fa-solid fa-wifi me-1"></i>1.5GB/Day + Unlimited 5G</li>
-                                            <li><i class="fa-solid fa-clock me-1"></i>180 Days Validity</li>
-                                        </ul>
-                                        <button class="proceed-btn">Recharge ₹1799 Plan</button>
-                                    </div>
-                                </div>
-
-                                <div class="col-lg-4 col-sm-6 responsive">
-                                    <div class="plan-card">
-                                        <div class="plan-header">Super Annual Pack</div>
-                                        <h5 class="plan-title">MC - 2999</h5>
-                                        <p class="plan-price">₹2999/365 Days</p>
-                                        <ul class="plan-features">
-                                            <li><i class="fa-solid fa-wifi me-1"></i>2GB/Day + Unlimited 5G</li>
-                                            <li><i class="fa-solid fa-clock me-1"></i>365 Days Validity</li>
-                                        </ul>
-                                        <button class="proceed-btn">Recharge ₹2999 Plan</button>
-                                    </div>
-                                </div>
-
-                                <div class="col-lg-4 col-sm-6 responsive">
-                                    <div class="plan-card">
-                                        <div class="plan-header">Mega Annual Max</div>
-                                        <h5 class="plan-title">MC - 4799</h5>
-                                        <p class="plan-price">₹4799/365 Days</p>
-                                        <ul class="plan-features">
-                                            <li><i class="fa-solid fa-wifi me-1"></i>3GB/Day + Unlimited 5G</li>
-                                            <li><i class="fa-solid fa-clock me-1"></i>365 Days Validity</li>
-                                        </ul>
-                                        <button class="proceed-btn">Recharge ₹3499 Plan</button>
-                                    </div>
-                                </div>
                             </div>
 
                         </div>
                         <div class="tab-pane fade" id="data" role="tabpanel" aria-labelledby="data-tab">
                             <div class="row">
-                                <div class="col-lg-4 col-sm-6 responsive">
-                                    <div class="plan-card">
-                                        <div class="plan-header">Best for Browsing</div>
-                                        <h5 class="plan-title">MC - 99</h5>
-                                        <p class="plan-price">₹99/3 Days</p>
-                                        <ul class="plan-features">
-                                            <li><i class="fa-solid fa-wifi me-1"></i>1GB data/day + Unlimited Night
-                                                Data</li>
-                                            <li><i class="fa-solid fa-globe me-1"></i>10GB data Roll Over</li>
-                                        </ul>
-                                        <button class="proceed-btn">Recharge ₹99 Plan</button>
-                                    </div>
-                                </div>
-                                <div class="col-lg-4 col-sm-6 responsive">
-                                    <div class="plan-card">
-                                        <div class="plan-header">Best for Browsing</div>
-                                        <h5 class="plan-title">MC - 29</h5>
-                                        <p class="plan-price">₹29/1 Day</p>
-                                        <ul class="plan-features">
-                                            <li><i class="fa-solid fa-wifi me-1"></i>1GB data/day + Unlimited Night
-                                                Data</li>
-                                            <li><i class="fa-solid fa-globe me-1"></i>10GB data Roll Over</li>
-                                        </ul>
-                                        <button class="proceed-btn">Recharge ₹29 Plan</button>
-                                    </div>
-                                </div>
-
-                                <div class="col-lg-4 col-sm-6 responsive">
-                                    <div class="plan-card">
-                                        <div class="plan-header">Daily Power User</div>
-                                        <h5 class="plan-title">MC - 149</h5>
-                                        <p class="plan-price">₹149/7 Days</p>
-                                        <ul class="plan-features">
-                                            <li><i class="fa-solid fa-wifi me-1"></i>2GB data/day + Weekend Data
-                                                Bonus</li>
-                                            <li><i class="fa-solid fa-globe me-1"></i>15GB data Roll Over</li>
-                                        </ul>
-                                        <button class="proceed-btn">Recharge ₹149 Plan</button>
-                                    </div>
-                                </div>
-
-                                <div class="col-lg-4 col-sm-6 responsive">
-                                    <div class="plan-card">
-                                        <div class="plan-header">Most Popular</div>
-                                        <h5 class="plan-title">MC - 399</h5>
-                                        <p class="plan-price">₹399/month</p>
-                                        <ul class="plan-features">
-                                            <li><i class="fa-solid fa-wifi me-1"></i>1.5GB data/day + 100GB data
-                                                Roll Over</li>
-                                            <li><i class="fa-solid fa-globe me-1"></i>Weekend Unlimited Data</li>
-                                        </ul>
-                                        <button class="proceed-btn">Recharge ₹399 Plan</button>
-                                    </div>
-                                </div>
-
-                                <div class="col-lg-4 col-sm-6 responsive">
-                                    <div class="plan-card">
-                                        <div class="plan-header">Gaming & Streaming</div>
-                                        <h5 class="plan-title">MC - 549</h5>
-                                        <p class="plan-price">₹549/month</p>
-                                        <ul class="plan-features">
-                                            <li><i class="fa-solid fa-wifi me-1"></i>3GB data/day + OTT Access</li>
-                                            <li><i class="fa-solid fa-globe me-1"></i>200GB data Roll Over</li>
-                                        </ul>
-                                        <button class="proceed-btn mt-3">Recharge ₹549 Plan</button>
-                                    </div>
-                                </div>
-
-                                <div class="col-lg-4 col-sm-6 responsive">
-                                    <div class="plan-card">
-                                        <div class="plan-header">Quarterly Pack</div>
-                                        <h5 class="plan-title">MC - 1299</h5>
-                                        <p class="plan-price">₹1299/3 Months</p>
-                                        <ul class="plan-features">
-                                            <li><i class="fa-solid fa-wifi me-1"></i>2.5GB data/day + Unlimited
-                                                Night Data</li>
-                                            <li><i class="fa-solid fa-globe me-1"></i>300GB data Roll Over</li>
-                                        </ul>
-                                        <button class="proceed-btn">Recharge ₹1299 Plan</button>
-                                    </div>
-                                </div>
-
-                                <div class="col-lg-4 col-sm-6 responsive">
-                                    <div class="plan-card">
-                                        <div class="plan-header">Half-Yearly Special</div>
-                                        <h5 class="plan-title">MC - 2499</h5>
-                                        <p class="plan-price">₹2499/6 Months</p>
-                                        <ul class="plan-features">
-                                            <li><i class="fa-solid fa-wifi me-1"></i>3GB data/day + MC-59 Music &
-                                                OTT</li>
-                                            <li><i class="fa-solid fa-globe me-1"></i>500GB data Roll Over</li>
-                                        </ul>
-                                        <button class="proceed-btn">Recharge ₹2499 Plan</button>
-                                    </div>
-                                </div>
-
-                                <div class="col-lg-4 col-sm-6 responsive">
-                                    <div class="plan-card">
-                                        <div class="plan-header">Annual Power Saver</div>
-                                        <h5 class="plan-title">MC - 4999</h5>
-                                        <p class="plan-price">₹4999/Year</p>
-                                        <ul class="plan-features">
-                                            <li><i class="fa-solid fa-wifi me-1"></i>2.5GB data/day + Unlimited
-                                                Calls</li>
-                                            <li><i class="fa-solid fa-globe me-1"></i>Unlimited Data Roll Over</li>
-                                        </ul>
-                                        <button class="proceed-btn">Recharge ₹4999 Plan</button>
-                                    </div>
-                                </div>
-
-                                <div class="col-lg-4 col-sm-6 responsive">
-                                    <div class="plan-card">
-                                        <div class="plan-header">Family Pack</div>
-                                        <h5 class="plan-title">MC - 5999</h5>
-                                        <p class="plan-price">₹5999/Year</p>
-                                        <ul class="plan-features">
-                                            <li><i class="fa-solid fa-wifi me-1"></i>5GB data/day (Shared) + Netflix
-                                                & Prime</li>
-                                            <li><i class="fa-solid fa-globe me-1"></i>1TB Data Roll Over</li>
-                                        </ul>
-                                        <button class="proceed-btn">Recharge ₹5999 Plan</button>
-                                    </div>
-                                </div>
-                                <div class="col-lg-4 col-sm-6 responsive">
-                                    <div class="plan-card">
-                                        <div class="plan-header">Daily Essentials</div>
-                                        <h5 class="plan-title">MC - 19</h5>
-                                        <p class="plan-price">₹19/1 Day</p>
-                                        <ul class="plan-features">
-                                            <li><i class="fa-solid fa-wifi me-1"></i>1GB data</li>
-                                            <li><i class="fa-solid fa-globe me-1"></i>High-Speed Access</li>
-                                        </ul>
-                                        <button class="proceed-btn">Recharge ₹19 Plan</button>
-                                    </div>
-                                </div>
-
-                                <div class="col-lg-4 col-sm-6 responsive">
-                                    <div class="plan-card">
-                                        <div class="plan-header">Weekly Pack</div>
-                                        <h5 class="plan-title">MC - 129</h5>
-                                        <p class="plan-price">₹129/7 Days</p>
-                                        <ul class="plan-features">
-                                            <li><i class="fa-solid fa-wifi me-1"></i>10GB data</li>
-                                            <li><i class="fa-solid fa-globe me-1"></i>Ultra-Fast 4G/5G Speed</li>
-                                        </ul>
-                                        <button class="proceed-btn">Recharge ₹129 Plan</button>
-                                    </div>
-                                </div>
-
-                                <div class="col-lg-4 col-sm-6 responsive">
-                                    <div class="plan-card">
-                                        <div class="plan-header">Monthly Saver</div>
-                                        <h5 class="plan-title">MC - 399</h5>
-                                        <p class="plan-price">₹399/28 Days</p>
-                                        <ul class="plan-features">
-                                            <li><i class="fa-solid fa-wifi me-1"></i>50GB data</li>
-                                            <li><i class="fa-solid fa-globe me-1"></i>Data Rollover Available</li>
-                                        </ul>
-                                        <button class="proceed-btn">Recharge ₹399 Plan</button>
-                                    </div>
-                                </div>
-
                             </div>
-
 
                         </div>
 
@@ -456,471 +138,15 @@
 
                         <div class="tab-pane fade" id="unlimited" role="tabpanel" aria-labelledby="unlimited-tab">
                             <div class="row">
-                                <div class="col-lg-4 col-sm-6 responsive">
-                                    <div class="plan-card">
-                                        <div class="plan-header">Unlimited Trial</div>
-                                        <h5 class="plan-title">MC - 59</h5>
-                                        <p class="plan-price">₹59/1 Day</p>
-                                        <ul class="plan-features">
-                                            <li><i class="fa-solid fa-wifi me-1"></i>Unlimited 5G Data</li>
-                                            <li><i class="fa-solid fa-globe me-1"></i>Max Speed: 1Gbps</li>
-                                        </ul>
-                                        <button class="proceed-btn mt-4">Recharge ₹59 Plan</button>
-                                    </div>
-                                </div>
-
-                                <div class="col-lg-4 col-sm-6 responsive">
-                                    <div class="plan-card">
-                                        <div class="plan-header">Unlimited Weekly</div>
-                                        <h5 class="plan-title">MC - 349</h5>
-                                        <p class="plan-price">₹349/7 Days</p>
-                                        <ul class="plan-features">
-                                            <li><i class="fa-solid fa-wifi me-1"></i>Unlimited 5G Data</li>
-                                            <li><i class="fa-solid fa-globe me-1"></i>Max Speed: 1Gbps + Weekend Data
-                                                Boost</li>
-                                        </ul>
-                                        <button class="proceed-btn">Recharge ₹349 Plan</button>
-                                    </div>
-                                </div>
-
-                                <div class="col-lg-4 col-sm-6 responsive">
-                                    <div class="plan-card">
-                                        <div class="plan-header">Most Popular</div>
-                                        <h5 class="plan-title">MC - 799</h5>
-                                        <p class="plan-price">₹799/Month</p>
-                                        <ul class="plan-features">
-                                            <li><i class="fa-solid fa-wifi me-1"></i>Unlimited 5G Data + 100GB
-                                                DataPriority Speed</li>
-                                            <li><i class="fa-solid fa-globe me-1"></i>OTT Access (Netflix, Prime)</li>
-                                        </ul>
-                                        <button class="proceed-btn">Recharge ₹799 Plan</button>
-                                    </div>
-                                </div>
-
-                                <div class="col-lg-4 col-sm-6 responsive">
-                                    <div class="plan-card">
-                                        <div class="plan-header">Gaming & Streaming</div>
-                                        <h5 class="plan-title">MC - 1199</h5>
-                                        <p class="plan-price">₹1199/Month</p>
-                                        <ul class="plan-features">
-                                            <li><i class="fa-solid fa-wifi me-1"></i>Unlimited 5G Data + No Speed Caps
-                                            </li>
-                                            <li><i class="fa-solid fa-globe me-1"></i>4K Streaming + Cloud Gaming Boost
-                                            </li>
-                                        </ul>
-                                        <button class="proceed-btn">Recharge ₹1199 Plan</button>
-                                    </div>
-                                </div>
-
-                                <div class="col-lg-4 col-sm-6 responsive">
-                                    <div class="plan-card">
-                                        <div class="plan-header">Business Pro</div>
-                                        <h5 class="plan-title">MC - 2999</h5>
-                                        <p class="plan-price">₹2999/3 Months</p>
-                                        <ul class="plan-features">
-                                            <li><i class="fa-solid fa-wifi me-1"></i>Unlimited 5G Data + 1TB Cloud
-                                                Storage</li>
-                                            <li><i class="fa-solid fa-globe me-1"></i>Guaranteed 5Gbps Speeds</li>
-                                        </ul>
-                                        <button class="proceed-btn mt-3">Recharge ₹2999 Plan</button>
-                                    </div>
-                                </div>
-
-                                <div class="col-lg-4 col-sm-6 responsive">
-                                    <div class="plan-card">
-                                        <div class="plan-header">Half-Yearly Ultimate</div>
-                                        <h5 class="plan-title">MC - 5999</h5>
-                                        <p class="plan-price">₹5999/6 Months</p>
-                                        <ul class="plan-features">
-                                            <li><i class="fa-solid fa-wifi me-1"></i>Unlimited 5G Data + MC-59 VPN
-                                            </li>
-                                            <li><i class="fa-solid fa-globe me-1"></i>High-Priority Network Access</li>
-                                        </ul>
-                                        <button class="proceed-btn mt-3">Recharge ₹5999 Plan</button>
-                                    </div>
-                                </div>
-
-                                <div class="col-lg-4 col-sm-6 responsive">
-                                    <div class="plan-card">
-                                        <div class="plan-header">Annual Saver</div>
-                                        <h5 class="plan-title">MC - 9999</h5>
-                                        <p class="plan-price">₹9999/Year</p>
-                                        <ul class="plan-features">
-                                            <li><i class="fa-solid fa-wifi me-1"></i>Unlimited 5G Data + 5Gbps Max Speed
-                                            </li>
-                                            <li><i class="fa-solid fa-globe me-1"></i>Netflix + Jio + Prime +
-                                                Spotify</li>
-                                        </ul>
-                                        <button class="proceed-btn">Recharge ₹9999 Plan</button>
-                                    </div>
-                                </div>
-
-                                <div class="col-lg-4 col-sm-6 responsive">
-                                    <div class="plan-card">
-                                        <div class="plan-header">Family Pack</div>
-                                        <h5 class="plan-title">MC - 12999</h5>
-                                        <p class="plan-price">₹12,999/Year</p>
-                                        <ul class="plan-features">
-                                            <li><i class="fa-solid fa-wifi me-1"></i>Unlimited 5G Data (5 Devices)</li>
-                                            <li><i class="fa-solid fa-globe me-1"></i>Netflix, Prime, Hotstar + Parental
-                                                Controls</li>
-                                        </ul>
-                                        <button class="proceed-btn mt-3">Recharge ₹12,999 Plan</button>
-                                    </div>
-                                </div>
-
-                                <div class="col-lg-4 col-sm-6 responsive">
-                                    <div class="plan-card">
-                                        <div class="plan-header">Enterprise Exclusive</div>
-                                        <h5 class="plan-title">MC - 19999</h5>
-                                        <p class="plan-price">₹19,999/Year</p>
-                                        <ul class="plan-features">
-                                            <li><i class="fa-solid fa-wifi me-1"></i>Unlimited 5G Data + Dedicated
-                                                Support</li>
-                                            <li><i class="fa-solid fa-globe me-1"></i>10Gbps Speed + Secure Business VPN
-                                            </li>
-                                        </ul>
-                                        <button class="proceed-btn">Recharge ₹19,999 Plan</button>
-                                    </div>
-                                </div>
-                                <div class="col-lg-4 col-sm-6 responsive">
-                                    <div class="plan-card">
-                                        <div class="plan-header">Basic 5G Unlimited</div>
-                                        <h5 class="plan-title">MC - 499</h5>
-                                        <p class="plan-price">₹499/28 Days</p>
-                                        <ul class="plan-features">
-                                            <li><i class="fa-solid fa-wifi me-1"></i>Unlimited 5G Data</li>
-                                            <li><i class="fa-solid fa-globe me-1"></i>100GB DataPriority High-Speed,
-                                                then 5Mbps</li>
-                                            <li><i class="fa-solid fa-tv"></i>Free OTT Access (SonyLIV + Zee5)</li>
-                                        </ul>
-                                        <button class="proceed-btn">Recharge ₹499 Plan</button>
-                                    </div>
-                                </div>
-
-                                <div class="col-lg-4 col-sm-6 responsive">
-                                    <div class="plan-card">
-                                        <div class="plan-header">MC-59 5G Max</div>
-                                        <h5 class="plan-title">MC - 799</h5>
-                                        <p class="plan-price">₹799/56 Days</p>
-                                        <ul class="plan-features">
-                                            <li><i class="fa-solid fa-wifi me-1"></i>Truly Unlimited 5G Data</li>
-                                            <li><i class="fa-solid fa-globe me-1"></i>Ultra HD Streaming & Gaming</li>
-                                            <li><i class="fa-solid fa-tv"></i>OTT Pack (Netflix Mobile + Jio
-                                                Hotstar)</li>
-                                        </ul>
-                                        <button class="proceed-btn mt-3">Recharge ₹799 Plan</button>
-                                    </div>
-                                </div>
-
-                                <div class="col-lg-4 col-sm-6 responsive">
-                                    <div class="plan-card">
-                                        <div class="plan-header">Ultimate 5G Pro</div>
-                                        <h5 class="plan-title">MC - 1199</h5>
-                                        <p class="plan-price">₹1199/90 Days</p>
-                                        <ul class="plan-features">
-                                            <li><i class="fa-solid fa-wifi me-1"></i>Unlimited 5G Data + International
-                                                Roaming</li>
-                                            <li><i class="fa-solid fa-gamepad"></i>Gaming Mode with 1ms Latency</li>
-                                            <li><i class="fa-solid fa-tv"></i>OTT Bundle (Netflix + Prime + Hotstar)
-                                            </li>
-                                        </ul>
-                                        <button class="proceed-btn">Recharge ₹1199 Plan</button>
-                                    </div>
-                                </div>
+                                
                             </div>
 
                         </div>
                         <div class="tab-pane fade" id="ott" role="tabpanel" aria-labelledby="ott-tab">
                             <div class="row">
-                                <div class="row">
-                                    <!-- Basic OTT Pack -->
-                                    <div class="col-lg-4 col-sm-6 responsive">
-                                        <div class="plan-card">
-                                            <div class="plan-header">Basic OTT Pack</div>
-                                            <h5 class="plan-title">Starter Plan</h5>
-                                            <p class="plan-price">₹399/30 Days</p>
-                                            <ul class="plan-features">
-                                                <li><i class="fa-solid fa-wifi me-1"></i>2GB/day + Unlimited Calls</li>
-                                                <li>
-                                                    <img src="src/images/netflixlogo.png" alt="Netflix" style="height: 14px; vertical-align: middle;">
-                                                    Netflix (Mobile-only)
-                                                </li>
-                                                <li><i class="fa-solid fa-globe me-1"></i>Validity: 30 Days</li>
-                                            </ul>
-                                            <button class="proceed-btn">Recharge ₹399 Plan</button>
-                                        </div>
-                                    </div>
                                 
-                                    <!-- OTT Value Pack -->
-                                    <div class="col-lg-4 col-sm-6 responsive">
-                                        <div class="plan-card">
-                                            <div class="plan-header">OTT Value Pack</div>
-                                            <h5 class="plan-title">Entertainment Lite</h5>
-                                            <p class="plan-price">₹499/30 Days</p>
-                                            <ul class="plan-features">
-                                                <li><i class="fa-solid fa-wifi me-1"></i>2.5GB/day + Unlimited Calls</li>
-                                                <li>
-                                                    <img src="src/images/amazonprimelogo.png" alt="Prime Video" style="height: 14px; vertical-align: middle;">
-                                                    Prime Video
-                                                </li>
-                                                <li>
-                                                    <img src="src/images/netflixlogo.png" alt="Netflix" style="height: 14px; vertical-align: middle;">
-                                                    Netflix (Standard)
-                                                </li>
-                                                <li><i class="fa-solid fa-globe me-1"></i>Validity: 30 Days</li>
-                                            </ul>
-                                            <button class="proceed-btn">Recharge ₹499 Plan</button>
-                                        </div>
-                                    </div>
-                                
-                                    <!-- OTT Super Saver -->
-                                    <div class="col-lg-4 col-sm-6 responsive">
-                                        <div class="plan-card">
-                                            <div class="plan-header">OTT Super Saver</div>
-                                            <h5 class="plan-title">OTT Power Pack</h5>
-                                            <p class="plan-price">₹599/45 Days</p>
-                                            <ul class="plan-features">
-                                                <li><i class="fa-solid fa-wifi me-1"></i>3GB/day + Unlimited Calls</li>
-                                                <li>
-                                                    <img src="src/images/netflixlogo.png" alt="Netflix" style="height: 14px; vertical-align: middle;">
-                                                    Netflix (HD)
-                                                </li>
-                                                <li>
-                                                    <img src="src/images/amazonprimelogo.png" alt="Prime Video" style="height: 14px; vertical-align: middle;">
-                                                    Prime Video
-                                                </li>
-                                                <li>
-                                                    <img src="src/images/jiohotstarlogo.png" alt="Jio Hotstar" style="height: 14px; vertical-align: middle;">
-                                                    Jio Hotstar (Mobile)
-                                                </li>
-                                                <li><i class="fa-solid fa-globe me-1"></i>Validity: 45 Days</li>
-                                            </ul>
-                                            <button class="proceed-btn">Recharge ₹599 Plan</button>
-                                        </div>
-                                    </div>
-                                
-                                    <!-- OTT Max Pack -->
-                                    <div class="col-lg-4 col-sm-6 responsive">
-                                        <div class="plan-card">
-                                            <div class="plan-header">OTT Max Pack</div>
-                                            <h5 class="plan-title">OTT Lovers Plan</h5>
-                                            <p class="plan-price">₹799/60 Days</p>
-                                            <ul class="plan-features">
-                                                <li><i class="fa-solid fa-wifi me-1"></i>3.5GB/day + Unlimited Calls</li>
-                                                <li>
-                                                    <img src="src/images/netflixlogo.png" alt="Netflix" style="height: 14px; vertical-align: middle;">
-                                                    Netflix (4K)
-                                                </li>
-                                                <li>
-                                                    <img src="src/images/amazonprimelogo.png" alt="Prime Video" style="height: 14px; vertical-align: middle;">
-                                                    Prime Video
-                                                </li>
-                                                <li>
-                                                    <img src="src/images/jiohotstarlogo.png" alt="Jio Hotstar" style="height: 14px; vertical-align: middle;">
-                                                    Jio Hotstar (MC-59)
-                                                </li>
-                                                <li><i class="fa-solid fa-globe me-1"></i>Validity: 60 Days</li>
-                                            </ul>
-                                            <button class="proceed-btn">Recharge ₹799 Plan</button>
-                                        </div>
-                                    </div>
-                                
-                                    <!-- OTT Ultimate Plan -->
-                                    <div class="col-lg-4 col-sm-6 responsive">
-                                        <div class="plan-card">
-                                            <div class="plan-header">Ultimate OTT Bundle</div>
-                                            <h5 class="plan-title">OTT Unlimited</h5>
-                                            <p class="plan-price">₹999/90 Days</p>
-                                            <ul class="plan-features">
-                                                <li><i class="fa-solid fa-wifi me-1"></i>4GB/day + Unlimited Calls</li>
-                                                <li>
-                                                    <img src="src/images/netflixlogo.png" alt="Netflix" style="height: 14px; vertical-align: middle;">
-                                                    Netflix (4K UHD)
-                                                </li>
-                                                <li>
-                                                    <img src="src/images/amazonprimelogo.png" alt="Prime Video" style="height: 14px; vertical-align: middle;">
-                                                    Prime Video (Full Access)
-                                                </li>
-                                                <li>
-                                                    <img src="src/images/jiohotstarlogo.png" alt="Jio Hotstar" style="height: 14px; vertical-align: middle;">
-                                                    Jio Hotstar (VIP)
-                                                </li>
-                                                <li><i class="fa-solid fa-globe me-1"></i>Validity: 90 Days</li>
-                                            </ul>
-                                            <button class="proceed-btn">Recharge ₹999 Plan</button>
-                                        </div>
-                                    </div>
-                                
-                                    <!-- OTT Annual MC-59 -->
-                                    <div class="col-lg-4 col-sm-6 responsive">
-                                        <div class="plan-card">
-                                            <div class="plan-header">Annual OTT MC-59</div>
-                                            <h5 class="plan-title">OTT Mega Saver</h5>
-                                            <p class="plan-price">₹2999/365 Days</p>
-                                            <ul class="plan-features">
-                                                <li><i class="fa-solid fa-wifi me-1"></i>5GB/day + Unlimited 5G</li>
-                                                <li>
-                                                    <img src="src/images/netflixlogo.png" alt="Netflix" style="height: 14px; vertical-align: middle;">
-                                                    Netflix (Full Family)
-                                                </li>
-                                                <li>
-                                                    <img src="src/images/amazonprimelogo.png" alt="Prime Video" style="height: 14px; vertical-align: middle;">
-                                                    Prime Video (Full Access)
-                                                </li>
-                                                <li>
-                                                    <img src="src/images/jiohotstarlogo.png" alt="Jio Hotstar" style="height: 14px; vertical-align: middle;">
-                                                    Jio Hotstar (VIP)
-                                                </li>
-                                                <li><i class="fa-solid fa-globe me-1"></i>Validity: 365 Days</li>
-                                            </ul>
-                                            <button class="proceed-btn">Recharge ₹2999 Plan</button>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <!-- Lite OTT Pack -->
-                                        <div class="col-lg-4 col-sm-6 responsive">
-                                            <div class="plan-card">
-                                                <div class="plan-header">Lite OTT Pack</div>
-                                                <h5 class="plan-title">Budget Binge</h5>
-                                                <p class="plan-price">₹299/28 Days</p>
-                                                <ul class="plan-features">
-                                                    <li><i class="fa-solid fa-wifi me-1"></i>1.5GB/day + Unlimited Calls</li>
-                                                    <li>
-                                                        <img src="src/images/jiohotstarlogo.png" alt="Jio Hotstar" style="height: 14px; vertical-align: middle;">
-                                                        Jio Hotstar (Mobile)
-                                                    </li>
-                                                    <li><i class="fa-solid fa-globe me-1"></i>Validity: 28 Days</li>
-                                                </ul>
-                                                <button class="proceed-btn">Recharge ₹299 Plan</button>
-                                            </div>
-                                        </div>
-                                    
-                                        <!-- Standard OTT Pack -->
-                                        <div class="col-lg-4 col-sm-6 responsive">
-                                            <div class="plan-card">
-                                                <div class="plan-header">Standard OTT Pack</div>
-                                                <h5 class="plan-title">Entertainment Plan</h5>
-                                                <p class="plan-price">₹549/30 Days</p>
-                                                <ul class="plan-features">
-                                                    <li><i class="fa-solid fa-wifi me-1"></i>3GB/day + Unlimited Calls</li>
-                                                    <li>
-                                                        <img src="src/images/netflixlogo.png" alt="Netflix" style="height: 14px; vertical-align: middle;">
-                                                        Netflix (Mobile)
-                                                    </li>
-                                                    <li>
-                                                        <img src="src/images/jiohotstarlogo.png" alt="Jio Hotstar" style="height: 14px; vertical-align: middle;">
-                                                        Jio Hotstar (Mobile)
-                                                    </li>
-                                                    <li><i class="fa-solid fa-globe me-1"></i>Validity: 30 Days</li>
-                                                </ul>
-                                                <button class="proceed-btn">Recharge ₹549 Plan</button>
-                                            </div>
-                                        </div>
-                                    
-                                        <!-- MC-59 OTT Pack -->
-                                        <div class="col-lg-4 col-sm-6 responsive">
-                                            <div class="plan-card">
-                                                <div class="plan-header">MC-59 OTT Pack</div>
-                                                <h5 class="plan-title">Binge Max</h5>
-                                                <p class="plan-price">₹849/60 Days</p>
-                                                <ul class="plan-features">
-                                                    <li><i class="fa-solid fa-wifi me-1"></i>3.5GB/day + Unlimited Calls</li>
-                                                    <li>
-                                                        <img src="src/images/netflixlogo.png" alt="Netflix" style="height: 14px; vertical-align: middle;">
-                                                        Netflix (HD)
-                                                    </li>
-                                                    <li>
-                                                        <img src="src/images/amazonprimelogo.png" alt="Prime Video" style="height: 14px; vertical-align: middle;">
-                                                        Prime Video
-                                                    </li>
-                                                    <li><i class="fa-solid fa-globe me-1"></i>Validity: 60 Days</li>
-                                                </ul>
-                                                <button class="proceed-btn">Recharge ₹849 Plan</button>
-                                            </div>
-                                        </div>
-                                    
-                                        <!-- Super OTT Pack -->
-                                        <div class="col-lg-4 col-sm-6 responsive">
-                                            <div class="plan-card">
-                                                <div class="plan-header">Super OTT Pack</div>
-                                                <h5 class="plan-title">OTT Plus</h5>
-                                                <p class="plan-price">₹1199/90 Days</p>
-                                                <ul class="plan-features">
-                                                    <li><i class="fa-solid fa-wifi me-1"></i>4GB/day + Unlimited Calls</li>
-                                                    <li>
-                                                        <img src="src/images/netflixlogo.png" alt="Netflix" style="height: 14px; vertical-align: middle;">
-                                                        Netflix (4K UHD)
-                                                    </li>
-                                                    <li>
-                                                        <img src="src/images/amazonprimelogo.png" alt="Prime Video" style="height: 14px; vertical-align: middle;">
-                                                        Prime Video
-                                                    </li>
-                                                    <li>
-                                                        <img src="src/images/jiohotstarlogo.png" alt="Jio Hotstar" style="height: 14px; vertical-align: middle;">
-                                                        Jio Hotstar (MC-59)
-                                                    </li>
-                                                    <li><i class="fa-solid fa-globe me-1"></i>Validity: 90 Days</li>
-                                                </ul>
-                                                <button class="proceed-btn">Recharge ₹1199 Plan</button>
-                                            </div>
-                                        </div>
-                                    
-                                        <!-- Annual OTT Family Plan -->
-                                        <div class="col-lg-4 col-sm-6 responsive">
-                                            <div class="plan-card">
-                                                <div class="plan-header">Annual Family OTT</div>
-                                                <h5 class="plan-title">OTT Family Plan</h5>
-                                                <p class="plan-price">₹3499/365 Days</p>
-                                                <ul class="plan-features">
-                                                    <li><i class="fa-solid fa-wifi me-1"></i>6GB/day + Unlimited 5G</li>
-                                                    <li>
-                                                        <img src="src/images/netflixlogo.png" alt="Netflix" style="height: 14px; vertical-align: middle;">
-                                                        Netflix (Full Family)
-                                                    </li>
-                                                    <li>
-                                                        <img src="src/images/amazonprimelogo.png" alt="Prime Video" style="height: 14px; vertical-align: middle;">
-                                                        Prime Video (Full Access)
-                                                    </li>
-                                                    <li>
-                                                        <img src="src/images/jiohotstarlogo.png" alt="Jio Hotstar" style="height: 14px; vertical-align: middle;">
-                                                        Jio Hotstar (VIP)
-                                                    </li>
-                                                    <li><i class="fa-solid fa-globe me-1"></i>Validity: 365 Days</li>
-                                                </ul>
-                                                <button class="proceed-btn">Recharge ₹3499 Plan</button>
-                                            </div>
-                                        </div>
-                                    
-                                        <!-- Ultimate OTT Plan -->
-                                        <div class="col-lg-4 col-sm-6 responsive">
-                                            <div class="plan-card">
-                                                <div class="plan-header">Ultimate OTT Pack</div>
-                                                <h5 class="plan-title">OTT Elite</h5>
-                                                <p class="plan-price">₹4999/365 Days</p>
-                                                <ul class="plan-features">
-                                                    <li><i class="fa-solid fa-wifi me-1"></i>Unlimited Data + Unlimited 5G</li>
-                                                    <li>
-                                                        <img src="src/images/netflixlogo.png" alt="Netflix" style="height: 14px; vertical-align: middle;">
-                                                        Netflix (MC-59 Family)
-                                                    </li>
-                                                    <li>
-                                                        <img src="src/images/amazonprimelogo.png" alt="Prime Video" style="height: 14px; vertical-align: middle;">
-                                                        Prime Video (Ultra HD)
-                                                    </li>
-                                                    <li>
-                                                        <img src="src/images/jiohotstarlogo.png" alt="Jio Hotstar" style="height: 14px; vertical-align: middle;">
-                                                        Jio Hotstar (Full Access)
-                                                    </li>
-                                                    <li><i class="fa-solid fa-globe me-1"></i>Validity: 365 Days</li>
-                                                </ul>
-                                                <button class="proceed-btn">Recharge ₹4999 Plan</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
-                                </div>
-                                
+
+
                             </div>
 
                         </div>
@@ -945,53 +171,82 @@
 
 
 
-    <script src="JavaScript/main.js"></script>
     <script>
         document.addEventListener("DOMContentLoaded", function () {
-    const categories = ["recommended", "validity", "unlimited", "ott"];
-
+            
+            const categories = ["recommended", "validity", "data", "unlimited", "ott"];
+            
+            const images = {
+        netflix: "src/images/netflixlogo.png",
+        amazon: "src/images/amazonprimelogo.png", // Alias for Prime Video
+    };
+    
     categories.forEach(category => {
-        fetch(`http://localhost:3000/${category}`)  // Fetch each category separately
-            .then(response => response.json())
-            .then(plans => {
-                const container = document.querySelector(`#${category} .row`);
-                if (!container) return; // If the container doesn't exist, skip
-
-                container.innerHTML = ""; // Clear previous content
-
-                if (plans.length === 0) {
-                    // Hide the category section if no data is available
-                    document.querySelector(`#${category}`).style.display = "none";
-                } else {
-                    plans.forEach(plan => {
+        fetch(`http://localhost:3000/${category}`)
+        .then(response => response.json())
+        .then(plans => {
+            const container = document.querySelector(`#${category} .row`);
+            if (!container) return;
+            
+            container.innerHTML = ""; // Clear previous content
+            
+            if (plans.length === 0) {
+                document.querySelector(`#${category}`).style.display = "none";
+            } else {
+                plans.forEach(plan => {
+                    if (plan.hidden) return;
+                    
+                    let modifiedFeatures = plan.features.map(feature => {
+                        let modifiedFeature = feature; // Start with the original text
+                        
+                        // Loop through OTT keywords & replace all occurrences with images
+                        Object.keys(images).forEach(keyword => {
+                            let regex = new RegExp(`\\b${keyword}\\b`, "gi"); // Case-insensitive whole word match
+                            modifiedFeature = modifiedFeature.replace(regex, `<img src="${images[keyword]}" alt="${keyword}" style="width:30px; "> ${keyword}`);
+                        });
+                        
+                        return `<li>${modifiedFeature}</li>`; // Wrap in <li> to maintain list structure
+                        }).join("");
+                        
                         const planCard = `
-                            <div class="col-lg-4 col-sm-6 responsive">
-                                <div class="plan-card">
-                                    <div class="plan-header">${plan.label}</div>
-                                    <h5 class="plan-title">${plan.plan_name}</h5>
-                                    <p class="plan-price">${plan.price}</p>
-                                    <ul class="plan-features">
-                                        ${plan.features.map(feature => `<li>${feature}</li>`).join("")}
-                                    </ul>
-                                    <button class="proceed-btn">Recharge ${plan.plan_code}</button>
+                        <div class="col-lg-4 col-sm-6 responsive">
+                            <div class="plan-card position-relative">
+                                ${plan.badge ? `<img src="${plan.badge}" class="badge-img position-absolute top-0 end-0 m-2" id="badge" alt="Badge" style="width:100px" >` : ''}
+                                <div class="plan-header position-relative" style="left:-30px;top:-29px">${plan.label}</div>
+                                <h5 class="plan-title">${plan.plan_name}</h5>
+                                <p class="plan-price">${plan.price}</p>
+                                <ul class="plan-features">${modifiedFeatures}</ul>
+                                <button  class="proceed-btn">${plan.plan_code ? `Recharge ${plan.plan_code}` : `Recharge ${plan.plan_name}`}</button>
                                 </div>
-                            </div>
-                        `;
-                        container.innerHTML += planCard;
-                    });
-                }
-            })
-            .catch(error => console.error(`Error fetching ${category} data:`, error));
+                                </div>`;
+                                
+                                container.innerHTML += planCard;
+                            });
+                        }
+                    })
+                    .catch(error => console.error(`Error fetching ${category} data:`, error));
+                });
+
+            });
+            
+            
+    
+            document.addEventListener("click", function (event) {
+        if (event.target.classList.contains("proceed-btn")) {
+            const planCode = event.target.getAttribute("data-plan-code") || "";
+            const planName = event.target.getAttribute("data-plan-name") || "";
+
+            // Navigate to payment page with query parameters
+            window.location.href = `http://127.0.0.1:5501/payment.html?planCode=${planCode}&planName=${planName}`;
+        }
     });
-});
+            </script>
 
+        
 
-    </script>
-
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
-</body>
-
-</html>
+    </body>
+    
+    </html>

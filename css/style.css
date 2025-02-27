@@ -166,6 +166,11 @@
   }
   
 
+
+
+  .navbar a:hover{
+    color: #d52136;
+  }
   
 
   body {
@@ -208,7 +213,7 @@
     background: #f4f7f9;
     transform: translateX(5px);
     padding-left: 20px;
-    color: #EF233C;
+    color: #a7636b;
 }
 
 
@@ -354,3 +359,33 @@ a {
   margin-top: 10px;
 }
 
+
+
+/* For Webkit Browsers (Chrome, Edge, Safari) */
+::-webkit-scrollbar {
+  width: 10px; /* Width of the scrollbar */
+}
+
+/* Scrollbar Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; /* Light grey background */
+  border-radius: 10px; /* Rounded corners */
+}
+
+/* Scrollbar Thumb (the draggable part) */
+::-webkit-scrollbar-thumb {
+  background: #888; /* Darker grey for visibility */
+  border-radius: 10px;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Scrollbar Thumb on Hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #d52136; /* Darker shade on hover */
+}
+
+/* Firefox scrollbar styling */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #d52136 #f1f1f1;
+}

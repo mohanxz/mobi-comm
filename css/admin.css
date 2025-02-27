@@ -1,0 +1,189 @@
+
+/* Sticky class applied dynamically */
+.sticky-active {
+  position: sticky !important;
+  top: 0;
+  z-index: 10;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.highlight {
+  background-color: yellow;
+  font-weight: bold;
+}
+
+
+.user-details {
+  border: 2px solid #ddd;
+  padding: 20px;
+  margin-top: 20px;
+  background: #f9f9f9;
+  border-radius: 8px;
+}
+
+.user-details h2 {
+  color: blue;
+}
+
+.user-details table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.user-details th, .user-details td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+aside {
+  width: 230px;
+  position: fixed;
+  height: 100vh;
+  left: 0;  /* Ensures no gap on the left */
+  top: 0;   /* Keeps it fixed at the top */
+  padding: 15px;
+  background: white; /* Ensure it has a background */
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, 
+              rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, 
+              rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+
+
+
+
+.input-style {
+  border: none;
+  border-bottom: 2px solid #EF233C !important; /* Yellow Bottom Border */
+  outline: none;
+  background-color: white;
+  transition: border-color 0.3s ease-in-out;
+  margin-block: 10px;
+}
+.input-style:focus {
+  border: none !important;
+  border-bottom: 2px solid #EF233C !important; /* Orange Border on Focus */
+}
+
+
+.form-select {
+  width: 200px;
+  padding: 8px;
+  border-radius: 5px;
+  border: 2px solid #d52136;
+  background-color: white;
+  color: #d52136;
+  font-weight: bold;
+  cursor: pointer;
+  outline: none;
+}
+
+.form-select:focus {
+  border-color: #b71c2c;
+  box-shadow: 0 0 5px rgba(213, 33, 54, 0.5);
+}
+
+.form-select option {
+  background-color: white;
+  color: #d52136;
+  font-weight: bold;
+}
+
+.form-select option:hover {
+  background-color: #d52136;
+  color: white;
+}
+
+
+.download-btn {
+  background: linear-gradient(90deg, #041634, #010405);
+  border: none;
+  color: #fff;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.download-btn:hover {
+  background: linear-gradient(90deg, #104dd0, #072a39);
+  transform: scale(1.05);
+}
+
+.download-btn i {
+  font-size: 18px;
+}
+
+
+/* CSS */
+.add-btn {
+  padding: 0.6em 2em;
+  border: none;
+  outline: none;
+  color: rgb(255, 255, 255);
+  background: #111;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  border-radius: 10px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.add-btn:before {
+  content: "";
+  background: linear-gradient(
+    45deg,
+    #d52136,
+    #ff7300,
+    #fffb00,
+    #d52136,
+    #00ffd5,
+    #002bff,
+    #7a00ff,
+    #ff00c8,
+    #d52136
+  );
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  -webkit-filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowing-button-85 20s linear infinite;
+  transition: opacity 0.3s ease-in-out;
+  border-radius: 10px;
+}
+
+@keyframes glowing-button-85 {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+
+.add-btn:after {
+  z-index: -1;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #222;
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+}
