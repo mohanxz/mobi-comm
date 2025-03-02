@@ -240,6 +240,22 @@
             window.location.href = `http://127.0.0.1:5501/payment.html?planCode=${planCode}&planName=${planName}`;
         }
     });
+    document.addEventListener("click", function (event) {
+    if (event.target.classList.contains("proceed-btn")) {
+        // Get the plan details from the parent card
+        const planCard = event.target.closest(".plan-card");
+        const planName = planCard.querySelector(".plan-title").textContent.trim();
+        const planPrice = planCard.querySelector(".plan-price").textContent.trim();
+        const planFeatures = Array.from(planCard.querySelectorAll(".plan-features li"))
+                                .map(li => li.innerHTML) // Keep HTML for images
+                                .join("|"); // Use '|' to separate features
+
+        // Navigate to the payment page with query parameters
+        const url = `http://127.0.0.1:5501/payment.html?planName=${encodeURIComponent(planName)}&planPrice=${encodeURIComponent(planPrice)}&planFeatures=${encodeURIComponent(planFeatures)}`;
+        window.location.href = url;
+    }
+});
+
             </script>
 
         
