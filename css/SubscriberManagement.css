@@ -67,7 +67,7 @@ input[type="radio"]:checked + .tab {
 
 .tab {
     position: relative;
-    z-index: 2; /* Make text above glider */
+    z-index: 2; 
     color: var(--secondary-color);
     transition: color 0.3s ease-in-out;
 }
