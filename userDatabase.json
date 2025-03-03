@@ -1,6 +1,27 @@
 {
   "users": [
     {
+      "id": "007",
+      "username": "Mohan raj",
+      "mobileNumber": "9698215988",
+      "email": "mohanrajs2k04@gmail.com",
+      "currentPlan": "MC-359",
+      "walletAmount": 112500,
+      "active": false,
+      "numberOfTransactions": 71,
+      "customerType": "New",
+      "rechargeHistory": [
+        {
+          "date": "2025-01-11",
+          "amount": 499,
+          "paymentMode": "Credit Card",
+          "transactionId": "TXN001",
+          "expiryDate": "2025-03-01"
+        }
+      ]
+    }
+    ,
+    {
       "id": "1",
       "username": "UserBalaji",
       "mobileNumber": "9876510001",
