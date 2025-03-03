@@ -199,11 +199,10 @@
                     let modifiedFeatures = plan.features.map(feature => {
                         let modifiedFeature = feature; // Start with the original text
                         
-                        // Loop through OTT keywords & replace all occurrences with images
-                        Object.keys(images).forEach(keyword => {
-                            let regex = new RegExp(`\\b${keyword}\\b`, "gi"); // Case-insensitive whole word match
-                            modifiedFeature = modifiedFeature.replace(regex, `<img src="${images[keyword]}" alt="${keyword}" style="width:30px; "> ${keyword}`);
-                        });
+                        // Object.keys(images).forEach(keyword => {
+                        //     let regex = new RegExp(`\\b${keyword}\\b`, "gi"); // Case-insensitive whole word match
+                        //     modifiedFeature = modifiedFeature.replace(regex, `<img src="${images[keyword]}" alt="${keyword}" style="width:30px; "> ${keyword}`);
+                        // });
                         
                         return `<li>${modifiedFeature}</li>`; // Wrap in <li> to maintain list structure
                         }).join("");

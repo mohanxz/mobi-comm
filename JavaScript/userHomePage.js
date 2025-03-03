@@ -2,32 +2,62 @@ const input = document.getElementById("mobile-input");
 const spinner = document.getElementById("spinner");
 const errorMessage = document.getElementById("error-message");
 
-input.addEventListener("input", function () {
+input.addEventListener("input", async function () {
     const value = input.value.trim();
     const length = value.length;
     const isValid = /^[6-9]\d{9}$/.test(value);
 
     if (length >= 8 && length <= 10) {
-        errorMessage.style.display = "block"; // Show error message when input is between 8-10 digits
+        errorMessage.innerText = "Please enter a valid 10-digit mobile number.";
+        errorMessage.style.display = "block";
     } else {
-        errorMessage.style.display = "none"; // Hide error message otherwise
+        errorMessage.style.display = "none";
     }
 
     if (isValid) {
-        input.classList.remove("shake");
-        input.classList.add("success");
-        errorMessage.style.display = "none"; // Hide error message
-        
-        // Show spinner and auto-login
-        spinner.style.display = "block";
-        input.disabled = true; // Prevent further input
-        
-        setTimeout(() => {
-            window.location.href = "http://127.0.0.1:5501/prepaidPage.html"; // Redirects to dashboard
-        }, 3000);
+        try {
+            spinner.style.display = "block"; //  Show spinner
+            input.disabled = true; // Disable input while checking
+
+            // Fetch user data from JSON Server
+            const response = await fetch("http://localhost:3000/users");
+            const users = await response.json();
+
+            const user = users.find(user => user.mobileNumber === value);
+
+            if (user) {
+                // Valid MobiComm user - Show spinner and Redirect
+                localStorage.setItem("loggedInUser", JSON.stringify(user));
+                
+                setTimeout(() => {
+                    window.location.href = "http://127.0.0.1:5501/prepaidPage.html";
+                }, 3000);
+                errorMessage.style.display = "none";
+
+                
+                return; // ⬅ Exit function early (so spinner doesn’t hide immediately)
+            } else {
+                //  Number is valid but not in MobiComm DB
+                errorMessage.innerText = "Please enter a valid MobiComm number.";
+                errorMessage.style.display = "block";
+                spinner.style.display = "none";
+
+                input.disabled = false;
+            }
+        } catch (error) {
+            console.error("Error fetching users:", error);
+            errorMessage.innerText = "Something went wrong. Please try again later.";
+            errorMessage.style.display = "block";
+            input.disabled = false;
+        } finally {
+            //  Only hide spinner if user is NOT found
+            if (!localStorage.getItem("loggedInUser")) {
+                spinner.style.display = "none";
+            }
+        }
     } else {
         input.classList.remove("success");
-        spinner.style.display = "none"; // Hide spinner if invalid
+        spinner.style.display = "none";
 
         if (length === 10) {
             input.classList.add("shake");
@@ -35,6 +65,8 @@ input.addEventListener("input", function () {
         }
     }
 });
+
+
 
 document.addEventListener('DOMContentLoaded',()=>{
     let getStartedBtn=document.querySelector('.cta-btn');
