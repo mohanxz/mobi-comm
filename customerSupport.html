@@ -9,7 +9,6 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-  <link rel="stylesheet" href="css/style.css">
   <link
     href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quicksand:wght@300..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
     rel="stylesheet">
@@ -35,10 +34,32 @@
       height: 75vh;
     }
 
-    .navbar{
-      position: sticky ;
-      top: 0;
-    }
+    .navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: white; /* Ensure background is set */
+}
+    .custom-card {
+            border-radius: 15px;
+            padding: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin: 20px 0;
+            transition: 0.5s;
+            box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+        }
+
+        .custom-card:hover{
+          transform: scale(1.04);
+        }
+        .yellow-card { background-color: #FFD83D; }
+        .dark-card { background-color: #23272A; color: white; }
+        .blue-card { background-color: #D6E5FF; }
+        .red-card { background-color: #708709; color: white; }
+        .card-text { max-width: 60%; }
+        .card-img { max-width: 80px; }
 
     @media screen and (max-width:450px) {
       .section__headline{
@@ -52,38 +73,24 @@
 
   </style>
   <header>
-    <nav class="navbar navbar-expand-lg navbar-light  border p-0 " style="position: sticky;;">
+    <nav class="navbar navbar-expand-lg navbar-light border p-0">
       <div class="container-fluid p-0">
-          <a class="navbar-brand  fs-1 p-0" href="http://127.0.0.1:5501/homePage.html"><img
-                  src="src/images/mobi-comm-named-logo.png" alt="" style="width: 220px;"></a>
-  
-          <button class="navbar-toggler p-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll"
-              aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarScroll">
-              <ul class="navbar-nav me-auto my-2 my-lg-0 " style="--bs-scroll-height: 100px;">
-                  <li class="nav-item p-0">
-                      <a class="nav-link"
-                          aria-current="page" href="http://127.0.0.1:5501/homePage.html" >Home</a>
-                  </li>
-                  <li class="nav-item">
-                      <a class="nav-link " aria-current="page" href="http://127.0.0.1:5501/viewplans.html">View
-                          plans
-                      </a>
-                  </li>
-                  <li class="nav-item">
-                      <a class="nav-link " href="http://127.0.0.1:5501/aboutUsPage.html">About us</a>
-                  </li>
-                  <li class="nav-item">
-                      <a class="nav-link text-secondary" href="http://127.0.0.1:5501/customerSupport.html">Support</a>
-                  </li>
-  
-              </ul>
-  
-          </div>
+        <a class="navbar-brand fs-1 p-0" href="homePage.html">
+          <img src="src/images/mobi-comm-named-logo.png" alt="Mobi-Comm Logo" style="width: 220px;">
+        </a>
+        <button class="navbar-toggler p-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarScroll">
+          <ul class="navbar-nav me-auto my-2 my-lg-0">
+            <li class="nav-item"><a class="nav-link" href="homePage.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="viewplans.html">View plans</a></li>
+            <li class="nav-item"><a class="nav-link" href="aboutUsPage.html">About Us</a></li>
+            <li class="nav-item"><a class="nav-link  text-secondary" href="customerSupport.html">Support</a></li>
+          </ul>
+        </div>
       </div>
-  </nav>
+    </nav>
 
     <div class="container-fluid">
       <div class="row">
@@ -94,302 +101,46 @@
       </div>
     </div>
   </header>
-
-  <section>
-    <div class="section_our_solution pt-3">
-
-      <h1 class="ps-4 text-secondary ">Manage Your SIM & Orders Effortlessly</h1>
-      <div class="row">
-        <div class="col-lg-12 col-md-12 col-sm-12">
-          <div class="our_solution_category">
-            <div class="solution_cards_box">
-              <div class="solution_card">
-                <div class="hover_color_bubble"></div>
-                <div class="so_top_icon">
-                  <img src="/src/images/locate-svgrepo-com.svg" alt="">
-                </div>
-                <div class="solu_title">
-                  <h3 class="text-light">Track Your Order</h3>
-                </div>
-                <div class="solu_description">
-                  <p>
-                    Check the status of your SIM card order and track its delivery in real time.
-                  </p>
-                  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#orderIDModal">Track Order</button>
-
-                </div>
-              </div>
-              <div class="solution_card">
-                <div class="hover_color_bubble"></div>
-                <div class="so_top_icon">
-                  <img src="src/images/sim-card-svgrepo-com.svg" alt="">
-                </div>
-                <div class="solu_title">
-                  <h3 class="text-light">Lost Your SIM?</h3>
-                </div>
-                <div class="solu_description">
-                  <p>
-                    Report your lost SIM card instantly and request a quick replacement.
-                  </p>
-                  <button type="button" class="read_more_btn">Report Now</button>
-                </div>
-              </div>
-            </div>
-
-            <div class="solution_cards_box sol_card_top_3">
-              <div class="solution_card">
-                <div class="hover_color_bubble"></div>
-                <div class="so_top_icon">
-                  <img src="src/images/refund-claim-svgrepo-com.svg" alt="">
-
-                </div>
-                <div class="solu_title">
-                  <h3 class="text-light">Request a Refund</h3>
-                </div>
-                <div class="solu_description">
-                  <p>
-                    If you were charged incorrectly or need a refund, apply here hassle-free.
-                  </p>
-                  <button type="button" class="btn btn-primary " data-bs-toggle="modal" data-bs-target="#contactModal">
-                    Request a refund</button>
-                </div>
-              </div>
-              <div class="solution_card">
-                <div class="hover_color_bubble"></div>
-                <div class="so_top_icon">
-                  <img src="src/images/contact-svgrepo-com.svg" alt="">
-                </div>
-                <div class="solu_title">
-                  <h3 class="text-light">Contact Us</h3>
-                </div>
-                <div class="solu_description">
-                  <p>
-                    Need assistance? Our support team is here to help with your queries.
-                  </p>
-                  <button type="button" class="btn btn-primary " data-bs-toggle="modal" data-bs-target="#contactModal">
-                    Get Support</button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="modal fade" id="orderIDModal" tabindex="-1" aria-labelledby="orderIDModalLabel" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered">
-          <div class="modal-content">
-              <div class="modal-header">
-                  <h5 class="modal-title" id="orderIDModalLabel">Enter Your Order ID</h5>
-                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-              </div>
-              <div class="modal-body">
-                  <input type="text" id="orderIDInput" class="form-control" placeholder="Enter 6-digit Order ID">
-                  <span id="orderIDError" class="text-danger mt-2" style="display: none;">Enter a valid 6-digit Order ID.</span>
-              </div>
-              <div class="modal-footer">
-                  <button type="button" class="btn btn-primary" onclick="validateOrderID()">Submit</button>
-              </div>
-          </div>
-      </div>
-  </div>
-
-
-  <!-- Order Status Modal -->
-  <div class="modal fade" id="orderStatusModal" tabindex="-1" aria-labelledby="orderStatusLabel" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered">
-          <div class="modal-content rounded-3 bg-card">
-              <div class="modal-header border-0">
-                  <h5 class="modal-title w-100 text-center text-light" id="orderStatusLabel">Order Status</h5>
-                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" style="filter: invert(1);"></button>
-              </div>
-              <div class="modal-body text-center">
-                  <p class="fw-blod bg-info text-light">AWB Number - <span id="awbNumber">5335T5S</span></p>
-
-                  <div class="d-flex justify-content-between align-items-center my-3">
-                      <div class="progress" style="width: 100%; height: 5px;">
-                          <div class="progress-bar bg-primary" style="width: 75%;"></div>
-                      </div>
-                  </div>
-                  <div class="d-flex justify-content-between text-light">
-                      <small>Order Placed</small>
-                      <small>In Transit</small>
-                      <small>Out for Delivery</small>
-                      <small>Delivered</small>
-                  </div>
-
-                  <div class="mt-4 text-start px-4 text-light">
-                      <p><strong>Shipped with:</strong> UPS</p>
-                      <p><strong>Shipping Type:</strong> Expedited</p>
-                      <p><strong>Estimated Delivery:</strong> 02/12/2017</p>
-                  </div>
-              </div>
-          </div>
-      </div>
-  </div>
-
-<!--contact modal-->
-    <div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
-      <div class="modal-dialog modal-lg h-100">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="contactModalLabel">Contact Us</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-            <form>
-              <div class="row mb-3">
-                <div class="col-md-6">
-                  <label class="form-label">Your Name</label>
-                  <input type="text" class="form-control" placeholder="Enter your name">
-                </div>
-                <div class="col-md-6">
-                  <label class="form-label">Your mobile number</label>
-                  <input type="number" class="form-control" placeholder="Enter your mobile number">
-                </div>
-              </div>
-              <div class="mb-3">
-                <label class="form-label">Reason for refund</label>
-                <textarea class="form-control" rows="4" placeholder="Your  here..."></textarea>
-              </div>
-              <div class="d-flex justify-content-between align-items-center">
-                <button type="submit" class="btn btn-primary text-light border-rounded">Submit</button>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
-
-
-  </section>
-
   <article>
-    <div class="container  mt-5">
-        <h2 class="mb-4 text-secondary" id="faq">FAQ</h2>
-        <div class="accordion mt-5" id="faqAccordion">
+    <div class="container mt-4">
+      <div class="custom-card yellow-card">
+          <div class="card-text">
+              <h4 class="fw-bold">Customer Support</h4>
+              <p>Get 24/7 assistance for all your telecom-related queries.</p>
+              <a href="#">Contact Us →</a>
+          </div>
+          <img src="support.png" alt="Customer Support" class="card-img">
+      </div>
 
-            <div class="accordion-item">
-                <h2 class="accordion-header">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#faq1">
-                        What is data rollback?
-                    </button>
-                </h2>
-                <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                    <div class="accordion-body">
-                        Data rollback lets you carry forward unused data to the next cycle, so you never lose
-                        what you've paid for.
-                    </div>
-                </div>
-            </div>
+      <div class="custom-card dark-card">
+          <div class="card-text">
+              <h4 class="fw-bold">Request a Refund</h4>
+              <p>Easily request refunds for incorrect charges or failed transactions.</p>
+              <a href="#" class="text-white">Apply Now →</a>
+          </div>
+          <img src="refund.png" alt="Refund Request" class="card-img">
+      </div>
 
-            <div class="accordion-item">
-                <h2 class="accordion-header">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#faq2">
-                        What are the benefits of MobiComm prepaid plans?
-                    </button>
-                </h2>
-                <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                    <div class="accordion-body">
-                        Our prepaid plans offer unlimited calls, high-speed data, OTT subscriptions, and free
-                        data rollbacks.
-                    </div>
-                </div>
-            </div>
+      <div class="custom-card blue-card">
+          <div class="card-text">
+              <h4 class="fw-bold">Track Your Order</h4>
+              <p>Stay updated on the status of your SIM or device delivery.</p>
+              <a href="#">Track Now →</a>
+          </div>
+          <img src="track.png" alt="Track Order" class="card-img">
+      </div>
 
-            <div class="accordion-item">
-                <h2 class="accordion-header">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#faq3">
-                        How do I activate my plan?
-                    </button>
-                </h2>
-                <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                    <div class="accordion-body">
-                        Simply recharge through our app or website, and your plan will be activated instantly.
-                    </div>
-                </div>
-            </div>
+      <div class="custom-card red-card">
+          <div class="card-text">
+              <h4 class="fw-bold">Lost Your SIM?</h4>
+              <p>Report a lost SIM and get a replacement quickly.</p>
+              <a href="#" class="text-white">Report Now →</a>
+          </div>
+          <img src="lost-sim.png" alt="Lost SIM" class="card-img">
+      </div>
+  </div>
+  </article>
 
-            <div class="accordion-item">
-                <h2 class="accordion-header">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#faq4">
-                        Can I use my plan internationally?
-                    </button>
-                </h2>
-                <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                    <div class="accordion-body">
-                        Yes, we offer international roaming plans for various countries at affordable rates.
-                    </div>
-                </div>
-            </div>
-            <div class="accordion-item">
-                <h2 class="accordion-header">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#faq6">
-                        What happens if I run out of data before my plan renews?
-                    </button>
-                </h2>
-                <div id="faq6" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                    <div class="accordion-body">
-                        You can purchase a top-up pack directly from our app or website.
-                    </div>
-                </div>
-            </div>
-
-            <div class="accordion-item">
-                <h2 class="accordion-header">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#faq7">
-                        Can I share my data with family members?
-                    </button>
-                </h2>
-                <div id="faq7" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                    <div class="accordion-body">
-                        Yes, our data-sharing feature allows you to share your data balance with family members
-                        on MobiComm.
-                    </div>
-                </div>
-            </div>
-
-            <div class="accordion-item">
-                <h2 class="accordion-header">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#faq8">
-                        How do I contact customer support?
-                    </button>
-                </h2>
-                <div id="faq8" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                    <div class="accordion-body">
-                        You can contact our 24/7 customer support via phone, email, or live chat through the
-                        MobiComm app.
-                    </div>
-                </div>
-            </div>
-
-            <div class="accordion-item">
-                <h2 class="accordion-header">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#faq9">
-                        Do I get cashback or rewards for recharges?
-                    </button>
-                </h2>
-                <div id="faq9" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                    <div class="accordion-body">
-                        Yes! Earn cashback and loyalty points with every recharge, redeemable for discounts and
-                        free add-ons.
-                    </div>
-                </div>
-            </div>
-
-        </div>
-
-    </div>
-    </div>
-</article>
 
 
 <footer class="footer">
