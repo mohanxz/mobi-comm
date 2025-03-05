@@ -93,7 +93,7 @@
             let mobile = document.getElementById("current-mobile").value;
             let digits = document.getElementById("chosen-digits").value;
             if (!/^[0-9]{10}$/.test(mobile)) {
-                alert("Please enter a valid 10-digit mobile number.");
+                showModal("Please enter a valid 10-digit mobile number.");
                 return;
             }
             if (!/^[0-9]{4}$/.test(digits) || /(012|123|234|345|456|567|678|789)/.test(digits)) {

@@ -19,8 +19,7 @@
           "expiryDate": "2025-03-01"
         }
       ]
-    }
-    ,
+    },
     {
       "id": "1",
       "username": "UserBalaji",
@@ -2308,6 +2307,186 @@
           "expiryDate": "2025-05-23"
         }
       ]
+    }
+  ],
+  "customerSupportRequests": [
+    {
+      "id": "1",
+      "name": "Mohan Raj",
+      "mobileNumber": "9698215988",
+      "email": "mohanrajs2k04@gmail.com",
+      "otp": "123456",
+      "submittedAt": "2025-03-05T12:00:00Z"
+    },
+    {
+      "id": "fe22",
+      "name": "Mohan Raj",
+      "mobileNumber": "9698215988",
+      "email": "mohanrajs2k04@gmail.com",
+      "otp": "123455"
+    },
+    {
+      "id": "e19c",
+      "name": "Keerthu",
+      "mobileNumber": "9698215988",
+      "email": "2k21aids68@kiot.ac.in",
+      "otp": "123456"
+    },
+    {
+      "id": "5eb1",
+      "name": "Venky",
+      "mobileNumber": "9698215988",
+      "email": "2k21aids66@kiot.ac.in",
+      "otp": "123456"
+    },
+    {
+      "id": "3801",
+      "name": "Mohan Raj",
+      "mobileNumber": "9698215988",
+      "otp": "123456"
+    },
+    {
+      "id": "2b9e",
+      "name": "Mohan Raj",
+      "mobileNumber": "9698215988",
+      "otp": ""
+    },
+    {
+      "id": "e818",
+      "name": "Mohan Raj",
+      "mobileNumber": "9698215988",
+      "otp": ""
+    },
+    {
+      "id": "d42d",
+      "name": "James nithil",
+      "mobileNumber": "9698215988",
+      "otp": "123456"
+    },
+    {
+      "id": "21c6",
+      "name": "naveen",
+      "mobileNumber": "9698215988",
+      "otp": "123456"
+    },
+    {
+      "id": "a9e4",
+      "name": "Kiruthik",
+      "mobileNumber": "9698215988",
+      "otp": "123456"
+    },
+    {
+      "id": "b7e2",
+      "name": "Mohan Raj S",
+      "mobileNumber": "9698215988",
+      "otp": "134567"
+    }
+  ],
+  "refundRequests": [
+    {
+      "id": "1",
+      "invoiceNumber": "INV-20250305-001",
+      "name": "Mohan Raj",
+      "mobileNumber": "9698215988",
+      "email": "mohanrajs2k04@gmail.com",
+      "otp": "123456",
+      "submittedAt": "2025-03-05T12:05:00Z",
+      "status": "Pending"
+    },
+    {
+      "id": "339c",
+      "invoiceNumber": "12345678",
+      "name": "Mohan Raj",
+      "mobileNumber": "9698215988",
+      "email": "2k21aids25@kiot.ac.in",
+      "otp": "123456"
+    },
+    {
+      "id": "2a19",
+      "type": "Refund Request",
+      "invoiceNumber": "12345678",
+      "name": "James nithil",
+      "mobileNumber": "9698215988",
+      "otp": "123456"
+    },
+    {
+      "id": "ae1e",
+      "type": "Refund Request",
+      "invoiceNumber": "12345678123",
+      "name": "Kiruthik Kumar",
+      "mobileNumber": "9698215988",
+      "otp": "152645"
+    },
+    {
+      "id": "5aaf",
+      "type": "Refund Request",
+      "invoiceNumber": "12345678",
+      "name": "naveen",
+      "mobileNumber": "9698215988",
+      "otp": "123456"
+    },
+    {
+      "id": "0341",
+      "invoiceNumber": "12345678123",
+      "name": "Mohan Raj z",
+      "mobileNumber": "9698215988"
+    },
+    {
+      "id": "5d50",
+      "invoiceNumber": "12345678123",
+      "name": "James nithil",
+      "mobileNumber": "9698215988"
+    },
+    {
+      "id": "f22e",
+      "invoiceNumber": "12345678",
+      "name": "James nithil",
+      "mobileNumber": "9698215981"
+    },
+    {
+      "id": "2414",
+      "invoiceNumber": "12345678",
+      "name": "James nithil",
+      "mobileNumber": "9698215988"
+    },
+    {
+      "id": "ea95",
+      "invoiceNumber": "12345678",
+      "name": "Mohan Raj",
+      "mobileNumber": "9698215988"
+    },
+    {
+      "id": "64e6",
+      "invoiceNumber": "12345678123",
+      "name": "Mohan Raj",
+      "mobileNumber": "9698215988",
+      "otp": "123456"
+    }
+  ],
+  "lostSimRequests": [
+    {
+      "id": "7835",
+      "type": "Lost SIM",
+      "lostSimNumber": "9698215988",
+      "aadhaarId": "1234567891234",
+      "contactNumber": "9629453235",
+      "otp": "123456"
+    },
+    {
+      "id": "d6e7",
+      "type": "Lost SIM",
+      "lostSimNumber": "9698215988",
+      "aadhaarId": "1234567891234",
+      "contactNumber": "9629453235",
+      "otp": "12345"
+    },
+    {
+      "id": "0640",
+      "type": "Lost SIM",
+      "lostSimNumber": "9698215988",
+      "aadhaarId": "1234567891234",
+      "contactNumber": "9629453235",
+      "otp": "123456"
     }
   ],
   "ott": [

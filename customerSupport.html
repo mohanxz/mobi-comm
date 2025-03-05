@@ -4,22 +4,147 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Mobi-Comm - About Us</title>
   <link rel="stylesheet" href="/css/mainmin.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-  <link
-    href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quicksand:wght@300..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
-    rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
-    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 
-<body class="overflow-x-hidden">
-  <style>
+<body>
+  <style>     
+   #form-container .input-style {
+  border: none;
+  border-bottom: 2px solid #EF233C !important; /* Yellow Bottom Border */
+  outline: none;
+  background-color: white;
+  transition: border-color 0.3s ease-in-out;
+  margin-block: 10px;
+}
+#form-container .input-style:focus {
+  border: none !important;
+  border-bottom: 2px solid #EF233C !important; /* Orange Border on Focus */
+}
+
+
+
+    /* Order Status Container */
+    #order-status {
+      margin-top: 2rem;
+      padding: 1.5rem;
+      background: #f8f9fa;
+      border-radius: 10px;
+    }
+    
+
+    /* Progress Bar */
+    #progressbar {
+      margin-bottom: 3vh;
+      overflow: hidden;
+      color: white;
+      padding-left: 0px;
+      margin-top: 3vh;
+      display: flex;
+      justify-content: space-between;
+      position: relative;
+    }
+
+    /* Progress Bar Steps */
+    #progressbar li {
+      list-style-type: none;
+      font-size: 0.9rem;
+      width: 25%;
+      position: relative;
+      text-align: center;
+      font-weight: 500;
+      color: rgb(151, 149, 149);
+    }
+
+    /* Step Circles */
+    #progressbar li:before {
+      content: "";
+      display: block;
+      width: 25px;
+      height: 25px;
+      background: rgb(151, 149, 149);
+      border-radius: 50%;
+      margin: auto;
+      position: relative;
+      z-index: 2;
+      margin-bottom: 1vh;
+    }
+
+    /* Connecting Line */
+    #progressbar li:after {
+      content: "";
+      height: 3px;
+      background: rgb(151, 149, 149, 0.651);
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 12px;
+      z-index: 1;
+    }
+
+    /* First Step (removes left connector) */
+    #progressbar li:first-child:after {
+      left: 50%;
+    }
+
+    /* Last Step (removes right connector) */
+    #progressbar li:last-child:after {
+      right: 50%;
+    }
+
+    /* Active Step */
+    #progressbar li.active:before {
+      background: #d52136;
+      color: white;
+    }
+
+    /* Active Step Line */
+    #progressbar li.active:after {
+      background: #d52136;
+    }
+
+    /* Icons */
+    .fa {
+      font-size: 1.5rem;
+      color: #42469d;
+      background-color: #fff;
+      border-radius: 50%;
+      padding: 0.5rem;
+    }
+
+    .space-container{
+      margin-top: 120px !important;
+    }
+
+
+    
+
+
+
+    /* Responsive Styles */
+    @media (max-width: 767px) {
+      #progressbar li {
+        font-size: 0.8rem;
+      }
+
+      #progressbar li:before {
+        width: 20px;
+        height: 20px;
+      }
+
+      .fa {
+        font-size: 1.2rem;
+      }
+
+      .details {
+        font-size: 1rem;
+        line-height: 2rem;
+      }
+    }
+
     .active {
       font-weight: bold;
 
@@ -35,178 +160,855 @@
     }
 
     .navbar {
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    background-color: white; /* Ensure background is set */
-}
-    .custom-card {
-            border-radius: 15px;
-            padding: 60px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin: 20px 0;
-            transition: 0.5s;
-            box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
-        }
-
-        .custom-card:hover{
-          transform: scale(1.04);
-        }
-        .yellow-card { background-color: #FFD83D; }
-        .dark-card { background-color: #23272A; color: white; }
-        .blue-card { background-color: #D6E5FF; }
-        .red-card { background-color: #708709; color: white; }
-        .card-text { max-width: 60%; }
-        .card-img { max-width: 80px; }
-
-    @media screen and (max-width:450px) {
-      .section__headline{
-        position: relative;
-        left:1%;
-      }
-      
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background-color: white;
+      /* Ensure background is set */
     }
 
-    
 
-  </style>
-  <header>
-    <nav class="navbar navbar-expand-lg navbar-light border p-0">
-      <div class="container-fluid p-0">
-        <a class="navbar-brand fs-1 p-0" href="homePage.html">
-          <img src="src/images/mobi-comm-named-logo.png" alt="Mobi-Comm Logo" style="width: 220px;">
-        </a>
-        <button class="navbar-toggler p-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarScroll">
-          <ul class="navbar-nav me-auto my-2 my-lg-0">
-            <li class="nav-item"><a class="nav-link" href="homePage.html">Home</a></li>
-            <li class="nav-item"><a class="nav-link" href="viewplans.html">View plans</a></li>
-            <li class="nav-item"><a class="nav-link" href="aboutUsPage.html">About Us</a></li>
-            <li class="nav-item"><a class="nav-link  text-secondary" href="customerSupport.html">Support</a></li>
-          </ul>
-        </div>
-      </div>
-    </nav>
+    #cust-support {
+      width: 200px;
+    }
 
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col bg-dark w-100 custom-height d-flex justify-content-center align-items-center ">
-          <h5 class="display-3 text-light  fw-blod text-center">Welcome! Let’s solve it together.
-          </h5>
-        </div>
+    /* .container {
+            max-width: 600px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        } */
+    h2 {
+      color: #d52136;
+    }
+
+    label {
+      font-weight: bold;
+      margin-top: 10px;
+      display: block;
+      color: #555;
+    }
+
+    .navbar a:hover{
+        color: #d52136;
+    }
+    .form-control .input-style {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .btn {
+      background-color: #2B2D42;
+      color: white;
+      padding: 10px 15px;
+      border: none;
+      margin-top: 15px;
+      cursor: pointer;
+      display: block;
+      margin-inline: auto;
+      width: 30%;
+      border-radius: 5px;
+    }
+
+    .btn:hover {
+      background-color: #393b52;
+    }
+
+    .link {
+      color: #007BFF;
+      cursor: pointer;
+      text-decoration: underline;
+      display: block;
+      margin: 10px 0;
+    }
+
+    .link:hover {
+      color: #0056b3;
+    }
+
+    #order-status {
+      margin-top: 15px;
+      font-weight: bold;
+      color: #28a745;
+    }
+
+    .custom-card {
+      border-radius: 15px;
+      padding-inline: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin: 20px 0;
+      transition: 0.5s;
+      box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    }
+
+    .card-img {
+      transition: transform 0.3s ease-in-out;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    .custom-card:hover a {
+      text-decoration: underline;
+    }
+
+    .custom-card:hover .card-img {
+      transform: scale(1.2);
+    }
+
+    .yellow-card {
+      background-color: #FCF596;
+    }
+
+    .dark-card {
+      background-color: #23272A;
+      color: white;
+    }
+
+    .blue-card {
+      background-color: #D6E5FF;
+    }
+
+    .red-card {
+      background-color: #240c34;
+      color: white;
+    }
+
+    .card-text {
+      max-width: 60%;
+    }
+
+    .card-img {
+      width: 200px;
+      border-radius: 50%;
+      max-width: 400px;
+    }
+
+    @media screen and (max-width:550px) {
+      .section__headline {
+        position: relative;
+        left: 1%;
+      }
+
+      .yellow-card {
+        padding-left: 20px;
+      }
+
+      .yellow-card img {
+        position: relative;
+        left: 35px;
+      }
+
+      .card-img {
+        max-width: 150px;
+      }
+
+      .dark-card p {
+        width: 260px;
+      }
+
+      .dark-card,
+      .red-card {
+        padding: 18px !important;
+      }
+
+      .blue-card {
+        padding-left: 20px !important;
+      }
+
+      .blue-card img {
+        position: relative;
+        left: 50px;
+      }
+
+    }
+</style>
+  <nav class="navbar navbar-expand-lg navbar-light border p-0">
+    <div class="container-fluid p-0">
+      <a class="navbar-brand fs-1 p-0" href="homePage.html">
+        <img src="src/images/mobi-comm-named-logo.png" alt="Mobi-Comm Logo" style="width: 220px;">
+      </a>
+      <button class="navbar-toggler p-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarScroll">
+        <ul class="navbar-nav me-auto my-2 my-lg-0">
+          <li class="nav-item"><a class="nav-link" href="homePage.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="viewplans.html">View plans</a></li>
+          <li class="nav-item"><a class="nav-link" href="aboutUsPage.html">About Us</a></li>
+          <li class="nav-item"><a class="nav-link  text-secondary" href="customerSupport.html">Support</a></li>
+        </ul>
       </div>
     </div>
-  </header>
-  <article>
-    <div class="container mt-4">
-      <div class="custom-card yellow-card">
-          <div class="card-text">
-              <h4 class="fw-bold">Customer Support</h4>
-              <p>Get 24/7 assistance for all your telecom-related queries.</p>
-              <a href="#">Contact Us →</a>
-          </div>
-          <img src="support.png" alt="Customer Support" class="card-img">
-      </div>
+  </nav>
 
-      <div class="custom-card dark-card">
-          <div class="card-text">
-              <h4 class="fw-bold">Request a Refund</h4>
-              <p>Easily request refunds for incorrect charges or failed transactions.</p>
-              <a href="#" class="text-white">Apply Now →</a>
-          </div>
-          <img src="refund.png" alt="Refund Request" class="card-img">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col bg-dark w-100 custom-height d-flex justify-content-center align-items-center ">
+        <h5 class="display-3 text-light  fw-blod text-center">Welcome! Let’s solve it together.
+        </h5>
       </div>
-
-      <div class="custom-card blue-card">
-          <div class="card-text">
-              <h4 class="fw-bold">Track Your Order</h4>
-              <p>Stay updated on the status of your SIM or device delivery.</p>
-              <a href="#">Track Now →</a>
-          </div>
-          <img src="track.png" alt="Track Order" class="card-img">
-      </div>
-
-      <div class="custom-card red-card">
-          <div class="card-text">
-              <h4 class="fw-bold">Lost Your SIM?</h4>
-              <p>Report a lost SIM and get a replacement quickly.</p>
-              <a href="#" class="text-white">Report Now →</a>
-          </div>
-          <img src="lost-sim.png" alt="Lost SIM" class="card-img">
-      </div>
+    </div>
   </div>
-  </article>
+</header>
+<article>
+  <div class="container mt-4">
+    <div class="custom-card yellow-card" onclick="showForm('customer-support')">
+      <div class="card-text">
+        <h4 class="fw-bold">Customer Support</h4>
+        <p>Get 24/7 assistance for all your telecom-related queries.</p>
+        <a href="#">Contact Us →</a>
+      </div>
+      <img src="src/images/support-chat-circle-icon-4c60d6.webp" alt="Customer Support" id="cust-support"
+        class="card-img">
+    </div>
+
+    <div class="custom-card dark-card p-5" onclick="showForm('refund-request')">
+      <div class="card-text">
+        <h4 class="fw-bold">Request a Refund</h4>
+        <p>Easily request refunds for incorrect charges or failed transactions.</p>
+        <a href="#" class="text-white">Apply Now →</a>
+      </div>
+      <img src="src/images/refund.webp" alt="Refund Request" id="refund-request" class="card-img">
+    </div>
+
+    <div class="custom-card blue-card px-5 py-2" onclick="showForm('lost-sim')">
+      <div class="card-text">
+        <h4 class="fw-bold">Lost Your SIM?</h4>
+        <p>Report a lost SIM and get a replacement quickly.</p>
+        <a href="#" class="text-dark">Report Now →</a>
+      </div>
+      <img src="src/images/simCardMissing.png" alt="Lost SIM" class="card-img">
+    </div>
+
+    <div class="custom-card red-card p-5" onclick="showForm('track-order')">
+      <div class="card-text">
+        <h4 class="fw-bold">Track Your Order</h4>
+        <p>Stay updated on the status of your SIM or device delivery.</p>
+        <a href="#" class="text-white">Track Now →</a>
+      </div>
+      <img src="src/images/track-banner.png" alt="Track Order" class="card-img">
+    </div>
+
+  </div>
+</article>
+<!-- Bootstrap Modal -->
+<div class="modal fade" id="responseModal" tabindex="-1" aria-labelledby="responseModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="responseModalLabel">Request Status</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body" id="modalMessage">
+        <!-- Message will be inserted here -->
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="space-container mt-5">
+  <div id="form-container" class="container"></div>
+
+</div>
+
+
+<div id="order-status shadow-none"></div>
+
+
+
 
 
 
 <footer class="footer">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-3 footer-section">
-                <h5>MobiComm</h5>
-                <p>MobiComm is your ultimate prepaid plan provider, offering seamless connectivity with exclusive OTT benefits. Stay connected and entertained with us!</p>
-                <p>© MobiComm 2025, All Rights Reserved</p>
-            </div>
-            
-            <div class="col-md-2 footer-section">
-                <h5>For Customers</h5>
-                <ul class="list-unstyled">
-                    <li><a href="#">Prepaid Plans</a></li>
-                    <li><a href="#">Mobile Offers</a></li>
-                    <li><a href="#">OTT Subscriptions</a></li>
-                    <li><a href="#">FAQs</a></li>
-                </ul>
-            </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3 footer-section">
+        <h5>MobiComm</h5>
+        <p>MobiComm is your ultimate prepaid plan provider, offering seamless connectivity with exclusive OTT
+          benefits. Stay connected and entertained with us!</p>
+        <p>© MobiComm 2025, All Rights Reserved</p>
+      </div>
 
-            <div class="col-md-2 footer-section">
-                <h5>For Partners</h5>
-                <ul class="list-unstyled">
-                    <li><a href="#">Partner with Us</a></li>
-                    <li><a href="#">Sponsorship</a></li>
-                    <li><a href="#">Affiliate Program</a></li>
-                    <li><a href="#">All Partners</a></li>
-                </ul>
-            </div>
+      <div class="col-md-2 footer-section">
+        <h5>For Customers</h5>
+        <ul class="list-unstyled">
+          <li><a href="#">Prepaid Plans</a></li>
+          <li><a href="#">Mobile Offers</a></li>
+          <li><a href="#">OTT Subscriptions</a></li>
+          <li><a href="#">FAQs</a></li>
+        </ul>
+      </div>
 
-            <div class="col-md-2 footer-section">
-                <h5>About MobiComm</h5>
-                <ul class="list-unstyled">
-                    <li><a href="#">Our Story</a></li>
-                    <li><a href="#">Careers</a></li>
-                    <li><a href="#">Press Releases</a></li>
-                </ul>
-            </div>
+      <div class="col-md-2 footer-section">
+        <h5>For Partners</h5>
+        <ul class="list-unstyled">
+          <li><a href="#">Partner with Us</a></li>
+          <li><a href="#">Sponsorship</a></li>
+          <li><a href="#">Affiliate Program</a></li>
+          <li><a href="#">All Partners</a></li>
+        </ul>
+      </div>
 
-            <div class="col-md-3 footer-section">
-                <h5>Get in Touch</h5>
-                <p>1234 MobiComm Street<br>New York, NY 10001, USA</p>
-                <p><a href="#">Contact Us</a></p>
-                
-                <div class="social-icons">
-                    <a href="#"><i class="bi bi-linkedin"></i></a>
-                    <a href="#"><i class="bi bi-instagram"></i></a>
-                    <a href="#"><i class="bi bi-facebook"></i></a>
-                    <a href="#"><i class="bi bi-twitter-x"></i></a>
-                    <a href="#"><i class="bi bi-youtube"></i></a>
-                </div>
-            </div>
+      <div class="col-md-2 footer-section">
+        <h5>About MobiComm</h5>
+        <ul class="list-unstyled">
+          <li><a href="#">Our Story</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">Press Releases</a></li>
+        </ul>
+      </div>
+
+      <div class="col-md-3 footer-section">
+        <h5>Get in Touch</h5>
+        <p>1234 MobiComm Street<br>New York, NY 10001, USA</p>
+        <p><a href="#">Contact Us</a></p>
+
+        <div class="social-icons">
+          <a href="#"><i class="bi bi-linkedin"></i></a>
+          <a href="#"><i class="bi bi-instagram"></i></a>
+          <a href="#"><i class="bi bi-facebook"></i></a>
+          <a href="#"><i class="bi bi-twitter-x"></i></a>
+          <a href="#"><i class="bi bi-youtube"></i></a>
         </div>
-        
-        <div class="text-center mt-4 footer-section">
-            <a href="#">Sitemap</a> | 
-            <a href="#">Terms of Use</a> | 
-            <a href="#">Privacy Policy</a> | 
-            <a href="#">Accessibility</a> | 
-            <a href="#">Fraud Protection</a>
-        </div>
+      </div>
     </div>
+
+    <div class="text-center mt-4 footer-section">
+      <a href="#">Sitemap</a> |
+      <a href="#">Terms of Use</a> |
+      <a href="#">Privacy Policy</a> |
+      <a href="#">Accessibility</a> |
+      <a href="#">Fraud Protection</a>
+    </div>
+  </div>
 </footer>
 
 
+<script>
+  function showModal(message) {
+    document.getElementById("modalMessage").innerText = message; // Insert message into modal
+    let modal = new bootstrap.Modal(document.getElementById("responseModal")); // Select modal
+    modal.show(); // Show modal
+}
+
+  document.addEventListener("DOMContentLoaded", function () {
+    document.getElementById("track-order-btn").style.display = "none";
+  });
+
+  // Validate if the user is a MobiComm user
+  async function validateUser(mobileNumber) {
+    try {
+      let response = await fetch(`http://localhost:3000/users?mobileNumber=${mobileNumber}`);
+      let users = await response.json();
+      return users.length > 0;
+    } catch (error) {
+      console.error("Error fetching user data:", error);
+      return false;
+    }
+  }
+
+  // Function to submit the form and store in JSON server
+  async function submitForm(type) {
+  let formContainer = document.getElementById("form-container");
+  let inputs = formContainer.querySelectorAll("input");
+  let jsonData = {};
+  let otpInput = formContainer.querySelector("input[name='otp']");
+  let otpError = formContainer.querySelector("#otpError"); // OTP error span
+  
+  // Collect form data
+  inputs.forEach((input) => {
+      jsonData[input.name] = input.value.trim();
+  });
+
+  // Validate Mobile Number
+  if (!jsonData["mobileNumber"] || jsonData["mobileNumber"].length !== 10) {
+      document.getElementById("mobileError").textContent = "Please enter a valid 10-digit mobile number.";
+      return;
+  } else {
+      document.getElementById("mobileError").textContent = ""; // Clear error
+  }
+
+  // Validate OTP - Show error if OTP is missing or invalid
+  if (!otpInput || otpInput.value.trim().length !== 6 || !/^\d{6}$/.test(otpInput.value.trim())) {
+      otpError.textContent = "Please enter a valid 6-digit OTP.";
+      return;
+  } else {
+      otpError.textContent = ""; // Clear error
+  }
+
+  let endpoint = "";
+  let validateMobiComm = true; // Default: validate users
+
+  // Determine the correct API endpoint
+  if (type === "Customer Support") {
+      endpoint = "http://localhost:3000/customerSupportRequests";
+  } else if (type === "Lost SIM") {
+      endpoint = "http://localhost:3000/lostSimRequests";
+  } else if (type === "Refund Request") {
+      endpoint = "http://localhost:3000/refundRequests";
+  }
+
+  // Validate MobiComm user only for Customer Support and Refund Request
+  if (validateMobiComm) {
+      let isValidUser = await validateUser(jsonData["mobileNumber"]);
+      if (!isValidUser) {
+          document.getElementById("mobileError").textContent = "Only MobiComm users can submit this request.";
+          return;
+      } else {
+          document.getElementById("mobileError").textContent = ""; // Clear error
+      }
+  }
+
+  // Submit form to JSON server
+  try {
+      let response = await fetch(endpoint, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(jsonData),
+      });
+
+      if (response.ok) {
+          formContainer.insertAdjacentHTML(
+              "beforeend",
+              `<div class="mt-3 alert alert-success">
+                  <img src="success-icon.png" alt="Success" width="30" height="30">
+                  ${type} request submitted successfully!
+              </div>`
+          );
+      } else {
+          otpError.textContent = "Error submitting form. Please try again.";
+      }
+  } catch (error) {
+      console.error("Error submitting form:", error);
+      otpError.textContent = "Network error. Please try again later.";
+  }
+}
+async function submitLostSimRequest(requestType) {
+    const lostSimNumber = document.querySelector('input[name="lostSimNumber"]').value.trim();
+    const aadhaarId = document.querySelector('input[name="aadhaarId"]').value.trim();
+    const contactNumber = document.querySelector('input[name="contactNumber"]').value.trim();
+    const otp = document.querySelector('input[name="otp"]').value.trim();
+
+    // Basic validation
+    if (!lostSimNumber || !aadhaarId || !contactNumber || !otp) {
+      showModal("All fields are required.");
+      return;
+    }
+    if (!/^\d{6}$/.test(otp)) {
+        showModal("Invalid OTP. Please enter a 6-digit OTP.");
+        return;
+    }
+    const requestData = {
+        lostSimNumber,
+        aadhaarId,
+        contactNumber,
+        otp
+    };
+
+    try {
+        const response = await fetch("http://localhost:3000/lostSimRequests", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(requestData)
+        });
+
+        if (response.ok) {
+            alert("Lost SIM request submitted successfully!");
+        } else {
+          showModal("Failed to submit lost SIM request.");
+
+        }
+    } catch (error) {
+        console.error("Error:", error);
+        showModal("An error occurred while submitting the request.");
+    }
+}
+
+async function submitRequest(requestType) {
+    let endpoint = "";
+    let requestData = {};
+
+    if (requestType === "Refund Request") {
+        requestData = {
+            invoiceNumber: document.querySelector('input[name="invoiceNumber"]').value.trim(),
+            name: document.querySelector('input[name="name"]').value.trim(),
+            mobileNumber: document.querySelector('input[name="mobileNumber"]').value.trim(),
+            otp: document.querySelector('input[name="otp"]').value.trim()
+        };
+        endpoint = "http://localhost:3000/refundRequests";
+    }
+
+    // ✅ Basic Validation: Ensure all fields are filled
+    if (Object.values(requestData).some(field => !field)) {
+        showModal("All fields are required.");
+        return;
+    }
+
+    // ✅ Validate Mobile Number (Only 10-digit numbers allowed)
+    if (!/^\d{10}$/.test(requestData.mobileNumber)) {
+        showModal("Please enter a valid 10-digit mobile number.");
+        return;
+    }
+
+    // ✅ (Optional) Validate Invoice Number Format (Modify if needed)
+    if (!/^\d+$/.test(requestData.invoiceNumber)) {  // Ensure invoice number is numeric
+        showModal("Invalid invoice number. It should contain only numbers.");
+        return;
+    }
+
+    // ✅ Validate OTP (Only 6-digit numbers allowed)
+    if (!/^\d{6}$/.test(requestData.otp)) {
+        showModal("Invalid OTP. Please enter a 6-digit OTP.");
+        return;
+    }
+
+    try {
+        const response = await fetch(endpoint, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(requestData)
+        });
+
+        if (response.ok) {
+            alert(`${requestType} submitted successfully!`);
+
+            // ✅ Hold the page for 10 seconds before reloading
+            setTimeout(() => {
+                window.location.reload();
+            }, 10000);
+        } else {
+            showModal(`Failed to submit ${requestType}. Please try again.`);
+        }
+    } catch (error) {
+        console.error("Error:", error);
+        showModal("An error occurred while submitting the request.");
+    }
+}
+
+
+// Function to Show Bootstrap Modal
+function showModal(message) {
+    document.getElementById("modalMessage").innerText = message;
+    let modal = new bootstrap.Modal(document.getElementById("responseModal"));
+    modal.show();
+}
+
+  // Function to dynamically generate form UI
+  function showForm(type) {
+    let formContainer = document.getElementById("form-container");
+    let formHTML = "";
+    let imageSrc = "";
+
+    // Generate the appropriate form UI
+    switch (type) {
+      case "customer-support":
+        imageSrc = "customer-support.jpg";
+        formHTML = `
+      <h2>Customer Support</h2>
+      
+      <label>Name</label>
+      <input type="text" name="name" class="form-control input-style" required>
+      <span id="nameError" class="text-danger"></span>
+
+      <label>Mobile Number</label>
+      <input type="tel" name="mobileNumber" id="mobileNumber" class="form-control input-style" required oninput="validateAndToggleOtp()">
+      <span id="mobileError" class="text-danger"></span>
+
+<button id="generateOtpBtn" class="btn btn-primary mt-2" style="display: none;" 
+  onclick="generateOtp('otpContainer')">Generate OTP</button>
+
+      <div id="otpContainer" style="display: none;">
+          <label>Enter OTP</label>
+          <input type="text" name="otp" class="form-control input-style" required>
+          <span id="otpError" class="text-danger"></span>
+      </div>
+
+      <button class="btn btn-success mt-3" onclick='submitForm("Customer Support")'>Submit</button>
+  `;
+        break;
+      case "refund-request":
+        imageSrc = "refund.jpg";
+        formHTML = `
+      <h2>Request a Refund</h2>
+
+      <label>Invoice Number</label>
+      <input type="text" name="invoiceNumber" class="form-control input-style" required>
+      <span id="invoiceError" class="text-danger"></span>
+
+      <label>Name</label>
+      <input type="text" name="name" class="form-control input-style" required>
+      <span id="nameError" class="text-danger"></span>
+
+      <label>Mobile Number</label>
+      <input type="tel" name="mobileNumber" id="refundMobileNumber" class="form-control input-style" required oninput="validateRefundMobile()">
+      <span id="refundMobileError" class="text-danger"></span>
+
+<button id="refundGenerateOtpBtn" class="btn btn-primary mt-2" style="display: none;" 
+  onclick="generateOtp('refundOtpContainer')">Generate OTP</button>
+
+      <div id="refundOtpContainer" style="display: none;">
+          <label>Enter OTP</label>
+          <input type="text" name="otp" class="form-control input-style" required>
+          <span id="otpError" class="text-danger"></span>
+      </div>
+
+      <button class="btn btn-success mt-3" onclick='submitRequest("Refund Request")'>Submit</button>
+  `;
+        break;
+
+
+      case "lost-sim":
+        imageSrc = "lost-sim.jpg";
+        formHTML = `
+              <h2>Lost Your SIM?</h2>
+
+              <!-- Lost SIM Mobile Number -->
+              <label>Lost SIM Mobile Number</label>
+              <input type="tel" name="lostSimNumber" id="lostSimNumber" class="form-control input-style" required oninput="validateLostSimNumber()">
+              <span id="lostSimError" class="text-danger"></span>
+
+              <!-- Aadhaar ID -->
+              <label>Aadhaar ID</label>
+              <input type="text" name="aadhaarId" class="form-control input-style" required>
+
+              <!-- Contact Mobile Number -->
+              <label>Contact Mobile Number</label>
+              <input type="tel" name="contactNumber" id="contactNumber" class="form-control input-style" required oninput="validateContactNumber()">
+              <span id="contactError" class="text-danger"></span>
+
+              <!-- Generate OTP Button -->
+              <button id="generateOtpBtnLost" class="btn btn-primary mt-2" style="display: none;" 
+  onclick="generateOtp('otpContainerLost')">Generate OTP</button>
+
+
+              <!-- OTP Input Field -->
+              <div id="otpContainerLost" style="display: none;">
+                  <label>Enter OTP</label>
+                  <input type="text" name="otp" class="form-control input-style" required>
+                  <span id="otpError" class="text-danger"></span>
+              </div>
+
+              <!-- Submit Button -->
+              <button class="btn btn-success mt-3" onclick='submitLostSimRequest("Lost SIM")'>Submit</button>
+          `;
+        break;
+
+
+      case "track-order":
+        imageSrc = "track-order.jpg";
+        formHTML = `
+              <h2>Track Your Order</h2>
+              <label>Tracking ID</label>
+              <input type='text' id='trackingId' class='form-control input-style' required>
+              <button class='btn btn-primary' onclick='validateAndShowTracking()'>Track</button>
+              <div id='order-status'></div>
+          `;
+        break;
+    }
+
+    // Display the form
+    formContainer.innerHTML = `
+      <div class="row align-items-center">
+          <div class="col-md-6 text-center">
+              <img src="${imageSrc}" class="img-fluid" alt="${type}">
+          </div>
+          <div class="col-md-6">
+              ${formHTML}
+          </div>
+      </div>`;
+
+    // Scroll into view
+    
+    setTimeout(() => {
+  const yOffset = -180; // Adjust this value based on your header height
+  const y = formContainer.getBoundingClientRect().top + window.scrollY + yOffset;
+  window.scrollTo({ top: y, behavior: "smooth" });
+}, 100);
+
+  }
+  async function validateAndToggleOtp() {
+    let mobileInput = document.getElementById("mobileNumber");
+    let mobileError = document.getElementById("mobileError");
+    let generateOtpBtn = document.getElementById("generateOtpBtn");
+
+    let mobileNumber = mobileInput.value.trim();
+
+    if (!/^\d{10}$/.test(mobileNumber)) {
+      mobileError.textContent = "Please enter a valid 10-digit mobile number.";
+      generateOtpBtn.style.display = "none";
+      return;
+    }
+
+    mobileError.textContent = ""; // Clear previous errors
+
+    let isValidUser = await validateUser(mobileNumber);
+
+    if (isValidUser) {
+      generateOtpBtn.style.display = "block"; // Show OTP button
+    } else {
+      mobileError.textContent = "Only MobiComm users can proceed.";
+      generateOtpBtn.style.display = "none";
+    }
+  }
+
+
+  async function validateLostSimNumber() {
+    let lostSimNumber = document.getElementById("lostSimNumber").value.trim();
+    let lostSimError = document.getElementById("lostSimError");
+    let generateOtpBtn = document.getElementById("generateOtpBtnLost");
+
+    if (lostSimNumber.length !== 10) {
+      lostSimError.innerText = "Mobile number must be 10 digits.";
+      generateOtpBtn.style.display = "none";
+      return;
+    }
+
+    let isMobiCommUser = await validateUser(lostSimNumber);
+    if (!isMobiCommUser) {
+      lostSimError.innerText = "Only MobiComm users can submit this request.";
+      generateOtpBtn.style.display = "none";
+    } else {
+      lostSimError.innerText = "";
+      generateOtpBtn.style.display = "block";
+
+      validateContactNumber(); // Ensure both numbers are different
+    }
+  }
+  async function validateRefundMobile() {
+    let mobileInput = document.getElementById("refundMobileNumber");
+    let mobileError = document.getElementById("refundMobileError");
+    let generateOtpBtn = document.getElementById("refundGenerateOtpBtn");
+
+    let mobileNumber = mobileInput.value.trim();
+
+    if (!/^\d{10}$/.test(mobileNumber)) {
+      mobileError.textContent = "Please enter a valid 10-digit mobile number.";
+      generateOtpBtn.style.display = "none";
+      return;
+    }
+
+    mobileError.textContent = ""; // Clear previous errors
+
+    let isValidUser = await validateUser(mobileNumber);
+
+    if (isValidUser) {
+      generateOtpBtn.style.display = "block"; // Show OTP button
+    } else {
+      mobileError.textContent = "Only MobiComm users can request a refund.";
+      generateOtpBtn.style.display = "none";
+    }
+  }
+
+
+  // Validate Contact Number (should not be the same as Lost SIM Number)
+  function validateContactNumber() {
+    let lostSimNumber = document.getElementById("lostSimNumber").value.trim();
+    let contactNumber = document.getElementById("contactNumber").value.trim();
+    let contactError = document.getElementById("contactError");
+    let generateOtpBtn = document.getElementById("generateOtpBtnLost");
+
+    if (contactNumber.length !== 10) {
+      contactError.innerText = "Mobile number must be 10 digits.";
+      generateOtpBtn.style.display = "none";
+      return;
+    }
+
+    if (lostSimNumber === contactNumber) {
+      contactError.innerText = "Lost SIM and Contact Number cannot be the same.";
+      generateOtpBtn.style.display = "none";
+    } else {
+      contactError.innerText = "";
+    }
+
+    // Show Generate OTP button if both fields are valid
+    if (lostSimNumber.length === 10 && contactNumber.length === 10 && lostSimNumber !== contactNumber) {
+      generateOtpBtn.style.display = "block";
+    }
+  }
+  // Generate Form HTML
+  function generateForm(title, fields) {
+    let formHTML = `<h2>${title}</h2>`;
+    fields.forEach(field => {
+      formHTML += `<label>${field.label}</label>
+                   <input type="${field.type}" name="${field.name}" class="form-control input-style" required>`;
+    });
+    formHTML += `<button class="btn btn-primary" onclick='submitForm("${title}")'>Submit</button>`;
+    return formHTML;
+  }
+
+  function toggleGenerateOtpButton() {
+    let mobileNumber = document.getElementById("mobileNumber").value.trim();
+    let generateOtpBtn = document.getElementById("generateOtpBtn");
+
+    if (mobileNumber.length === 10) { // Assuming 10-digit mobile number
+      generateOtpBtn.style.display = "block";
+    } else {
+      generateOtpBtn.style.display = "none";
+      document.getElementById("otpContainer").style.display = "none";
+    }
+  }
+
+  // Function to show the OTP input field
+  function generateOtp(containerId) {
+    let otpContainer = document.getElementById(containerId);
+    if (otpContainer) {
+      otpContainer.style.display = "block";
+    }
+  }
+
+  // Order Tracking Validation
+  function validateAndShowTracking() {
+    let trackingId = document.getElementById("trackingId").value.trim();
+    let trackingContainer = document.getElementById("order-status");
+
+    if (/^\d{6}$/.test(trackingId)) {
+      trackingContainer.innerHTML = `
+          <div class=" mt-3 p-3 border shadow-none">
+              <h4 class="text-center text-primary">Order Status</h4>
+              <p class="text-center font-weight-bold text-primary">AWB Number: <span class="text-secondary">${trackingId}</span></p>
+              
+              <div class="progress-track">
+                  <ul id="progressbar" class="list-unstyled">
+                      <li id="step1" class="step0 active">Order placed</li>
+                      <li id="step2" class="step0 active text-center">In Transit</li>
+                      <li id="step3" class="step0 active text-right">Out for Delivery</li>
+                      <li id="step4" class="step0 text-right">Delivered</li>
+                  </ul>
+              </div>
+
+              <button class="btn btn-danger mt-3 w-100" onclick="clearTracking()">Close</button>
+          </div>
+      `;
+
+      setTimeout(() => {
+        trackingContainer.scrollIntoView({ behavior: "smooth", block: "start" });
+      }, 100);
+    } else {
+      showModal("Please enter a valid 6-digit Tracking ID");
+    }
+  }
+
+  // Clear Tracking
+  function clearTracking() {
+    document.getElementById("order-status").innerHTML = "";
+  }
+
+</script>
 
 
 
@@ -215,12 +1017,10 @@
 
 
 
-
-
-  <script src="JavaScript/supportPage.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-    crossorigin="anonymous"></script>
+<script src="JavaScript/supportPage.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+  crossorigin="anonymous"></script>
 </body>
 
 </html>
