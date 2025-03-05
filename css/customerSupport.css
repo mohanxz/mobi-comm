@@ -1,0 +1,317 @@
+#form-container .input-style {
+    border: none;
+    border-bottom: 2px solid #EF233C !important; /* Yellow Bottom Border */
+    outline: none;
+    background-color: white;
+    transition: border-color 0.3s ease-in-out;
+    margin-block: 10px;
+  }
+  #form-container .input-style:focus {
+    border: none !important;
+    border-bottom: 2px solid #EF233C !important; /* Orange Border on Focus */
+  }
+  
+  
+  
+      /* Order Status Container */
+      #order-status {
+        margin-top: 2rem;
+        padding: 1.5rem;
+        background: #f8f9fa;
+        border-radius: 10px;
+      }
+      
+  
+      /* Progress Bar */
+      #progressbar {
+        margin-bottom: 3vh;
+        overflow: hidden;
+        color: white;
+        padding-left: 0px;
+        margin-top: 3vh;
+        display: flex;
+        justify-content: space-between;
+        position: relative;
+      }
+  
+      /* Progress Bar Steps */
+      #progressbar li {
+        list-style-type: none;
+        font-size: 0.9rem;
+        width: 25%;
+        position: relative;
+        text-align: center;
+        font-weight: 500;
+        color: rgb(151, 149, 149);
+      }
+  
+      /* Step Circles */
+      #progressbar li:before {
+        content: "";
+        display: block;
+        width: 25px;
+        height: 25px;
+        background: rgb(151, 149, 149);
+        border-radius: 50%;
+        margin: auto;
+        position: relative;
+        z-index: 2;
+        margin-bottom: 1vh;
+      }
+  
+      /* Connecting Line */
+      #progressbar li:after {
+        content: "";
+        height: 3px;
+        background: rgb(151, 149, 149, 0.651);
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 12px;
+        z-index: 1;
+      }
+  
+      /* First Step (removes left connector) */
+      #progressbar li:first-child:after {
+        left: 50%;
+      }
+  
+      /* Last Step (removes right connector) */
+      #progressbar li:last-child:after {
+        right: 50%;
+      }
+  
+      /* Active Step */
+      #progressbar li.active:before {
+        background: #d52136;
+        color: white;
+      }
+  
+      /* Active Step Line */
+      #progressbar li.active:after {
+        background: #d52136;
+      }
+  
+      /* Icons */
+      .fa {
+        font-size: 1.5rem;
+        color: #42469d;
+        background-color: #fff;
+        border-radius: 50%;
+        padding: 0.5rem;
+      }
+  
+   
+  
+      #form-container{
+        margin-top: 120px !important;
+      }
+  
+  
+      
+  
+  
+  
+      /* Responsive Styles */
+      @media (max-width: 767px) {
+        #progressbar li {
+          font-size: 0.8rem;
+        }
+  
+        #progressbar li:before {
+          width: 20px;
+          height: 20px;
+        }
+  
+        .fa {
+          font-size: 1.2rem;
+        }
+  
+        .details {
+          font-size: 1rem;
+          line-height: 2rem;
+        }
+      }
+  
+      .active {
+        font-weight: bold;
+  
+      }
+  
+      .scrollable-container {
+        overflow-y: auto;
+        max-height: 800px;
+      }
+  
+      .custom-height {
+        height: 75vh;
+      }
+  
+  
+      #cust-support {
+        width: 200px;
+      }
+  
+      /* .container {
+              max-width: 600px;
+              margin: auto;
+              background: white;
+              padding: 20px;
+              border-radius: 10px;
+              box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+          } */
+      h2 {
+        color: #d52136;
+      }
+  
+      label {
+        font-weight: bold;
+        margin-top: 10px;
+        display: block;
+        color: #555;
+      }
+  
+      .form-control .input-style {
+        width: 100%;
+        padding: 10px;
+        margin-top: 5px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+  
+      .btn {
+        background-color: #2B2D42;
+        color: white;
+        padding: 10px 15px;
+        border: none;
+        margin-top: 15px;
+        cursor: pointer;
+        display: block;
+        margin-inline: auto;
+        width: 30%;
+        border-radius: 5px;
+      }
+  
+      .btn:hover {
+        background-color: #393b52;
+      }
+  
+      .link {
+        color: #007BFF;
+        cursor: pointer;
+        text-decoration: underline;
+        display: block;
+        margin: 10px 0;
+      }
+  
+      .link:hover {
+        color: #0056b3;
+      }
+  
+      #order-status {
+        margin-top: 15px;
+        font-weight: bold;
+        color: #28a745;
+      }
+  
+      .custom-card {
+        border-radius: 15px;
+        padding-inline: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: 20px 0;
+        transition: 0.5s;
+        box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+      }
+  
+      .card-img {
+        transition: transform 0.3s ease-in-out;
+      }
+  
+      a {
+        text-decoration: none;
+      }
+  
+      .custom-card:hover a {
+        text-decoration: underline;
+      }
+  
+      .custom-card:hover .card-img {
+        transform: scale(1.2);
+      }
+  
+      .yellow-card {
+        background-color: #FCF596;
+      }
+  
+      .dark-card {
+        background-color: #23272A;
+        color: white;
+      }
+  
+      .blue-card {
+        background-color: #D6E5FF;
+      }
+  
+      .red-card {
+        background-color: #240c34;
+        color: white;
+      }
+  
+      .card-text {
+        max-width: 60%;
+      }
+  
+      .card-img {
+        width: 200px;
+        border-radius: 50%;
+        max-width: 400px;
+      }
+  
+      @media screen and (max-width:550px) {
+        .section__headline {
+          position: relative;
+          left: 1%;
+        }
+  
+        .yellow-card {
+          padding: 20px;
+        }
+  
+        .yellow-card img {
+          position: relative;
+          left: 35px;
+        }
+  
+        .card-img {
+          max-width: 150px;
+        }
+  
+        .dark-card p {
+          width: 170px;
+          padding-left: 0px !important;
+        }
+  
+        .dark-card img {
+          width: 140px;
+          position: relative;
+
+        }
+  
+        .dark-card {
+           padding: 0px !important;
+           display: flex;
+           justify-content: space-between;
+        }
+  
+        .blue-card {
+          padding-left: 20px !important;
+        }
+  
+        .blue-card img {
+          position: relative;
+          left: 50px;
+        }
+  
+      }
