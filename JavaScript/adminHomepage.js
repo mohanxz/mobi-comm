@@ -3,6 +3,7 @@
 
 document.addEventListener("DOMContentLoaded", function () {
     fetch("http://localhost:3000/users")
+    
         .then(response => response.json())
         .then(users => {
             let expiringCount = 0, subscriberCount = users.length, rechargeCount = 0, totalSales = 0;
