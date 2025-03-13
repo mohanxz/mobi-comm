@@ -460,11 +460,13 @@ i {
   font-weight: bold;
   padding: 6px 14px;
   border-radius: 0% 100% 23% 77% / 100% 0% 100% 0%;
-
   display: inline-block;
   margin-bottom: 15px;
   font-size: 14px;
   text-transform: uppercase;
+  position: relative;
+  top: -29px;
+  left: -30px;
 }
 
 .plan-title {

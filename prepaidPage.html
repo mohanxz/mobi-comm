@@ -169,99 +169,140 @@
     </div>
     </main>
 
-
-
     <script>
         document.addEventListener("DOMContentLoaded", function () {
-            
-            const categories = ["recommended", "validity", "data", "unlimited", "ott"];
-            
-            const images = {
-        netflix: "src/images/netflixlogo.png",
-        amazon: "src/images/amazonprimelogo.png", // Alias for Prime Video
-    };
+        const categoryEndpoint = "http://localhost:8081/api/categories";
+        const plansBaseEndpoint = "http://localhost:8081/api/plans/category/";
     
-    categories.forEach(category => {
-        fetch(`http://localhost:3000/${category}`)
-        .then(response => response.json())
-        .then(plans => {
-            const container = document.querySelector(`#${category} .row`);
-            if (!container) return;
-            
-            container.innerHTML = ""; // Clear previous content
-            
-            if (plans.length === 0) {
-                document.querySelector(`#${category}`).style.display = "none";
-            } else {
-                plans.forEach(plan => {
-                    if (plan.hidden) return;
-                    
-                    let modifiedFeatures = plan.features.map(feature => {
-                        let modifiedFeature = feature; // Start with the original text
-                        
-                        // Object.keys(images).forEach(keyword => {
-                        //     let regex = new RegExp(`\\b${keyword}\\b`, "gi"); // Case-insensitive whole word match
-                        //     modifiedFeature = modifiedFeature.replace(regex, `<img src="${images[keyword]}" alt="${keyword}" style="width:30px; "> ${keyword}`);
-                        // });
-                        
-                        return `<li>${modifiedFeature}</li>`; // Wrap in <li> to maintain list structure
-                        }).join("");
-                        
-                        const planCard = `
-                        <div class="col-lg-4 col-sm-6 responsive">
-                            <div class="plan-card position-relative">
-                                ${plan.badge ? `<img src="${plan.badge}" class="badge-img position-absolute top-0 end-0 m-2" id="badge" alt="Badge" style="width:100px" >` : ''}
-                                <div class="plan-header position-relative" style="left:-30px;top:-29px">${plan.label}</div>
-                                <h5 class="plan-title">${plan.plan_name}</h5>
-                                <p class="plan-price">${plan.price}</p>
-                                <ul class="plan-features">${modifiedFeatures}</ul>
-                                <button  class="proceed-btn">${plan.plan_code ? `Recharge ${plan.plan_code}` : `Recharge ${plan.plan_name}`}</button>
-                                </div>
-                                </div>`;
-                                
-                                container.innerHTML += planCard;
-                            });
-                        }
-                    })
-                    .catch(error => console.error(`Error fetching ${category} data:`, error));
+        function normalizeCategoryName(name) {
+            return name.toLowerCase().replace(/_/g, "");
+        }
+    
+        function formatValidity(validityDays) {
+            if (!validityDays || isNaN(validityDays)) return ""; 
+    
+            const validityMap = {
+                1: "1 Day",
+                2: "2 Days",
+                3: "3 Days",
+                5: "5 Days",
+                7: "1 Week",
+                10: "10 Days",
+                14: "2 Weeks",
+                15: "15 Days",
+                21: "3 Weeks",
+                28: "4 Weeks",
+                30: "1 Month",
+                45: "1.5 Months",
+                60: "2 Months",
+                75: "2.5 Months",
+                90: "3 Months",
+                120: "4 Months",
+                150: "5 Months",
+                180: "6 Months",
+                270: "9 Months",
+                300: "10 Months",
+                330: "11 Months",
+                365: "1 Year",
+                730: "2 Years",
+                1095: "3 Years"
+            };
+    
+            if (validityMap[validityDays]) {
+                return validityMap[validityDays];
+            }
+    
+            if (validityDays % 365 === 0) {
+                return `${validityDays / 365} Years`;
+            } 
+            if (validityDays % 30 === 0) {
+                return `${validityDays / 30} Months`;
+            } 
+            if (validityDays % 7 === 0) {
+                return `${validityDays / 7} Weeks`;
+            }
+    
+            return `${validityDays} Days`;
+        }
+    
+        function formatPriceWithValidity(price, validityDays) {
+            const formattedValidity = formatValidity(validityDays);
+            return formattedValidity ? `₹${price} / ${formattedValidity}` : `₹${price}`;
+        }
+    
+        fetch(categoryEndpoint)
+            .then(response => response.json())
+            .then(categories => {
+                categories.forEach(category => {
+                    let categoryName = normalizeCategoryName(category.categoryName);
+                    fetchPlansByCategory(categoryName);
                 });
-
-            });
-            
-            
+            })
+            .catch(error => console.error("Error fetching categories:", error));
     
-            document.addEventListener("click", function (event) {
-        if (event.target.classList.contains("proceed-btn")) {
-            const planCode = event.target.getAttribute("data-plan-code") || "";
-            const planName = event.target.getAttribute("data-plan-name") || "";
-
-            // Navigate to payment page with query parameters
-            window.location.href = `http://127.0.0.1:5501/payment.html?planCode=${planCode}&planName=${planName}`;
+        function fetchPlansByCategory(category) {
+            fetch(`${plansBaseEndpoint}${category}`)
+                .then(response => response.json())
+                .then(plans => {
+                    const container = document.querySelector(`#${category} .row`);
+                    if (!container) return;
+    
+                    container.innerHTML = ""; 
+    
+                    if (plans.length === 0) {
+                        document.querySelector(`#${category}`).style.display = "none";
+                    } else {
+                        plans.forEach(plan => {
+                            if (!plan.active) return;
+    
+                            let featuresList = [];
+                            if (plan.callLimit) featuresList.push(`<li> ${plan.callLimit}</li>`);
+                            if (plan.dataLimit) featuresList.push(`<li> ${plan.dataLimit}</li>`);
+                            if (plan.smsLimit) featuresList.push(`<li> ${plan.smsLimit}</li>`);
+                            if (plan.dataRollover && plan.dataRollover.toLowerCase() !== "none") featuresList.push(`<li>${plan.dataRollover}</li>`);
+                            if (plan.ottPlans) featuresList.push(`<li> ${plan.ottPlans}</li>`);
+    
+                            const planCard = `
+                                <div class="col-lg-4 col-sm-6 responsive">
+                                    <div class="plan-card position-relative">
+                                        ${plan.imagePath ? `<img src="${plan.imagePath}" class="plan-img" alt="Plan Image" style="width:100%; height:150px; object-fit:cover;">` : ""}
+                                        ${plan.planLabel ? `<div class="plan-header position-relative">${plan.planLabel}</div>` : ""}
+                                        <h5 class="plan-title">${plan.planName}</h5>
+                                        <p class="plan-price">${formatPriceWithValidity(plan.price+"", plan.validityDays)}</p>
+                                        <ul class="plan-features">${featuresList.join("")}</ul>
+                                        <button class="proceed-btn" data-plan-name="${plan.planName}" data-plan-price="${plan.price}">Recharge ${plan.planCode}</button>
+                                    </div>
+                                </div>`;
+    
+                            container.innerHTML += planCard;
+                        });
+                    }
+                })
+                .catch(error => console.error(`Error fetching ${category} plans:`, error));
         }
     });
+    
+    // Handle "Proceed" button clicks
     document.addEventListener("click", function (event) {
-    if (event.target.classList.contains("proceed-btn")) {
-        // Get the plan details from the parent card
-        const planCard = event.target.closest(".plan-card");
-        const planName = planCard.querySelector(".plan-title").textContent.trim();
-        const planPrice = planCard.querySelector(".plan-price").textContent.trim();
-        const planFeatures = Array.from(planCard.querySelectorAll(".plan-features li"))
-                                .map(li => li.innerHTML) // Keep HTML for images
-                                .join("|"); // Use '|' to separate features
-
-        // Navigate to the payment page with query parameters
-        const url = `http://127.0.0.1:5501/payment.html?planName=${encodeURIComponent(planName)}&planPrice=${encodeURIComponent(planPrice)}&planFeatures=${encodeURIComponent(planFeatures)}`;
-        window.location.href = url;
-    }
-});
-
-            </script>
-
-        
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-        crossorigin="anonymous"></script>
+        if (event.target.classList.contains("proceed-btn")) {
+            const planCard = event.target.closest(".plan-card");
+            const planName = planCard.querySelector(".plan-title").textContent.trim();
+            const planPrice = planCard.querySelector(".plan-price").textContent.trim();
+            const planFeatures = Array.from(planCard.querySelectorAll(".plan-features li"))
+                .map(li => li.innerHTML)
+                .join("|");
+    
+            const url = `http://127.0.0.1:5501/payment.html?planName=${encodeURIComponent(planName)}&planPrice=${encodeURIComponent(planPrice)}&planFeatures=${encodeURIComponent(planFeatures)}`;
+            window.location.href = url;
+        }
+    });
+    
+    </script>
+            
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+            crossorigin="anonymous"></script>
     </body>
     
     </html>
