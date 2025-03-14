@@ -155,19 +155,12 @@
                 </div>
             </div>
         </div>
+        
     </main>
 
 
-    </div>
 
-
-
-
-
-    </div>
-    </div>
-    </div>
-    </main>
+ 
 
     <script>
         document.addEventListener("DOMContentLoaded", function () {
@@ -253,7 +246,7 @@
                         document.querySelector(`#${category}`).style.display = "none";
                     } else {
                         plans.forEach(plan => {
-                            if (!plan.active) return;
+                            if (!plan.isActive) return;
     
                             let featuresList = [];
                             if (plan.callLimit) featuresList.push(`<li> ${plan.callLimit}</li>`);
