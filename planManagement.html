@@ -16,6 +16,9 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
 
     <style>
+        body{
+            overflow-x: hidden;
+        }
         .tabs {
             display: flex;
             background: #fff;
@@ -50,7 +53,7 @@
         }
 
         #main-content{
-            width:85%;
+            width:55%;
         
         }
         /* Ensure main content takes up remaining space */
@@ -218,235 +221,309 @@ aside {
                 <div id="plansContainer" class="row mt-3"></div>
             </div>
         </div>
-     
-        <!-- Add Plan Modal -->
         <div class="modal fade" id="addPlanModal" tabindex="-1" aria-labelledby="addPlanModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
+            <div class="modal-dialog modal-dialog-centered modal-lg">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title">Add New Plan</h5>
+                        <h5 class="modal-title" id="addPlanModalLabel">Add New Plan</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="addPlanForm">
+                            <div class="mb-3">
+                                <label for="planLabel" class="form-label">Plan Label</label>
+                                <input type="text" class="form-control" id="planLabel" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="planName" class="form-label">Plan Name</label>
+                                <input type="text" class="form-control" id="planName" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="planCode" class="form-label">Plan Code</label>
+                                <input type="text" class="form-control" id="planCode" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="price" class="form-label">Price</label>
+                                <input type="number" class="form-control" id="price" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="validityDays" class="form-label">Validity (Days)</label>
+                                <input type="number" class="form-control" id="validityDays" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="dataLimit" class="form-label">Data Limit</label>
+                                <input type="text" class="form-control" id="dataLimit" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="dataRollover" class="form-label">Data Rollover</label>
+                                <input type="text" class="form-control" id="dataRollover">
+                            </div>
+                            <div class="mb-3">
+                                <label for="callLimit" class="form-label">Call Limit</label>
+                                <input type="text" class="form-control" id="callLimit" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="smsLimit" class="form-label">SMS Limit</label>
+                                <input type="text" class="form-control" id="smsLimit">
+                            </div>
+                            <div class="mb-3">
+                                <label for="categoryId" class="form-label">Category</label>
+                                <select class="form-control" id="categoryId" required>
+                                    <option value="">Loading categories...</option>
+                                </select>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary" id="savePlanBtn">Save Plan</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+     
+        <div class="modal fade" id="editPlanModal" tabindex="-1" aria-labelledby="editPlanModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Edit Plan</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                     </div>
                     <div class="modal-body">
-                        <label>Plan Name:</label>
-                        <input type="text" id="newPlanName" class="form-control">
-    
-                        <label>Price:</label>
-                        <input type="text" id="newPlanPrice" class="form-control">
-    
-                        <label>Validity:</label>
-                        <input type="text" id="newPlanValidity" class="form-control">
-    
-                        <label>Features:</label>
-                        <textarea id="newPlanFeatures" class="form-control"></textarea>
-    
-                        <label>Label:</label>
-                        <input type="text" id="newPlanLabel" class="form-control">
-                        <img src="" alt="">
-    
-                        <label>Select Plan Badge:</label>
-                        <select id="newPlanBadge" class="form-control">
+                        <label for="editPlanLabel">Plan Label:</label>
+                        <input type="text" id="editPlanLabel" class="form-control">
+        
+                        <label for="editPlanName">Plan Name:</label>
+                        <input type="text" id="editPlanName" class="form-control">
+        
+                        <label for="editPlanCode">Plan Code:</label>
+                        <input type="text" id="editPlanCode" class="form-control">
+        
+                        <label for="editPrice">Price:</label>
+                        <input type="number" id="editPrice" class="form-control">
+        
+                        <label for="editValidityDays">Validity (Days):</label>
+                        <input type="number" id="editValidityDays" class="form-control">
+        
+                        <label for="editDataLimit">Data Limit:</label>
+                        <input type="text" id="editDataLimit" class="form-control">
+        
+                        <label for="editDataRollover">Data Rollover:</label>
+                        <input type="text" id="editDataRollover" class="form-control">
+        
+                        <label for="editCallLimit">Call Limit:</label>
+                        <input type="text" id="editCallLimit" class="form-control">
+        
+                        <label for="editSmsLimit">SMS Limit:</label>
+                        <input type="text" id="editSmsLimit" class="form-control">
+        
+                        <label for="editPlanBadge">Select Plan Badge:</label>
+                        <select id="editPlanBadge" class="form-control">
                             <option value="none" selected>None</option>
-                            <option value="src/images/best-seller-banner_175838-470-removebg-preview.png" style="width: 400px;">Best Seller</option>
+                            <option value="src/images/best-seller-banner_175838-470-removebg-preview.png">Best Seller</option>
                             <option value="src/images/special-offer-creative-sale-banner-design.png">Budget Friendly</option>
                             <option value="img3.png">Most Popular</option>
                             <option value="img4.png">Limited Offer</option>
                         </select>
-    
-                        <!-- <img src="src/images/special-offer-creative-sale-banner-design.png" alt=""> -->
+        
                         <div class="mt-3 text-center">
-                            <img id="selectedBadgePreview" src="" style="display:none; width: 50px; height: 50px;">
+                            <img id="editBadgePreview" src="" style="display:none; width: 50px; height: 50px;">
                         </div>
-                    </div>6
+                    </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary" id="saveNewPlan">Save Plan</button>
+                        <button type="button" class="btn btn-primary" id="saveEditedPlan">Save Plan</button>
                     </div>
                 </div>
             </div>
         </div>
     
+
+    
 </body>
     
     <!-- Tabs -->
     
-    <!-- jQuery -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
-    <script>
-        
-        let currentCategory = "recommended";
-        let editingPlanId = null;
+ <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const categoryEndpoint = "http://localhost:8081/api/categories";
+    const plansBaseEndpoint = "http://localhost:8081/api/plans/category/";
+    const planEndpoint = "http://localhost:8081/api/plans";
 
-        
-    
-        function loadAdminPlans() {
-            
-            $.get(`http://localhost:3000/${currentCategory}`, function (plans) {
-                $("#plansContainer").html("");
+    let currentCategory = "";
 
-
-
-
-                
-                plans.forEach(plan => {
-                    
-                    let badgeHtml = plan.badge && plan.badge !== "none" ? 
-                        `<img src="${plan.badge}" class="position-absolute top-0 end-0 mt-2 me-2" style="width:100px;">` 
-                        : '';
-    
-                    let card = `
-                    <div class="col-lg-3 g-5 mx-5"style="margin-left:0px;">
-                           <div class="plan-card ${plan.hidden ? 'bg-light' : ''}">
-                            ${badgeHtml}
-                            <div class="plan-header position-relative"style="left:-30px;top:-29px" >${plan.label} ${plan.hidden ? '(Hidden)' : ''}</div>
-                            <h5 class="plan-title">${plan.plan_name} - <span style="font-size: 14px; color: #888;">
-                            <p class="plan-price">${plan.price}/${plan.validity}</p>
-                            <ul class="plan-features">
-                                ${plan.features.map(f => `<li><i class="fa-solid fa-check-circle"></i> ${f}</li>`).join('')}
-                            </ul>
-                            <button class="proceed-btn">Recharge ${plan.price} Plan</button>
-                            <div class="plan-buttons position-relative"style="left:70px;top:10px">
-                              <button class="btn text-light  ${plan.hidden ? 'unhide' : 'hide'} toggle-hide" data-id="${plan.id}">
-                                 ${plan.hidden 
-                                     ? '<i class="fa-solid fa-eye"></i> Unhide'  
-                                     : '<i class="fa-solid fa-eye-slash text-light"></i> Hide'} 
-                             </button>
-
-                                <button class="btn edit edit-plan text-light" data-id="${plan.id}"><i class="fas fa-edit text-light"></i> Edit</button>
-                            </div>
-                        </div>
-                        </div>`;
-                    $("#plansContainer").append(card);
-                });
-            });
-        }
-    
-        $(document).on("click", ".tab", function() {
-            $(".tab").removeClass("active");
-            $(this).addClass("active");
-            currentCategory = $(this).data("category");
-            loadAdminPlans();
-        });
-    
-        $("#addPlanBtn").click(function () {
-            editingPlanId = null;  // Reset editing state
-            $("#newPlanName, #newPlanPrice, #newPlanValidity, #newPlanFeatures, #newPlanLabel").val("");
-            $("#newPlanBadge").val("none");
-            $("#selectedBadgePreview").hide();
-            new bootstrap.Modal(document.getElementById('addPlanModal')).show();
-        });
-    
-        $("#newPlanBadge").change(function () {
-            let selectedImage = $(this).val();
-            if (selectedImage === "none") {
-                $("#selectedBadgePreview").hide();
-            } else {
-                $("#selectedBadgePreview").attr("src", selectedImage).show();
-            }
-        });
-    
-        $("#saveNewPlan").click(function () {
-    let newPlan = {
-        plan_name: $("#newPlanName").val().trim(),
-        price: $("#newPlanPrice").val().trim(),
-        validity: $("#newPlanValidity").val().trim(),
-        features: $("#newPlanFeatures").val().trim().split("\n"),
-        label: $("#newPlanLabel").val().trim(),
-        badge: $("#newPlanBadge").val(),
-        hidden: false
-    };
-
-    if (!newPlan.plan_name || !newPlan.price || !newPlan.validity) {
-        alert("Please fill in all required fields.");
-        return;
+    function normalizeCategoryName(name) {
+      return name.toLowerCase().replace(/_/g, "");
     }
 
-    console.log("Sending new plan:", newPlan); // Debugging
+    function loadCategories() {
+      fetch(categoryEndpoint)
+        .then(response => response.json())
+        .then(categories => {
+          let tabsContainer = document.querySelector(".tabs");
+          tabsContainer.innerHTML = "";
 
-    $.ajax({
-        url: `http://localhost:3000/${currentCategory}`,
-        type: "POST",
-        contentType: "application/json",
-        data: JSON.stringify(newPlan),
-        success: function () {
-            console.log("Plan added successfully!"); // Debugging
-            bootstrap.Modal.getInstance(document.getElementById('addPlanModal')).hide();
-            loadAdminPlans();
-        },
-        error: function (err) {
-            console.error("Error adding plan:", err);
-            alert("Failed to add plan. Check the console for details.");
+          categories.sort((a, b) => {
+            if (a.categoryName.toLowerCase() === "recommended") return -1;
+            if (b.categoryName.toLowerCase() === "recommended") return 1;
+
+            const priorityKeywords = ["validity", "data", "unlimited", "ott plans"];
+            const aPriority = priorityKeywords.some(keyword => a.categoryName.toLowerCase().includes(keyword));
+            const bPriority = priorityKeywords.some(keyword => b.categoryName.toLowerCase().includes(keyword));
+
+            if (aPriority && !bPriority) return -1;
+            if (bPriority && !aPriority) return 1;
+
+            return a.categoryId - b.categoryId;
+          });
+
+          categories.forEach(category => {
+            let categoryName = normalizeCategoryName(category.categoryName);
+
+            let tab = document.createElement("div");
+            tab.classList.add("tab");
+            tab.dataset.category = categoryName;
+            tab.textContent = category.categoryName;
+            tab.addEventListener("click", function () {
+              document.querySelectorAll(".tab").forEach(tab => tab.classList.remove("active"));
+              this.classList.add("active");
+              currentCategory = categoryName;
+              loadAdminPlans();
+            });
+
+            tabsContainer.appendChild(tab);
+
+            if (!currentCategory) {
+              currentCategory = categoryName;
+            }
+          });
+
+          document.querySelector(".tab").classList.add("active");
+          loadAdminPlans();
+        })
+        .catch(error => console.error("Error loading categories:", error));
+    }
+
+    function loadAdminPlans() {
+      if (!currentCategory) return;
+
+      fetch(`${plansBaseEndpoint}${currentCategory}`)
+        .then(response => response.json())
+        .then(plans => {
+          const container = document.getElementById("plansContainer");
+          container.innerHTML = "";
+
+          plans.forEach(plan => {
+            let featuresList = [];
+            if (plan.callLimit) featuresList.push(`<li>${plan.callLimit}</li>`);
+            if (plan.dataLimit) featuresList.push(`<li>${plan.dataLimit}</li>`);
+            if (plan.smsLimit) featuresList.push(`<li>${plan.smsLimit}</li>`);
+            if (plan.dataRollover && plan.dataRollover.toLowerCase() !== "none") featuresList.push(`<li>${plan.dataRollover}</li>`);
+            if (plan.ottPlans) featuresList.push(`<li>${plan.ottPlans}</li>`);
+
+            let badgeHtml = plan.imagePath ? `<img src="${plan.imagePath}" class="plan-img" style="width:100%; height:150px; object-fit:cover;">` : "";
+
+            let isActive = plan.isActive;
+
+            let planCard = `
+              <div class="col-lg-4 col-sm-6">
+                <div class="plan-card position-relative ${isActive ? '' : 'bg-light'}">
+                  ${badgeHtml}
+                  <div class="plan-header">${plan.planLabel || ""} ${isActive ? "" : "(Hidden)"}</div>
+                  <h5 class="plan-title">${plan.planName} - ₹${plan.price}</h5>
+                  <ul class="plan-features">${featuresList.join("")}</ul>
+                  <div class="plan-buttons">
+                    <button class="btn toggle-hide text-light" data-id="${plan.planId}" data-isActive="${isActive}">
+                      ${isActive ? '<i class="fa-solid fa-eye-slash"></i> Hide' : '<i class="fa-solid fa-eye"></i> Unhide'}
+                    </button>
+                    <button class="btn edit-plan text-light" data-id="${plan.planId}"><i class="fas fa-edit"></i> Edit</button>
+                  </div>
+                </div>
+              </div>`;
+
+            container.innerHTML += planCard;
+          });
+        })
+        .catch(error => console.error("Error loading plans:", error));
+    }
+    document.addEventListener("click", function (event) {
+        if (event.target.closest(".edit-plan")) {
+            let planId = event.target.closest(".edit-plan").dataset.id;
+
+            fetch(`${planEndpoint}/${planId}`)
+                .then(response => response.json())
+                .then(plan => {
+                    document.getElementById("editPlanLabel").value = plan.planLabel || "";
+                    document.getElementById("editPlanName").value = plan.planName || "";
+                    document.getElementById("editPlanCode").value = plan.planCode || "";
+                    document.getElementById("editPrice").value = plan.price || "";
+                    document.getElementById("editValidityDays").value = plan.validityDays || "";
+                    document.getElementById("editDataLimit").value = plan.dataLimit || "";
+                    document.getElementById("editDataRollover").value = plan.dataRollover || "";
+                    document.getElementById("editCallLimit").value = plan.callLimit || "";
+                    document.getElementById("editSmsLimit").value = plan.smsLimit || "";
+                    document.getElementById("editPlanBadge").value = plan.imagePath || "";
+
+                    // Store plan ID for update
+                    document.getElementById("saveEditedPlan").dataset.id = plan.planId;
+
+                    // Open Modal
+                    $("#editPlanModal").modal("show");
+                })
+                .catch(error => console.error("Error fetching plan:", error));
         }
     });
-});
 
-        $(document).on("click", ".toggle-hide", function () {
-            
-            let planId = $(this).data("id");
-    
-            $.get(`http://localhost:3000/${currentCategory}/${planId}`, function (plan) {
-                plan.hidden = !plan.hidden;  // Toggle visibility
-    
-                $.ajax({
-                    url: `http://localhost:3000/${currentCategory}/${planId}`,
-                    type: "PUT",
-                    contentType: "application/json",
-                    data: JSON.stringify(plan),
-                    success: function () {
-                        loadAdminPlans();
-                    }
+    // Event Listener for Saving Edited Plan
+    document.getElementById("saveEditedPlan").addEventListener("click", function () {
+        let planId = this.dataset.id;
+
+        fetch(`${planEndpoint}/${planId}`)
+            .then(response => response.json())
+            .then(existingPlan => {
+                let updatedPlan = {
+                    planLabel: document.getElementById("editPlanLabel").value.trim() || existingPlan.planLabel,
+                    planName: document.getElementById("editPlanName").value.trim() || existingPlan.planName,
+                    planCode: document.getElementById("editPlanCode").value.trim() || existingPlan.planCode,
+                    price: parseFloat(document.getElementById("editPrice").value.trim()) || existingPlan.price,
+                    validityDays: parseInt(document.getElementById("editValidityDays").value.trim()) || existingPlan.validityDays,
+                    dataLimit: document.getElementById("editDataLimit").value.trim() || existingPlan.dataLimit,
+                    dataRollover: document.getElementById("editDataRollover").value.trim() || existingPlan.dataRollover,
+                    callLimit: document.getElementById("editCallLimit").value.trim() || existingPlan.callLimit,
+                    smsLimit: document.getElementById("editSmsLimit").value.trim() || existingPlan.smsLimit,
+                    imagePath: document.getElementById("editPlanBadge").value.trim() || existingPlan.imagePath,
+                    isActive: true, 
+                    categoryId: existingPlan.categoryId // Retain existing category
+                };
+
+                return fetch(`${planEndpoint}/${planId}`, {
+                    method: "PUT",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify(updatedPlan)
                 });
-            });
-        });
-    
-        $(document).on("click", ".edit-plan", function () {
-            let planId = $(this).data("id");
-            editingPlanId = planId;
-    
-            $.get(`http://localhost:3000/${currentCategory}/${planId}`, function (plan) {
-                $("#newPlanName").val(plan.plan_name);
-                $("#newPlanPrice").val(plan.price);
-                $("#newPlanValidity").val(plan.validity);
-                $("#newPlanFeatures").val(plan.features.join("\n"));
-                $("#newPlanLabel").val(plan.label);
-                $("#newPlanBadge").val(plan.badge);
-                $("#newPlanCode").val(plan.plan_name);
-    
-                if (plan.badge !== "none") {
-                    $("#selectedBadgePreview").attr("src", plan.badge).show();
-                } else {
-                    $("#selectedBadgePreview").hide();
-                }
-    
-                new bootstrap.Modal(document.getElementById('addPlanModal')).show();
-            });
-        });
-
-        
-    
-        $(document).ready(loadAdminPlans);
-        $("#searchBar").on("input", function () {
-    let searchQuery = $(this).val().toLowerCase();
-
-    $(".plan-card").each(function () {
-        let card = $(this);
-        let cardText = card.text().toLowerCase();
-
-        if (cardText.includes(searchQuery)) {
-            card.show();  // Show matching cards
-        } else {
-            card.hide();  // Hide non-matching cards
-        }
+            })
+            .then(() => {
+                $("#editPlanModal").modal("hide"); // Close modal
+                loadAdminPlans(); // Reload plans
+            })
+            .catch(error => console.error("Error updating plan:", error));
     });
-});
 
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
+    
+    loadCategories();
+  
+    });
+
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     
 </body>
 </html>

@@ -2971,7 +2971,7 @@
       ],
       "label": "Recommended",
       "badge": "src/images/best-seller-banner_175838-470-removebg-preview.png",
-      "hidden": false
+      "hidden": true
     }
   ],
   "data": [
