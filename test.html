@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Port/Activate SIM – Mobi-Comm</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <style>
+      :root {
+        --primary: #157a6e;
+        --secondary: #f6af65;
+        --success: #156a6e;
+        --text-color: #ffffff;
+      }
+
+      /* Navbar */
+      .navbar {
+        background-color: var(--primary);
+        padding: 8px 20px;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 1000;
+      }
+      .navbar-brand {
+        font-family: "Orbitron", sans-serif;
+        font-size: 28px;
+        font-weight: 700;
+        color: #fff;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        text-shadow: 0 0 10px rgba(246, 175, 101, 0.8);
+        animation: glow 2s infinite alternate;
+      }
+      @keyframes glow {
+        0% {
+          text-shadow: 0 0 10px rgba(246, 175, 101, 0.8);
+        }
+        100% {
+          text-shadow: 0 0 20px rgba(246, 175, 101, 1),
+            0 0 30px rgba(181, 255, 225, 0.5);
+        }
+      }
+      .navbar-brand:hover {
+        transform: scale(1.05);
+        color: var(--secondary);
+      }
+      .nav-links a {
+        color: #fff;
+        font-size: 17px;
+        text-decoration: none;
+        transition: color 0.3s ease;
+      }
+      .nav-links a:hover::after {
+        width: 100%;
+      }
+      .nav-right .search-icon,
+      .nav-right .user-icon {
+        font-size: 20px;
+        color: #fff;
+      }
+
+      /* Main Section: 2 columns, 50% each */
+      .main-section {
+        margin-top: 70px;
+        display: flex;
+        min-height: calc(100vh - 70px);
+      }
+
+      /* Left Banner Container */
+      .left-banner-container {
+        flex: 0 0 50%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 60px 0;
+      }
+      .banner-top,
+      .banner-bottom {
+        width: 80%;
+        max-height: 500px;
+        margin: 30px 0;
+        overflow: hidden;
+        border-radius: 280px;
+      }
+      .banner-top img,
+      .banner-bottom img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      /* Right side container */
+      .right-form-container {
+        flex: 0 0 50%;
+        padding: 40px 20px;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        background-color: #ffffff;
+      }
+
+      /* Right form box */
+      .right-form {
+        width: 100%;
+        max-width: 700px;
+        background: rgba(184, 238, 238, 0.9);
+        padding: 40px;
+        border-radius: 15px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      }
+      .right-form h1 {
+        font-size: 28px;
+        margin-bottom: 15px;
+        font-weight: 700;
+      }
+      .right-form p {
+        font-size: 16px;
+        color: #666;
+        margin-bottom: 25px;
+      }
+
+      .form-card {
+        background: rgba(242, 255, 255, 0.9);
+        padding: 20px;
+        border-radius: 10px;
+        margin-bottom: 25px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+      }
+      .form-card h3 {
+        font-size: 20px;
+        color: var(--primary);
+        margin-bottom: 15px;
+      }
+      .form-group {
+        margin-bottom: 20px;
+      }
+      .form-group label {
+        font-weight: 500;
+      }
+      .form-group input,
+      .form-group select {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        font-size: 14px;
+        transition: border-color 0.3s ease, box-shadow 0.3s ease;
+      }
+      .form-group input:focus,
+      .form-group select:focus {
+        border-color: var(--primary);
+        box-shadow: 0 0 5px rgba(21, 122, 110, 0.3);
+        outline: none;
+      }
+
+      /* Radio group alignment fix */
+      .radio-group {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+      .radio-group label {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        cursor: pointer;
+      }
+      .radio-group input[type="radio"] {
+        margin: 0;
+      }
+
+      .error-message {
+        color: red;
+        font-size: 12px;
+        display: none;
+      }
+
+      /* OTP Section */
+      .otp-section {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      .otp-section input {
+        width: 100px;
+      }
+      .otp-section .success-tick {
+        color: #28a745;
+        font-size: 20px;
+      }
+
+      /* Button Styles (for Submit and Send OTP) */
+      .submit-btn {
+        background-color: var(--primary);
+        color: #fff;
+        border: none;
+        padding: 12px 30px;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+        width: 100%;
+        margin-top: 20px;
+      }
+      .submit-btn:hover {
+        background-color: var(--success);
+        transform: scale(1.02);
+      }
+
+      /* Back to Top Button */
+      #backToTopBtn {
+        background-color: var(--secondary);
+        color: #ffffff;
+        border: none;
+        border-radius: 20%;
+        width: 26px;
+        height: 30px;
+        font-size: 19px;
+        cursor: pointer;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        transition: background-color 0.3s ease, transform 0.3s ease;
+        position: absolute;
+        top: -60px;
+        right: 20px;
+      }
+      #backToTopBtn:hover {
+        background-color: var(--primary);
+        transform: scale(1.1);
+      }
+
+      /* Footer */
+      .footer {
+        background-color: var(--primary);
+        color: var(--text-color);
+        padding: 40px 0;
+        margin-top: 50px;
+      }
+      .footer h5 {
+        font-weight: bold;
+        color: var(--secondary);
+      }
+      .footer a {
+        color: var(--text-color);
+        text-decoration: none;
+      }
+      .footer a:hover {
+        text-decoration: underline;
+      }
+      .social-icons a {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        margin: 5px;
+        border: 1px solid white;
+        border-radius: 50%;
+        color: white;
+        text-decoration: none;
+      }
+      .social-icons a:hover {
+        background-color: var(--secondary);
+      }
+      .footer-bottom {
+        border-top: 1px solid rgba(255, 255, 255, 0.2);
+        margin-top: 20px;
+        padding-top: 10px;
+        text-align: center;
+      }
+      .download-btn {
+        width: 150px;
+        margin: 10px;
+        transition: transform 0.2s ease-in-out;
+      }
+      .download-btn:hover {
+        transform: scale(1.1);
+      }
+
+      /* Show/Hide for eSIM vs Non-eSIM */
+      #nonEsimContent,
+      #esimContent {
+        display: none;
+      }
+      #nonEsimContent.active {
+        display: block;
+      }
+      #esimContent.active {
+        display: block;
+      }
+
+      /* Two dropdowns in row for brand/model */
+      .dropdown-row {
+        display: flex;
+        gap: 10px;
+      }
+      .dropdown-row select {
+        flex: 1;
+      }
+      .compatibility-msg {
+        color: #28a745;
+        font-weight: bold;
+        margin-top: 10px;
+        display: none;
+      }
+      .compatibility-msg.active {
+        display: block;
+      }
+
+      /* Media Query for Mobile */
+      @media (max-width: 768px) {
+        .main-section {
+          flex-direction: column;
+        }
+        .left-banner-container {
+          display: none;
+        }
+        .right-form-container {
+          flex: 0 0 100%;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Toast Container -->
+    <div id="toast-container" class="position-fixed top-0 end-0 p-3"></div>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Mobi-Comm</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarContent"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarContent">
+          <div class="nav-links ms-auto d-flex gap-4">
+            <a href="Homepage.html">Recharge</a>
+            <a href="PlansPage2.html">Prepaid</a>
+            <a href="Aboutuspage.html">Support</a>
+            <a href="Aboutuspage.html">About Us</a>
+          </div>
+          <div class="nav-right ms-4 d-flex gap-3">
+            <a href="SearchPage.html" class="search-icon"
+              ><i class="fa-solid fa-magnifying-glass"></i
+            ></a>
+            <div class="dropdown">
+              <a
+                class="user-icon dropdown-toggle"
+                id="userDropdown"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                <i class="fa-solid fa-circle-user"></i>
+              </a>
+              <ul
+                class="dropdown-menu dropdown-menu-end"
+                aria-labelledby="userDropdown"
+              >
+                <li>
+                  <a class="dropdown-item" href="LoginPage.html">Log In</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Main Section -->
+    <section class="main-section">
+      <!-- Left Banner with two images -->
+      <div class="left-banner-container">
+        <div class="banner-top">
+          <img src="Assets/Images/Instant activation, unlimited choices.png" alt="Top Banner">
+        </div>
+        <div class="banner-bottom">
+          <img src="Assets/Images/Switch to MC.png" alt="Bottom Banner">
+        </div>
+        <div class="banner-bottom">
+          <img src="Assets/Images/e-SIM made Easy with MC.png" alt="Bottom Banner">
+        </div>
+      </div>
+
+      <!-- Right side container -->
+      <div class="right-form-container">
+        <div class="right-form">
+          <h1>
+            Your Perfect
+            <span style="color: var(--secondary)">SIM</span> Delivered with
+            Ease!
+          </h1>
+
+          <p>Stay ahead with a SIM that matches your needs</p>
+
+          <!-- Choose Your Path -->
+          <div class="form-card">
+            <h3 class="fw-bolder">1.Choose Your Path</h3>
+            <div class="form-group radio-group">
+              <label>
+                <input
+                  type="radio"
+                  name="simOption"
+                  value="port"
+                  required
+                  onclick="toggleForm(this.value)"
+                />
+                <span>Port to Mobi-Comm</span>
+              </label>
+              <label>
+                <input
+                  type="radio"
+                  name="simOption"
+                  value="new"
+                  onclick="toggleForm(this.value)"
+                />
+                <span>Get new SIM</span>
+              </label>
+              <label>
+                <input
+                  type="radio"
+                  name="simOption"
+                  value="esim"
+                  onclick="toggleForm(this.value)"
+                />
+                <span>Activate e‑SIM</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Non-eSIM Content -->
+          <div id="nonEsimContent" class="active">
+            <div class="form-card">
+              <h3 class="fw-bolder">2.Tell Us About You</h3>
+              <div class="form-group">
+                <label>Mobile Number*</label>
+                <input
+                  type="text"
+                  id="mobileNumber"
+                  placeholder="Ex: 9810012345"
+                  required
+                />
+                <small id="mobileError" class="error-message"></small>
+              </div>
+              <div class="form-group">
+                <label>Name*</label>
+                <input
+                  type="text"
+                  id="name"
+                  placeholder="Ex: Rahul Kumar"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label>Email*</label>
+                <input
+                  type="email"
+                  id="email"
+                  placeholder="Ex: example@email.com"
+                  required
+                />
+              </div>
+              <div class="form-group" id="otpSection">
+                <button class="submit-btn" id="sendOtpBtn" onclick="sendOtp()">Send OTP</button>
+              </div>
+            </div>
+            <div class="form-card">
+              <h3 class="fw-bolder">3.Where Should We Deliver?</h3>
+              <div class="form-group">
+                <label>Area*</label>
+                <input
+                  type="text"
+                  id="area"
+                  placeholder="Ex: Sector 12"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label>City*</label>
+                <input type="text" id="city" placeholder="Ex: Delhi" required />
+              </div>
+              <div class="form-group">
+                <label>State*</label>
+                <select id="state" required>
+                  <option value="">Select State</option>
+                  <option value="Andhra Pradesh">Andhra Pradesh</option>
+                  <option value="West Bengal">West Bengal</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label>Pincode*</label>
+                <input
+                  type="text"
+                  id="pincode"
+                  placeholder="Ex: 110001"
+                  required
+                />
+                <small id="pincodeError" class="error-message"></small>
+              </div>
+              <div class="form-group">
+                <label>Country*</label>
+                <input type="text" id="country" value="India" readonly />
+              </div>
+              <button class="submit-btn" onclick="validateForm()">
+                Submit
+              </button>
+            </div>
+          </div>
+
+          <!-- e-SIM Content -->
+          <div id="esimContent">
+            <div class="form-card">
+              <h3 class="fw-bolder">1.Activate e‑SIM</h3>
+              <div class="form-group">
+                <label>Name*</label>
+                <input
+                  type="text"
+                  id="esimName"
+                  placeholder="Ex: Rahul Kumar"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label>Email*</label>
+                <input
+                  type="email"
+                  id="esimEmail"
+                  placeholder="Ex: example@email.com"
+                  required
+                />
+              </div>
+              <div class="form-group" id="esimOtpSection">
+                <button class="submit-btn" id="sendEsimOtpBtn" onclick="sendOtpEsim()">
+                  Send OTP
+                </button>
+              </div>
+              <div
+                class="form-group"
+                id="esimOtpInputDiv"
+                style="display: none"
+              >
+                <div class="otp-section">
+                  <input
+                    type="text"
+                    id="esimOtpInput"
+                    placeholder="Enter 4-digit OTP"
+                    maxlength="4"
+                    oninput="checkOtpEsim()"
+                  />
+                  <span id="esimOtpSuccess" style="display: none">
+                    <i class="fas fa-check-circle success-tick"></i>
+                  </span>
+                </div>
+              </div>
+              <button class="submit-btn" onclick="validateEsimForm()">
+                Submit
+              </button>
+            </div>
+            <div class="form-card">
+              <h3 class="fw-bolder">2.Check if your device is e‑SIM-enabled</h3>
+              <p>
+                Just select your brand and model to know if it’s e‑SIM-ready.
+              </p>
+              <div class="dropdown-row">
+                <select id="selectBrand" onchange="populateModels()">
+                  <option value="">Select Brand</option>
+                  <option value="Samsung">Samsung</option>
+                  <option value="Google">Google</option>
+                  <option value="Apple">Apple</option>
+                  <option value="OnePlus">OnePlus</option>
+                  <option value="Nokia">Nokia</option>
+                </select>
+                <select id="selectModel" onchange="checkCompatibility()">
+                  <option value="">Select Model</option>
+                </select>
+              </div>
+              <div id="compatibilityMsg" class="compatibility-msg">
+                <i class="fas fa-check-circle"></i> Yes, this device is
+                compatible for e‑SIM.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <button id="backToTopBtn" title="Go to top">
+        <i class="fa-solid fa-chevron-up"></i>
+      </button>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3">
+            <h5>Mobi-Comm Service Limited</h5>
+            <p>
+              Mobi-Comm, a mobile service provider in India, offers voice and
+              data services across 2G, 3G, and 4G networks under its prepaid
+              mobile plans.
+            </p>
+            <div class="social-icons">
+              <a href="https://www.instagram.com/yourusername" target="_blank"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a href="https://www.facebook.com/yourusername" target="_blank"
+                ><i class="fab fa-facebook"></i
+              ></a>
+              <a href="https://www.twitter.com/yourusername" target="_blank"
+                ><i class="fab fa-twitter"></i
+              ></a>
+              <a href="https://www.youtube.com/yourchannel" target="_blank"
+                ><i class="fab fa-youtube"></i
+              ></a>
+              <a href="https://www.linkedin.com/in/yourprofile" target="_blank"
+                ><i class="fab fa-linkedin"></i
+              ></a>
+            </div>
+          </div>
+          <div class="col-md-2">
+            <h5>Quick Links</h5>
+            <ul class="list-unstyled">
+              <li><a href="Aboutuspage.html">About Us</a></li>
+              <li><a href="FAQsPage.html">FAQs</a></li>
+              <li><a href="MyAccount.html">My Account</a></li>
+              <li><a href="https://commonsupportcentre.com/">Support</a></li>
+            </ul>
+          </div>
+          <div class="col-md-3">
+            <h5>Contact Us</h5>
+            <p>Mobi-Comm Headquarters</p>
+            <p>123 Telecom Street, Tech City, India - 560001</p>
+            <p><strong>Phone:</strong> +91 9876543210</p>
+          </div>
+          <div class="col-md-4 text-center">
+            <h5>Download Mobi-Comm</h5>
+            <a href="https://play.google.com/store" target="_blank">
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Google_Play_Store_badge_EN.svg/512px-Google_Play_Store_badge_EN.svg.png"
+                alt="Google Play"
+                class="download-btn"
+              />
+            </a>
+            <a href="https://www.apple.com/app-store/" target="_blank">
+              <img
+                src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg"
+                alt="App Store"
+                class="download-btn"
+              />
+            </a>
+          </div>
+        </div>
+        <div class="footer-bottom">© 2025 Mobi-Comm. All Rights Reserved.</div>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      // Toggle form content
+      function toggleForm(value) {
+        const nonEsim = document.getElementById("nonEsimContent");
+        const esim = document.getElementById("esimContent");
+        if (value === "esim") {
+          nonEsim.classList.remove("active");
+          esim.classList.add("active");
+        } else {
+          esim.classList.remove("active");
+          nonEsim.classList.add("active");
+        }
+      }
+
+      // Toast function
+      function showToast(message, delay) {
+        const toastContainer = document.getElementById("toast-container");
+        const toast = document.createElement("div");
+        toast.className = "toast align-items-center border-0 show";
+        toast.style.backgroundColor = "#1E90FF";
+        toast.style.color = "white";
+        toast.style.padding = "10px 20px";
+        toast.style.borderRadius = "5px";
+        toast.textContent = message;
+        toastContainer.appendChild(toast);
+        setTimeout(() => {
+          toast.remove();
+        }, delay);
+      }
+
+      // Non-eSIM OTP
+      function sendOtp() {
+        const otpSection = document.getElementById("otpSection");
+        otpSection.innerHTML = `
+          <div class="otp-section">
+            <input type="text" id="otpInput" placeholder="Enter 4-digit OTP" maxlength="4" oninput="checkOtp()" />
+            <span id="otpSuccess" style="display: none;">
+              <i class="fas fa-check-circle success-tick"></i>
+            </span>
+          </div>
+        `;
+      }
+      function checkOtp() {
+        const val = document.getElementById("otpInput").value;
+        const success = document.getElementById("otpSuccess");
+        success.style.display = val.length === 4 ? "flex" : "none";
+      }
+      function validateForm() {
+        const mobileNumber = document.getElementById("mobileNumber").value;
+        const pincode = document.getElementById("pincode").value;
+        const mobileError = document.getElementById("mobileError");
+        const pincodeError = document.getElementById("pincodeError");
+        const phoneRegex = /^[6-9]\d{9}$/;
+        const pincodeRegex = /^\d{6}$/;
+
+        mobileError.style.display = "none";
+        pincodeError.style.display = "none";
+
+        if (!phoneRegex.test(mobileNumber)) {
+          mobileError.textContent =
+            "Please enter a valid 10-digit mobile number.";
+          mobileError.style.display = "block";
+          return;
+        }
+        if (!pincodeRegex.test(pincode)) {
+          pincodeError.textContent = "Please enter a valid 6-digit pincode.";
+          pincodeError.style.display = "block";
+          return;
+        }
+        showToast(
+          "Form submitted successfully! We'll deliver your SIM soon.",
+          3000
+        );
+      }
+
+      // eSIM OTP
+      function sendOtpEsim() {
+        document.getElementById("esimOtpSection").style.display = "none";
+        document.getElementById("esimOtpInputDiv").style.display = "block";
+      }
+      function checkOtpEsim() {
+        const val = document.getElementById("esimOtpInput").value;
+        const success = document.getElementById("esimOtpSuccess");
+        success.style.display = val.length === 4 ? "inline-block" : "none";
+      }
+      function validateEsimForm() {
+        const name = document.getElementById("esimName").value;
+        const email = document.getElementById("esimEmail").value;
+        const otp = document.getElementById("esimOtpInput").value;
+        if (!name || !email || otp.length !== 4) {
+          showToast(
+            "Please complete all fields correctly for e‑SIM activation.",
+            3000
+          );
+          return;
+        }
+        showToast("Your e‑SIM will be activated within 24 hours.", 3000);
+      }
+
+      // Dynamic dropdown for brand/model
+      const models = {
+        Samsung: ["Galaxy S21", "Galaxy Note 20", "Galaxy Z Flip"],
+        Google: ["Pixel 6", "Pixel 6 Pro", "Pixel 5"],
+        Apple: ["iPhone 12", "iPhone 13", "iPhone SE"],
+        OnePlus: ["OnePlus 9", "OnePlus 8T", "OnePlus Nord"],
+        Nokia: ["Nokia 8.3", "Nokia 7.2", "Nokia 5.4"],
+      };
+      function populateModels() {
+        const brand = document.getElementById("selectBrand").value;
+        const modelSelect = document.getElementById("selectModel");
+        modelSelect.innerHTML = <option value="">Select Model</option>;
+        if (models[brand]) {
+          models[brand].forEach((m) => {
+            const opt = document.createElement("option");
+            opt.value = m;
+            opt.textContent = m;
+            modelSelect.appendChild(opt);
+          });
+        }
+        document.getElementById("compatibilityMsg").classList.remove("active");
+      }
+      function checkCompatibility() {
+        const brand = document.getElementById("selectBrand").value;
+        const model = document.getElementById("selectModel").value;
+        const msg = document.getElementById("compatibilityMsg");
+        if (brand && model) msg.classList.add("active");
+        else msg.classList.remove("active");
+      }
+
+      document.getElementById("backToTopBtn").addEventListener("click", () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+    </script>
+  </body>
+</html>

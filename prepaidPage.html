@@ -146,7 +146,6 @@
                             <div class="row">
                                 
 
-
                             </div>
 
                         </div>
@@ -258,8 +257,8 @@
                             const planCard = `
                                 <div class="col-lg-4 col-sm-6 responsive">
                                     <div class="plan-card position-relative">
-                                        ${plan.imagePath ? `<img src="${plan.imagePath}" class="plan-img" alt="Plan Image" style="width:100%; height:150px; object-fit:cover;">` : ""}
                                         ${plan.planLabel ? `<div class="plan-header position-relative">${plan.planLabel}</div>` : ""}
+                                        ${plan.imagePath ? `<img src="src/images/${plan.imagePath}" class="plan-img" alt="Plan Image" style="width:50px; height:0px;;">` : ""}
                                         <h5 class="plan-title">${plan.planName}</h5>
                                         <p class="plan-price">${formatPriceWithValidity(plan.price+"", plan.validityDays)}</p>
                                         <ul class="plan-features">${featuresList.join("")}</ul>

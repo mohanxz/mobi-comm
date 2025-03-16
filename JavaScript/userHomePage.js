@@ -2,6 +2,8 @@ const input = document.getElementById("mobile-input");
 const spinner = document.getElementById("spinner");
 const errorMessage = document.getElementById("error-message");
 
+const API_URL = "http://localhost:8081/auth/login"; // 🔹 Update with your backend endpoint
+
 input.addEventListener("input", async function () {
     const value = input.value.trim();
     const length = value.length;
@@ -16,47 +18,41 @@ input.addEventListener("input", async function () {
 
     if (isValid) {
         try {
-            spinner.style.display = "block"; //  Show spinner
+            spinner.style.display = "block"; // Show spinner
             input.disabled = true; // Disable input while checking
 
-            // Fetch user data from JSON Server
-            const response = await fetch("http://localhost:3000/users");
-            const users = await response.json();
+            // 🔹 Send mobile number to backend for authentication
+            const response = await fetch(API_URL, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({ mobicommNumber: value }),
+            });
 
-            const user = users.find(user => user.mobileNumber === value);
+            if (response.ok) {
+                const data = await response.json();
+                localStorage.setItem("jwtToken", data.token); // 🔹 Store JWT Token
+                localStorage.setItem("loggedInUser", JSON.stringify(data));
 
-            if (user) {
-                // Valid MobiComm user - Show spinner and Redirect
-                localStorage.setItem("loggedInUser", JSON.stringify(user));
-                
                 setTimeout(() => {
                     window.location.href = "http://127.0.0.1:5501/prepaidPage.html";
                 }, 3000);
-                errorMessage.style.display = "none";
 
-                
-                return; // ⬅ Exit function early (so spinner doesn’t hide immediately)
+                errorMessage.style.display = "none";
             } else {
-                //  Number is valid but not in MobiComm DB
                 errorMessage.innerText = "Please enter a valid MobiComm number.";
                 errorMessage.style.display = "block";
-                spinner.style.display = "none";
-
-                input.disabled = false;
             }
         } catch (error) {
             console.error("Error fetching users:", error);
             errorMessage.innerText = "Something went wrong. Please try again later.";
             errorMessage.style.display = "block";
-            input.disabled = false;
         } finally {
-            //  Only hide spinner if user is NOT found
-            if (!localStorage.getItem("loggedInUser")) {
-                spinner.style.display = "none";
-            }
+            spinner.style.display = "none";
+            input.disabled = false;
         }
     } else {
-        input.classList.remove("success");
         spinner.style.display = "none";
 
         if (length === 10) {
@@ -66,18 +62,37 @@ input.addEventListener("input", async function () {
     }
 });
 
+// ✅ Redirect only if token is VALID
+document.addEventListener("DOMContentLoaded", async () => {
+    let getStartedBtn = document.querySelector(".cta-btn");
 
-
-document.addEventListener('DOMContentLoaded',()=>{
-    let getStartedBtn=document.querySelector('.cta-btn');
-    if(getStartedBtn){
-        getStartedBtn.addEventListener('click',()=>{
-            window.location.href="http://127.0.0.1:5501/newPrepaid.html";
+    if (getStartedBtn) {
+        getStartedBtn.addEventListener("click", () => {
+            window.location.href = "http://127.0.0.1:5501/newPrepaid.html";
         });
-
     }
 
-})
+    const token = localStorage.getItem("jwtToken");
+
+    if (token) {
+        try {
+            const response = await fetch("http://localhost:8081/auth/validate", {
+                method: "GET",
+                headers: { "Authorization": `Bearer ${token}` }
+            });
+
+            if (response.ok) {
+                window.location.href = "http://127.0.0.1:5501/prepaidPage.html"; // ✅ Redirect only if token is valid
+            } else {
+                localStorage.removeItem("jwtToken"); // ❌ Remove invalid token
+                console.warn("Invalid token. Please log in again.");
+            }
+        } catch (error) {
+            console.error("Token validation error:", error);
+        }
+    }
+});
+
 
 
 
