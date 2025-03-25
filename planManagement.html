@@ -13,7 +13,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
 
     <style>
         body{
@@ -130,13 +129,102 @@ aside {
         position: relative;
     }
 }
+.table-hover tbody tr:hover {
+    background-color: #f5f5f5 !important;
+}
+
+.badge {
+    font-size: 0.9rem;
+    padding: 5px 10px;
+}
+
+.btn-sm i {
+    font-size: 1rem;
+}
+
+
+.plan-img {
+    width: 100px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    transition: transform 0.3s ease-in-out;
+}
+
+.plan-img:hover {
+    transform: scale(1.1);
+}
+
+.btn {
+    padding: 6px 10px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.btn i {
+    font-size: 18px;
+}
+
+
+
+
+
+.bg-light {
+    opacity: 0.7;
+}
+
+
+/* Header Styling */
+.table thead {
+    background: rgba(255, 255, 255, 0.1); 
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.table th, .table td {
+    border-color: rgba(255, 255, 255, 0.2); /* Lighter border */
+}
+
+.table tbody tr:hover {
+    background: rgba(255, 255, 255, 0.05); /* Light hover effect */
+}
+
+.btn {
+    border-radius: 8px;
+    transition: all 0.3s ease-in-out;
+}
+
+.btn i {
+    font-size: 18px;
+}
+
+.plan-banner {
+    position: absolute;
+    top: 15px;
+    right: 5px;
+    width: 130px;  /* Adjust size */
+    height: auto;
+    z-index: 10;
+}
+
+.ott-icon {
+    width: 36px;  /* Small size */
+    height: auto;
+    margin-left: -6px;
+    vertical-align: middle;  /* Aligns properly with text */
+}
+
+
+
     </style>
 </head>
 
     <body class="container-fluid mt-4">
         <div class="d-flex">
             <!-- Sidebar -->
-            <aside class="d-none d-md-block bg-light p-3" style="width: 250px; min-height: 100vh;">
+            <aside class="d-none d-md-block bg-white p-3" style="width: 250px; min-height: 100vh;">
                 <div class="text-center">
                     <img src="src/images/mobi-comm-named-logo-removebg-preview.png" alt="" style="width: 180px;">
                 </div>
@@ -148,15 +236,15 @@ aside {
                         <li class="p-2   rounded mb-2">
                             <a href="http://127.0.0.1:5501/subscriberManagement.html" class="text-dark text-decoration-none">Subscribers</a>
                         </li>
-                        <li class="p-2 rounded mb-2 bg-danger">
+                        <li class="p-2 rounded mb-2 bg-secondary">
                             <a href="#" class="text-light text-decoration-none">Plans</a>
                         </li>
                         <li class="p-2 rounded mb-2">
                             <a href="http://127.0.0.1:5501/RechargeManagement.html#" class="text-dark text-decoration-none">Recharge Management</a>
                         </li>
-                        <li class="p-2 rounded mb-2">
+                        <!-- <li class="p-2 rounded mb-2">
                             <a href="#" class="text-dark text-decoration-none">Complaint Management</a>
-                        </li>
+                        </li> -->
                     </ul>
                 </nav>
             </aside>
@@ -192,7 +280,6 @@ aside {
                 </div>
             </div>
             
-            
     
             <!-- Main Content -->
             <div id="main-content" class="flex-grow-1 p-3">
@@ -215,149 +302,311 @@ aside {
     
         
                 </div>
+                <div class="d-flex justify-content-end mb-3">
+                    <button id="toggleView" class="btn btn-primary">
+                        <i id="toggleIcon" class="fas fa-table"></i>
+                    </button>
+                    
+                  </div>
     
                 <!-- Plans Container -->
                 <div id="plansContainer" class="row gx-1  mt-3"></div>
+                <div id="plansTableContainer" class="d-none ms-5"></div> <!-- Table View Container -->
             </div>
         </div>
-        <div class="modal fade" id="addPlanModal" tabindex="-1" aria-labelledby="addPlanModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered modal-lg">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="addPlanModalLabel">Add New Plan</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        
+<div class="modal fade" id="addPlanModal" tabindex="-1" aria-labelledby="addPlanModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content shadow-lg rounded-4">
+            <div class="modal-header bg-secondary text-white">
+                <h5 class="modal-title"><i class="fas fa-plus-circle"></i> Add New Plan</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body p-4">
+                <form id="addPlanForm">
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <label for="planLabel" class="form-label fw-bold">Plan Label</label>
+                            <input type="text" class="form-control rounded-3" id="planLabel" placeholder="Eg: Premium 299" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="planName" class="form-label fw-bold">Plan Name</label>
+                            <input type="text" class="form-control rounded-3" id="planName" placeholder="Eg: Super Saver" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="planCode" class="form-label fw-bold">Plan Code</label>
+                            <input type="text" class="form-control rounded-3" id="planCode" readonly required>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="price" class="form-label fw-bold">Price (₹)</label>
+                            <input type="number" class="form-control rounded-3" id="price" placeholder="Eg: 299" required>
+                            <span id="priceError" class="text-danger d-none"></span>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="validityDays" class="form-label fw-bold">Validity (Days)</label>
+                            <input type="number" class="form-control rounded-3" id="validityDays" placeholder="Eg: 28" required>
+                        </div>
+
+                        <!-- Data Limit Selection -->
+                        <div class="col-md-6">
+                            <label for="dataLimit" class="form-label fw-bold">Data Limit</label>
+                            <select class="form-control rounded-3" id="dataLimit" required onchange="toggleInput(this, 'dataLimitOther')">
+                                <option value="1GB">1GB per day</option>
+                                <option value="2GB">2GB per day</option>
+                                <option value="3GB">3GB per day</option>
+                                <option value="Unlimited">Unlimited</option>
+                                <option value="No Data">No Data</option>
+                                <option value="other">Other</option>
+                            </select>
+                            <input type="text" class="form-control rounded-3 mt-2 d-none" id="dataLimitOther" placeholder="Enter custom data limit">
+                        </div>
+
+                        <!-- Data Rollover -->
+                        <div class="col-md-6">
+                            <label for="dataRollover" class="form-label fw-bold">Data Rollover</label>
+                            <select class="form-control rounded-3" id="dataRollover" onchange="toggleInput(this, 'dataRolloverOther')">
+                                <option value="">None</option>
+                                <option value="10GB">10GB</option>
+                                <option value="20GB">20GB</option>
+                                <option value="30GB">30GB</option>
+                                <option value="40GB">40GB</option>
+                                <option value="other">Other</option>
+                            </select>
+                            <input type="text" class="form-control rounded-3 mt-2 d-none" id="dataRolloverOther" placeholder="Enter custom data rollover">
+                        </div>
+
+                        <!-- Call Limit Selection -->
+                        <div class="col-md-6">
+                            <label for="callLimit" class="form-label fw-bold">Call Limit</label>
+                            <select class="form-control rounded-3" id="callLimit" required onchange="toggleInput(this, 'callLimitOther')">
+                                <option value="Unlimited">Unlimited</option>
+                                <option value="100min">100 mins per day</option>
+                                <option value="250min">250 mins per day</option>
+                                <option value="No Calls">No Calls</option>
+                                <option value="other">Other</option>
+                            </select>
+                            <input type="text" class="form-control rounded-3 mt-2 d-none" id="callLimitOther" placeholder="Enter custom call limit">
+                        </div>
+
+                        <!-- SMS Limit Selection -->
+                        <div class="col-md-6">
+                            <label for="smsLimit" class="form-label fw-bold">SMS Limit</label>
+                            <select class="form-control rounded-3" id="smsLimit" onchange="toggleInput(this, 'smsLimitOther')">
+                                <option value="100">100 per day</option>
+                                <option value="200">200 per day</option>
+                                <option value="Unlimited">Unlimited</option>
+                                <option value="No SMS">No SMS</option>
+                                <option value="other">Other</option>
+                            </select>
+                            <input type="text" class="form-control rounded-3 mt-2 d-none" id="smsLimitOther" placeholder="Enter custom SMS limit">
+                        </div>
+
+                        <!-- Category Selection -->
+                        <div class="col-md-12">
+                            <label for="categoryId" class="form-label fw-bold">Category</label>
+                            <select class="form-control rounded-3" id="categoryId" required onchange="toggleInput(this, 'categoryOther')">
+                                <option value="">Loading categories...</option>
+                                <option value="other">Other</option>
+                            </select>
+                            <input type="text" class="form-control rounded-3 mt-2 d-none" id="categoryOther" placeholder="Enter custom category">
+                        </div>
                     </div>
-                    <div class="modal-body">
-                        <form id="addPlanForm">
-                            <div class="mb-3">
-                                <label for="planLabel" class="form-label">Plan Label</label>
-                                <input type="text" class="form-control" id="planLabel" required>
-                            </div>
-                            <div class="mb-3">
-                                <label for="planName" class="form-label">Plan Name</label>
-                                <input type="text" class="form-control" id="planName" required>
-                            </div>
-                            <div class="mb-3">
-                                <label for="planCode" class="form-label">Plan Code</label>
-                                <input type="text" class="form-control" id="planCode" required>
-                            </div>
-                            <div class="mb-3">
-                                <label for="price" class="form-label">Price</label>
-                                <input type="number" class="form-control" id="price" required>
-                            </div>
-                            <div class="mb-3">
-                                <label for="validityDays" class="form-label">Validity (Days)</label>
-                                <input type="number" class="form-control" id="validityDays" required>
-                            </div>
-                            <div class="mb-3">
-                                <label for="dataLimit" class="form-label">Data Limit</label>
-                                <input type="text" class="form-control" id="dataLimit" required>
-                            </div>
-                            <div class="mb-3">
-                                <label for="dataRollover" class="form-label">Data Rollover</label>
-                                <input type="text" class="form-control" id="dataRollover">
-                            </div>
-                            <div class="mb-3">
-                                <label for="callLimit" class="form-label">Call Limit</label>
-                                <input type="text" class="form-control" id="callLimit" required>
-                            </div>
-                            <div class="mb-3">
-                                <label for="smsLimit" class="form-label">SMS Limit</label>
-                                <input type="text" class="form-control" id="smsLimit">
-                            </div>
-                            <div class="mb-3">
-                                <label for="categoryId" class="form-label">Category</label>
-                                <select class="form-control" id="categoryId" required>
-                                    <option value="">Loading categories...</option>
-                                </select>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary rounded-3" data-bs-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-primary rounded-3" id="savePlanBtn">
+                    <i class="fas fa-save"></i> Save Plan
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- JavaScript to Handle "Other" Selection -->
+<script>
+    function toggleInput(selectElement, inputId) {
+        var inputBox = document.getElementById(inputId);
+        if (selectElement.value === "other") {
+            inputBox.classList.remove("d-none");  // Show input box
+            inputBox.required = true;
+        } else {
+            inputBox.classList.add("d-none");  // Hide input box
+            inputBox.required = false;
+            inputBox.value = "";  // Clear input
+        }
+    }
+    // Dictionary of common spelling mistakes and corrections
+const corrections = {
+    "recieve": "receive",
+    "adress": "address",
+    "seperate": "separate",
+    "definately": "definitely",
+    "occurence": "occurrence",
+    "untill": "until",
+    "teh": "the",
+    "thier": "their",
+    "alot": "a lot",
+    "wich": "which"
+};
+
+// Function to auto-correct input
+function autoCorrect(inputField) {
+    let words = inputField.value.split(" ");
+    for (let i = 0; i < words.length; i++) {
+        let lowerCaseWord = words[i].toLowerCase();
+        if (corrections[lowerCaseWord]) {
+            words[i] = corrections[lowerCaseWord]; // Replace incorrect word
+        }
+    }
+    inputField.value = words.join(" ");
+}
+
+// Apply auto-correction when the user leaves the input field
+document.getElementById("planLabel").addEventListener("blur", function () {
+    autoCorrect(this);
+});
+</script>
+        
+        
+
+        <div class="modal fade" id="editPlanModal" tabindex="-1" aria-labelledby="editPlanModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-lg">
+                
+                <div class="modal-content shadow-lg rounded-4">
+                    <div class="modal-header bg-secondary text-white">
+                        <h5 class="modal-title"><i class="fas fa-edit"></i> Edit Plan</h5>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body p-4">
+                        <form id="editPlanForm">
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <label for="editPlanLabel" class="form-label fw-bold">Plan Label</label>
+                                    <input type="text" class="form-control rounded-3" id="editPlanLabel" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="editPlanName" class="form-label fw-bold">Plan Name</label>
+                                    <input type="text" class="form-control rounded-3" id="editPlanName" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="editPlanCode" class="form-label fw-bold">Plan Code</label>
+                                    <input type="text" class="form-control rounded-3" id="editPlanCode" readonly required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="editPrice" class="form-label fw-bold">Price (₹)</label>
+                                    <input type="number" class="form-control rounded-3" id="editPrice" placeholder="Eg: 299" required>
+                                    <span id="editPriceError" class="text-danger d-none fw-bold"></span>
+                                </div>
+                                
+                                <div class="col-md-6">
+                                    <label for="editValidityDays" class="form-label fw-bold">Validity (Days)</label>
+                                    <input type="number" class="form-control rounded-3" id="editValidityDays" required>
+                                </div>
+        
+                                <!-- Data Limit Selection -->
+                                <div class="col-md-6">
+                                    <label for="editDataLimit" class="form-label fw-bold">Data Limit</label>
+                                    <select class="form-control rounded-3" id="editDataLimit" required>
+                                        <option value="1GB">1GB per day</option>
+                                        <option value="2GB">2GB per day</option>
+                                        <option value="3GB">3GB per day</option>
+                                        <option value="Unlimited">Unlimited</option>
+                                        <option value="No Data">No Data</option>
+                                    </select>
+                                </div>
+        
+                                <!-- Data Rollover -->
+                                <div class="col-md-6">
+                                    <label for="editDataRollover" class="form-label fw-bold">Data Rollover</label>
+                                    <select class="form-control rounded-3" id="editDataRollover">
+                                        <option value="">None</option>
+                                        <option value="10GB">10GB</option>
+                                        <option value="20GB">20GB</option>
+                                        <option value="30GB">30GB</option>
+                                        <option value="40GB">40GB</option>
+                                        <option value="50GB">50GB</option>
+                                        <option value="60GB">60GB</option>
+                                        <option value="70GB">70GB</option>
+                                        <option value="80GB">80GB</option>
+                                        <option value="90GB">90GB</option>
+                                        <option value="100GB">100GB</option>
+                                    </select>
+                                </div>
+        
+                                <!-- Call Limit Selection -->
+                                <div class="col-md-6">
+                                    <label for="editCallLimit" class="form-label fw-bold">Call Limit</label>
+                                    <select class="form-control rounded-3" id="editCallLimit" required>
+                                        <option value="Unlimited">Unlimited</option>
+                                        <option value="100min">100 mins per day</option>
+                                        <option value="250min">250 mins per day</option>
+                                        <option value="No Calls">No Calls</option>
+                                    </select>
+                                </div>
+        
+                                <!-- SMS Limit Selection -->
+                                <div class="col-md-6">
+                                    <label for="editSmsLimit" class="form-label fw-bold">SMS Limit</label>
+                                    <select class="form-control rounded-3" id="editSmsLimit">
+                                        <option value="100">100 per day</option>
+                                        <option value="200">200 per day</option>
+                                        <option value="Unlimited">Unlimited</option>
+                                        <option value="No SMS">No SMS</option>
+                                    </select>
+                                </div>
+        
+                                <!-- Plan Badge Selection -->
+                                <div class="col-md-12">
+                                    <label for="editPlanBadge" class="form-label fw-bold">Select Plan Badge</label>
+                                    <select id="editPlanBadge" class="form-control rounded-3">
+                                        <option value="none" selected>None</option>
+                                        <option value="src/images/best-seller-banner_175838-470-removebg-preview.png">Best Seller</option>
+                                        <option value="src/images/special-offer-creative-sale-banner-design.png">Budget Friendly</option>
+                                        <option value="img3.png">Most Popular</option>
+                                        <option value="img4.png">Limited Offer</option>
+                                    </select>
+                                </div>
+        
+                                <!-- Badge Preview -->
+                                <div class="mt-3 text-center">
+                                    <img id="editBadgePreview" src="" style="display:none; width: 80px; height: 80px;">
+                                </div>
                             </div>
                         </form>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="submit" class="btn btn-primary" id="savePlanBtn">Save Plan</button>
+                        <button type="button" class="btn btn-secondary rounded-3" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary rounded-3" id="saveEditedPlan">
+                            <i class="fas fa-save"></i> Save Plan
+                        </button>
                     </div>
                 </div>
             </div>
         </div>
-
-     
-        <div class="modal fade" id="editPlanModal" tabindex="-1" aria-labelledby="editPlanModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered modal-lg">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title">Edit Plan</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                    </div>
-                    <div class="modal-body">
-                        <label for="editPlanLabel">Plan Label:</label>
-                        <input type="text" id="editPlanLabel" class="form-control">
         
-                        <label for="editPlanName">Plan Name:</label>
-                        <input type="text" id="editPlanName" class="form-control">
-        
-                        <label for="editPlanCode">Plan Code:</label>
-                        <input type="text" id="editPlanCode" class="form-control">
-        
-                        <label for="editPrice">Price:</label>
-                        <input type="number" id="editPrice" class="form-control">
-        
-                        <label for="editValidityDays">Validity (Days):</label>
-                        <input type="number" id="editValidityDays" class="form-control">
-        
-                        <label for="editDataLimit">Data Limit:</label>
-                        <input type="text" id="editDataLimit" class="form-control">
-        
-                        <label for="editDataRollover">Data Rollover:</label>
-                        <input type="text" id="editDataRollover" class="form-control">
-        
-                        <label for="editCallLimit">Call Limit:</label>
-                        <input type="text" id="editCallLimit" class="form-control">
-        
-                        <label for="editSmsLimit">SMS Limit:</label>
-                        <input type="text" id="editSmsLimit" class="form-control">
-        
-                        <label for="editPlanBadge">Select Plan Badge:</label>
-                        <select id="editPlanBadge" class="form-control">
-                            <option value="none" selected>None</option>
-                            <option value="src/images/best-seller-banner_175838-470-removebg-preview.png">Best Seller</option>
-                            <option value="src/images/special-offer-creative-sale-banner-design.png">Budget Friendly</option>
-                            <option value="img3.png">Most Popular</option>
-                            <option value="img4.png">Limited Offer</option>
-                        </select>
-        
-                        <div class="mt-3 text-center">
-                            <img id="editBadgePreview" src="" style="display:none; width: 50px; height: 50px;">
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary" id="saveEditedPlan">Save Plan</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    
 
     
 </body>
     
     <!-- Tabs -->
     
-    
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
  <script>
+    
   document.addEventListener("DOMContentLoaded", function () {
     const categoryEndpoint = "http://localhost:8081/api/categories";
     const plansBaseEndpoint = "http://localhost:8081/api/plans/category/";
     const planEndpoint = "http://localhost:8081/api/plans";
 
     let currentCategory = "";
-
+    
+    let token=localStorage.getItem("authToken")
+    console.log(token)
     function normalizeCategoryName(name) {
-      return name.toLowerCase().replace(/_/g, "");
+        return name.toLowerCase().replace(/_/g, "");
     }
     
     function formatValidity(validityDays) {
@@ -389,11 +638,11 @@ aside {
                 730: "2 Years",
                 1095: "3 Years"
             };
-    
+            
             if (validityMap[validityDays]) {
                 return validityMap[validityDays];
             }
-    
+            
             if (validityDays % 365 === 0) {
                 return `${validityDays / 365} Years`;
             } 
@@ -403,16 +652,22 @@ aside {
             if (validityDays % 7 === 0) {
                 return `${validityDays / 7} Weeks`;
             }
-    
+            
             return `${validityDays} Days`;
         }
-    
+        
         function formatPriceWithValidity(price, validityDays) {
             const formattedValidity = formatValidity(validityDays);
             return formattedValidity ? `₹${price} / ${formattedValidity}` : `₹${price}`;
         }
         const categorySelect = document.getElementById("categoryId");
-    fetch("http://localhost:8081/api/categories") // Update with actual endpoint
+        fetch("http://localhost:8081/api/categories", {
+            method: "GET",
+            headers: {
+                "Authorization": `Bearer ${token}`,
+                "Content-Type": "application/json"
+            }
+        }) // Update with actual endpoint
         .then(response => response.json())
         .then(categories => {
             categorySelect.innerHTML = ""; // Clear placeholder
@@ -427,21 +682,27 @@ aside {
             console.error("Error fetching categories:", error);
             categorySelect.innerHTML = '<option value="">Failed to load categories</option>';
         });
-
-    function loadCategories() {
-      fetch(categoryEndpoint)
-        .then(response => response.json())
+        
+        function loadCategories() {
+            fetch(categoryEndpoint, {
+                method: "GET",
+                headers: {
+                    "Authorization": `Bearer ${token}`,
+                    "Content-Type": "application/json"
+        }
+    })
+    .then(response => response.json())
         .then(categories => {
-          let tabsContainer = document.querySelector(".tabs");
-          tabsContainer.innerHTML = "";
-
-          categories.sort((a, b) => {
-            if (a.categoryName.toLowerCase() === "recommended") return -1;
-            if (b.categoryName.toLowerCase() === "recommended") return 1;
-
-            const priorityKeywords = ["validity", "data", "unlimited", "ott plans"];
-            const aPriority = priorityKeywords.some(keyword => a.categoryName.toLowerCase().includes(keyword));
-            const bPriority = priorityKeywords.some(keyword => b.categoryName.toLowerCase().includes(keyword));
+            let tabsContainer = document.querySelector(".tabs");
+            tabsContainer.innerHTML = "";
+            
+            categories.sort((a, b) => {
+                if (a.categoryName.toLowerCase() === "recommended") return -1;
+                if (b.categoryName.toLowerCase() === "recommended") return 1;
+                
+                const priorityKeywords = ["validity", "data", "unlimited", "ott plans"];
+                const aPriority = priorityKeywords.some(keyword => a.categoryName.toLowerCase().includes(keyword));
+                const bPriority = priorityKeywords.some(keyword => b.categoryName.toLowerCase().includes(keyword));
 
             if (aPriority && !bPriority) return -1;
             if (bPriority && !aPriority) return 1;
@@ -457,16 +718,16 @@ aside {
             tab.dataset.category = categoryName;
             tab.textContent = category.categoryName;
             tab.addEventListener("click", function () {
-              document.querySelectorAll(".tab").forEach(tab => tab.classList.remove("active"));
-              this.classList.add("active");
-              currentCategory = categoryName;
-              loadAdminPlans();
+                document.querySelectorAll(".tab").forEach(tab => tab.classList.remove("active"));
+                this.classList.add("active");
+                currentCategory = categoryName;
+                loadAdminPlans();
             });
-
+            
             tabsContainer.appendChild(tab);
-
+            
             if (!currentCategory) {
-              currentCategory = categoryName;
+                currentCategory = categoryName;
             }
           });
 
@@ -475,83 +736,253 @@ aside {
         })
         .catch(error => console.error("Error loading categories:", error));
     }
+    
+    let isTableView = false;
 
-    function loadAdminPlans() {
-      if (!currentCategory) return;
+function loadAdminPlans() {
+    if (!currentCategory) return;
+    
+    fetch(`${plansBaseEndpoint}${currentCategory}`,
+    {
+        method: "GET",
+        headers: {
+            "Authorization": `Bearer ${token}`,
+            "Content-Type": "application/json"
+        }
+    }
+)
+.then(response => response.json())
+.then(plans => {
+    const container = document.getElementById("plansContainer");
+    container.innerHTML = "";
+    
+    if (isTableView) {
+        let tableHtml = `<table class="table table-bordered text-center">
+            <thead class="thead-dark">
+                <tr>
+                    <th class="text-secondary">Plan Code</th>
+                    <th class="text-secondary">Plan Name</th>
+                    <th class="text-secondary">Price & Validity</th>
+                    <th class="text-secondary">Features</th>
+                    <th class="text-secondary">Actions</th>
+                </tr>
+            </thead>
+            <tbody>`;
 
-      fetch(`${plansBaseEndpoint}${currentCategory}`)
-        .then(response => response.json())
-        .then(plans => {
-          const container = document.getElementById("plansContainer");
-          container.innerHTML = "";
+        plans.forEach(plan => {
+            let features = [];
 
-          plans.forEach(plan => {
+            if (plan.callLimit) {
+                let callText = plan.callLimit.toLowerCase().includes("call") ? plan.callLimit : `${plan.callLimit} Calls`;
+                features.push(`<i class="fa-solid fa-phone"></i> ${callText}`);
+            }
+
+            if (plan.dataLimit) {
+                let dataText = plan.dataLimit.toLowerCase().includes("gb") || plan.dataLimit.toLowerCase().includes("mb") 
+                    ? plan.dataLimit 
+                    : `${plan.dataLimit} GB Data`;
+                features.push(`<i class="fa-solid fa-globe"></i> ${dataText}`);
+            }
+
+            if (plan.smsLimit) {
+                let smsText = plan.smsLimit.toLowerCase().includes("sms") ? plan.smsLimit : `${plan.smsLimit} SMS`;
+                features.push(`<i class="fa-solid fa-comments"></i> ${smsText}`);
+            }
+
+            if (plan.dataRollover && plan.dataRollover.toLowerCase() !== "none") {
+                let rolloverText = plan.dataRollover.toLowerCase().includes("rollover") 
+                    ? plan.dataRollover 
+                    : `${plan.dataRollover} Data Rollover`;
+                features.push(`<i class="fa-solid fa-cloud-download-alt"></i> ${rolloverText}`);
+            }
+
+            if (plan.ottPlans) {
+                let ottContent = plan.ottPlans.toLowerCase();
+                let ottText = plan.ottPlans;
+                
+                if (ottContent.includes("game") || ottContent.includes("gaming")) {
+                    ottText = `<i class="fa-solid fa-gamepad"></i> ${ottText}`;
+                }
+                
+                const ottIcons = {
+        "netflix": "netflixlogo.png",
+        "amazon prime": "amazonprimelogo.png",
+        "jiohotstar": "jiohotstarlogo.png",
+
+    };
+
+
+                Object.keys(ottIcons).forEach(platform => {
+                    if (ottContent.includes(platform)) {
+                        ottText = ottText.replace(
+                            new RegExp(platform, "gi"), 
+                            `<img src="src/images/${ottIcons[platform]}" alt="" class="ott-icon"> ${platform}`
+                        );
+                    }
+                });
+
+                features.push(`<i class="fas fa-video"></i> ${ottText}`);
+            }
+
+            tableHtml += `
+            <tr class="${plan.isActive ? '' : 'bg-light'} text-center">
+                <td class="fw-bold">${plan.planCode || ""} ${plan.isActive ? "" : "(Hidden)"}</td>
+                <td class="fw-bold">${plan.planLabel || ""} ${plan.isActive ? "" : "(Hidden)"}</td>
+                <td class="text-primary fw-semibold">${formatPriceWithValidity(plan.price + "", plan.validityDays)}</td>
+                <td>${features.join(", ")}</td>
+                <td>
+                    <button class="btn btn-outline-danger toggle-hide" data-id="${plan.planId}" data-isActive="${plan.isActive}" title="Toggle Visibility">
+                        ${plan.isActive ? '<i class="fa-solid fa-eye-slash text-dark"></i>' : '<i class="fa-solid fa-eye text-dark"></i>'}
+                    </button>
+                    <br>
+                    <button class="btn btn-outline-success edit-plan mt-2" data-id="${plan.planId}" title="Edit Plan">
+                        <i class="fas fa-edit text-secondary"></i>
+                    </button>
+                </td> 
+            </tr>`;
+        });
+
+        tableHtml += `</tbody></table>`;
+        container.innerHTML = tableHtml;
+        
+    } else {
+        plans.forEach(plan => {
             let featuresList = [];
-            if (plan.callLimit) featuresList.push(`<li>${plan.callLimit}</li>`);
-            if (plan.dataLimit) featuresList.push(`<li>${plan.dataLimit}</li>`);
-            if (plan.smsLimit) featuresList.push(`<li>${plan.smsLimit}</li>`);
-            if (plan.dataRollover && plan.dataRollover.toLowerCase() !== "none") featuresList.push(`<li>${plan.dataRollover}</li>`);
-            if (plan.ottPlans) featuresList.push(`<li>${plan.ottPlans}</li>`);
 
-            let badgeHtml = plan.imagePath ? `<img src="${plan.imagePath}" class="plan-img" style="width:100%; height:150px; object-fit:cover;">` : "";
+            if (plan.callLimit) {
+                let callText = plan.callLimit.toLowerCase().includes("call") ? plan.callLimit : `${plan.callLimit} Calls`;
+                featuresList.push(`<li><i class="fa-solid fa-phone"></i> ${callText}</li>`);
+            }
 
-            let isActive = plan.isActive;
+            if (plan.dataLimit) {
+                let dataText = plan.dataLimit.toLowerCase().includes("gb") || plan.dataLimit.toLowerCase().includes("mb") 
+                    ? plan.dataLimit 
+                    : `${plan.dataLimit} GB Data`;
+                featuresList.push(`<li><i class="fa-solid fa-globe"></i> ${dataText}</li>`);
+            }
+
+            if (plan.smsLimit) {
+                let smsText = plan.smsLimit.toLowerCase().includes("sms") ? plan.smsLimit : `${plan.smsLimit} SMS`;
+                featuresList.push(`<li><i class="fa-solid fa-comments"></i> ${smsText}</li>`);
+            }
+
+            if (plan.dataRollover && plan.dataRollover.toLowerCase() !== "none") {
+                let rolloverText = plan.dataRollover.toLowerCase().includes("rollover") 
+                    ? plan.dataRollover 
+                    : `${plan.dataRollover} Data Rollover`;
+                featuresList.push(`<li><i class="fa-solid fa-cloud-download-alt"></i> ${rolloverText}</li>`);
+            }
+
+            if (plan.ottPlans) {
+                let ottContent = plan.ottPlans.toLowerCase();
+                let ottText = plan.ottPlans;
+                
+                if (ottContent.includes("game") || ottContent.includes("gaming")) {
+                    ottText = `<i class="fa-solid fa-gamepad"></i> ${ottText}`;
+                }
+
+                const ottIcons = {
+        "netflix": "netflixlogo.png",
+        "amazon prime": "amazonprimelogo.png",
+        "jiohotstar": "jiohotstarlogo.png",
+
+    };
+
+
+                Object.keys(ottIcons).forEach(platform => {
+                    if (ottContent.includes(platform)) {
+                        ottText = ottText.replace(
+                            new RegExp(platform, "gi"), 
+                            `<img src="src/images/${ottIcons[platform]}" alt="${platform}" class="ott-icon"> ${platform}`
+                        );
+                    }
+                });
+
+                featuresList.push(`<li> ${ottText}</li>`);
+            }
+
+            let badgeHtml = plan.imagePath ? `<img src="${plan.imagePath}" class="plan-banner">` : "";
 
             let planCard = `
-              <div class="col-lg-4 col-sm-6">
-                <div class="plan-card mx-5 position-relative ${isActive ? '' : 'bg-light'}">
-                  ${badgeHtml}
-                  <div class="plan-header">${plan.planLabel || ""} ${isActive ? "" : "(Hidden)"}</div>
-                  <h5 class="plan-title">${plan.planName} - ₹${plan.price}</h5>
-               <p class="plan-price">${formatPriceWithValidity(plan.price+"", plan.validityDays)}</p>
-                  <ul class="plan-features">${featuresList.join("")}</ul>
-                  <div class="plan-buttons">
-                    <button class="btn toggle-hide text-light" data-id="${plan.planId}" data-isActive="${isActive}">
-                      ${isActive ? '<i class="fa-solid fa-eye-slash"></i> Hide' : '<i class="fa-solid fa-eye"></i> Unhide'}
-                    </button>
-                    <button class="btn edit-plan text-light" data-id="${plan.planId}"><i class="fas fa-edit"></i> Edit</button>
-                  </div>
+            <div class="col-lg-4 col-sm-6">
+                <div class="plan-card mx-5 position-relative ${plan.isActive ? '' : 'bg-light'}">
+                    ${badgeHtml}
+                    <div class="plan-header">${plan.planLabel || ""} ${plan.isActive ? "" : "(Hidden)"}</div>
+                    <h5 class="plan-title">${plan.planName}</h5>
+                    <p class="plan-price">${formatPriceWithValidity(plan.price+"", plan.validityDays)}</p>
+                    <ul class="plan-features">${featuresList.join("")}</ul>
+                    <div class="plan-buttons">
+                        <button class="btn toggle-hide text-light" data-id="${plan.planId}" data-isActive="${plan.isActive}">
+                            ${plan.isActive ? '<i class="fa-solid fa-eye-slash"></i>' : '<i class="fa-solid fa-eye"></i>'}
+                        </button>
+                        <button class="btn edit-plan text-light" data-id="${plan.planId}">
+                            <i class="fas fa-edit"></i>
+                        </button>
+                    </div>
                 </div>
-              </div>`;
+            </div>`;
 
             container.innerHTML += planCard;
-          });
-        })
-        .catch(error => console.error("Error loading plans:", error));
+
+        });
     }
-    document.addEventListener("click", function (event) {
+})
+                        .catch(error => console.error("Error loading plans:", error));
+                    }
+                    document.addEventListener("click", function (event) {
+    let token = localStorage.getItem("authToken");
+    
     if (event.target.closest(".toggle-hide")) {
         let button = event.target.closest(".toggle-hide");
         let planId = button.dataset.id;
-        let isActive = button.dataset.isActive === "true";
+        let isActive = button.dataset.isactive === "true"; // Fix: Convert to boolean
 
-        fetch(`${planEndpoint}/${planId}`)
-            .then(response => response.json())
-            .then(plan => {
-                plan.isActive = !isActive;
-
-                return fetch(`${planEndpoint}/${planId}`, {
-                    method: "PUT",
-                    headers: { "Content-Type": "application/json" },
-                    body: JSON.stringify(plan)
-                });
-            })
-            .then(() => {
-                button.dataset.isActive = !isActive;
-                button.innerHTML = !isActive
-                    ? '<i class="fa-solid fa-eye-slash"></i> Hide'
-                    : '<i class="fa-solid fa-eye"></i> Unhide';
-
-                button.closest(".plan-card").classList.toggle("bg-light", !isActive);
-            })
-            .catch(error => console.error("Error updating plan visibility:", error));
+        fetch(`${planEndpoint}/${planId}`, {
+            method: "PATCH",
+            headers: {
+                "Content-Type": "application/json",
+                "Authorization": `Bearer ${token}`
+            },
+            body: JSON.stringify({ isActive: !isActive })  // Fix: Send only required field
+        })
+        .then(response => {
+            if (!response.ok) throw new Error("Failed to update plan status.");
+            return response.json();
+        })
+        .then(() => {
+            button.dataset.isactive = (!isActive).toString(); // Fix: Convert to string
+            button.innerHTML = isActive
+                ? '<i class="fa-solid fa-eye"></i> Unhide'
+                : '<i class="fa-solid fa-eye-slash"></i> Hide';
+            
+            button.closest(".plan-card").classList.toggle("bg-light", isActive); // Fix: Toggle visibility
+        })
+        .catch(error => console.error("Error updating plan visibility:", error));
     }
 });
+
+
+    
+    // Toggle View Button
+    const toggleViewBtn = document.getElementById("toggleView");
+    if (toggleViewBtn) {
+        toggleViewBtn.addEventListener("click", function () {
+            isTableView = !isTableView;
+            loadAdminPlans();
+        });
+    }
+    
     document.addEventListener("click", function (event) {
         if (event.target.closest(".edit-plan")) {
             let planId = event.target.closest(".edit-plan").dataset.id;
 
-            fetch(`${planEndpoint}/${planId}`)
+            fetch(`${planEndpoint}/id/${planId}`, {
+        method: "GET",
+        headers: {
+            "Authorization": `Bearer ${token}`,
+            "Content-Type": "application/json"
+        }
+    })
                 .then(response => response.json())
                 .then(plan => {
                     document.getElementById("editPlanLabel").value = plan.planLabel || "";
@@ -579,7 +1010,15 @@ aside {
     document.getElementById("saveEditedPlan").addEventListener("click", function () {
         let planId = this.dataset.id;
 
-        fetch(`${planEndpoint}/${planId}`)
+        fetch(`${planEndpoint}/id/${planId}`,
+         {
+        method: "GET",
+        headers: {
+            "Authorization": `Bearer ${token}`,
+            "Content-Type": "application/json"
+        }
+    }
+        )
             .then(response => response.json())
             .then(existingPlan => {
                 let updatedPlan = {
@@ -598,8 +1037,12 @@ aside {
                 };
 
                 return fetch(`${planEndpoint}/${planId}`, {
+
+    
                     method: "PUT",
-                    headers: { "Content-Type": "application/json" },
+                    headers: { "Content-Type": "application/json",
+                    "Authorization": `Bearer ${token}`,
+                },
                     body: JSON.stringify(updatedPlan)
                 });
             })
@@ -618,8 +1061,9 @@ aside {
     document.getElementById("addPlanBtn").addEventListener("click", function () {
     let modal = new bootstrap.Modal(document.getElementById("addPlanModal"));
     modal.show();
-});
 
+    
+});
 // Handle Form Submission
 document.getElementById("savePlanBtn").addEventListener("click", function () {
     const newPlan = {
@@ -639,9 +1083,10 @@ document.getElementById("savePlanBtn").addEventListener("click", function () {
     };
 
     // Send Data to Backend (POST request)
+  let token=localStorage.getItem("authToken")
     fetch("http://localhost:8081/api/plans", { // Update endpoint as needed
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: { "Content-Type": "application/json", "Authorization": `Bearer ${token}` },
         body: JSON.stringify(newPlan)
     })
     .then(response => response.json())
@@ -655,10 +1100,141 @@ document.getElementById("savePlanBtn").addEventListener("click", function () {
         alert("Failed to add plan.");
     });
 });
+
+document.getElementById("price").addEventListener("input", function () {
+    let price = this.value;
+    let planCodeField = document.getElementById("planCode");
+    if (price) {
+        planCodeField.value = "MC-" + price;
+    } else {
+        planCodeField.value = "";
+    }
+});
+
+
+
+// function setEditPlanValues(plan) {
+//     document.getElementById("editPlanLabel").value = plan.label;
+//     document.getElementById("editPlanName").value = plan.name;
+//     document.getElementById("editPlanCode").value = plan.code;
+//     document.getElementById("editPrice").value = plan.price;
+//     document.getElementById("editValidityDays").value = plan.validity;
+//     document.getElementById("editDataLimit").value = plan.dataLimit;
+//     document.getElementById("editDataRollover").value = plan.dataRollover || ""; // Default to none if null
+//     document.getElementById("editCallLimit").value = plan.callLimit;
+//     document.getElementById("editSmsLimit").value = plan.smsLimit;
+//     document.getElementById("editPlanBadge").value = plan.badge || "none";
+
+//     // Update badge preview
+//     let badgePreview = document.getElementById("editBadgePreview");
+//     if (plan.badge && plan.badge !== "none") {
+//         badgePreview.src = plan.badge;
+//         badgePreview.style.display = "block";
+//     } else {
+//         badgePreview.style.display = "none";
+//     }
+// }
+const toggleViewBtn = document.getElementById("toggleView");
+const toggleIcon = document.getElementById("toggleIcon");
+
+if (toggleViewBtn) {
+    toggleViewBtn.addEventListener("click", function () {
+        isTableView = !isTableView;
+        loadAdminPlans();
+
+        // Toggle icons
+        toggleIcon.classList.toggle("fa-table", isTableView);
+        toggleIcon.classList.toggle("fa-th-large", !isTableView);
+    });
+}let existingPlans = [];
+
+// Fetch existing plans when a modal opens
+async function fetchExistingPlans() {
+    const token = localStorage.getItem("authToken");
+    
+    try {
+        const response = await fetch("http://localhost:8081/api/plans", {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json",
+                "Authorization": `Bearer ${token}`
+            }
+        });
+
+        if (!response.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+
+        existingPlans = await response.json();
+    } catch (error) {
+        console.error("Error fetching plans:", error);
+    }
+}
+
+// Fetch plans when any of the modals open
+document.getElementById("addPlanModal").addEventListener("shown.bs.modal", fetchExistingPlans);
+document.getElementById("editPlanModal").addEventListener("shown.bs.modal", fetchExistingPlans);
+
+// Function to check for duplicate price (Used in both Add & Edit forms)
+function checkDuplicatePrice(priceInputId, priceErrorId, planCodeId = null, saveButtonId = null) {
+    const priceInput = document.getElementById(priceInputId);
+    const priceError = document.getElementById(priceErrorId);
+    const saveButton = saveButtonId ? document.getElementById(saveButtonId) : null;
+    const enteredPrice = parseFloat(priceInput.value);
+
+    let isDuplicate = false;
+    let duplicatePlan = null;
+
+    if (planCodeId) {
+        const currentPlanCode = document.getElementById(planCodeId).value.trim();
+        duplicatePlan = existingPlans.find(plan => plan.price === enteredPrice && plan.planCode !== currentPlanCode);
+    } else {
+        duplicatePlan = existingPlans.find(plan => plan.price === enteredPrice);
+    }
+
+    if (duplicatePlan) {
+        priceError.innerText = `⚠ Plan '${duplicatePlan.planName}' already exists at ₹${enteredPrice}. Please enter a different price.`;
+        priceError.classList.remove("d-none");
+        isDuplicate = true;
+    } else {
+        priceError.classList.add("d-none");
+        priceError.innerText = "";
+    }
+
+    if (saveButton) {
+        saveButton.disabled = isDuplicate; // Disable button if price is duplicate
+    }
+
+    return !isDuplicate; // Return true if valid, false if duplicate
+}
+
+// Add Plan - Real-time price validation
+document.getElementById("price").addEventListener("input", function () {
+    checkDuplicatePrice("price", "priceError");
+});
+
+// Prevent form submission if duplicate price exists (Add Plan)
+document.getElementById("savePlanBtn").addEventListener("click", function (e) {
+    if (!checkDuplicatePrice("price", "priceError")) {
+        e.preventDefault(); // Stop form submission
+    }
+});
+
+// Edit Plan - Real-time price validation
+document.getElementById("editPrice").addEventListener("input", function () {
+    checkDuplicatePrice("editPrice", "editPriceError", "editPlanCode", "saveEditedPlan");
+});
+
+// Prevent form submission if duplicate price exists (Edit Plan)
+document.getElementById("editPlanForm").addEventListener("submit", function (event) {
+    if (!checkDuplicatePrice("editPrice", "editPriceError", "editPlanCode", "saveEditedPlan")) {
+        event.preventDefault(); // Stop form submission
+    }
+});
+
 </script>
 
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     
 </body>

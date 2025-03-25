@@ -107,13 +107,7 @@ canvas {
 }
 
 
-#clock {
-    width: 500px;
-    display: flex;
-    position: relative;
-    left: 20%;
 
-}
 
 .display-date {
     text-align: center;

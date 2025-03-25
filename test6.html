@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subscriber Management</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/html2canvas"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+
+    <button id="refreshBtn">Refresh</button>
+    <button id="downloadBtn">Download Table</button>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Full Name</th>
+                <th>Mobile</th>
+                <th>Email</th>
+                <th>Plan</th>
+                <th>Transactions</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody id="user-table"></tbody>
+    </table>
+
+    <div id="user-details-container" style="display: none;"></div>
+
+    <canvas id="churnRateChart"></canvas>
+    <canvas id="planChart"></canvas>
+    <canvas id="expirationChart"></canvas>
+    <canvas id="walletChart"></canvas>
+
+    <script>
+        const token = localStorage.getItem("authToken") || "your_default_token";
+
+        // ✅ Generic API Fetch Function
+        async function apiFetch(url, options = {}) {
+            try {
+                const response = await fetch(url, {
+                    ...options,
+                    headers: {
+                        "Authorization": `Bearer ${token}`,
+                        "Content-Type": "application/json",
+                        ...options.headers
+                    }
+                });
+
+                if (!response.ok) {
+                    throw new Error(`API error: ${response.status} - ${await response.text()}`);
+                }
+
+                return response.json();
+            } catch (error) {
+                console.error("Error fetching data:", error);
+                return null;
+            }
+        }
+
+        // ✅ Fetch Users & Recharges
+        async function fetchData() {
+            try {
+                const [users, recharges] = await Promise.all([
+                    apiFetch("http://localhost:8081/api/users"),
+                    apiFetch("http://localhost:8081/api/recharges")
+                ]);
+
+                if (!users || !recharges) return;
+
+                users.forEach(user => {
+                    user.numberOfTransactions = recharges.filter(r => r.userId === user.userId).length;
+                });
+
+                displayUsers(users);
+                generateCharts(users);
+                updateTabCounts(users);
+            } catch (error) {
+                console.error("Error in fetchData:", error);
+            }
+        }
+
+        // ✅ Display Users
+        function displayUsers(users) {
+            const tableBody = document.getElementById("user-table");
+            tableBody.innerHTML = "";
+
+            users.forEach(user => {
+                let row = document.createElement("tr");
+                row.innerHTML = `
+                    <td>${user.userId}</td>
+                    <td>${user.fullName || "N/A"}</td>
+                    <td>${user.mobicommNumber || "N/A"}</td>
+                    <td>${user.email || "N/A"}</td>
+                    <td>${user.currentPlanId || "N/A"}</td>
+                    <td>${user.numberOfTransactions}</td>
+                `;
+                row.addEventListener("click", () => displayUserDetails(user));
+                tableBody.appendChild(row);
+            });
+        }
+
+        // ✅ Display User Details
+        function displayUserDetails(user) {
+            const userDetailsContainer = document.getElementById("user-details-container");
+            userDetailsContainer.innerHTML = `
+                <div class="card p-3 border shadow">
+                    <h4>${user.fullName}</h4>
+                    <p><strong>ID:</strong> ${user.userId}</p>
+                    <p><strong>Mobile:</strong> ${user.mobicommNumber}</p>
+                    <p><strong>Email:</strong> ${user.email}</p>
+                    <p><strong>Current Plan:</strong> ${user.currentPlanId}</p>
+                    <p><strong>Transactions:</strong> ${user.numberOfTransactions}</p>
+                </div>
+            `;
+            userDetailsContainer.style.display = "block";
+        }
+
+        // ✅ Generate Charts
+        function generateCharts(users) {
+            const churnedUsers = users.filter(user => !user.active).length;
+            const activeUsers = users.length - churnedUsers;
+
+            new Chart(document.getElementById("churnRateChart"), {
+                type: "pie",
+                data: {
+                    labels: ["Active", "Churned"],
+                    datasets: [{ data: [activeUsers, churnedUsers], backgroundColor: ["#4CAF50", "#FF5733"] }]
+                }
+            });
+
+            const planCounts = users.reduce((acc, user) => {
+                acc[user.currentPlanId] = (acc[user.currentPlanId] || 0) + 1;
+                return acc;
+            }, {});
+
+            new Chart(document.getElementById("planChart"), {
+                type: "bar",
+                data: {
+                    labels: Object.keys(planCounts),
+                    datasets: [{ label: "Users per Plan", data: Object.values(planCounts), backgroundColor: "#4285F4" }]
+                }
+            });
+
+            const walletAmount = users.reduce((sum, user) => sum + (user.walletAmount || 0), 0);
+
+            new Chart(document.getElementById("walletChart"), {
+                type: "doughnut",
+                data: {
+                    labels: ["Total Wallet Amount"],
+                    datasets: [{ data: [walletAmount], backgroundColor: ["#8E44AD"] }]
+                }
+            });
+        }
+
+        // ✅ Update User Count
+        function updateTabCounts(users) {
+            document.querySelector("label[for='radio-1']").textContent = `All Users (${users.length})`;
+        }
+
+        // ✅ Capture User Details as Image
+        function captureContainerAsImage() {
+            const container = document.getElementById("user-details-container");
+            if (!container) return console.error("User details container not found.");
+
+            html2canvas(container).then(canvas => {
+                let link = document.createElement("a");
+                link.href = canvas.toDataURL("image/png");
+                link.download = "user-details.png";
+                link.click();
+            });
+        }
+
+        // ✅ Refresh & Download Table
+        document.getElementById("refreshBtn").addEventListener("click", () => location.reload());
+        document.getElementById("downloadBtn").addEventListener("click", () => {
+            html2canvas(document.querySelector(".table")).then(canvas => {
+                let link = document.createElement("a");
+                link.href = canvas.toDataURL("image/png");
+                link.download = "user-table.png";
+                link.click();
+            });
+        });
+
+        // ✅ Auto Fetch Data on Page Load
+        document.addEventListener("DOMContentLoaded", fetchData);
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>User Profile & Recharges</title>
+    <link rel="stylesheet" href="css/mainmin.css">
+    <link rel="stylesheet" href="css/style.css">
+    
+    <!-- Bootstrap CSS -->
+
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .profile-container, .history-container, .plans-container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        .editable {
+            border: 1px solid #ddd;
+            padding: 5px;
+            border-radius: 5px;
+        }
+        .save-btn {
+            display: none;
+        }
+
+        
+.golden-banner {
+  position: absolute;
+  top: 0px;
+  left: 10px;
+  width: 80px; 
+  height: auto;
+  z-index: 10; 
+}
+.plan-card {
+  background: linear-gradient(135deg, #0d1117, #161b22); /* Deep Navy */
+  border-radius: 16px;
+  padding: 30px;
+  text-align: left;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6);
+  width: 380px;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(255, 215, 0, 0.3); /* Gold Border */
+}
+
+.plan-card:hover {
+  box-shadow: 0 12px 24px rgba(255, 215, 0, 0.4); /* Gold Glow */
+}
+
+
+
+.plan-card:hover::before {
+  opacity: 1;
+}
+
+.plan-header {
+  background: #ffea70; 
+  color: #161b22;
+  font-weight: bold;
+  padding: 6px 14px;
+  border-radius: 0% 100% 23% 77% / 100% 0% 100% 0%;
+  display: inline-block;
+  margin-bottom: 15px;
+  font-size: 14px;
+  text-transform: uppercase;
+  position: relative;
+  top: -29px;
+  left: -30px;
+}
+
+.plan-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #ffffff;
+  margin-bottom: 8px;
+}
+
+.plan-price {
+  font-size: 22px;
+  color: #ffea70;
+  font-weight: bold;
+  margin-bottom: 12px;
+}
+
+.plan-features {
+  font-size: 15px;
+  color: #c9d1d9;
+  margin-bottom: 20px;
+  font-weight: 400;
+}
+
+.plan-card ul {
+  padding: 0;
+  list-style: none;
+}
+
+ .plan-card ul li {
+  padding-block: 8px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 15px;
+  color: #e6edf3;
+}
+
+.plan-card ul li::before {
+  color: #ffea70; 
+  font-size: 14px;
+}
+
+.proceed-btn {
+  background: linear-gradient(135deg, #008080, #005f5f);
+  color: white;
+  border: none;
+  padding: 14px 28px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  width: 100%;
+  text-align: center;
+  display: block;
+  font-size: 16px;
+  box-shadow: 0 4px 8px rgba(0, 128, 128, 0.3);
+}
+.plan-banner {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 120px;  /* Adjust size */
+    height: auto;
+    z-index: 10;
+}
+
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">MobiComm</a>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <div class="row">
+            <!-- Profile Section -->
+            <div class="col-lg-4">
+                <div class="profile-container">
+                    <h4 class="text-center">User Profile</h4>
+                    <hr>
+
+                    <div class="mb-3">
+                        <label class="form-label"><strong>Username:</strong></label>
+                        <p id="username" class="form-control-plaintext"></p>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label"><strong>MobiComm Number:</strong></label>
+                        <p id="mobicommNumber" class="form-control-plaintext"></p>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label"><strong>Email:</strong></label>
+                        <input type="email" id="email" class="form-control editable" disabled>
+                        <button id="edit-btn" class="btn btn-sm btn-warning mt-2">Edit</button>
+                        <button id="save-btn" class="btn btn-sm btn-success mt-2 save-btn">Save</button>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label"><strong>Role:</strong></label>
+                        <p id="role" class="form-control-plaintext"></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recharge History -->
+            <div class="col-lg-8">
+                <div class="history-container">
+                    <h4 class="text-center">Recharge History</h4>
+                    <hr>
+                    <ul id="recharge-history" class="list-group"></ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Recent Plans -->
+        <div class="mt-4">
+            <div class="plans-container">
+                <h4 class="text-center">Recent Recharge Plans</h4>
+                <hr>
+                <div id="plans-container" class="row"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap & JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        // Parse URL Parameters
+        function getQueryParams() {
+            const params = new URLSearchParams(window.location.search);
+            return {
+                userId: params.get("userId"),
+                username: params.get("username"),
+                mobicommNumber: params.get("mobicommNumber"),
+                email: params.get("email"),
+                role: params.get("role")
+            };
+        }
+
+        let authToken=localStorage.getItem("token")
+
+        // Populate User Data
+        function populateUserData() {
+            const userData = getQueryParams();
+            document.getElementById("username").innerText = userData.username;
+            document.getElementById("mobicommNumber").innerText = userData.mobicommNumber;
+            document.getElementById("email").value = userData.email;
+            document.getElementById("role").innerText = userData.role;
+            fetchRechargeHistory(userData.userId);
+            fetchRecentPlans();
+        }
+
+        // Fetch Recharge History
+        async function fetchRechargeHistory(userId) {
+            try {
+                const authToken = localStorage.getItem("token");
+                const response = await fetch(`http://localhost:8081/api/recharges/user/${userId}`, {
+                    headers: { "Authorization": `Bearer ${authToken}` }
+                });
+
+                if (!response.ok) throw new Error("Failed to fetch recharge history");
+
+                const history = await response.json();
+                const historyList = document.getElementById("recharge-history");
+                historyList.innerHTML = history.map(recharge => `
+                    <li class="list-group-item">
+                        ₹${recharge.amountPaid} - ${recharge.paymentMode} <br>
+                        <small>Transaction ID: ${recharge.transactionId}</small><br>
+                        <small>Start: ${new Date(recharge.startDate).toLocaleString()}</small> - 
+                        <small>Expiry: ${new Date(recharge.expiryDate).toLocaleString()}</small>
+                    </li>
+                `).join("");
+            } catch (error) {
+                console.error(error);
+            }
+        }
+
+        // Fetch Recent Plans
+       // Fetch Recent Plans
+// Fetch Recent Plans
+async function fetchRecentPlans() {
+    try {
+        const authToken = localStorage.getItem("token");
+        const response = await fetch(`http://localhost:8081/api/plans`, {
+            headers: { "Authorization": `Bearer ${authToken}` }
+        });
+
+        if (!response.ok) throw new Error("Failed to fetch plans");
+
+        const plans = await response.json();
+        const plansContainer = document.getElementById("plans-container");
+
+        plansContainer.innerHTML = plans.slice(0, 6).map(plan => {
+            const featuresList = plan.features ? plan.features.map(f => `<li>${f}</li>`) : [];
+
+            return `
+                <div class="col-lg-4 col-sm-6 responsive">
+                    <div class="plan-card position-relative">
+                        ${plan.imagePath ? `<img src="${plan.imagePath}" class="plan-banner" alt="">` : ""}
+                        ${plan.planLabel ? `<div class="plan-header position-relative">${plan.planLabel}</div>` : ""}
+                        <h5 class="plan-title">${plan.planName}</h5>
+                        <p class="plan-price">₹${plan.price} / ${plan.validityDays} Days</p>
+                        ${featuresList.length > 0 ? `<ul class="plan-features">${featuresList.join("")}</ul>` : ""}
+                        <button class="proceed-btn" data-plan-code="${plan.planCode}" 
+                            data-plan-name="${plan.planName}" data-plan-price="${plan.price}"> 
+                            Recharge ${plan.planCode}
+                        </button>
+                    </div>
+                </div>`;
+        }).join("");
+
+    } catch (error) {
+        console.error(error);
+    }
+}
+
+// Load Plans on Page Load
+document.addEventListener("DOMContentLoaded", fetchRecentPlans);
+
+// Load Plans on Page Load
+document.addEventListener("DOMContentLoaded", fetchRecentPlans);
+
+
+        // Enable Editing
+        document.getElementById("edit-btn").addEventListener("click", function() {
+            document.getElementById("email").removeAttribute("disabled");
+            document.getElementById("edit-btn").style.display = "none";
+            document.getElementById("save-btn").style.display = "inline-block";
+        });
+
+        // Save Edited Email
+        document.getElementById("save-btn").addEventListener("click", async function() {
+            const userData = getQueryParams();
+            const newEmail = document.getElementById("email").value;
+            const authToken = localStorage.getItem("authToken");
+
+            try {
+                const response = await fetch(`http://localhost:8081/api/users/${userData.userId}/update-email`, {
+                    method: "PATCH",
+                    headers: {
+                        "Authorization": `Bearer ${authToken}`,
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({ email: newEmail })
+                });
+
+                if (!response.ok) throw new Error("Failed to update email");
+
+                alert("Email updated successfully!");
+                document.getElementById("email").setAttribute("disabled", "true");
+                document.getElementById("edit-btn").style.display = "inline-block";
+                document.getElementById("save-btn").style.display = "none";
+            } catch (error) {
+                console.error(error);
+                alert("Failed to update email!");
+            }
+        });
+
+        // Load data on page load
+        document.addEventListener("DOMContentLoaded", populateUserData);
+    </script>
+
+</body>
+</html>

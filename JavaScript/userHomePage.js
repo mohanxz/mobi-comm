@@ -2,67 +2,111 @@ const input = document.getElementById("mobile-input");
 const spinner = document.getElementById("spinner");
 const errorMessage = document.getElementById("error-message");
 
-const API_URL = "http://localhost:8081/auth/login"; // 🔹 Update with your backend endpoint
+const LOGIN_API = "http://localhost:8081/auth/user/login";  // Login API
+const USER_API = "http://localhost:8081/api/users/mobile/"; // Get User API
 
-input.addEventListener("input", async function () {
+let debounceTimer;
+
+// ✅ Improved Debounce - Only calls API if exactly 10 digits entered
+input.addEventListener("input", function () {
+    clearTimeout(debounceTimer);
+
     const value = input.value.trim();
-    const length = value.length;
+    if (value.length > 10) {
+        input.value = value.slice(0, 10); // Prevents user from typing more than 10 digits
+    }
+
+    debounceTimer = setTimeout(() => {
+        if (value.length === 10) {
+            handleUserInput();
+        }
+    }, 500);
+});
+
+async function handleUserInput() {
+    const value = input.value.trim();
     const isValid = /^[6-9]\d{9}$/.test(value);
 
-    if (length >= 8 && length <= 10) {
+    // ✅ Improved Error Message for Invalid Number
+    if (!isValid) {
         errorMessage.innerText = "Please enter a valid 10-digit mobile number.";
         errorMessage.style.display = "block";
+        return;
     } else {
         errorMessage.style.display = "none";
     }
 
-    if (isValid) {
-        try {
-            spinner.style.display = "block"; // Show spinner
-            input.disabled = true; // Disable input while checking
+    try {
+        spinner.style.display = "block";
+        input.disabled = true;
 
-            // 🔹 Send mobile number to backend for authentication
-            const response = await fetch(API_URL, {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                },
-                body: JSON.stringify({ mobicommNumber: value }),
-            });
+        // ✅ Step 1: Login & Get Token
+        const loginResponse = await fetch(LOGIN_API, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ mobicommNumber: value }),
+        });
 
-            if (response.ok) {
-                const data = await response.json();
-                localStorage.setItem("jwtToken", data.token); // 🔹 Store JWT Token
-                localStorage.setItem("loggedInUser", JSON.stringify(data));
-
-                setTimeout(() => {
-                    window.location.href = "http://127.0.0.1:5501/prepaidPage.html";
-                }, 3000);
-
-                errorMessage.style.display = "none";
-            } else {
-                errorMessage.innerText = "Please enter a valid MobiComm number.";
-                errorMessage.style.display = "block";
-            }
-        } catch (error) {
-            console.error("Error fetching users:", error);
-            errorMessage.innerText = "Something went wrong. Please try again later.";
+        if (!loginResponse.ok) {
+            errorMessage.innerText = "Invalid mobile number. Please try again.";
             errorMessage.style.display = "block";
-        } finally {
-            spinner.style.display = "none";
-            input.disabled = false;
+            return;
         }
-    } else {
+
+        const loginData = await loginResponse.json();
+        const token = loginData.token;
+
+        // ✅ Secure Token Storage
+        localStorage.setItem("token", token);
+
+        // ✅ Step 2: Fetch User Details with JWT Token
+        const userResponse = await fetch(USER_API + value, {
+            method: "GET",
+            headers: {
+                "Authorization": `Bearer ${token}`,
+                "Content-Type": "application/json",
+            },
+        });
+
+        if (!userResponse.ok) {
+            if (userResponse.status === 403) {
+                localStorage.removeItem("token"); //  Clear token immediately if unauthorized
+                errorMessage.innerText = "Session expired. Please log in again.";
+            } else if (userResponse.status === 404) {
+                errorMessage.innerText = "User not found.";
+            } else {
+                errorMessage.innerText = `Error: ${userResponse.status}`;
+            }
+            errorMessage.style.display = "block";
+            return;
+        }
+
+        const userData = await userResponse.json();
+
+        // ✅ Redirect to prepaid page with user details
+        const queryParams = new URLSearchParams({
+            userId: userData.userId,
+            username: userData.fullName,
+            mobicommNumber: userData.mobicommNumber,
+            email: userData.email,
+            role: loginData.role
+        }).toString();
+
+        setTimeout(() => {
+            window.location.href = `http://127.0.0.1:5501/prepaidPage.html?${queryParams}`;
+        }, 2000);
+
+    } catch (error) {
+        console.error("Error logging in or fetching user details:", error);
+        errorMessage.innerText = "Server error. Try again later.";
+        errorMessage.style.display = "block";
+    } finally {
         spinner.style.display = "none";
-
-        if (length === 10) {
-            input.classList.add("shake");
-            setTimeout(() => input.classList.remove("shake"), 300);
-        }
+        input.disabled = false;
     }
-});
+}
 
-// ✅ Redirect only if token is VALID
+
 document.addEventListener("DOMContentLoaded", async () => {
     let getStartedBtn = document.querySelector(".cta-btn");
 
@@ -73,7 +117,6 @@ document.addEventListener("DOMContentLoaded", async () => {
     }
 
     const token = localStorage.getItem("jwtToken");
-
     if (token) {
         try {
             const response = await fetch("http://localhost:8081/auth/validate", {
@@ -82,9 +125,9 @@ document.addEventListener("DOMContentLoaded", async () => {
             });
 
             if (response.ok) {
-                window.location.href = "http://127.0.0.1:5501/prepaidPage.html"; // ✅ Redirect only if token is valid
+                window.location.href = "http://127.0.0.1:5501/prepaidPage.html"; 
             } else {
-                localStorage.removeItem("jwtToken"); // ❌ Remove invalid token
+                localStorage.removeItem("jwtToken"); 
                 console.warn("Invalid token. Please log in again.");
             }
         } catch (error) {
@@ -169,3 +212,4 @@ function startSimAnimation(event, button, url) {
         }, 1000);
     }, 1500);
 }
+

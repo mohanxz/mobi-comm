@@ -35,10 +35,7 @@
   body{
     overflow-x: hidden;
   }
-  #clock{
-    margin-left: -130px;
-    max-width:100%;
-  }
+
 
   #mobiLogo{
     position: relative;
@@ -60,6 +57,39 @@
     padding: 30px;
   }
 }
+.table-container {
+    position: relative;
+}
+
+body {
+    overflow-x: hidden; /* Prevents horizontal scrolling */
+}
+
+.table-container {
+    max-height: 80vh; /* Adjust height dynamically */
+    overflow-y: auto; /* Only this container scrolls */
+    position: relative;
+}
+
+.table thead {
+    position: sticky;
+    top: 0; /* Ensures it sticks within table-container */
+    background: white;
+    z-index: 1000;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Fixed header when scrolled past 10px */
+.table thead.fixed {
+    position: fixed;
+    top: 10px;
+    left: 0;
+    width: calc(100% - 20px);
+    background: white;
+    z-index: 1050;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+}
+
 
 </style>
 
@@ -83,12 +113,13 @@
                 <li class="p-2 text-dark rounded mb-2">
                     <a href="http://127.0.0.1:5501/planManagement.html#" class="text-dark text-decoration-none">Plans</a>
                 </li>
+                
                 <li class="p-2  rounded mb-2">
                     <a href="http://127.0.0.1:5501/RechargeManagement.html" class="text-dark text-decoration-none">Recharge Management </a>
                 </li>
-                <li class="p-2 text-dark rounded mb-2">
+                <!-- <li class="p-2 text-dark rounded mb-2">
                     <a href="#" class="text-dark text-decoration-none">Complaint Management</a>
-                </li>
+                </li> -->
             </ul>
         </nav>
 
@@ -119,32 +150,19 @@
     <!-- Main Content -->
     <main class="flex-grow-1 p-4">
 
-        <div class="mb-0">
-            <div class="row mb-0">
-                <div class="col">
-                    <div class=" text-secondary p-4 rounded  fs-3 fw-semibold fade-in">
-                        Welcome,Admin!
+            <div class="welcome-container position-relative">
+                <div class="overlay"></div>
+                <div class="row welcome-content">
+                    <div class="col-md-8">
+                        <p class="text-light mb-1">Hey, Admin!</p>
+                        <h2 class="greeting">Good Evening</h2>
                     </div>
-
-                </div>
-                <div class="col mt-2 ms-5">
-
-                    <div id="clock">
-                        <div class="display-date mt-4 ms-5 ">
-                            <span id="day">day</span>,
-                            <span id="daynum">00</span>
-                            <span id="month">month</span>
-                            <span id="year">0000</span>
-                        </div>
-                        <div class="display-time d-inline ms-1"></div>
+                    <div class="col-md-4 text-end date-time">
+                        <span id="currentTime">08:47 PM</span><br>
+                        <span id="currentDate">Tuesday, Mar 04, 2025</span>
                     </div>
-
-
                 </div>
-                <img src="src/images/mobi-comm-logo-removebg-preview.png" class="ms-3" id="mobiLogo" alt="">
-
             </div>
-        </div>
 
 
         <div id="user-details-container" class="user-details" style="display: none;">
@@ -202,7 +220,6 @@
                                 <th>Email</th>
                                 <th>Plan</th>
                                 <th>Transactions</th>
-                                <th>Wallet</th>
                                 <th>Status</th>
                             </tr>
                         </thead>
@@ -225,31 +242,35 @@
 
 
 
+      
         <script>
+  
 
-        </script>
 
-        <script>
-            document.addEventListener("scroll", function () {
-                const table = document.querySelector(".table thead");
-                const tablePosition = table.getBoundingClientRect().top;
-
-                if (tablePosition <= 10) {
-                    table.classList.add("sticky-active");
-                } else {
-                    table.classList.remove("sticky-active");
-                }
-            });
-
-            async function fetchUserData() {
-                try {
-                    const response = await fetch("http://localhost:3000/users");
-                    const users = await response.json();
-                    generateCharts(users);
-                } catch (error) {
-                    console.error("Error fetching user data:", error);
-                }
+            let token=localStorage.getItem("authToken")
+            console.log(token)
+           
+async function fetchUserData() {
+    try {
+        const response = await fetch("http://localhost:8081/api/users", {
+            method: "GET",
+            headers: {
+                "Authorization": `Bearer ${token}`,  // 🔹 Token attached here
+                "Content-Type": "application/json"
             }
+        });
+
+        if (!response.ok) {
+            throw new Error("Failed to fetch user data");
+        }
+
+        const users = await response.json();
+        generateCharts(users);
+    } catch (error) {
+        console.error("Error fetching user data:", error);
+    }
+}
+
 
             function generateCharts(users) {
                 // 1️⃣ Churn Rate (Pie Chart)
@@ -335,172 +356,157 @@
                 }
             });
 
-            document.addEventListener("DOMContentLoaded", fetchUsers);
+            document.addEventListener("DOMContentLoaded", fetchData);
 
-            let users = [];
+let users = [];
+let recharges = [];
 
-            document.addEventListener("DOMContentLoaded", () => {
-                const tabs = document.querySelectorAll(".tab");
-                const glider = document.querySelector(".glider");
+async function fetchData() {
+    try {
+        // Fetch users and recharges in parallel
+        const token = localStorage.getItem("authToken"); // Replace with the actual token
 
-                tabs.forEach((tab, index) => {
-                    tab.addEventListener("click", () => {
-                        let tabWidth = tab.offsetWidth; // Get the width of a tab
-                        glider.style.transform = `translateX(${index * tabWidth}px)`;
-                    });
-                });
-            });
+const [usersResponse, rechargesResponse] = await Promise.all([
+    fetch("http://localhost:8081/api/users", {
+        method: "GET",
+        headers: {
+            "Authorization": `Bearer ${token}`,
+            "Content-Type": "application/json"
+        }
+    }),
+    fetch("http://localhost:8081/api/recharges", {
+        method: "GET",
+        headers: {
+            "Authorization": `Bearer ${token}`,
+            "Content-Type": "application/json"
+        }
+    })
+]);
 
-            function updateTabCounts() {
-                let allCount = users.length;
-                let activeCount = users.filter(user => user.active).length;
-                let inactiveCount = users.filter(user => !user.active).length;
-                let premiumCount = users.filter(user => user.currentPlan.includes("MC-")).length;
 
-                document.querySelector("label[for='radio-1']").textContent = `All Users (${allCount})`;
-                document.querySelector("label[for='radio-2']").textContent = `Active Users (${activeCount})`;
-                document.querySelector("label[for='radio-3']").textContent = `Inactive Users (${inactiveCount})`;
-                document.querySelector("label[for='radio-4']").textContent = `Premium Users (${premiumCount})`;
-            }
+        users = await usersResponse.json();
+        recharges = await rechargesResponse.json();
 
-            // Call this function after fetching users
-            function fetchUsers() {
-                fetch("http://localhost:3000/users")
-                    .then(response => response.json())
-                    .then(data => {
-                        users = data;
-                        displayUsers(users);
-                        updateTabCounts(); // Update tab counts after loading users
-                    })
-                    .catch(error => console.error("Error fetching users:", error));
-            }
+        // Count transactions per user
+        const transactionCounts = countUserTransactions(recharges);
 
-            function displayUsers(userList) {
-                const tableBody = document.getElementById("user-table");
-                tableBody.innerHTML = ""; // Clear previous data
+        // Merge transaction count into user data
+        users.forEach(user => {
+            user.numberOfTransactions = transactionCounts[user.userId] || 0;
+        });
 
-                userList.forEach(user => {
-                    let status = user.active ? "Active" : "Inactive";
-                    let row = document.createElement("tr");
+        // Display the updated users list
+        displayUsers(users);
+        updateTabCounts();
+    } catch (error) {
+        console.error("Error fetching data:", error);
+    }
+}
 
-                    row.innerHTML = `
-            <td>${user.id}</td>
-            <td>${user.username}</td>
-            <td>${user.mobileNumber}</td>
-            <td>${user.email}</td>
-            <td>${user.currentPlan}</td>
+// Count the number of recharges per user
+function countUserTransactions(rechargeData) {
+    return rechargeData.reduce((acc, recharge) => {
+        acc[recharge.userId] = (acc[recharge.userId] || 0) + 1;
+        return acc;
+    }, {});
+}
+
+// Display users in the table
+function displayUsers(userList) {
+    const tableBody = document.getElementById("user-table");
+    tableBody.innerHTML = ""; // Clear previous data
+
+    userList.forEach(user => {
+        let status = user.active ? "Active" : "Inactive";
+        let row = document.createElement("tr");
+        row.setAttribute("data-user-id", user.userId);
+
+        row.innerHTML = `
+            <td>${user.userId}</td>
+            <td>${user.fullName || "N/A"}</td>
+            <td>${user.mobicommNumber || "N/A"}</td>
+            <td>${user.email || "N/A"}</td>
+            <td>${user.currentPlanId || "N/A"}</td>
             <td>${user.numberOfTransactions}</td>
-            <td>₹${user.walletAmount}</td>
             <td>${status}</td>
         `;
 
-                    // Attach click event to show user details
-                    row.addEventListener("click", () => displayUserDetails(user)
+        row.addEventListener("click", () => displayUserDetails(user));
+        tableBody.appendChild(row);
+    });
+}
 
-                    );
+// Display user details and their recharge history
+function displayUserDetails(user) {
+    const userDetailsContainer = document.getElementById("user-details-container");
+    const userRecharges = recharges.filter(r => r.userId === user.userId);
 
-                    tableBody.appendChild(row);
-                });
-            }
-
-
-
-
-
-
-
-
-
-
-            function populateTable(users) {
-                let tbody = document.querySelector("#userTable tbody");
-                tbody.innerHTML = ""; // Clear previous data
-
-                users.forEach(user => {
-                    user.rechargeHistory.forEach(recharge => {
-                        let row = document.createElement("tr");
-
-                        row.innerHTML = `
-                <td>${recharge.date || "N/A"}</td>
-                <td>₹${recharge.amount || "N/A"}</td>
-                <td>${recharge.paymentMode || "N/A"}</td>
-                <td>${recharge.transactionId || "N/A"}</td>
-                <td>${recharge.expiryDate || "N/A"}</td>
-            `;
-
-                        row.addEventListener("click", () => displayUserDetails(user));
-
-                        tbody.appendChild(row);
-
-
-                    });
-                });
-            }
-            function displayUserDetails(user) {
-                const userDetailsContainer = document.getElementById("user-details-container");
-                if (!userDetailsContainer) return;
-
-                // Set current timestamp
-                let timestamp = new Date().toLocaleString();
-
-                userDetailsContainer.innerHTML = `
+    userDetailsContainer.innerHTML = `
         <div class="card p-3 border shadow">
             <div class="row d-flex">
                 <div class="col">
-                    <h4 class="text-primary">Mobi-comm Subscriber</h4>
-                    <p><strong>ID:</strong> ${user.id}</p>
-                    <p><strong>Username:</strong> ${user.username}</p>
-                    <p><strong>Mobile:</strong> ${user.mobileNumber}</p>
+                    <h4 class="text-danger">Mobi-comm Subscriber</h4>
+                    <p><strong>ID:</strong> ${user.userId}</p>
+                    <p><strong>Full Name:</strong> ${user.fullName}</p>
+                    <p><strong>Mobile:</strong> ${user.mobicommNumber}</p>
                     <p><strong>Email:</strong> ${user.email}</p>
-                    <p><strong>Current Plan:</strong> ${user.currentPlan}</p>
-                    <p><strong>Wallet Balance:</strong> ₹${user.walletAmount}</p>
-                </div>
-                <div class="col">
-                    <div style="text-align: center; margin-bottom: 20px;">
-                        <img src="src/images/mobi-comm-logo-removebg-preview.png" alt="Mobicom Logo"
-                        style="width: 120px; height: auto;"><br>
-                        <img src="src/images/mobi-comm-named-logo-removebg-preview.png" alt="" style="width: 220px;">
-                    </div>
-                    <h2 style="text-align: center; color: #d52136; margin-bottom: 10px;">User Details Report</h2>
-                    <p style="text-align: center; font-size: 14px; color: #555;">
-                        Time: <span id="timestamp">${timestamp}</span>
-                    </p>
+                    <p><strong>Current Plan:</strong> ${user.currentPlanId}</p>
+                    <p><strong>Transactions:</strong> ${user.numberOfTransactions}</p>
                 </div>
             </div>
 
-            <!-- Recharge History Section -->
             <div class="mt-3">
                 <h5 class="text-secondary">Recharge History</h5>
                 <table class="table table-bordered">
                     <thead>
                         <tr>
-                            <th>Date</th>
                             <th>Amount (₹)</th>
                             <th>Payment Mode</th>
                             <th>Transaction ID</th>
+                            <th>Start Date</th>
                             <th>Expiry Date</th>
                         </tr>
                     </thead>
                     <tbody>
-                        ${user.rechargeHistory.map(recharge => `
+                        ${userRecharges.map(recharge => `
                             <tr>
-                                <td>${recharge.date}</td>
-                                <td>₹${recharge.amount}</td>
+                                <td>${recharge.amountPaid}</td>
                                 <td>${recharge.paymentMode}</td>
                                 <td>${recharge.transactionId}</td>
-                                <td>${recharge.expiryDate}</td>
+                                <td>${formatDate(recharge.startDate)}</td>
+                                <td>${formatDate(recharge.expiryDate)}</td>
                             </tr>
                         `).join('')}
                     </tbody>
                 </table>
             </div>
-
-            <!-- Download Button -->
-            <button onclick="captureContainerAsImage()" class="btn btn-primary mt-2">Download</button>
         </div>
     `;
-                userDetailsContainer.style = "block"
-            }
+    userDetailsContainer.style.display = "block";
+}
+
+// Convert SQL date to readable format
+function formatDate(sqlDate) {
+    if (!sqlDate) return "N/A"; 
+    const date = new Date(sqlDate);
+    return date.toLocaleDateString("en-GB");
+}
+
+// Update tab counts
+function updateTabCounts() {
+    document.querySelector("label[for='radio-1']").textContent = `All Users (${users.length})`;
+}
+
+// Refresh and Download Table as Image
+document.getElementById("refreshBtn").addEventListener("click", () => location.reload());
+document.getElementById("downloadBtn").addEventListener("click", () => {
+    html2canvas(document.querySelector(".table")).then(canvas => {
+        let link = document.createElement("a");
+        link.href = canvas.toDataURL("image/png");
+        link.download = "user-table.png";
+        link.click();
+    });
+});
 
 
             function captureContainerAsImage() {
@@ -560,7 +566,25 @@
                 });
             });
 
+            function updateTime() {
+        const now = new Date();
+        let hours = now.getHours();
+        const minutes = now.getMinutes();
+        const seconds = now.getSeconds();
+        const amPm = hours >= 12 ? "PM" : "AM";
 
+        // Convert to 12-hour format
+        hours = hours % 12 || 12;
+
+        document.getElementById("currentTime").textContent = 
+            `${hours}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')} ${amPm}`;
+        
+        document.getElementById("currentDate").textContent = 
+            now.toLocaleDateString(undefined, { weekday: 'long', month: 'short', day: '2-digit', year: 'numeric' });
+    }
+
+    setInterval(updateTime, 1000);
+    updateTime();
 
         </script>
 

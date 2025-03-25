@@ -632,3 +632,44 @@ i {
 }
 
 
+
+.welcome-container {
+  background: url('https://images.pexels.com/photos/2525871/pexels-photo-2525871.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2') no-repeat center center/cover;
+  border-radius: 20px;
+  padding: 40px;
+  color: white;
+  position: relative;
+  overflow: hidden;
+  background-size: cover;
+  background-position: 10% 26%; 
+  border-radius: 20px;
+  top: -20px;
+
+}
+
+.overlay {
+  background: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+}
+.welcome-content {
+  position: relative;
+  z-index: 1;
+}
+.date-time {
+  text-align: right;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+.greeting {
+  font-size: 2rem;
+  font-weight: bold;
+}
+@media (max-width: 768px) {
+  .greeting { font-size: 1.5rem; }
+  .date-time { font-size: 1rem; }
+}
