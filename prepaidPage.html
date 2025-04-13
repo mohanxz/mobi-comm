@@ -66,7 +66,7 @@
     </style>
 <nav class="navbar navbar-expand-lg navbar-light border p-0">
     <div class="container-fluid p-0">
-        <a class="navbar-brand fs-1 p-0" href="http://127.0.0.1:5501/homePage.html">
+        <a class="navbar-brand fs-1 p-0" href="homePage.html">
             <img src="src/images/mobi-comm-named-logo.png" alt="" style="width: 220px;">
         </a>
 
@@ -78,24 +78,24 @@
         <div class="collapse navbar-collapse" id="navbarScroll">
             <ul class="navbar-nav me-auto my-2 my-lg-0" style="--bs-scroll-height: 100px;">
                 <li class="nav-item p-0">
-                    <a class="nav-link" href="http://127.0.0.1:5501/homePage.html" 
+                    <a class="nav-link" href="homePage.html" 
                         data-bs-toggle="tooltip" data-bs-placement="bottom" title="You might need to log in again.">
                         Home
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-secondary" href="http://127.0.0.1:5501/viewplans.html">
+                    <a class="nav-link text-secondary" href="viewPlans.html">
                         Prepaid Plans
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="http://127.0.0.1:5501/aboutUsPage.html" 
+                    <a class="nav-link" href="aboutUsPage.html" 
                         data-bs-toggle="tooltip" data-bs-placement="bottom" title="You might need to log in again.">
                         About Us
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="http://127.0.0.1:5501/customerSupport.html" 
+                    <a class="nav-link" href="customerSupport.html" 
                         data-bs-toggle="tooltip" data-bs-placement="bottom" title="You might need to log in again.">
                         Support
                     </a>
@@ -109,10 +109,10 @@
 
 
     <main>
-        <div class="container-fluid">
+        <div class="container-fluid ">
             <div class="row">
                 <div class="col-lg-4 bg-info  p-5  d-none d-lg-block ">
-                    <div class=" mt-5 ms-5  p-5 bg-light rounded-3">
+                    <div class=" mt-5 ms-5  p-5 bg-light rounded-3 " style="height: 1;">
                         <h6>Find the right Recharge pack for you</h6>
                         <input type="search" class="fw-bold rounded-2 border-1 p-2 border-warning border-focus-none input-style">
                         <i class="fa-solid fa-magnifying-glass ms-1"></i>
@@ -428,61 +428,83 @@ if (plan.ottPlans && plan.ottPlans.toLowerCase() !== "none") {
 
     // Razorpay Payment Function
     function proceedPayment(planName, planCode, price) {
-        const options = {
-            "key": "rzp_test_hFoXVarHVhtB0H",  // Razorpay Test Key
-            "amount": price * 100,  // Convert to paisa
-            "currency": "INR",
-            "name": "Mobicomm Recharge",
-            "description": `${planName} - ${planCode}`,
-            "image": "src/images/mobi-comm-named-logo.png",
-            "handler": function (response) {
-                
-                // After payment, proceed with recharge API call
-                const rechargeData = {
-                    userId: parseInt(user.userId),
-                    planCode: planCode,
-                    paymentMode: "Razorpay",
-                };
+    const options = {
+        "key": "rzp_test_hFoXVarHVhtB0H",  // Razorpay Test Key
+        "amount": price * 100,  // Convert to paisa
+        "currency": "INR",
+        "name": "Mobicomm Recharge",
+        "description": `${planName} - ${planCode}`,
+        "image": "src/images/mobi-comm-named-logo.png",
+        "handler": function (response) {
+            const rechargeData = {
+                userId: parseInt(user.userId),
+                planCode: planCode,
+                paymentMode: "Razorpay",
+            };
 
-                console.log("Sending Data:", JSON.stringify(rechargeData));
+            console.log("Sending Recharge Data:", JSON.stringify(rechargeData));
 
-                fetch("http://localhost:8081/api/recharge", {
-    method: "POST",
-    headers: {
-        "Content-Type": "application/json",
-        "Authorization": `Bearer ${token}` // ✅ Attach JWT Token
-    },
-    body: JSON.stringify(rechargeData)
-})
-.then(response => 
-    response.json().then(data => ({ status: response.status, body: data }))
-)
-.then(({ status, body }) => {
-    if (status === 400) {
-        console.error("Bad Request:", body);
-    } else if (status === 403) {
-        console.error("Forbidden: You don't have permission to access this resource.");
-    } else if (status === 401) {
-        console.error("Unauthorized: Please log in again.");
-    } else {
-        console.log("Server Response:", body);
-    }
-})
-.catch(error => console.error("Fetch Error:", error));
-            },
-            "prefill": {
-                "name": user.username || "User",
-                "email": "user@example.com",
-                "contact": user.mobicommNumber || "9999999999"
-            },
-            "theme": {
-                "color": "#d52136"
-            }
-        };
+            fetch("http://localhost:8081/api/recharge", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    "Authorization": `Bearer ${token}`
+                },
+                body: JSON.stringify(rechargeData)
+            })
+            .then(res => res.json().then(data => ({ status: res.status, body: data })))
+            .then(({ status, body }) => {
+                if (status === 200) {
+                    console.log("Recharge Success:", body);
 
-        const rzp = new Razorpay(options);
-        rzp.open();
-    }
+                    fetch("http://localhost:8081/api/send-invoice", {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/x-www-form-urlencoded"
+                        },
+                        body: new URLSearchParams({
+                            toEmail: user.email,
+                            planName: planName,
+                            amount: price
+                        })
+                    })
+                    .then(response => response.text().then(text => ({
+                        status: response.status,
+                        body: text
+                    })))
+                    .then(({ status, body }) => {
+                        if (status === 200) {
+                            console.log(" Invoice sent successfully:", body);
+                        } else {
+                            console.error(" Invoice sending failed!", body);
+                        }
+                    })
+                    .catch(err => {
+                        console.error("📭 Invoice Email Error:", err);
+                    });
+
+                } else {
+                    console.error("⚠️ Recharge failed:", body);
+                }
+            })
+            .catch(error => {
+                console.error("💥 Recharge API Error:", error);
+            });
+        },
+        "prefill": {
+            "name": user.username || "User",
+            "email": user.email || "user@example.com",
+            "contact": user.mobicommNumber || "9999999999"
+        },
+        "theme": {
+            "color": "#d52136"
+        }
+    };
+
+    const rzp = new Razorpay(options);
+    rzp.open();
+}
+
 
     // Add event listener for "Proceed" buttons
     document.addEventListener("click", function (event) {
@@ -515,17 +537,12 @@ if (!token) {
     console.log("Token loaded:", token);
     
     setTimeout(() => {
-        console.log("Removing token after 2 minutes...");
+        console.log("Removing token after 20 minutes...");
         localStorage.removeItem("token");
-    }, 200000); // 2 minutes
+    }, 2000000);
 }
 
-window.addEventListener("beforeunload", function () {
-    if (localStorage.getItem("token")) {
-        console.log("User is navigating away, clearing token...");
-        localStorage.removeItem("token");
-    }
-});
+
 
     
 </script>

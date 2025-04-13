@@ -93,7 +93,7 @@ async function handleUserInput() {
         }).toString();
 
         setTimeout(() => {
-            window.location.href = `http://127.0.0.1:5501/prepaidPage.html?${queryParams}`;
+            window.location.href = `prepaidPage.html?${queryParams}`;
         }, 2000);
 
     } catch (error) {
@@ -112,7 +112,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     if (getStartedBtn) {
         getStartedBtn.addEventListener("click", () => {
-            window.location.href = "http://127.0.0.1:5501/newPrepaid.html";
+            window.location.href = "newPrepaid.html";
         });
     }
 
@@ -125,7 +125,7 @@ document.addEventListener("DOMContentLoaded", async () => {
             });
 
             if (response.ok) {
-                window.location.href = "http://127.0.0.1:5501/prepaidPage.html"; 
+                window.location.href = "prepaidPage.html"; 
             } else {
                 localStorage.removeItem("jwtToken"); 
                 console.warn("Invalid token. Please log in again.");

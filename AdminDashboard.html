@@ -82,24 +82,31 @@
    <!-- Sidebar for Desktop -->
 <aside class="d-none d-md-block">
     <div class="container" style="margin-left: -30px;">
-        <a href="http://127.0.0.1:5501/AdminDashboard.html">
+        <a href="AdminDashboard.html">
             <img src="src/images/mobi-comm-named-logo-removebg-preview.png" alt="" style="width: 200px;">
         </a>
     </div>
     <nav class="mt-3">
         <ul class="list-unstyled">
             <li class="p-2 bg-danger text-white rounded mb-2">
-                <a href="http://127.0.0.1:5501/AdminDashboard.html" class="text-white text-decoration-none">Expiring Recharges</a>
+                <a href="AdminDashboard.html" class="text-white text-decoration-none">Expiring Recharges</a>
             </li>
             <li class="p-2 text-dark rounded mb-2">
-                <a href="http://127.0.0.1:5501/subscriberManagement.html" class="text-dark text-decoration-none">Subscribers</a>
+                <a href="subscriberManagement.html" class="text-dark text-decoration-none">Subscribers</a>
             </li>
             <li class="p-2 text-dark rounded mb-2">
-                <a href="http://127.0.0.1:5501/planManagement.html" class="text-dark text-decoration-none">Plans</a>
+                <a href="planManagement.html" class="text-dark text-decoration-none">Plans</a>
             </li>
             <li class="p-2 rounded mb-2">
-                <a href="http://127.0.0.1:5501/RechargeManagement.html#" class="text-dark text-decoration-none">Recharge Management</a>
+                <a href="RechargeManagement.html#" class="text-dark text-decoration-none">Transactions</a>
             </li>
+            <li class="p-2  rounded mb-2">
+                <a href="analyticsOverView.html" class="text-dark text-decoration-none">Analytics Overview</a>
+            </li>
+
+
+
+                                                                                                                                                                                                                                                                                                                                                                                                  
             <!-- <li class="p-2 text-dark rounded mb-2">
                 <a href="#" class="text-dark text-decoration-none">Complaint Management</a>
             </li>
@@ -123,20 +130,20 @@
     <div class="offcanvas-body">
         <nav>
             <ul class="list-unstyled">
-                <li class="p-2 bg-danger text-white rounded mb-2">
-                    <a href="http://127.0.0.1:5501/AdminDashboard.html" class="text-white text-decoration-none">Expiring Recharges</a>
+                <li class="p-2 bg-secondary text-white rounded mb-2">
+                    <a href="AdminDashboard.html" class="text-white text-decoration-none">Expiring Recharges</a>
                 </li>
                 <li class="p-2 text-dark rounded mb-2">
-                    <a href="http://127.0.0.1:5501/subscriberManagement.html" class="text-dark text-decoration-none">Subscribers</a>
+                    <a href="subscriberManagement.html" class="text-dark text-decoration-none">Subscribers</a>
                 </li>
                 <li class="p-2 text-dark rounded mb-2">
-                    <a href="http://127.0.0.1:5501/planManagement.html" class="text-dark text-decoration-none">Plans</a>
+                    <a href="planManagement.html" class="text-dark text-decoration-none">Plans</a>
                 </li>
-                <li class="p-2 text-dark rounded mb-2">
-                    <a href="#" class="text-dark text-decoration-none">Complaint Management</a>
+                <li class="p-2  rounded mb-2 bg-danger">
+                    <a href="RechargeManagement.html" class="text-light text-decoration-none">Transactions</a>
                 </li>
-                <li class="p-2 text-dark rounded mb-2">
-                    <a href="#" class="text-dark text-decoration-none">Admin Controls</a>
+                <li class="p-2  rounded mb-2">
+                    <a href="http://127.0.0.1:5501/analyticsOverView.html" class="text-light text-decoration-none">Analytics Overview</a>
                 </li>
             </ul>
         </nav>
@@ -411,7 +418,6 @@ function updateTime() {
     setInterval(updateTime, 1000);
     updateTime();
 
-// ✅ Fetch Data on Load
 fetchUserData();
 
 </script>

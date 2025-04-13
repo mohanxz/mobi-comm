@@ -10,7 +10,7 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "bootstrap": "^5.3.3",
+    "bootstrap": "file:",
     "dotenv": "^16.4.7"
   }
 }

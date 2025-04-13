@@ -90,7 +90,7 @@ function sortTable() {
         if (sortBy === "name_desc") return nameB.localeCompare(nameA);
         if (sortBy === "daysLeft_asc") return daysA - daysB;
         if (sortBy === "daysLeft_desc") return daysB - daysA;
-        if(sortBy==="reset")window.location.href="http://127.0.0.1:5501/AdminDashboard.html";
+        if(sortBy==="reset")window.location.href="AdminDashboard.html";
         return 0; // Default (No Sorting)
     });
 

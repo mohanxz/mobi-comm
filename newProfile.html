@@ -171,7 +171,7 @@
                     if (verifyResponse.ok) {
                         const verifyData = await verifyResponse.json();
                         localStorage.setItem("token", verifyData.token); // Store JWT token
-                        window.location.href = `http://127.0.0.1:5501/prepaidPage.html?token=${verifyData.token}`;
+                        window.location.href = `prepaidPage.html?token=${verifyData.token}`;
                     } else {
                         const verifyData = await verifyResponse.json();
                         otpErrorMessage.innerText = verifyData.message;
